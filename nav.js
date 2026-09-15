@@ -23,7 +23,6 @@ function renderNav(opts) {
   const lifecycleItems = [
     { id: 'prepare-data',   label: 'Prepare Data',   href: p + 'prepare-data/prepare-data.html',       tools: [] },
     { id: 'train-model',    label: 'Train Model',    href: p + 'train-model/train-model.html',         tools: [] },
-    { id: 'optimize-model', label: 'Optimize Model', href: p + 'optimize-model/optimize-model.html',   tools: [] },
     { id: 'deploy-models',  label: 'Deploy Models',  href: p + 'deploy-models/deploy-models.html',     tools: [] },
     { id: 'serve-model',    label: 'Serve Model',    href: p + 'serve-model/serve-model.html',         tools: [] },
     { id: 'ai-governance',  label: 'AI Governance',  href: p + 'ai-governance/ai-governance.html',     tools: [] },
@@ -156,6 +155,16 @@ function renderNav(opts) {
         dropdown: flyoutDropdown('Products & Tools', productsCategoryItems, sub),
       },
       {
+        id: 'generative-ai', label: 'Generative AI',
+        href: p + 'generative-ai/generative-ai.html',
+        dropdown: null,
+      },
+      {
+        id: 'agentic-ai', label: 'Agentic AI',
+        href: p + 'agentic-ai/agentic-ai.html',
+        dropdown: null,
+      },
+      {
         id: 'help', label: 'Getting Help',
         href: p + 'getting-help/terminology.html',
         dropdown: dropdown('Getting Help', helpItems, sub),
@@ -285,10 +294,9 @@ function initSearch(wrapper, root) {
     { title: 'Machine Learning for IBM z/OS (MLz)', section: 'Train Model', snippet: 'IBM MLz provides a full lifecycle platform for building, deploying, and scoring AI models on z/OS.', href: root + 'products-tools/ai-platforms.html#mlz' },
     { title: 'Red Hat OpenShift AI', section: 'Train Model', snippet: 'MLOps platform on Red Hat OpenShift running on IBM Z and LinuxONE for containerized AI workloads.', href: root + 'products-tools/ai-platforms.html#rhoai' },
 
-    /* Optimize Model */
-    { title: 'Optimize Model', section: 'AI Lifecycle', snippet: 'ONNX, PMML, quantization, and the IBM Z Deep Learning Compiler (zDLC) for model optimization.', href: root + 'optimize-model/optimize-model.html' },
-    { title: 'ONNX & IBM Z Deep Learning Compiler', section: 'Optimize Model', snippet: 'Convert and compile models to ONNX format; use zDLC to optimize neural networks for IBM Z hardware.', href: root + 'products-tools/model-formats.html#zdlc' },
-    { title: 'AI Optimizer for IBM Z and LinuxONE', section: 'Optimize Model', snippet: 'Quantize and compress AI models to improve inference throughput on IBM Z hardware.', href: root + 'products-tools/ai-platforms.html#ai-optimizer' },
+    /* Deploy Models (includes optimize & deploy) */
+    { title: 'ONNX & IBM Z Deep Learning Compiler', section: 'Deploy Models', snippet: 'Convert and compile models to ONNX format; use zDLC to optimize neural networks for IBM Z hardware.', href: root + 'products-tools/model-formats.html#zdlc' },
+    { title: 'AI Optimizer for IBM Z and LinuxONE', section: 'Deploy Models', snippet: 'Quantize and compress AI models to improve inference throughput on IBM Z hardware.', href: root + 'products-tools/ai-platforms.html#ai-optimizer' },
 
     /* Model Formats & Compilers */
     { title: 'Model Formats & Compilers', section: 'Products & Tools', snippet: 'ONNX and PMML model interchange formats plus the IBM Z Deep Learning Compiler for Telum-accelerated inference.', href: root + 'products-tools/model-formats.html' },

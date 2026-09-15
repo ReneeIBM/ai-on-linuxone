@@ -55,42 +55,110 @@
         <!-- ── WHERE TO START ────────────────────────────────────────── -->
         <section class="section" id="where-to-start">
           <h1>Where to Start</h1>
-          <p>Your serving choice depends on the model type, where you deployed, and how your application will consume predictions. Use this to find your path:</p>
+          <p>Your starting point depends on where you want to serve the model, the model formats you need to support, and how you plan to operate inference at scale.</p>
 
           <div class="decision-cards">
 
             <div class="decision-card">
-              <div class="decision-card-label">Serving TensorFlow models on Linux on Z</div>
+              <div class="decision-card-label">Serving Models Directly on z/OS</div>
               <div class="decision-card-body">
-                <p>Your model is a TensorFlow SavedModel and you need a production-grade REST or gRPC endpoint with version management and Telum acceleration.</p>
-                <p><strong>→ Use IBM Z Accelerated Serving for TensorFlow.</strong> A flexible, high-performing serving system for TensorFlow models, served via HTTP REST or gRPC, with Telum II acceleration on z17.</p>
+                <p>You want inference integrated with transaction processing and business applications running on z/OS.</p>
+                <p><strong>→ Start with Machine Learning for IBM z/OS (MLz).</strong> MLz provides model deployment, scoring services, and REST APIs directly within the z/OS environment.</p>
+                <p><em>Common approach:</em> Register model in MLz → Expose scoring endpoint → Integrate with z/OS applications.</p>
               </div>
             </div>
 
             <div class="decision-card">
-              <div class="decision-card-label">Serving multiple frameworks or model types</div>
+              <div class="decision-card-label">Serving Models Across Multiple Frameworks</div>
               <div class="decision-card-body">
-                <p>You have a mix of model types — ONNX, SnapML, PyTorch — or need a unified serving platform that handles ensembles and concurrent models.</p>
-                <p><strong>→ Use IBM Z Accelerated for Triton Inference Server.</strong> A multi-framework, high-performance inference server supporting SnapML, ONNX/DLC, and PyTorch backends — with dynamic batching and model ensemble support on Linux on Z.</p>
+                <p>You need a single inference platform that supports ONNX, TensorFlow, PyTorch, and other model formats.</p>
+                <p><strong>→ Start with IBM Z Accelerated for Triton Inference Server.</strong> Triton provides a unified serving platform for multiple model types and supports high-performance production inference.</p>
+                <p><em>Common approach:</em> Export model → Deploy to Triton → Serve through APIs.</p>
               </div>
             </div>
 
             <div class="decision-card">
-              <div class="decision-card-label">Serving LLMs and foundation models</div>
+              <div class="decision-card-label">Serving TensorFlow Models</div>
               <div class="decision-card-body">
-                <p>You're serving a large language model — Granite, Llama, Mixtral, or similar — for generative AI use cases on IBM z17 with Spyre or Telum II acceleration.</p>
-                <p><strong>→ Build or fine-tune models in watsonx.ai</strong>, then serve them using <strong>Red Hat AI Inference Server</strong> (vLLM-based), <strong>Red Hat OpenShift AI</strong>, or <strong>AI Optimizer for IBM Z and LinuxONE</strong> depending on your deployment architecture.</p>
+                <p>Your model remains in TensorFlow format and you want a dedicated serving solution.</p>
+                <p><strong>→ Start with IBM Z Accelerated Serving for TensorFlow.</strong> TensorFlow Serving provides a production runtime optimized for serving TensorFlow models.</p>
+                <p><em>Common approach:</em> Export TensorFlow SavedModel → Deploy to TensorFlow Serving → Expose inference endpoint.</p>
               </div>
             </div>
 
             <div class="decision-card">
-              <div class="decision-card-label">Serving inside z/OS applications</div>
+              <div class="decision-card-label">Managing Enterprise AI Inference</div>
               <div class="decision-card-body">
-                <p>Your application runs in CICS, IMS, or batch on z/OS and you need the model score to be part of the transaction — not a round-trip to an external server.</p>
-                <p><strong>→ Use Machine Learning for IBM z/OS (MLz).</strong> Native CICS, IMS, and Java scoring services embedded in z/OS transactions, with near-zero latency and Telum acceleration.</p>
+                <p>Multiple teams require deployment controls, monitoring, scaling, governance, and operational oversight.</p>
+                <p><strong>→ Start with Red Hat OpenShift AI.</strong> OpenShift AI provides the platform layer that manages model serving infrastructure, monitoring, and MLOps operations.</p>
+                <p><em>Common approach:</em> Deploy model servers → Monitor performance → Scale inference workloads.</p>
               </div>
             </div>
 
+            <div class="decision-card">
+              <div class="decision-card-label">Centralizing and Optimizing Inference</div>
+              <div class="decision-card-body">
+                <p>You need a common gateway for deploying, routing, and optimizing inference workloads across multiple model types.</p>
+                <p><strong>→ Start with AI Optimizer for IBM Z and LinuxONE.</strong> AI Optimizer helps operationalize and route inference workloads while simplifying deployment architectures.</p>
+                <p><em>Common approach:</em> Register model → Configure inference routing → Deploy optimized inference services.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ── PRODUCTS & TOOLS ──────────────────────────────────────── -->
+        <section class="section" id="products-tools">
+          <h1>Products &amp; Tools</h1>
+          <p>The table below shows products relevant to this stage, their serving functions, and their typical role.</p>
+
+          <div class="data-table" style="max-width:800px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Serving Functions</th>
+                  <th>Typical Role in Serve Model Stage</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Red Hat OpenShift AI</strong></td>
+                  <td>Model serving management, deployment orchestration, monitoring, scaling, inference endpoint management, MLOps workflows</td>
+                  <td>Enterprise platform for operating and managing model serving environments</td>
+                </tr>
+                <tr>
+                  <td><strong>Machine Learning for IBM z/OS (MLz)</strong></td>
+                  <td>Model deployment, online scoring, REST API generation, inference services, model lifecycle management</td>
+                  <td>Native z/OS serving and inference platform</td>
+                </tr>
+                <tr>
+                  <td><strong>watsonx.ai</strong></td>
+                  <td>Model catalog management, model promotion, AI asset management, governance integration, deployment coordination</td>
+                  <td>Governs and manages AI assets moving into production serving environments</td>
+                </tr>
+                <tr>
+                  <td><strong>AI Optimizer for IBM Z and LinuxONE</strong></td>
+                  <td>Inference routing, model execution management, workload optimization, inference orchestration</td>
+                  <td>Centralized inference layer that helps operationalize and optimize model serving</td>
+                </tr>
+                <tr>
+                  <td><strong>Red Hat AI Inference Server</strong></td>
+                  <td>Model serving, inference APIs, model hosting, scalable inference endpoints</td>
+                  <td>Enterprise inference runtime for serving AI models</td>
+                </tr>
+                <tr>
+                  <td><strong>IBM Z Accelerated for Triton</strong></td>
+                  <td>Multi-framework model serving, inference APIs, dynamic batching, high-performance inference, model management</td>
+                  <td>Runtime serving platform for TensorFlow, PyTorch, ONNX, and other model formats</td>
+                </tr>
+                <tr>
+                  <td><strong>IBM Z Accelerated Serving for TensorFlow</strong></td>
+                  <td>TensorFlow model serving, inference APIs, model version management, request routing</td>
+                  <td>Runtime serving platform optimized for TensorFlow models</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </section>
 
@@ -116,6 +184,46 @@
       <footer class="footer"><p>&copy; 2025 AI on Z</p></footer>
     </div>
   </div>
+  <style>
+    .decision-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 18px 0 24px;
+      max-width: 720px;
+    }
+    .decision-card {
+      border: 1px solid var(--ibm-border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .decision-card-label {
+      background: var(--ibm-gray-10);
+      border-bottom: 1px solid var(--ibm-border);
+      padding: 9px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ibm-text-helper);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .decision-card-body {
+      padding: 14px 16px;
+    }
+    .decision-card-body p {
+      font-size: 14px;
+      color: var(--ibm-text-secondary);
+      margin-bottom: 6px !important;
+      line-height: 1.55;
+    }
+    .decision-card-body p:last-child {
+      margin-bottom: 0 !important;
+    }
+    .decision-card-body strong {
+      color: var(--ibm-text-primary);
+    }
+  </style>
+
   <script src="../nav.js"></script>
   <script>
     renderNav({
@@ -125,6 +233,7 @@
       pageNavItems: [
         { id: 'overview',       label: 'Overview' },
         { id: 'where-to-start', label: 'Where to Start' },
+        { id: 'products-tools', label: 'Products & Tools' },
         { id: 'next-steps',     label: 'Next Steps' },
       ]
     });

@@ -22,72 +22,169 @@
         <!-- ── OVERVIEW ─────────────────────────────────────────────── -->
         <section class="section" id="overview">
           <h1>Deploy Models</h1>
-          <p>Deployment is where a trained and optimized model moves from a development environment into production — where it can process real data and generate business value. On IBM Z, deployment means co-locating your model with the mission-critical data and applications it needs to score: Db2 transactions, CICS workflows, IMS applications, and more. That proximity is the key to real-time, in-transaction AI at the low latencies that enterprise workloads demand.</p>
-          <p>IBM Z supports multiple deployment paths depending on your operating environment, your model type, and the kind of application you're infusing AI into.</p>
+          <p>After training, most models need to be prepared before they can run efficiently in production on IBM Z. This stage covers both optimization — converting your model into the right format and compiling it for hardware acceleration — and deployment, where your model moves into a production runtime and begins scoring real data.</p>
+          <p>IBM Z supports multiple paths depending on your model type, your target operating environment, and how you need to integrate AI into your applications.</p>
 
           <h2>What happens at this stage?</h2>
           <div class="card-grid">
             <div class="card">
-              <h4>Move to production</h4>
-              <p>Transfer your trained, optimized model from a development environment to a production runtime — on z/OS, Linux on Z, or an OpenShift container environment.</p>
+              <h4>Convert to a portable format</h4>
+              <p>Export your trained model to ONNX (deep learning) or PMML (traditional ML) — standard interchange formats that work across Z operating systems and deployment tools.</p>
             </div>
             <div class="card">
-              <h4>Register and version the model</h4>
-              <p>Register the model in a lifecycle management platform so it can be tracked, versioned, and governed through its production life.</p>
+              <h4>Optimize for IBM Z hardware</h4>
+              <p>Compile and quantize your model using the IBM Z Deep Learning Compiler or AI Optimizer to maximize inference performance on Telum and Spyre acceleration.</p>
+            </div>
+            <div class="card">
+              <h4>Move to production</h4>
+              <p>Deploy your model to a production runtime — on z/OS, Linux on Z, or an OpenShift container environment — co-located with the enterprise data it needs to score.</p>
             </div>
             <div class="card">
               <h4>Configure scoring endpoints</h4>
-              <p>Set up the model to receive inference requests — via REST API, CICS/IMS native scoring, batch jobs, or a gRPC serving endpoint.</p>
-            </div>
-            <div class="card">
-              <h4>Validate in production</h4>
-              <p>Run test traffic through the deployed model to confirm it produces expected results before enabling it for live workloads.</p>
+              <p>Set up the model to receive inference requests via REST API, CICS/IMS native scoring, batch jobs, or a gRPC serving endpoint.</p>
             </div>
           </div>
 
           <h2>Who is this stage for?</h2>
-          <p>Deployment is primarily owned by <strong>IT Architects</strong> and <strong>Application Architects</strong>, with <strong>ML Engineers</strong> responsible for the model artifact and deployment tooling. Data Scientists are stakeholders who validate that the deployed model performs as expected. Line of Business stakeholders set the production SLAs and scoring latency requirements.</p>
+          <p>Optimization and deployment are jointly owned by <strong>ML Engineers</strong> and <strong>IT Architects</strong>. The ML Engineer handles model conversion, compilation, and the deployment artifact. The IT Architect owns the infrastructure decisions — operating environment, serving topology, and integration with business applications. Data Scientists are stakeholders who validate that the deployed model performs as expected.</p>
         </section>
 
         <!-- ── WHERE TO START ────────────────────────────────────────── -->
         <section class="section" id="where-to-start">
           <h1>Where to Start</h1>
-          <p>Your deployment path depends primarily on your target operating environment and how you need to integrate AI into your applications. Use this to find your path:</p>
+          <p>Your path depends on your model type, target environment, and deployment requirements. Use this to find your path:</p>
 
           <div class="decision-cards">
 
             <div class="decision-card">
-              <div class="decision-card-label">Deploying on z/OS — in-transaction AI</div>
+              <div class="decision-card-label">Deploying a Traditional Machine Learning Model</div>
               <div class="decision-card-body">
-                <p>Your business applications run on z/OS (CICS, IMS, Batch) and you want AI scoring co-located with transaction data — near-zero latency, no data movement.</p>
-                <p><strong>→ Use Machine Learning for IBM z/OS (MLz).</strong> The full-featured ML platform on z/OS that deploys models trained anywhere and scores them natively inside CICS, IMS, and batch workflows with Telum acceleration.</p>
+                <p>You have a trained model from Snap ML, scikit-learn, XGBoost, Spark MLlib, or another traditional ML framework.</p>
+                <p><strong>→ Start with PMML.</strong> PMML provides a portable format for many traditional machine learning models and enables deployment without requiring the original training framework.</p>
+                <p><em>Common approach:</em> Train a model → Export to PMML → Deploy through AI Optimizer or MLz scoring services.</p>
               </div>
             </div>
 
             <div class="decision-card">
-              <div class="decision-card-label">Deploying on Linux on Z or LinuxONE — containerized</div>
+              <div class="decision-card-label">Deploying a Deep Learning Model</div>
               <div class="decision-card-body">
-                <p>Your AI workloads run in containers on Linux on Z or LinuxONE, and you want a flexible, cloud-native deployment environment with MLOps capabilities.</p>
-                <p><strong>→ Use Red Hat OpenShift AI.</strong> A Kubernetes-native AI/ML platform that deploys models across any OpenShift footprint — including IBM Z and LinuxONE — with built-in pipeline orchestration, model serving, and monitoring.</p>
+                <p>You have a trained neural network and want portable deployment across serving platforms.</p>
+                <p><strong>→ Start with ONNX.</strong> ONNX creates a framework-independent model format that simplifies optimization and deployment across environments.</p>
+                <p><em>Common approach:</em> Convert to ONNX → Optimize and deploy for production inference.</p>
               </div>
             </div>
 
             <div class="decision-card">
-              <div class="decision-card-label">Deploying foundation models and LLMs</div>
+              <div class="decision-card-label">Deploying Models Across Multiple Frameworks</div>
               <div class="decision-card-body">
-                <p>You're deploying a large language model or generative AI application on IBM Z, using IBM Spyre or Telum II for acceleration.</p>
-                <p><strong>→ Use watsonx.ai or Red Hat OpenShift AI</strong> to manage the model lifecycle, and the <strong>Red Hat AI Inference Server</strong> (vLLM-based) or <strong>AI Optimizer for IBM Z</strong> as the serving infrastructure for LLM inference.</p>
+                <p>You need to serve TensorFlow, PyTorch, ONNX, or other model types from a common inference platform.</p>
+                <p><strong>→ Use Triton Inference Server.</strong> Triton supports multiple framework formats through a single serving environment.</p>
+                <p><em>Common approach:</em> Train using your preferred framework → Export model → Deploy through Triton.</p>
               </div>
             </div>
 
             <div class="decision-card">
-              <div class="decision-card-label">Hybrid cloud — train anywhere, deploy on Z</div>
+              <div class="decision-card-label">Deploying Models Directly on z/OS</div>
               <div class="decision-card-body">
-                <p>You trained a model in the cloud or on a GPU cluster and want to bring it to IBM Z for accelerated production inference.</p>
-                <p><strong>→ Convert to ONNX or PMML</strong> (in the Optimize stage), then import directly into MLz or deploy via the AI Toolkit container images. Both paths accept models trained on any platform.</p>
+                <p>You want model management and operationalization integrated into the z/OS environment.</p>
+                <p><strong>→ Use Machine Learning for IBM z/OS (MLz).</strong> MLz provides model deployment, scoring, governance integration, and model lifecycle management within z/OS.</p>
+                <p><em>Common approach:</em> Train model using internal or external tools → Register in MLz → Deploy and manage scoring on z/OS.</p>
               </div>
             </div>
 
+            <div class="decision-card">
+              <div class="decision-card-label">Building an Enterprise AI Deployment Platform</div>
+              <div class="decision-card-body">
+                <p>Multiple teams require deployment pipelines, model catalogs, monitoring, and operational controls.</p>
+                <p><strong>→ Use Red Hat OpenShift AI.</strong> OpenShift AI provides the MLOps layer that manages model deployment, serving infrastructure, monitoring, and lifecycle operations.</p>
+                <p><em>Common approach:</em> Register model → Deploy using Triton or TensorFlow Serving → Monitor and manage through OpenShift AI.</p>
+              </div>
+            </div>
+
+            <div class="decision-card">
+              <div class="decision-card-label">Managing AI Assets Across the Full Lifecycle</div>
+              <div class="decision-card-body">
+                <p>You need model governance, catalogs, lifecycle management, and enterprise AI oversight.</p>
+                <p><strong>→ Use watsonx.ai.</strong> watsonx.ai helps manage AI assets and integrates with broader AI lifecycle and governance workflows.</p>
+                <p><em>Common approach:</em> Build or import model → Track and manage AI assets → Promote approved models into deployment platforms.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ── PRODUCTS & TOOLS ──────────────────────────────────────── -->
+        <section class="section" id="products-tools">
+          <h1>Products &amp; Tools</h1>
+          <p>The table below shows products relevant to this deployment, its deployment functions, and its typical role in deployment.</p>
+
+          <div class="data-table" style="max-width:800px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Deploy Functions</th>
+                  <th>Typical Role in Deploy Stage</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Red Hat OpenShift AI</strong></td>
+                  <td>Model deployment, model management, deployment pipelines, monitoring, scaling, MLOps workflows</td>
+                  <td>Enterprise platform that manages and operates deployed models</td>
+                </tr>
+                <tr>
+                  <td><strong>watsonx.ai</strong></td>
+                  <td>Model cataloging, model promotion, lifecycle management, AI governance integration, deployment orchestration</td>
+                  <td>Governs and manages AI assets moving into production</td>
+                </tr>
+                <tr>
+                  <td><strong>Machine Learning for IBM z/OS (MLz)</strong></td>
+                  <td>Model registration, model deployment, scoring services, REST APIs, model lifecycle management on z/OS</td>
+                  <td>Native z/OS deployment and inference platform</td>
+                </tr>
+                <tr>
+                  <td><strong>Snap ML</strong></td>
+                  <td>PMML model export</td>
+                  <td>Produces deployable traditional ML models but is not itself a deployment platform</td>
+                </tr>
+                <tr>
+                  <td><strong>TensorFlow</strong></td>
+                  <td>SavedModel export, TensorFlow Serving integration</td>
+                  <td>Produces deployable deep learning models</td>
+                </tr>
+                <tr>
+                  <td><strong>PyTorch</strong></td>
+                  <td>ONNX export, Triton integration</td>
+                  <td>Produces deployable deep learning models</td>
+                </tr>
+                <tr>
+                  <td><strong>ONNX</strong></td>
+                  <td>Portable model format, framework interoperability, deployment artifact</td>
+                  <td>Common deployment format for deep learning models</td>
+                </tr>
+                <tr>
+                  <td><strong>PMML</strong></td>
+                  <td>Portable model format, model exchange, deployment artifact</td>
+                  <td>Common deployment format for traditional ML models</td>
+                </tr>
+                <tr>
+                  <td><strong>IBM Z Deep Learning Compiler (ZDLC)</strong></td>
+                  <td>Generates optimized deployment artifacts from ONNX models</td>
+                  <td>Optimization step that prepares models for deployment on IBM Z</td>
+                </tr>
+                <tr>
+                  <td><strong>TensorFlow Serving</strong></td>
+                  <td>Model serving, inference APIs, model versioning, request routing</td>
+                  <td>Runtime serving environment for TensorFlow models</td>
+                </tr>
+                <tr>
+                  <td><strong>Triton Inference Server</strong></td>
+                  <td>Multi-framework serving, inference APIs, model management, dynamic batching, scaling</td>
+                  <td>Runtime serving environment for TensorFlow, PyTorch, ONNX, and other models</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </section>
 
@@ -113,6 +210,47 @@
       <footer class="footer"><p>&copy; 2025 AI on Z</p></footer>
     </div>
   </div>
+
+  <style>
+    .decision-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 18px 0 24px;
+      max-width: 720px;
+    }
+    .decision-card {
+      border: 1px solid var(--ibm-border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .decision-card-label {
+      background: var(--ibm-gray-10);
+      border-bottom: 1px solid var(--ibm-border);
+      padding: 9px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ibm-text-helper);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .decision-card-body {
+      padding: 14px 16px;
+    }
+    .decision-card-body p {
+      font-size: 14px;
+      color: var(--ibm-text-secondary);
+      margin-bottom: 6px !important;
+      line-height: 1.55;
+    }
+    .decision-card-body p:last-child {
+      margin-bottom: 0 !important;
+    }
+    .decision-card-body strong {
+      color: var(--ibm-text-primary);
+    }
+  </style>
+
   <script src="../nav.js"></script>
   <script>
     renderNav({
@@ -122,6 +260,7 @@
       pageNavItems: [
         { id: 'overview',       label: 'Overview' },
         { id: 'where-to-start', label: 'Where to Start' },
+        { id: 'products-tools', label: 'Products & Tools' },
         { id: 'next-steps',     label: 'Next Steps' },
       ]
     });

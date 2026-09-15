@@ -52,42 +52,115 @@
         <!-- ── WHERE TO START ────────────────────────────────────────── -->
         <section class="section" id="where-to-start">
           <h1>Where to Start</h1>
-          <p>The right training approach depends on your model type, your data, and how much control you need over the training process. Use this to find your path:</p>
+          <p>Your starting point depends on the type of model you're building, your preferred development environment, and how your team works.</p>
 
           <div class="decision-cards">
 
             <div class="decision-card">
-              <div class="decision-card-label">Structured / tabular data — fraud, risk, claims</div>
+              <div class="decision-card-label">Building Traditional Machine Learning Models</div>
               <div class="decision-card-body">
-                <p>You're building a traditional ML model on structured transaction data. Speed and compatibility with scikit-learn matter.</p>
-                <p><strong>→ Start with IBM Z Accelerated SnapML.</strong> It's a drop-in replacement for scikit-learn that trains linear models, random forests, and gradient boosting faster — and exports to PMML or ONNX for deployment.</p>
+                <p>You are working with structured or tabular data and need models such as classification, regression, forecasting, or recommendation systems.</p>
+                <p><strong>→ Start with Snap ML.</strong> Snap ML is optimized for high-performance machine learning training on IBM Z and LinuxONE.</p>
+                <p><em>Common approach:</em> Prepare data → Train with Snap ML → Export to PMML → Deploy.</p>
               </div>
             </div>
 
             <div class="decision-card">
-              <div class="decision-card-label">Deep learning — NLP, image, voice, LLMs</div>
+              <div class="decision-card-label">Building Deep Learning Models</div>
               <div class="decision-card-body">
-                <p>You need to train or fine-tune a neural network. You're using TensorFlow or PyTorch already, or need to get started.</p>
-                <p><strong>→ Use IBM Z Accelerated for TensorFlow or PyTorch</strong> (available in the AI Toolkit for IBM Z). Train on IBM Z or hybrid cloud, then deploy to IBM Z for Telum-accelerated inference.</p>
+                <p>You need to develop neural networks, computer vision models, natural language processing models, or other deep learning workloads.</p>
+                <p><strong>→ Start with TensorFlow or PyTorch.</strong> These industry-standard frameworks provide flexibility for building and training custom AI models.</p>
+                <p><em>Common approach:</em> Prepare data → Train with TensorFlow or PyTorch → Export to ONNX → Optimize and deploy.</p>
               </div>
             </div>
 
             <div class="decision-card">
-              <div class="decision-card-label">Training on z/OS with Python</div>
+              <div class="decision-card-label">Building Models Directly on z/OS</div>
               <div class="decision-card-body">
-                <p>Your data lives on z/OS and you want to train directly on the platform using Python, scikit-learn, XGBoost, or similar tools.</p>
-                <p><strong>→ Use the Python AI Toolkit for IBM z/OS.</strong> A curated set of Python packages — including pandas, NumPy, scikit-learn, and XGBoost — running natively on z/OS without data movement.</p>
+                <p>You want model development, management, and operationalization integrated into the z/OS environment.</p>
+                <p><strong>→ Start with Machine Learning for IBM z/OS (MLz).</strong> MLz provides a z/OS-native environment for developing and managing machine learning solutions.</p>
+                <p><em>Common approach:</em> Develop and train models on z/OS → Manage and operationalize through MLz → Deploy.</p>
               </div>
             </div>
 
             <div class="decision-card">
-              <div class="decision-card-label">Using a pre-built or external model</div>
+              <div class="decision-card-label">Building an Enterprise AI Platform</div>
               <div class="decision-card-body">
-                <p>You want to lift and shift a model trained elsewhere onto IBM Z, or fine-tune a foundation model with your own data.</p>
-                <p><strong>→ Convert to ONNX or PMML</strong> for portable deployment, or use <strong>watsonx.ai</strong> to fine-tune foundation models and export for IBM Z inferencing.</p>
+                <p>Multiple teams require shared workspaces, notebooks, experiments, pipelines, and MLOps capabilities.</p>
+                <p><strong>→ Start with Red Hat OpenShift AI.</strong> OpenShift AI provides a collaborative platform for model development, training, and lifecycle management.</p>
+                <p><em>Common approach:</em> Create projects → Train using TensorFlow, PyTorch, or other frameworks → Promote models through MLOps pipelines.</p>
               </div>
             </div>
 
+            <div class="decision-card">
+              <div class="decision-card-label">Building Generative AI and Foundation Model Solutions</div>
+              <div class="decision-card-body">
+                <p>You want to work with foundation models, model tuning, prompt engineering, or generative AI applications.</p>
+                <p><strong>→ Start with watsonx.ai.</strong> watsonx.ai provides access to foundation models and tools for tuning, evaluation, and AI application development.</p>
+                <p><em>Common approach:</em> Select a foundation model → Tune or customize it → Deploy into business applications.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ── PRODUCTS & TOOLS ──────────────────────────────────────── -->
+        <section class="section" id="products-tools">
+          <h1>Products &amp; Tools</h1>
+          <p>The table below shows products relevant to this stage, their training functions, and their typical role.</p>
+
+          <div class="data-table" style="max-width:800px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Training Functions</th>
+                  <th>Typical Role in Train Model Stage</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Red Hat OpenShift AI</strong></td>
+                  <td>Data science workbenches, Jupyter notebooks, experiment tracking, pipeline orchestration, distributed training, MLOps workflows</td>
+                  <td>Enterprise platform for collaborative model development and training</td>
+                </tr>
+                <tr>
+                  <td><strong>Machine Learning for IBM z/OS (MLz)</strong></td>
+                  <td>Model development, model management, training workflow integration, model lifecycle management</td>
+                  <td>z/OS-native machine learning environment for developing and managing models</td>
+                </tr>
+                <tr>
+                  <td><strong>watsonx.ai</strong></td>
+                  <td>Foundation model access, prompt engineering, model tuning, model evaluation, generative AI development</td>
+                  <td>Platform for building, tuning, and managing foundation models and GenAI solutions</td>
+                </tr>
+                <tr>
+                  <td><strong>Python AI Toolkit for IBM z/OS</strong></td>
+                  <td>Python runtime, Jupyter notebooks, pandas, NumPy, scikit-learn, TensorFlow, PyTorch support</td>
+                  <td>Python-based development environment for data science and model training</td>
+                </tr>
+                <tr>
+                  <td><strong>Snap ML</strong></td>
+                  <td>Classification, regression, clustering, recommendation models, accelerated machine learning training</td>
+                  <td>High-performance framework for traditional machine learning workloads</td>
+                </tr>
+                <tr>
+                  <td><strong>TensorFlow</strong></td>
+                  <td>Neural network training, deep learning, computer vision, NLP, distributed training</td>
+                  <td>Deep learning framework for building and training AI models</td>
+                </tr>
+                <tr>
+                  <td><strong>PyTorch</strong></td>
+                  <td>Neural network training, deep learning, computer vision, NLP, research and production AI development</td>
+                  <td>Deep learning framework emphasizing flexibility and model development</td>
+                </tr>
+                <tr>
+                  <td><strong>Apache Spark MLlib</strong></td>
+                  <td>Distributed machine learning, classification, regression, clustering, recommendation systems, feature engineering integration</td>
+                  <td>Scalable machine learning framework integrated with Spark data pipelines</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </section>
 
@@ -97,13 +170,8 @@
           <p>Once your model is trained and validated, the next stage is to make it available in a production environment.</p>
           <div class="card-grid">
             <div class="card">
-              <h4>Optimize Model</h4>
-              <p>Before deploying, consider compiling with the IBM Z Deep Learning Compiler or applying quantization with AI Optimizer to improve inference performance on Telum.</p>
-              <a href="../optimize-model/optimize-model.html" class="learn-more" style="font-size:13px;">Go to Optimize Model &#8594;</a>
-            </div>
-            <div class="card">
               <h4>Deploy Models</h4>
-              <p>Move your trained model to a production environment — MLz for z/OS, AI Toolkit containers for Linux on Z, or Red Hat OpenShift AI for hybrid cloud.</p>
+              <p>Convert your model to ONNX or PMML, optimize with zDLC or AI Optimizer, and deploy to a production environment — MLz for z/OS, AI Toolkit containers for Linux on Z, or Red Hat OpenShift AI.</p>
               <a href="../deploy-models/deploy-models.html" class="learn-more" style="font-size:13px;">Go to Deploy Models &#8594;</a>
             </div>
           </div>
@@ -113,6 +181,46 @@
       <footer class="footer"><p>&copy; 2025 AI on Z</p></footer>
     </div>
   </div>
+  <style>
+    .decision-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 18px 0 24px;
+      max-width: 720px;
+    }
+    .decision-card {
+      border: 1px solid var(--ibm-border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .decision-card-label {
+      background: var(--ibm-gray-10);
+      border-bottom: 1px solid var(--ibm-border);
+      padding: 9px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ibm-text-helper);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .decision-card-body {
+      padding: 14px 16px;
+    }
+    .decision-card-body p {
+      font-size: 14px;
+      color: var(--ibm-text-secondary);
+      margin-bottom: 6px !important;
+      line-height: 1.55;
+    }
+    .decision-card-body p:last-child {
+      margin-bottom: 0 !important;
+    }
+    .decision-card-body strong {
+      color: var(--ibm-text-primary);
+    }
+  </style>
+
   <script src="../nav.js"></script>
   <script>
     renderNav({
@@ -122,6 +230,7 @@
       pageNavItems: [
         { id: 'overview',       label: 'Overview' },
         { id: 'where-to-start', label: 'Where to Start' },
+        { id: 'products-tools', label: 'Products & Tools' },
         { id: 'next-steps',     label: 'Next Steps' },
       ]
     });

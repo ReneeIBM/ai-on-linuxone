@@ -73,42 +73,72 @@
         <!-- ── WHERE TO START ────────────────────────────────────────── -->
         <section class="section" id="where-to-start">
           <h1>Where to Start</h1>
-          <p>Your governance approach depends on where your models are deployed and what compliance requirements you need to meet. Use this to find your path:</p>
+          <p>Your starting point depends on the scope of governance you need, where your models are deployed, and what compliance requirements you need to meet.</p>
 
           <div class="decision-cards">
 
             <div class="decision-card">
-              <div class="decision-card-label">Models deployed on z/OS via MLz</div>
+              <div class="decision-card-label">Establishing Enterprise AI Governance</div>
               <div class="decision-card-body">
-                <p>Your models run inside CICS, IMS, or batch on z/OS and you need explainability and drift detection at the individual transaction level.</p>
-                <p><strong>→ Use MLz's built-in Trustworthy AI features.</strong> LIME and SHAP explainability at the transaction level; output and feature drift detection with drill-down capabilities — all without leaving z/OS.</p>
+                <p>You need visibility into AI models, governance workflows, risk management, compliance reporting, and responsible AI practices.</p>
+                <p><strong>→ Start with watsonx.governance.</strong> watsonx.governance provides governance workflows, model monitoring, risk management, compliance tracking, and AI lifecycle oversight.</p>
+                <p><em>Common approach:</em> Register AI assets → Define governance policies → Monitor compliance and model behavior → Generate audit reports.</p>
               </div>
             </div>
 
             <div class="decision-card">
-              <div class="decision-card-label">Models on Linux on Z / OpenShift — predictive AI</div>
+              <div class="decision-card-label">Governing Models Running on z/OS</div>
               <div class="decision-card-body">
-                <p>Your models are containerized and running in Red Hat OpenShift AI on IBM Z. You need continuous monitoring for bias, drift, and fairness.</p>
-                <p><strong>→ Use TrustyAI in Red Hat OpenShift AI.</strong> Continuous model monitoring, bias and drift detection, and trust metrics for both traditional ML and generative AI models running in RHOAI on IBM Z.</p>
+                <p>You need governance and oversight for models deployed and operated within the z/OS environment.</p>
+                <p><strong>→ Start with Machine Learning for IBM z/OS (MLz).</strong> MLz integrates model lifecycle management, deployment controls, monitoring, and operational governance for AI workloads running on z/OS.</p>
+                <p><em>Common approach:</em> Deploy model → Monitor usage and performance → Manage model lifecycle and operational controls.</p>
               </div>
             </div>
 
             <div class="decision-card">
-              <div class="decision-card-label">Enterprise AI governance across all models</div>
+              <div class="decision-card-label">Monitoring Production Inference Services</div>
               <div class="decision-card-body">
-                <p>You need a unified governance platform that tracks models across their full lifecycle — development through production — with audit trails, factsheets, and compliance reporting.</p>
-                <p><strong>→ Use watsonx.governance</strong> on Linux on IBM Z (IBM Software Hub 5.4.0). Factsheets, OpenScale monitoring, and WML lifecycle management — all running on-platform in highly regulated industries.</p>
+                <p>You need operational visibility into deployed models, inference endpoints, and production serving environments.</p>
+                <p><strong>→ Start with Red Hat AI Inference Server.</strong> Red Hat AI Inference Server provides the serving infrastructure where models execute and can be monitored for operational performance and reliability.</p>
+                <p><em>Common approach:</em> Deploy model → Monitor inference workloads → Track runtime performance and service health.</p>
               </div>
             </div>
 
-            <div class="decision-card">
-              <div class="decision-card-label">Governing LLMs and generative AI</div>
-              <div class="decision-card-body">
-                <p>You're deploying foundation models or LLMs on IBM Z and need guardrails, output quality assessment, and protection from harmful content.</p>
-                <p><strong>→ Use TrustyAI's LLM evaluation and Guardrails</strong> in Red Hat OpenShift AI — evaluates LLM outputs against quality metrics and protects inputs/outputs from sensitive data and harmful content.</p>
-              </div>
-            </div>
+          </div>
+        </section>
 
+        <!-- ── PRODUCTS & TOOLS ──────────────────────────────────────── -->
+        <section class="section" id="products-tools">
+          <h1>Products &amp; Tools</h1>
+          <p>The table below shows products relevant to this stage, their AI governance functions, and their typical role.</p>
+
+          <div class="data-table" style="max-width:800px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>AI Governance Functions</th>
+                  <th>Typical Role in AI Governance Stage</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>watsonx.governance</strong></td>
+                  <td>AI governance workflows, risk management, compliance monitoring, model documentation, responsible AI controls, audit reporting, model lifecycle governance</td>
+                  <td>Enterprise AI governance platform that manages risk, compliance, transparency, and oversight across AI systems</td>
+                </tr>
+                <tr>
+                  <td><strong>Machine Learning for IBM z/OS (MLz)</strong></td>
+                  <td>Model lifecycle management, model registration, deployment controls, operational monitoring, model version tracking, governance integration</td>
+                  <td>Provides governance and operational oversight for AI models running on z/OS</td>
+                </tr>
+                <tr>
+                  <td><strong>Red Hat AI Inference Server</strong></td>
+                  <td>Inference monitoring, endpoint management, runtime observability, performance tracking, operational metrics collection</td>
+                  <td>Provides operational visibility into production AI services and inference workloads</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </section>
 
@@ -134,6 +164,46 @@
       <footer class="footer"><p>&copy; 2025 AI on Z</p></footer>
     </div>
   </div>
+  <style>
+    .decision-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 18px 0 24px;
+      max-width: 720px;
+    }
+    .decision-card {
+      border: 1px solid var(--ibm-border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .decision-card-label {
+      background: var(--ibm-gray-10);
+      border-bottom: 1px solid var(--ibm-border);
+      padding: 9px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ibm-text-helper);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .decision-card-body {
+      padding: 14px 16px;
+    }
+    .decision-card-body p {
+      font-size: 14px;
+      color: var(--ibm-text-secondary);
+      margin-bottom: 6px !important;
+      line-height: 1.55;
+    }
+    .decision-card-body p:last-child {
+      margin-bottom: 0 !important;
+    }
+    .decision-card-body strong {
+      color: var(--ibm-text-primary);
+    }
+  </style>
+
   <script src="../nav.js"></script>
   <script>
     renderNav({
@@ -144,6 +214,7 @@
         { id: 'overview',             label: 'Overview' },
         { id: 'governance-lifecycle', label: 'Governance Lifecycle on IBM Z' },
         { id: 'where-to-start',       label: 'Where to Start' },
+        { id: 'products-tools',       label: 'Products & Tools' },
         { id: 'next-steps',           label: 'Where to Go from Here' },
       ]
     });
