@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────────────────────
-   nav.js  —  Shared navigation renderer for AI on IBM Z site
+   nav.js  —  Shared navigation renderer for AI on IBM Z 101 site
    ─────────────────────────────────────────────────────────────
 
    renderNav({
@@ -95,8 +95,8 @@ function renderNav(opts) {
   ];
 
   const useCasesItems = [
-    { id: 'ai-solution-patterns',  label: 'AI Solution Patterns',  href: p + 'use-cases/use-cases.html#ai-solution-patterns' },
-    { id: 'ai-solution-template',  label: 'AI Solution Blueprint',  href: p + 'use-cases/ai-solution-template.html' },
+    { id: 'ai-solution-patterns',  label: 'Example AI Solution Pattern',  href: p + 'use-cases/use-cases.html#ai-solution-patterns' },
+    { id: 'ai-solution-template',  label: 'Additional Patterns',    href: p + 'use-cases/ai-solution-template.html' },
   ];
 
   /* ── Helper: simple dropdown (no flyout) ───────────────────── */
@@ -134,11 +134,6 @@ function renderNav(opts) {
   const topbarEl = document.getElementById('topnav');
   if (topbarEl) {
     const items = [
-      {
-        id: 'overview', label: 'Overview',
-        href: p + 'overview/overview.html',
-        dropdown: null,
-      },
       {
         id: 'use-cases', label: 'Use Cases',
         href: p + 'use-cases/use-cases.html',
@@ -273,12 +268,6 @@ function initScrollSpy() {}
 function initSearch(wrapper, root) {
   /* ── Static index: { title, section, snippet, href } ── */
   const INDEX = [
-    /* Overview */
-    { title: 'What is AI on IBM Z?', section: 'Overview', snippet: 'IBM Z combines hardware acceleration, open-source AI frameworks, and a complete software stack to run AI workloads co-located with critical business data.', href: root + 'overview/overview.html' },
-    { title: 'Why Run AI on IBM Z?', section: 'Overview', snippet: 'Co-location with data eliminates latency, reduces risk, and enables real-time AI scoring within existing transaction systems.', href: root + 'overview/overview.html#why-z' },
-    { title: 'AI on Z Entry Points', section: 'Overview', snippet: 'Three entry points: z/OS with MLz, Linux on Z with open-source frameworks, and Red Hat OpenShift AI on IBM Z.', href: root + 'overview/overview.html#entry-points' },
-    { title: 'AI Lifecycle on IBM Z', section: 'Overview', snippet: 'Prepare data, train, optimize, deploy, serve, and govern AI models — all on IBM Z infrastructure.', href: root + 'overview/overview.html#ai-lifecycle' },
-
     /* Prepare Data */
     { title: 'Prepare Data', section: 'AI Lifecycle', snippet: 'Synthetic data generation, feature engineering, and Apache Spark on IBM Z for data preparation.', href: root + 'prepare-data/prepare-data.html' },
     { title: 'IBM SQL Data Insights Pro', section: 'Products & Tools', snippet: 'AI-powered semantic search and similarity queries inside Db2 for z/OS using standard SQL and Telum on-chip inference — no data movement required.', href: root + 'products-tools/sql-data-insights.html' },
@@ -327,15 +316,14 @@ function initSearch(wrapper, root) {
     { title: 'AI Toolkit for IBM Z and LinuxONE', section: 'Products & Tools', snippet: 'A collection of open-source AI frameworks — TensorFlow, PyTorch, SnapML, ONNX — optimized for s390x.', href: root + 'products-tools/ai-frameworks.html#ai-toolkit' },
 
     /* Use Cases */
-    { title: 'AI Solution Patterns', section: 'Use Cases', snippet: 'Common AI solution patterns on IBM Z including real-time scoring, batch inference, and hybrid cloud.', href: root + 'use-cases/use-cases.html#ai-solution-patterns' },
-    { title: 'AI Solution Blueprints', section: 'Use Cases', snippet: 'Pre-built blueprints that walk you through the full AI lifecycle on IBM Z with working code.', href: root + 'use-cases/ai-solution-template.html' },
-    { title: 'Advanced Credit Card Fraud Detection', section: 'Solution Blueprints', snippet: 'Multi-model ensemble AI on IBM z17 — XGBoost + BERT deployed with MLz for real-time fraud scoring.', href: root + 'use-cases/ai-solution-template.html#fraud-detection-tis' },
-    { title: 'Fraud Detection on IBM Z', section: 'Solution Blueprints', snippet: 'Deploy an AI fraud detection model using open-source frameworks and Machine Learning for IBM z/OS.', href: root + 'use-cases/ai-solution-template.html#fraud-detection' },
-    { title: 'Document Intelligence with Spyre', section: 'Solution Blueprints · Generative AI', snippet: 'IBM Granite LLM inference on Red Hat AI Inference Server, leveraging the IBM Spyre Accelerator on IBM Z.', href: root + 'use-cases/ai-solution-template.html#generative-ai' },
-    { title: 'Credit Risk Assessment on IBM Z', section: 'Solution Blueprints', snippet: 'Build and deploy a credit risk scoring model using open-source frameworks and MLz with real-time scoring.', href: root + 'use-cases/ai-solution-template.html#credit-risk' },
-    { title: 'Health Insurance Claims on IBM Z', section: 'Solution Blueprints', snippet: 'AI model for health insurance claims processing using MLz, deployed for real-time scoring on z/OS.', href: root + 'use-cases/ai-solution-template.html#health-insurance' },
-    { title: 'Data Preprocessing on IBM Z', section: 'Solution Blueprints', snippet: 'Build an AI solution with a preprocessing pipeline using open-source frameworks and MLz on IBM Z.', href: root + 'use-cases/ai-solution-template.html#data-preprocessing' },
-    { title: 'Anti-Money Laundering on IBM Z', section: 'Solution Blueprints', snippet: 'AML detection model using open-source frameworks and MLz for real-time transaction monitoring.', href: root + 'use-cases/ai-solution-template.html#anti-money-laundering' },
+    { title: 'Example AI Solution Pattern', section: 'Use Cases', snippet: 'Common AI solution patterns on IBM Z including real-time scoring, batch inference, and hybrid cloud.', href: root + 'use-cases/use-cases.html#ai-solution-patterns' },
+    { title: 'Additional Patterns', section: 'Use Cases', snippet: 'More AI solution patterns on IBM Z — generative AI, fraud detection, credit risk, health insurance, data preprocessing, and AML.', href: root + 'use-cases/ai-solution-template.html' },
+    { title: 'Fraud Detection on IBM Z', section: 'Additional Patterns', snippet: 'Deploy an AI fraud detection model using open-source frameworks and Machine Learning for IBM z/OS.', href: root + 'use-cases/ai-solution-template.html#fraud-detection' },
+    { title: 'Document Intelligence with Spyre', section: 'Additional Patterns · Generative AI', snippet: 'IBM Granite LLM inference on Red Hat AI Inference Server, leveraging the IBM Spyre Accelerator on IBM Z.', href: root + 'use-cases/ai-solution-template.html#generative-ai' },
+    { title: 'Credit Risk Assessment on IBM Z', section: 'Additional Patterns', snippet: 'Build and deploy a credit risk scoring model using open-source frameworks and MLz with real-time scoring.', href: root + 'use-cases/ai-solution-template.html#credit-risk' },
+    { title: 'Health Insurance Claims on IBM Z', section: 'Additional Patterns', snippet: 'AI model for health insurance claims processing using MLz, deployed for real-time scoring on z/OS.', href: root + 'use-cases/ai-solution-template.html#health-insurance' },
+    { title: 'Data Preprocessing on IBM Z', section: 'Additional Patterns', snippet: 'Build an AI solution with a preprocessing pipeline using open-source frameworks and MLz on IBM Z.', href: root + 'use-cases/ai-solution-template.html#data-preprocessing' },
+    { title: 'Anti-Money Laundering on IBM Z', section: 'Additional Patterns', snippet: 'AML detection model using open-source frameworks and MLz for real-time transaction monitoring.', href: root + 'use-cases/ai-solution-template.html#anti-money-laundering' },
 
     /* Getting Help */
     { title: 'Terminology & Glossary', section: 'Getting Help', snippet: 'Key terms and definitions for AI on IBM Z: MLz, PMML, ONNX, Telum, Spyre, zDLC, and more.', href: root + 'getting-help/terminology.html#terminology' },
@@ -348,7 +336,6 @@ function initSearch(wrapper, root) {
     { title: 'CICS Scoring Endpoint', section: 'Deploy Models', snippet: 'Expose MLz-deployed models as CICS or REST scoring endpoints for z/OS transaction applications.', href: root + 'deploy-models/deploy-models.html' },
     { title: 'IBM z17', section: 'Hardware', snippet: 'IBM z17 is the latest IBM Z mainframe featuring Telum II AI accelerator and IBM Spyre Accelerator support.', href: root + 'products-tools/hardware-solutions.html' },
     { title: 'Telum II AI Accelerator', section: 'Hardware', snippet: 'Telum II is the second-generation on-chip AI accelerator in IBM z17, with improved inference throughput.', href: root + 'products-tools/hardware-solutions.html#telum' },
-    { title: 'Ensemble AI on IBM Z', section: 'Solution Blueprints', snippet: 'Combine XGBoost and BERT in an ensemble pipeline — fast model screens first, deep model refines uncertain predictions.', href: root + 'use-cases/ai-solution-template.html#fraud-detection-tis' },
     { title: 'Real-Time AI Inference on z/OS', section: 'AI Lifecycle', snippet: 'Run AI inference co-located with transactional data on z/OS using MLz CICS or REST scoring.', href: root + 'serve-model/serve-model.html' },
   ];
 
