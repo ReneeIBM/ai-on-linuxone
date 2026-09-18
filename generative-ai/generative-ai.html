@@ -20,8 +20,111 @@
 
         <section class="section" id="overview">
           <h1>Generative AI on IBM Z</h1>
-          <p>Content coming soon.</p>
+          <div class="callout-note" style="margin-bottom:20px;">
+            <p>This page provides a brief introduction to generative AI in the context of IBM Z. For a full deep-dive into generative AI concepts, models, and use cases, visit the <a href="https://www.ibm.com/think/topics/generative-ai" target="_blank" rel="noopener">IBM Think topic on Generative AI</a>.</p>
+          </div>
+          <h1>Why Organizations Use Generative AI</h1>
+          <p>Generative AI helps organizations unlock value from large volumes of information by making knowledge easier to access, understand, and use. Instead of requiring users to search through documents, applications, or data sources manually, generative AI can analyze information and generate summaries, answers, recommendations, and other useful outputs.</p>
+          <p>By leveraging foundation models and large language models (LLMs), organizations can support a wide range of tasks without building a separate model for every use case.</p>
+
+          <h2>Common Benefits</h2>
+          <div class="accordion">
+            <details class="accordion-item">
+              <summary class="accordion-summary">Unlock Value from Enterprise Knowledge</summary>
+              <div class="accordion-body">Unlock value from enterprise knowledge at scale by enabling users to interact with large volumes of structured and unstructured information through natural language instead of manually searching documents, databases, or applications. Foundation models can be adapted to support many tasks using the same underlying model, reducing the need to build separate AI solutions for each use case.</div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Improve Productivity and Decision-Making</summary>
+              <div class="accordion-body">Improve productivity and accelerate decision-making through capabilities such as summarization, conversational search, question answering, and content generation. By reducing the time spent gathering, reviewing, and synthesizing information, users can focus on higher-value business activities.</div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Reduce AI Adoption Cost and Complexity</summary>
+              <div class="accordion-body">Reduce the cost and complexity of AI adoption by leveraging pre-trained foundation models that require significantly less labeled data and shorter training cycles than traditional approaches. Organizations can adapt existing models to new use cases rather than developing models from scratch.</div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Extend AI Across Business Functions</summary>
+              <div class="accordion-body">Extend AI across a broad range of business functions including customer service, business automation, IT operations, application modernization, knowledge management, and software development. A single foundation model can support multiple downstream tasks and workflows.</div>
+            </details>
+          </div>
+
+          <h2>Common Use Cases</h2>
+          <div class="accordion">
+            <details class="accordion-item">
+              <summary class="accordion-summary">Conversational Search &amp; Q&amp;A</summary>
+              <div class="accordion-body">Enable users to ask questions in natural language and receive responses derived from enterprise knowledge, policies, procedures, and business information.</div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Document Summarization</summary>
+              <div class="accordion-body">Condense large reports, meeting notes, technical documentation, and business content into concise summaries that accelerate information consumption and decision-making.</div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Content Generation</summary>
+              <div class="accordion-body">Generate business content, communications, documentation, and knowledge assets while improving consistency and reducing manual effort.</div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Code Generation and Application Modernization</summary>
+              <div class="accordion-body">Assist developers by generating, explaining, and transforming code, helping accelerate software delivery and modernization initiatives.</div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Enterprise Assistants</summary>
+              <div class="accordion-body">Provide contextual assistance for business and technical users by combining foundation models with enterprise knowledge, applications, and workflows.</div>
+            </details>
+          </div>
+          <a href="https://www.ibm.com/think/topics/generative-ai" target="_blank" rel="noopener" class="learn-more" style="font-size:13px;">Learn more about Generative AI &#8594;</a>
         </section>
+
+        <style>
+          .accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin: 14px 0 24px;
+            max-width: 680px;
+          }
+          .accordion-item {
+            border: 1px solid var(--ibm-border);
+            border-radius: 4px;
+            overflow: hidden;
+          }
+          .accordion-summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 11px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--ibm-text-primary);
+            cursor: pointer;
+            background: var(--ibm-gray-10);
+            list-style: none;
+            user-select: none;
+          }
+          .accordion-summary::-webkit-details-marker { display: none; }
+          .accordion-summary::after {
+            content: '+';
+            font-size: 18px;
+            font-weight: 300;
+            color: var(--ibm-text-helper);
+            transition: transform 0.2s;
+          }
+          .accordion-item[open] > .accordion-summary::after {
+            content: '−';
+          }
+          .accordion-item[open] > .accordion-summary {
+            background: var(--ibm-blue);
+            color: #fff;
+          }
+          .accordion-item[open] > .accordion-summary::after {
+            color: rgba(255,255,255,0.8);
+          }
+          .accordion-body {
+            padding: 12px 16px;
+            font-size: 14px;
+            color: var(--ibm-text-secondary);
+            line-height: 1.6;
+            border-top: 1px solid var(--ibm-border);
+          }
+        </style>
 
       </div>
       <footer class="footer"><p>&copy; 2025 AI on Z</p></footer>
