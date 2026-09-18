@@ -21,6 +21,7 @@ function renderNav(opts) {
 
   /* ── Lifecycle stages with their tool sub-items ─────────────── */
   const lifecycleItems = [
+    { id: 'lifecycle-overview', label: 'Overview',   href: p + 'prepare-data/lifecycle-overview.html', tools: [] },
     { id: 'prepare-data',   label: 'Prepare Data',   href: p + 'prepare-data/prepare-data.html',       tools: [] },
     { id: 'train-model',    label: 'Train Model',    href: p + 'train-model/train-model.html',         tools: [] },
     { id: 'deploy-models',  label: 'Deploy Models',  href: p + 'deploy-models/deploy-models.html',     tools: [] },
@@ -30,6 +31,11 @@ function renderNav(opts) {
 
   /* ── Product categories with their tool sub-items ───────────── */
   const productsCategoryItems = [
+    {
+      id: 'products-overview', label: 'Overview',
+      href: p + 'products-tools/overview.html',
+      tools: []
+    },
     {
       id: 'data-analytics', label: 'Data & Analytics',
       href: p + 'products-tools/data-analytics.html',
@@ -95,8 +101,9 @@ function renderNav(opts) {
   ];
 
   const useCasesItems = [
+    { id: 'use-cases-overview',    label: 'Overview',                     href: p + 'use-cases/overview.html' },
     { id: 'ai-solution-patterns',  label: 'Example AI Solution Pattern',  href: p + 'use-cases/use-cases.html#ai-solution-patterns' },
-    { id: 'ai-solution-template',  label: 'Additional Patterns',    href: p + 'use-cases/ai-solution-template.html' },
+    { id: 'ai-solution-template',  label: 'Additional Patterns',          href: p + 'use-cases/ai-solution-template.html' },
   ];
 
   /* ── Helper: simple dropdown (no flyout) ───────────────────── */
@@ -136,17 +143,17 @@ function renderNav(opts) {
     const items = [
       {
         id: 'use-cases', label: 'Use Cases',
-        href: p + 'use-cases/use-cases.html',
+        href: p + 'use-cases/overview.html',
         dropdown: dropdown('Use Cases', useCasesItems, top === 'use-cases' ? sub : null),
       },
       {
         id: 'lifecycle', label: 'AI Lifecycle',
-        href: p + 'prepare-data/prepare-data.html',
+        href: p + 'prepare-data/lifecycle-overview.html',
         dropdown: flyoutDropdown('AI Lifecycle', lifecycleItems, sub),
       },
       {
         id: 'products', label: 'Products & Tools',
-        href: p + 'products-tools/data-analytics.html',
+        href: p + 'products-tools/overview.html',
         dropdown: flyoutDropdown('Products & Tools', productsCategoryItems, sub),
       },
       {

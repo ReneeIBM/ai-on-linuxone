@@ -75,6 +75,46 @@
             </div>
 
             <div class="decision-card">
+              <div class="decision-card-label">Optimizing a Deep Learning Model for IBM Z Hardware</div>
+              <div class="decision-card-body">
+                <p>You have a deep learning model in ONNX format and want to maximize inference performance on IBM Z and LinuxONE.</p>
+                <p><strong>→ Start with IBM Z Deep Learning Compiler (ZDLC).</strong> ZDLC generates optimized deployment artifacts that take advantage of IBM Z hardware acceleration.</p>
+                <p><em>Common approach:</em> Train model → Convert to ONNX → Optimize with ZDLC → Deploy to a serving platform.</p>
+                <p>Most users will encounter ZDLC as an optional optimization step after selecting a deployment format such as ONNX.</p>
+              </div>
+            </div>
+
+            <div class="decision-card">
+              <div class="decision-card-label">Deploying Models Trained with TensorFlow</div>
+              <div class="decision-card-body">
+                <p>Your model was trained using TensorFlow and is ready to be prepared for production deployment.</p>
+                <p><strong>→ Start by exporting a TensorFlow SavedModel or converting to ONNX.</strong> TensorFlow models can be deployed directly with TensorFlow Serving or converted to ONNX for use across multiple serving platforms.</p>
+                <p><em>Common approach:</em> Train with TensorFlow → Export SavedModel or ONNX → Deploy to TensorFlow Serving, Triton, MLz, or OpenShift AI.</p>
+                <p>TensorFlow is primarily a training framework; deployment choices are typically made after training is complete.</p>
+              </div>
+            </div>
+
+            <div class="decision-card">
+              <div class="decision-card-label">Deploying Models Trained with PyTorch</div>
+              <div class="decision-card-body">
+                <p>Your model was trained using PyTorch and you want to deploy it into a production environment.</p>
+                <p><strong>→ Start by exporting to ONNX.</strong> ONNX provides a portable deployment format that integrates with many serving platforms.</p>
+                <p><em>Common approach:</em> Train with PyTorch → Convert to ONNX → Deploy to Triton, MLz, or OpenShift AI.</p>
+                <p>PyTorch is primarily a training framework rather than a deployment technology.</p>
+              </div>
+            </div>
+
+            <div class="decision-card">
+              <div class="decision-card-label">Deploying Models Trained with Snap ML</div>
+              <div class="decision-card-body">
+                <p>Your model was trained using Snap ML and is ready for production deployment.</p>
+                <p><strong>→ Start by exporting to PMML.</strong> PMML provides a portable format for many traditional machine learning models.</p>
+                <p><em>Common approach:</em> Train with Snap ML → Export PMML → Deploy through MLz or other scoring platforms.</p>
+                <p>Snap ML is primarily a training technology. Deployment decisions typically begin after exporting the trained model.</p>
+              </div>
+            </div>
+
+            <div class="decision-card">
               <div class="decision-card-label">Deploying Models Across Multiple Frameworks</div>
               <div class="decision-card-body">
                 <p>You need to serve TensorFlow, PyTorch, ONNX, or other model types from a common inference platform.</p>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI on Z | Use Cases Overview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="no-lifecycle">
+  <header class="topbar">
+    <a href="../index.html" class="topbar-logo"><span class="topbar-logo-mark"></span>AI on IBM Z 101</a>
+    <nav class="topnav" id="topnav"></nav>
+  </header>
+  <nav class="lifecycle-nav" id="lifecycle-nav"></nav>
+
+  <div class="page-shell">
+    <nav class="pagenav" id="pagenav"></nav>
+    <div class="main-content">
+      <div class="page-body">
+
+        <!-- ══════════════════════════════════════════
+             SECTION 1 — Overview
+        ═══════════════════════════════════════════ -->
+        <section class="section" id="overview">
+          <h1>Use Cases &amp; AI Entry Points</h1>
+          <p>Organizations adopt AI on IBM Z and LinuxONE differently based on their business goals. Some may adopt a pre-built solution, deploy an existing model, or build their own. Understanding these entry points can help you identify the products, skills, and lifecycle stages that are most relevant to your AI journey.</p>
+         
+        </section>
+
+        <!-- ══════════════════════════════════════════
+             SECTION 2 — Flow Diagram
+        ═══════════════════════════════════════════ -->
+        <section class="section" id="ai-entry-points">
+          <h2>The Three AI Entry Points</h2>
+          <p>While AI implementations vary, many follow a similar path from identifying a business problem to delivering AI-driven outcomes. The three entry points below reflect common approaches organizations take when adopting AI on IBM Z.</p>
+
+          <!-- Flow diagram -->
+          <div class="entry-flow">
+            <div class="entry-flow-row">
+              <div class="entry-flow-node entry-flow-start">
+                <span class="entry-flow-icon">&#9654;</span>
+                Define<br>Use Case
+              </div>
+              <div class="entry-flow-arrow">&#8594;</div>
+
+              <div class="entry-flow-fork">
+                <div class="entry-flow-node entry-flow-ep1">
+                  <span class="ep-badge">1</span>
+                  Turnkey<br>Solution
+                </div>
+                <div class="entry-flow-node entry-flow-ep2">
+                  <span class="ep-badge">2</span>
+                  Select a<br>Model
+                </div>
+                <div class="entry-flow-node entry-flow-ep3">
+                  <span class="ep-badge">3</span>
+                  Build Your<br>Own Model
+                </div>
+              </div>
+
+              <div class="entry-flow-arrow">&#8594;</div>
+              <div class="entry-flow-node entry-flow-mid">
+                Deploy<br>Model
+              </div>
+              <div class="entry-flow-arrow">&#8594;</div>
+              <div class="entry-flow-node entry-flow-mid">
+                Application<br>Calls AI
+              </div>
+              <div class="entry-flow-arrow">&#8594;</div>
+              <div class="entry-flow-node entry-flow-end">
+                <span class="entry-flow-icon">&#9733;</span>
+                AI<br>Insights
+              </div>
+            </div>
+          </div>
+
+          <!-- Three entry point cards -->
+          <div class="ep-card-grid">
+
+            <div class="ep-card ep-card--1">
+              <div class="ep-card-header">
+                <span class="ep-number">1</span>
+                <h3>Turnkey Solution</h3>
+              </div>
+              <p class="ep-tagline">Install, configure, deploy.</p>
+              <p>IBM and its partners offer pre-built AI solutions that are ready to deploy with minimal setup. These solutions embed AI directly into the platform or provide vendor-managed models that are purpose-built for specific business domains.</p>
+              <h4>When to choose this entry point</h4>
+              <ul>
+                <li>Your team has limited or no data science expertise</li>
+                <li>You need fast time-to-value with minimal build effort</li>
+                <li>A proven, pre-built solution already exists for your use case</li>
+                <li>You prefer a managed or embedded AI experience</li>
+              </ul>
+            </div>
+
+            <div class="ep-card ep-card--2">
+              <div class="ep-card-header">
+                <span class="ep-number">2</span>
+                <h3>Select a Model via IBM or Vendor</h3>
+              </div>
+              <p class="ep-tagline">Leverage an existing model with IBM Z inferencing acceleration.</p>
+              <p>Choose a foundation model, open-source model, or vendor-supplied model and deploy it on IBM Z using IBM's inferencing infrastructure and hardware acceleration. No model training required — focus is on serving and integration.</p>
+              <h4>When to choose this entry point</h4>
+              <ul>
+                <li>A suitable model already exists (IBM, open source, or vendor)</li>
+                <li>Your team has integration and deployment skills but not model training expertise</li>
+                <li>You want hardware-accelerated inferencing (Telum, Spyre) without building a model from scratch</li>
+                <li>You are deploying a foundation model or LLM for generative AI workloads</li>
+              </ul>
+            </div>
+
+            <div class="ep-card ep-card--3">
+              <div class="ep-card-header">
+                <span class="ep-number">3</span>
+                <h3>Build Your Own Model</h3>
+              </div>
+              <p class="ep-tagline">Full AI lifecycle — from your data to your deployed model.</p>
+              <p>When no existing model meets your needs you can build one. This entry point covers the full lifecycle: find and prepare data, train a model on your enterprise data, test and validate it, optimize it for deployment, and serve it in production on IBM Z.</p>
+              <h4>When to choose this entry point</h4>
+              <ul>
+                <li>Your use case is highly specific to your business and data</li>
+                <li>You have data science and machine learning expertise in-house</li>
+                <li>Existing models do not provide sufficient accuracy or coverage</li>
+                <li>You need full control over model behavior, training data, and versioning</li>
+              </ul>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+             SECTION 3 — Comparison / Which to Choose
+        ═══════════════════════════════════════════ -->
+        <section class="section" id="which-entry-point">
+          <h2>Which Entry Point Is Right for You?</h2>
+          <div class="pattern-table-wrap">
+            <table class="pattern-table">
+              <thead>
+                <tr>
+                  <th>If you want to…</th>
+                  <th>Entry Point</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Adopt AI quickly with no model training or data science team</td><td>1 — Turnkey Solution</td></tr>
+                <tr><td>Deploy a proven IBM, open-source, or vendor model on IBM Z hardware acceleration</td><td>2 — Select a Model</td></tr>
+                <tr><td>Train a model on your own data and own the full AI lifecycle</td><td>3 — Build Your Own</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Once you've identified your entry point, explore the <a href="../prepare-data/prepare-data.html">AI Lifecycle</a> for implementation guidance, and <a href="../products-tools/data-analytics.html">Products &amp; Tools</a> for a full catalog of available technologies.</p>
+        </section>
+
+      </div>
+      <footer class="footer"><p>&copy; 2025 AI on Z</p></footer>
+    </div>
+  </div>
+
+  <script src="../nav.js"></script>
+  <script>
+    renderNav({
+      root: '../',
+      activeTop: 'use-cases',
+      activeSub: null,
+      pageNavItems: [
+        { id: 'overview',          label: 'Overview' },
+        { id: 'ai-entry-points',   label: 'The Three Entry Points' },
+        { id: 'which-entry-point', label: 'Which Entry Point?' },
+      ]
+    });
+  </script>
+</body>
+</html>

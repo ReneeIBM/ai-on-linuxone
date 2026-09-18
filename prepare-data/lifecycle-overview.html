@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI on Z | AI Lifecycle Overview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="no-lifecycle">
+  <header class="topbar">
+    <a href="../index.html" class="topbar-logo"><span class="topbar-logo-mark"></span>AI on IBM Z 101</a>
+    <nav class="topnav" id="topnav"></nav>
+  </header>
+  <nav class="lifecycle-nav" id="lifecycle-nav"></nav>
+
+  <div class="page-shell">
+    <nav class="pagenav" id="pagenav"></nav>
+    <div class="main-content">
+      <div class="page-body">
+
+        <section class="section" id="overview">
+          <h1>AI Lifecycle Overview</h1>
+          <p>IBM offers a broad set of AI technologies for IBM Z. Many products support more than one stage of the AI lifecycle and often work together. Use the sections below to explore where each product is commonly used, understand how products relate to one another, and see common paths organizations take when building AI solutions.</p>
+
+          <div class="card-grid" style="margin-top:24px;">
+            <div class="card" style="display:flex;flex-direction:column;">
+              <h4>Prepare Data</h4>
+              <p>Clean, transform, and engineer features using IBM Z-native data tools and Apache Spark.</p>
+              <a href="../prepare-data/prepare-data.html" class="learn-more" style="font-size:13px;margin-top:auto;">Go to Prepare Data &#8594;</a>
+            </div>
+            <div class="card" style="display:flex;flex-direction:column;">
+              <h4>Train Model</h4>
+              <p>Train ML or deep learning models on IBM Z or hybrid cloud, using Telum acceleration where applicable.</p>
+              <a href="../train-model/train-model.html" class="learn-more" style="font-size:13px;margin-top:auto;">Go to Train Model &#8594;</a>
+            </div>
+            <div class="card" style="display:flex;flex-direction:column;">
+              <h4>Deploy Models</h4>
+              <p>Convert, optimize, and deploy your model into a production environment on IBM Z.</p>
+              <a href="../deploy-models/deploy-models.html" class="learn-more" style="font-size:13px;margin-top:auto;">Go to Deploy Models &#8594;</a>
+            </div>
+            <div class="card" style="display:flex;flex-direction:column;">
+              <h4>Serve Model</h4>
+              <p>Run trained models in production inference environments where they can process requests, generate predictions, and support operational workloads.</p>
+              <a href="../serve-model/serve-model.html" class="learn-more" style="font-size:13px;margin-top:auto;">Go to Serve Model &#8594;</a>
+            </div>
+            <div class="card" style="display:flex;flex-direction:column;">
+              <h4>AI Governance</h4>
+              <p>Monitor, explain, and govern models in production for bias, drift, and regulatory compliance.</p>
+              <a href="../ai-governance/ai-governance.html" class="learn-more" style="font-size:13px;margin-top:auto;">Go to AI Governance &#8594;</a>
+            </div>
+          </div>
+        </section>
+
+      </div>
+      <footer class="footer"><p>&copy; 2025 AI on Z</p></footer>
+    </div>
+  </div>
+
+  <script src="../nav.js"></script>
+  <script>
+    renderNav({
+      root: '../',
+      activeTop: 'lifecycle',
+      activeSub: null,
+      pageNavItems: [
+        { id: 'overview', label: 'Overview' },
+      ]
+    });
+  </script>
+</body>
+</html>
