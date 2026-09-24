@@ -19,35 +19,6 @@
     <div class="main-content">
       <div class="page-body">
 
-        <!-- ── Machine Learning for IBM z/OS ──────────────────────── -->
-        <section class="section" id="mlz">
-          <h1>Machine Learning for IBM z/OS</h1>
-          <p><strong>AI Lifecycle:</strong> <a href="../train-model/train-model.html">Train Model</a> · <a href="../deploy-models/deploy-models.html">Deploy Models</a> · <a href="../serve-model/serve-model.html">Serve Model</a> · <a href="../ai-governance/ai-governance.html">AI Governance</a></p>
-
-          <p>Machine Learning for IBM z/OS (MLz) is IBM's full-featured AI platform for z/OS — a unified environment for building, deploying, scoring, and governing AI models natively on the mainframe, co-located with the enterprise applications, transaction data, and business logic that already live there. It is designed for data scientists, application developers, and z/OS teams who need to operationalize AI inside CICS transactions, IMS message flows, and Batch jobs — where the data never leaves the platform and response times are measured in milliseconds. The problem MLz solves is fundamental: most AI platforms require data to leave the mainframe for scoring. For banking, insurance, and retail organizations where transactions, customer records, and financial data live on z/OS, that offload introduces latency, increases risk, and complicates governance. MLz brings the model to the data instead.</p>
-
-          <h2>Key Capabilities</h2>
-          <ul>
-            <li>End-to-end lifecycle management: train, deploy, version, score, and monitor from one unified UI and REST API</li>
-            <li>Native scoring integration with CICS, IMS, and Batch — in-transaction AI without application re-architecture</li>
-            <li>Direct connections to Db2, IMS, VSAM, and MQ data sources for training and scoring</li>
-            <li>Import models in PMML, ONNX, and Python format; export to standard formats for use elsewhere</li>
-            <li>Telum AI accelerator and zIIP specialty engine exploitation for high-throughput, cost-efficient inference</li>
-            <li>Built-in drift monitoring, bias detection, SHAP explainability, and AI Factsheet integration</li>
-            <li>All model lifecycle events logged and auditable within z/OS security frameworks — data never leaves the boundary</li>
-          </ul>
-
-          <h2>On IBM Z</h2>
-          <p>MLz is the most comprehensive single product for AI on z/OS, spanning <strong>Train Model</strong>, <strong>Deploy Models</strong>, <strong>Serve Model</strong>, and <strong>AI Governance</strong>. Data scientists can train models in notebooks directly on z/OS via the z/OS Container Extension, using Python, Scikit-learn, XGBoost, or PyTorch against native z/OS data sources. Models trained externally — in <a href="#watsonx-ai">watsonx.ai</a>, on a Linux cluster, or in any tool that exports PMML or ONNX — can be imported and deployed on z/OS, making MLz the on-Z deployment and serving target for the broader IBM Z AI ecosystem. Organizations that need real-time AI scoring co-located with their highest-value enterprise data, with full lifecycle governance and without moving data off-platform, should evaluate MLz as their primary AI platform on z/OS.</p>
-
-          <h2>Getting Started</h2>
-          <a href="https://www.ibm.com/products/machine-learning-for-zos" class="learn-more" target="_blank" rel="noopener">Machine Learning for IBM z/OS product page &#8594;</a>
-          <a href="https://www.ibm.com/support/z-content-solutions/machine-learning-zos/" class="learn-more" target="_blank" rel="noopener">MLz content solution hub — documentation, tutorials, support &#8594;</a>
-          <a href="https://www.ibm.com/docs/en/machine-learning-for-zos" class="learn-more" target="_blank" rel="noopener">MLz product documentation &#8594;</a>
-          <a href="../use-cases/ai-solution-template.html#fraud-detection-tis" class="learn-more">Advanced CC Fraud Detection solution blueprint (uses MLz) &#8594;</a>
-          <p style="font-size:13px;color:var(--ibm-text-helper);margin-top:8px;">Questions? Contact <a href="mailto:aionz@us.ibm.com">aionz@us.ibm.com</a></p>
-        </section>
-
         <!-- ── AI Optimizer for IBM Z and LinuxONE ────────────────── -->
         <section class="section" id="ai-optimizer">
           <h1>AI Optimizer for IBM Z and LinuxONE</h1>
@@ -65,7 +36,7 @@
           </ul>
 
           <h2>On IBM Z</h2>
-          <p>AI Optimizer is primarily an <strong>Optimize Model</strong> tool — you bring it a trained model and it produces a leaner, faster version suited for IBM Z deployment. The optimized model then flows into a serving runtime: <a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton</a>, <a href="#mlz">MLz</a>, or another compatible endpoint. Its inferencing gateway capability extends into the <strong>Serve Model</strong> stage, managing traffic distribution across running LLM instances on the platform. Consider AI Optimizer when moving from initial deployment to production-grade performance, particularly when working with large models or high-volume inference workloads on IBM Z and LinuxONE.</p>
+          <p>AI Optimizer is primarily an <strong>Optimize Model</strong> tool — you bring it a trained model and it produces a leaner, faster version suited for IBM Z deployment. The optimized model then flows into a serving runtime: <a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton</a> or another compatible endpoint. Its inferencing gateway capability extends into the <strong>Serve Model</strong> stage, managing traffic distribution across running LLM instances on the platform. Consider AI Optimizer when moving from initial deployment to production-grade performance, particularly when working with large models or high-volume inference workloads on IBM Z and LinuxONE.</p>
 
           <h2>Getting Started</h2>
           <a href="https://www.ibm.com/docs/en/ai-optimizer-for-z/3.1.1?topic=overview-ai-optimizer-z-linuxone" class="learn-more" target="_blank" rel="noopener">AI Optimizer for IBM Z — documentation overview &#8594;</a>
@@ -107,7 +78,7 @@
           <h1>watsonx.ai</h1>
           <p><strong>AI Lifecycle:</strong> <a href="../prepare-data/prepare-data.html">Prepare Data</a> · <a href="../train-model/train-model.html">Train Model</a> · <a href="../deploy-models/deploy-models.html">Deploy Models</a></p>
 
-          <p>IBM watsonx.ai is IBM's enterprise AI studio — a single platform for building, training, fine-tuning, evaluating, and deploying traditional machine learning models and generative AI applications. It is designed for data scientists, ML engineers, and application developers who need a comprehensive environment that handles both the experimentation and production sides of AI development. The problem it solves is fragmentation: building production-quality AI typically requires stitching together too many separate tools — notebooks, training infrastructure, model registries, prompt engineering environments, fine-tuning pipelines, and deployment targets. watsonx.ai consolidates these into one governed, traceable platform, with deployment paths that include IBM Z via <a href="#mlz">Machine Learning for IBM z/OS</a>.</p>
+          <p>IBM watsonx.ai is IBM's enterprise AI studio — a single platform for building, training, fine-tuning, evaluating, and deploying traditional machine learning models and generative AI applications. It is designed for data scientists, ML engineers, and application developers who need a comprehensive environment that handles both the experimentation and production sides of AI development. The problem it solves is fragmentation: building production-quality AI typically requires stitching together too many separate tools — notebooks, training infrastructure, model registries, prompt engineering environments, fine-tuning pipelines, and deployment targets. watsonx.ai consolidates these into one governed, traceable platform, with deployment paths that include IBM Z and LinuxONE.</p>
 
           <h2>Key Capabilities</h2>
           <ul>
@@ -174,7 +145,6 @@
       activeTop: 'products',
       activeSub: 'ai-platforms',
       pageNavItems: [
-        { id: 'mlz',                  label: 'Machine Learning for IBM z/OS' },
         { id: 'ai-optimizer',         label: 'AI Optimizer for IBM Z and LinuxONE' },
         { id: 'rhoai',                label: 'Red Hat OpenShift AI' },
         { id: 'watsonx-ai',           label: 'watsonx.ai' },

@@ -27,7 +27,7 @@ ai-on-z/
 │   ├── ai-platforms.html       ← MLz, AI Optimizer, RHOAI, watsonx.ai, watsonx.governance
 │   ├── inference-serving.html  ← TF Serving, Triton, RH AI Inference Server
 │   ├── ai-frameworks.html      ← AI Toolkit, Snap ML, TensorFlow, PyTorch, zDLC, ONNX
-│   └── data-analytics.html     ← IBM Synthetic Data Sets, Apache Spark
+│   └── data-analytics.html     ← IBM Synthetic Data Sets
 │
 ├── use-cases/
 │   ├── use-cases.html          ← AI Solution Patterns

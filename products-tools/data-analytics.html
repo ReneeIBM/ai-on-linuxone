@@ -19,106 +19,6 @@
     <div class="main-content">
       <div class="page-body">
 
-        <!-- ── APACHE SPARK ──────────────────────────────────────────── -->
-        <section class="section" id="apache-spark">
-          <h1>IBM Z Platform for Apache Spark</h1>
-          <p><strong>AI Lifecycle:</strong> <a href="../prepare-data/prepare-data.html">Prepare Data</a> · <a href="../train-model/train-model.html">Train Model</a></p>
-
-          <h2>What is Apache Spark?</h2>
-          <p>Apache Spark is a lightning-fast, open-source data-processing engine for machine learning and AI applications, backed by the largest open-source community in big data. It easily handles large-scale data sets and is a fast, general-purpose clustering system well-suited for PySpark. It is designed to deliver the computational speed, scalability, and programmability required for big data — specifically for streaming data, graph data, analytics, machine learning, large-scale data processing, and AI applications.</p>
-          <p>Spark's analytics engine processes data 10 to 100 times faster than alternatives like Hadoop for smaller workloads. It scales by distributing processing workflows across large clusters of computers with built-in parallelism and fault tolerance. It includes APIs for Scala, Java, Python, and R — languages popular among data analysts and data scientists.</p>
-          <p>Spark was developed in 2009 at UC Berkeley's AMPLab. Today it is maintained by the Apache Software Foundation and boasts the largest open-source community in big data, with over 1,000 contributors.</p>
-
-          <h2>IBM Z Platform for Apache Spark</h2>
-          <p>IBM Z Platform for Apache Spark packages Spark to run natively on z/OS — bringing large-scale data processing, feature engineering, and ML pipelines directly to the platform where your enterprise data lives. Instead of extracting data to an external cluster, Spark jobs run on z/OS alongside Db2, IMS, and transactional systems. This reduces data movement, simplifies architecture, and keeps sensitive data within z/OS's security boundary.</p>
-
-          <h2>How Apache Spark Works</h2>
-          <p>Spark has a hierarchical primary/secondary architecture. The <strong>Spark Driver</strong> is the primary node that controls the cluster manager, which manages secondary nodes and delivers results to the application client. Based on application code, the Spark Driver generates the <strong>SparkContext</strong>, which works with the cluster manager to distribute and monitor execution across nodes.</p>
-
-          <h3>Resilient Distributed Datasets (RDD)</h3>
-          <p>RDDs are fault-tolerant collections of elements distributed across cluster nodes and worked on in parallel. Once data is loaded into an RDD, Spark performs transformations and actions in memory — the key to its speed. Each dataset in an RDD is divided into logical partitions computed on different nodes. Users perform two types of operations: <strong>transformations</strong> (creating a new RDD) and <strong>actions</strong> (computing a result and returning it to the driver).</p>
-
-          <h3>Directed Acyclic Graph (DAG)</h3>
-          <p>Rather than the two-stage execution process in MapReduce, Spark creates a Directed Acyclic Graph (DAG) to schedule tasks and orchestrate worker nodes. The DAG scheduler facilitates efficiency and makes fault tolerance possible by reapplying recorded operations from a previous state.</p>
-
-          <h3>DataFrames and Datasets</h3>
-          <p>DataFrames are the most common structured API, representing tabular data with rows and columns. They are now the primary API for Spark's MLlib, providing uniformity across Scala, Java, Python, and R. Datasets are an extension of DataFrames that provide a type-safe, object-oriented interface — by default, a collection of strongly typed JVM objects.</p>
-
-          <h2>Advantages of Apache Spark</h2>
-          <ul>
-            <li><strong>Process faster</strong> — Up to 100x faster than Hadoop for smaller workloads due to advanced in-memory computing</li>
-            <li><strong>Accelerate app development</strong> — Spark Streaming and SQL programming models backed by MLlib and GraphX make it easier to build ML-powered applications</li>
-            <li><strong>Manage with ease</strong> — A unified engine supports SQL queries, streaming data, ML, and graph processing in one platform</li>
-            <li><strong>Broad language support</strong> — APIs for Python, Scala, Java, and R make Spark accessible to data engineers, data scientists, and developers alike</li>
-            <li><strong>Innovate faster</strong> — APIs provide ease of use for manipulating semi-structured data and transforming datasets</li>
-          </ul>
-
-          <h2>Apache Spark and Machine Learning</h2>
-          <p>Spark extends naturally into machine learning and AI through several built-in libraries:</p>
-          <ul>
-            <li><strong>Spark MLlib</strong> — Provides classification, regression, collaborative filtering, clustering, distributed linear algebra, decision trees, random forests, gradient-boosted trees, frequent pattern mining, and evaluation metrics at scale</li>
-            <li><strong>Spark GraphX</strong> — A graph abstraction extending RDDs for graph-parallel computation, useful for entity resolution and network analysis problems</li>
-            <li><strong>Spark Streaming</strong> — Enables scalable, fault-tolerant processing of live data streams, delivering data to file systems, databases, and dashboards in real time</li>
-          </ul>
-
-          <h2>On IBM Z: Key Capabilities</h2>
-          <table class="ops-table">
-            <thead><tr><th>Capability</th><th>Details</th></tr></thead>
-            <tbody>
-              <tr><td class="cap-label">Supported Languages</td><td>Python (PySpark), Scala, Java, R</td></tr>
-              <tr><td class="cap-label">Core Components</td><td>Spark SQL, Spark Streaming, MLlib, GraphX</td></tr>
-              <tr><td class="cap-label">Current Version</td><td>Apache Spark 3.5 with Java 17</td></tr>
-              <tr><td class="cap-label">Data Sources</td><td>Db2 for z/OS, IMS, VSAM, flat files, JDBC/ODBC</td></tr>
-              <tr><td class="cap-label">Security</td><td>Runs within z/OS security boundary; RACF integration; Secure All Ports</td></tr>
-            </tbody>
-          </table>
-
-          <h2>Getting Started</h2>
-          <ul>
-            <li><a href="https://www.ibm.com/support/z-content-solutions/journey-to-open-data-analytics/" target="_blank" rel="noopener">IBM Z open data analytics content solution</a></li>
-            <li><a href="https://www.ibm.com/docs/en/z-platform-apache-spark" target="_blank" rel="noopener">IBM Z Platform for Apache Spark documentation</a></li>
-            <li><a href="https://spark.apache.org/docs/latest/" target="_blank" rel="noopener">Apache Spark official documentation</a></li>
-            <li><a href="https://github.com/IBM/spark-on-z-samples" target="_blank" rel="noopener">IBM Spark on Z samples (GitHub)</a></li>
-          </ul>
-        </section>
-
-        <!-- ── SQL DATA INSIGHTS PRO ─────────────────────────────────── -->
-        <section class="section" id="sql-data-insights">
-          <h1>IBM SQL Data Insights Pro</h1>
-          <p><strong>AI Lifecycle:</strong> <a href="../prepare-data/prepare-data.html">Prepare Data</a> · <a href="../deploy-models/deploy-models.html">Deploy &amp; Serve</a></p>
-
-          <h2>What is SQL Data Insights Pro?</h2>
-          <p>IBM SQL Data Insights Pro adds AI-powered semantic understanding directly inside Db2 for z/OS. It lets you query your data by <em>meaning</em> — finding similarities, patterns, and relationships that traditional SQL can't easily surface — using standard SQL syntax you already know. All processing happens on-chip via Telum AI acceleration, with no data leaving Db2 and no external infrastructure required.</p>
-
-          <h2>Why Use It on IBM Z</h2>
-          <ul>
-            <li><strong>Zero data movement</strong> — Embedding models and inference run entirely inside Db2 on z/OS. Sensitive enterprise data never leaves the platform.</li>
-            <li><strong>No new infrastructure</strong> — Runs on existing IBM Z hardware using Telum on-chip AI acceleration. No GPU, no separate ML cluster.</li>
-            <li><strong>SQL you already know</strong> — Query by similarity and meaning using standard SQL syntax. No Python, no vector database, no new query language.</li>
-            <li><strong>Works on structured and unstructured data</strong> — Analyze relational columns and free-text fields like comments, descriptions, and logs within the same query.</li>
-            <li><strong>Faster time to insight</strong> — Bypass the typical extract → move → process → return pipeline. Answers come from data where it already sits.</li>
-          </ul>
-
-          <h2>Key Capabilities</h2>
-          <table class="ops-table">
-            <thead><tr><th>Capability</th><th>Details</th></tr></thead>
-            <tbody>
-              <tr><td class="cap-label">Query Interface</td><td>Standard SQL — no new language or SDK required</td></tr>
-              <tr><td class="cap-label">AI Acceleration</td><td>Telum on-chip inference (IBM z16, z17, LinuxONE 4 and 5)</td></tr>
-              <tr><td class="cap-label">Data Types</td><td>Structured relational data; unstructured text (comments, logs, descriptions)</td></tr>
-              <tr><td class="cap-label">AI Capabilities</td><td>Semantic similarity search, embedding queries, pattern discovery, incremental retraining</td></tr>
-              <tr><td class="cap-label">Data Residency</td><td>All processing on z/OS — no data egress, no external model calls</td></tr>
-              <tr><td class="cap-label">Initial Dataset Support</td><td>Db2 for z/OS (IMS and VSAM on roadmap)</td></tr>
-            </tbody>
-          </table>
-
-          <h2>Getting Started</h2>
-          <ul>
-            <li><a href="https://www.ibm.com/products/db2/sql-data-insights" target="_blank" rel="noopener">IBM SQL Data Insights Pro product page</a></li>
-            <li><a href="https://www.ibm.com/docs/en/db2-for-zos/13?topic=features-data-insights" target="_blank" rel="noopener">IBM Documentation — Db2 SQL Data Insights</a></li>
-          </ul>
-        </section>
-
         <!-- ── SYNTHETIC DATA SETS ───────────────────────────────────── -->
         <section class="section" id="synthetic-data-sets">
           <h1>IBM Synthetic Data Sets</h1>
@@ -291,17 +191,6 @@
           <h1>AI Platforms</h1>
           <p>IBM Z integrates with enterprise AI platforms that provide end-to-end lifecycle management — from data preparation and model development through deployment, monitoring, and governance.</p>
 
-          <h2>Machine Learning for IBM z/OS (MLz)</h2>
-          <p>MLz is IBM's integrated AI platform for the z/OS operating system. It provides a unified environment for building, deploying, scoring, and governing AI models on z/OS, with deep integration into the z/OS data and application ecosystem.</p>
-          <ul>
-            <li>Model build, deploy, and scoring on z/OS</li>
-            <li>Integration with Db2, IMS, VSAM, and MQ data sources</li>
-            <li>REST-based model scoring services</li>
-            <li>Built-in model governance and drift monitoring</li>
-            <li>PMML, ONNX, and Python model import/export</li>
-          </ul>
-          <a href="https://www.ibm.com/products/machine-learning-for-zos" class="learn-more" target="_blank">Learn more about Machine Learning for IBM z/OS &#8594;</a>
-
           <h2>Red Hat OpenShift AI (RHOAI)</h2>
           <p>Red Hat OpenShift AI is a Kubernetes-native AI/ML platform that runs on OpenShift. On IBM Z and LinuxONE, RHOAI provides the full AI lifecycle — data science workbenches, pipeline orchestration, model serving, and governance — within an enterprise-hardened container environment.</p>
           <ul>
@@ -324,12 +213,12 @@
           <a href="https://www.ibm.com/products/watsonx-ai" class="learn-more" target="_blank">Learn more about IBM watsonx.ai &#8594;</a>
 
           <h2>IBM watsonx.governance</h2>
-          <p>IBM watsonx.governance provides AI risk and compliance management. It connects with models deployed on IBM Z — including through MLz and RHOAI — to provide bias monitoring, model explainability, and lifecycle tracking.</p>
+          <p>IBM watsonx.governance provides AI risk and compliance management. It connects with models deployed on IBM Z — including through RHOAI — to provide bias monitoring, model explainability, and lifecycle tracking.</p>
           <ul>
             <li>Automated bias and fairness detection</li>
             <li>Model explainability (SHAP-based and built-in)</li>
             <li>AI factsheets for model documentation</li>
-            <li>Integration with MLz and RHOAI governance workflows</li>
+            <li>Integration with RHOAI governance workflows</li>
           </ul>
           <a href="https://www.ibm.com/products/watsonx-governance" class="learn-more" target="_blank">Learn more about IBM watsonx.governance &#8594;</a>
         </section>
@@ -360,7 +249,7 @@
           <a href="https://community.ibm.com/community/user/ibmz-and-linuxone/home" class="learn-more" target="_blank">Join the IBM Z Community &#8594;</a>
 
           <h2>IBM Z TechDocs &amp; Product Documentation</h2>
-          <p>IBM publishes comprehensive technical documentation for all Z products, including MLz, Db2 for z/OS, and AI tooling, available through the IBM Documentation portal.</p>
+          <p>IBM publishes comprehensive technical documentation for all Z products, including Db2 for z/OS and AI tooling, available through the IBM Documentation portal.</p>
           <a href="https://www.ibm.com/docs/en" class="learn-more" target="_blank">Browse IBM Documentation &#8594;</a>
         </section>
 
@@ -375,8 +264,6 @@
       activeTop: 'products',
       activeSub: 'data-analytics',
       pageNavItems: [
-        { id: 'apache-spark',        label: 'Apache Spark on IBM Z' },
-        { id: 'sql-data-insights',   label: 'IBM SQL Data Insights Pro' },
         { id: 'synthetic-data-sets', label: 'IBM Synthetic Data Sets' },
       ]
     });

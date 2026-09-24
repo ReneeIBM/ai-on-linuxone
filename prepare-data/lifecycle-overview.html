@@ -26,7 +26,7 @@
           <div class="card-grid" style="margin-top:24px;">
             <div class="card" style="display:flex;flex-direction:column;">
               <h4>Prepare Data</h4>
-              <p>Clean, transform, and engineer features using IBM Z-native data tools and Apache Spark.</p>
+              <p>Clean, transform, and engineer features using IBM Z-native data tools and open-source pipelines.</p>
               <a href="../prepare-data/prepare-data.html" class="learn-more" style="font-size:13px;margin-top:auto;">Go to Prepare Data &#8594;</a>
             </div>
             <div class="card" style="display:flex;flex-direction:column;">
@@ -63,13 +63,11 @@
                 <thead>
                   <tr>
                     <th class="matrix-th-product">Product</th>
-                    <th class="matrix-th-stage">Prepare Data</th>
-                    <th class="matrix-th-stage">Train Model</th>
-                    <th class="matrix-th-stage">Deploy Models</th>
-                    <th class="matrix-th-stage">Serve Model</th>
-                    <th class="matrix-th-stage">AI Governance</th>
-                    <th class="matrix-th-os">IBM z/OS</th>
-                    <th class="matrix-th-os">Linux on Z</th>
+                    <th class="matrix-th-stage" style="color:#aaa;">Data for Training</th>
+                    <th class="matrix-th-stage" style="color:#f0a500;">Train Model</th>
+                    <th class="matrix-th-stage" style="color:#e07000;">Deploy Model</th>
+                    <th class="matrix-th-stage" style="color:#7b1040;">Serve Model</th>
+                    <th class="matrix-th-stage" style="color:#1a3a6e;">AI Governance</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -81,32 +79,6 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td class="matrix-os-yes">Yes</td>
-                    <td class="matrix-os-yes">Yes</td>
-                  </tr>
-
-                  <!-- IBM SQL Data Insights Pro -->
-                  <tr>
-                    <td class="matrix-td-product"><a href="../products-tools/sql-data-insights.html">IBM SQL Data Insights Pro</a></td>
-                    <td class="matrix-cell-active matrix-stage-1"><span class="matrix-star" title="Most used capability">★</span></td>
-                    <td></td>
-                    <td class="matrix-cell-active matrix-stage-3"></td>
-                    <td class="matrix-cell-active matrix-stage-4"><span class="matrix-star" title="Most used capability">★</span></td>
-                    <td></td>
-                    <td class="matrix-os-yes">Yes</td>
-                    <td class="matrix-os-no">—</td>
-                  </tr>
-
-                  <!-- IBM Z Platform for Apache Spark -->
-                  <tr>
-                    <td class="matrix-td-product"><a href="../products-tools/data-analytics.html#apache-spark">IBM Z Platform for Apache Spark</a></td>
-                    <td class="matrix-cell-active matrix-stage-1"></td>
-                    <td class="matrix-cell-active matrix-stage-2"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="matrix-os-yes">Yes</td>
-                    <td class="matrix-os-no">—</td>
                   </tr>
 
                   <!-- IBM Z Accelerated SnapML* -->
@@ -117,8 +89,6 @@
                     <td class="matrix-cell-active matrix-stage-3"><span class="matrix-star" title="Most used capability">★</span></td>
                     <td></td>
                     <td></td>
-                    <td class="matrix-os-zcx">Yes via zCX</td>
-                    <td class="matrix-os-yes">Yes</td>
                   </tr>
 
                   <!-- IBM Z Accelerated for TensorFlow* -->
@@ -129,8 +99,6 @@
                     <td class="matrix-cell-active matrix-stage-3"><span class="matrix-star" title="Most used capability">★</span></td>
                     <td></td>
                     <td></td>
-                    <td class="matrix-os-zcx">Yes via zCX</td>
-                    <td class="matrix-os-yes">Yes</td>
                   </tr>
 
                   <!-- IBM Z Accelerated for PyTorch* -->
@@ -141,20 +109,6 @@
                     <td class="matrix-cell-active matrix-stage-3"><span class="matrix-star" title="Most used capability">★</span></td>
                     <td></td>
                     <td></td>
-                    <td class="matrix-os-zcx">Yes via zCX</td>
-                    <td class="matrix-os-yes">Yes</td>
-                  </tr>
-
-                  <!-- Python AI Toolkit for z/OS -->
-                  <tr>
-                    <td class="matrix-td-product"><a href="../products-tools/ai-frameworks.html#python-ai-toolkit">Python AI Toolkit for z/OS</a></td>
-                    <td></td>
-                    <td class="matrix-cell-active matrix-stage-2"></td>
-                    <td class="matrix-cell-active matrix-stage-3"><span class="matrix-star" title="Most used capability">★</span></td>
-                    <td></td>
-                    <td></td>
-                    <td class="matrix-os-yes">Yes</td>
-                    <td class="matrix-os-no">—</td>
                   </tr>
 
                   <!-- ONNX & IBM Z Deep Learning Compiler* -->
@@ -162,23 +116,19 @@
                     <td class="matrix-td-product"><a href="../products-tools/model-formats.html#zdlc">ONNX &amp; IBM Z Deep Learning Compiler*</a></td>
                     <td></td>
                     <td></td>
-                    <td class="matrix-cell-active matrix-stage-3"></td>
+                    <td class="matrix-cell-active matrix-stage-3"><span class="matrix-star" title="Most used capability">★</span></td>
                     <td></td>
                     <td></td>
-                    <td class="matrix-os-zcx">Yes via zCX</td>
-                    <td class="matrix-os-yes">Yes</td>
                   </tr>
 
                   <!-- IBM Z Accelerated Serving for TensorFlow* -->
                   <tr>
-                    <td class="matrix-td-product"><a href="../products-tools/inference-serving.html#tf-serving">IBM Z Accelerated Serving for TensorFlow*</a></td>
+                    <td class="matrix-td-product"><a href="../products-tools/inference-serving.html#tf-serving">IBM Z Accelerated Serving for TensorFlow *</a></td>
                     <td></td>
                     <td></td>
                     <td class="matrix-cell-active matrix-stage-3"></td>
-                    <td class="matrix-cell-active matrix-stage-4"></td>
+                    <td class="matrix-cell-active matrix-stage-4"><span class="matrix-star" title="Most used capability">★</span></td>
                     <td></td>
-                    <td class="matrix-os-zcx">Yes via zCX</td>
-                    <td class="matrix-os-yes">Yes</td>
                   </tr>
 
                   <!-- IBM Z Accelerated for Triton Inference Server* -->
@@ -189,32 +139,16 @@
                     <td class="matrix-cell-active matrix-stage-3"></td>
                     <td class="matrix-cell-active matrix-stage-4"><span class="matrix-star" title="Most used capability">★</span></td>
                     <td></td>
-                    <td class="matrix-os-zcx">Yes via zCX</td>
-                    <td class="matrix-os-yes">Yes</td>
                   </tr>
 
-                  <!-- Machine Learning for IBM z/OS -->
+                  <!-- AI Optimizer for LinuxONE -->
                   <tr>
-                    <td class="matrix-td-product"><a href="../products-tools/ai-platforms.html#mlz">Machine Learning for IBM z/OS</a></td>
+                    <td class="matrix-td-product"><a href="../products-tools/ai-platforms.html#ai-optimizer">AI Optimizer for LinuxONE</a></td>
                     <td></td>
-                    <td class="matrix-cell-active matrix-stage-2"></td>
-                    <td class="matrix-cell-active matrix-stage-3"><span class="matrix-star" title="Most used capability">★</span></td>
+                    <td></td>
+                    <td></td>
                     <td class="matrix-cell-active matrix-stage-4"><span class="matrix-star" title="Most used capability">★</span></td>
-                    <td class="matrix-cell-active matrix-stage-5 matrix-label-cell">Explainability &amp; Drift</td>
-                    <td class="matrix-os-yes">Yes</td>
-                    <td class="matrix-os-no">—</td>
-                  </tr>
-
-                  <!-- AI Optimizer for IBM Z -->
-                  <tr>
-                    <td class="matrix-td-product"><a href="../products-tools/ai-platforms.html#ai-optimizer">AI Optimizer for IBM Z</a></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="matrix-cell-active matrix-stage-4"></td>
-                    <td></td>
-                    <td class="matrix-os-no">—</td>
-                    <td class="matrix-os-yes">Yes</td>
                   </tr>
 
                   <!-- Red Hat OpenShift AI -->
@@ -225,8 +159,6 @@
                     <td class="matrix-cell-active matrix-stage-3"></td>
                     <td class="matrix-cell-active matrix-stage-4"><span class="matrix-star" title="Most used capability">★</span></td>
                     <td class="matrix-cell-active matrix-stage-5 matrix-label-cell">TrustyAI</td>
-                    <td class="matrix-os-zcx">Yes via zCX</td>
-                    <td class="matrix-os-yes">Yes</td>
                   </tr>
 
                   <!-- Red Hat AI Inference Server -->
@@ -237,8 +169,6 @@
                     <td></td>
                     <td class="matrix-cell-active matrix-stage-4"></td>
                     <td></td>
-                    <td class="matrix-os-no">—</td>
-                    <td class="matrix-os-yes">Yes</td>
                   </tr>
 
                   <!-- watsonx.ai -->
@@ -249,8 +179,6 @@
                     <td class="matrix-cell-active matrix-stage-3"></td>
                     <td class="matrix-cell-active matrix-stage-4"><span class="matrix-star" title="Most used capability">★</span></td>
                     <td></td>
-                    <td class="matrix-os-no">—</td>
-                    <td class="matrix-os-yes">Yes</td>
                   </tr>
 
                   <!-- watsonx.governance -->
@@ -261,8 +189,6 @@
                     <td></td>
                     <td></td>
                     <td class="matrix-cell-active matrix-stage-5"></td>
-                    <td class="matrix-os-no">—</td>
-                    <td class="matrix-os-yes">Yes</td>
                   </tr>
                 </tbody>
               </table>

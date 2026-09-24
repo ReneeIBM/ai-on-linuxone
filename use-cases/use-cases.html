@@ -53,11 +53,9 @@
                 <p class="bp-subtitle">Multi-model Ensemble AI on IBM z17</p>
                 <p class="bp-intro">Financial institutions must detect fraudulent transactions in real time while maintaining the throughput and low latency required for high-volume payment processing. This solution demonstrates an ensemble AI approach for credit card fraud detection that combines machine learning and transformer-based models to improve detection accuracy while optimizing performance.</p>
                 <p class="bp-intro" style="margin-top:10px">Using IBM Synthetic Data Sets, organizations can train, evaluate, and compare models such as XGBoost and BERT to identify fraud patterns across transactional data, including purchase amounts, merchant information, locations, and transaction timing. Transactions are first analyzed by a high-performance XGBoost model, while lower-confidence predictions can be routed to a BERT model for additional analysis. This layered approach enables more accurate fraud detection while minimizing the impact on processing performance.</p>
-                <p class="bp-intro" style="margin-top:10px">The trained models are deployed on Machine Learning for IBM z/OS (MLz), enabling seamless integration with business applications and transaction processing systems. By combining scalable machine learning with advanced AI models, organizations can reduce fraud risk, improve operational efficiency, and support real-time fraud prevention at enterprise scale.</p>
                 <div class="bp-tags">
                   <span class="st-badge">XGBoost · PMML</span>
                   <span class="st-badge">BERT · ONNX</span>
-                  <span class="st-badge">MLz</span>
                   <span class="st-badge">IBM z17</span>
                   <span class="st-badge">Telum II / Spyre*</span>
                 </div>
@@ -105,7 +103,7 @@
                 <ul class="bp-info-list">
                   <li><strong>Ensemble AI —</strong> XGBoost screens every transaction at speed; when its fraud probability falls below the user-set threshold (default 0.8), BERT automatically steps in for enhanced precision</li>
                   <li><strong>IBM Synthetic Dataset —</strong> realistic labeled credit card transaction data (User, Card, Amount, Use Chip, Merchant, Zip) ready to use from day one</li>
-                  <li><strong>Multi-model MLz deployment —</strong> XGBoost exported as PMML and BERT as ONNX, both deployed via Machine Learning for IBM z/OS with CICS or REST scoring endpoints</li>
+                  <li><strong>Multi-model deployment —</strong> XGBoost exported as PMML and BERT as ONNX, deployed for production inference on IBM Z</li>
                   <li><strong>Co-located inference on IBM z17 —</strong> AI runs directly alongside transactional data, accelerated by Telum II / Spyre,* eliminating offload latency and enabling every transaction to be screened</li>
                   <li><strong>Actionable output —</strong> probability scores let applications approve, flag, or block transactions at the moment they happen</li>
                   <li><strong>Full lifecycle coverage —</strong> data prep → training → evaluation → export → deployment → analysis, with all sample code included</li>
@@ -136,9 +134,9 @@
                 <p>Prerequisites vary by lifecycle phase. You can start from training or skip straight to deployment using the pre-trained model files included in the repo.</p>
                 <ul class="bp-info-list">
                   <li><strong>Platform —</strong> IBM z17 · Telum II AI accelerator · IBM Spyre Accelerator <em>(Q4 2025)</em></li>
-                  <li><strong>Training —</strong> z/OS Container Extension (zCX), Python 3, Jupyter Notebook, Scikit-learn, XGBoost, PyTorch, Git</li>
-                  <li><strong>Deployment —</strong> Machine Learning for IBM z/OS (MLz) installed; model files <code>xgboost_fraud_detection.pmml</code> and <code>bert_model.onnx</code>; scoring service: CICS or REST</li>
-                  <li><strong>Analysis —</strong> Python 3, Git, <code>ensemble_inference_MLz.ipynb</code>, network access to MLz UI and REST endpoints</li>
+                  <li><strong>Training —</strong> Python 3, Jupyter Notebook, Scikit-learn, XGBoost, PyTorch, Git</li>
+                  <li><strong>Deployment —</strong> Model files <code>xgboost_fraud_detection.pmml</code> and <code>bert_model.onnx</code>; inference served via Triton or RHOAI on LinuxONE</li>
+                  <li><strong>Analysis —</strong> Python 3, Git, <code>ensemble_inference.ipynb</code></li>
                   <li><strong>Dataset —</strong> IBM Synthetic Credit Card Fraud Dataset; required features: User, Card, Year, Month, Day, Time, Amount, Use Chip, Merchant Name, Merchant City, Zip; label: <code>Is Fraud</code> (1 / 0)</li>
                 </ul>
               </div>
