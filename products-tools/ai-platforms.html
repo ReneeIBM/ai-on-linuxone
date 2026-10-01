@@ -25,78 +25,6 @@
 
       <div class="page-body">
 
-        <!-- ── Machine Learning for IBM z/OS ──────────────────────── -->
-        <div class="tool-accordion" id="mlz">
-          <button class="tool-accordion-trigger" aria-expanded="false">
-            <span class="tool-accordion-title">Machine Learning for IBM z/OS</span>
-            <svg class="tool-accordion-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
-          </button>
-          <div class="tool-accordion-body" hidden>
-            <h1 style="margin-top:0;">Machine Learning for IBM z/OS (MLz)</h1>
-            <p><strong>AI Lifecycle:</strong> <a href="../build-model/build-model.html">Build Model</a> · <a href="../deploy-models/deploy-models.html">Deploy Models</a> · <a href="../serve-model/serve-model.html">Serve Model</a> · <a href="../ai-governance/ai-governance.html">AI Governance</a></p>
-
-            <p>Machine Learning for IBM z/OS (MLz) is IBM's transactional AI platform for IBM Z, providing an integrated environment to deploy, serve, monitor, and govern AI models close to mission-critical applications, transactions, and data. MLz also supports a train anywhere approach, allowing models to be developed on IBM Z or in external environments and then deployed for scoring.</p>
-            <p>MLz is designed for data scientists, application developers, architects, and IT teams that need to operationalize AI alongside the enterprise applications, transactions, and data already running on IBM Z.</p>
-            <p>Traditional AI architectures may require moving data to another platform for model scoring, which can introduce latency, data movement, governance considerations, and additional complexity. MLz brings AI to the data, enabling model scoring close to the applications and transactions where business decisions occur, while helping reduce unnecessary data movement.</p>
-
-            <h2>Key Value</h2>
-            <p>MLz is the only AI platform purpose-built for z/OS — enabling organisations to run AI where their most critical workloads already execute, with the security, compliance, and performance that z/OS natively provides.</p>
-
-            <h2>Key Capabilities</h2>
-            <ul>
-              <li><strong>Unified AI lifecycle management</strong> — train, deploy, version, score, and monitor models from a single interface on z/OS.</li>
-              <li><strong>Native workload integration</strong> — model scoring connects directly to CICS, IMS, and batch workloads without application redesign.</li>
-              <li><strong>Direct z/OS data source connectivity</strong> — training and scoring connect natively to Db2, IMS, VSAM, and MQ.</li>
-              <li><strong>Flexible model import and export</strong> — import models in PMML, ONNX, and Python formats; export in standard formats for portability across environments including watsonx.ai.</li>
-              <li><strong>Hardware-accelerated inference</strong> — the Telum AI Accelerator and zIIP specialty engines deliver high-volume, low-latency inference without consuming general CPU capacity.</li>
-              <li><strong>Built-in model observability</strong> — monitors for drift, detects bias, provides SHAP-based explanations, and integrates with AI Factsheets.</li>
-              <li><strong>Native z/OS governance</strong> — full model lifecycle logging and auditing within RACF, SMF, and existing z/OS security frameworks. No separate governance toolchain required.</li>
-            </ul>
-
-            <h2>Business Value</h2>
-            <ul>
-              <li><strong>Eliminates data movement risk and cost</strong> — AI scoring runs where the data lives. Organisations avoid extracting regulated or sensitive z/OS data to external platforms for inference.</li>
-              <li><strong>Simplifies AI governance</strong> — MLz operates within the z/OS security and compliance perimeter already trusted for mission-critical workloads. No new governance tooling or policy gaps to close.</li>
-              <li><strong>Enables real-time AI at transaction speed</strong> — scoring embedded in CICS, IMS, and batch delivers AI inference at the point of transaction, supporting fraud detection, credit decisioning, underwriting, and similar time-critical use cases.</li>
-              <li><strong>Bridges external and on-Z AI</strong> — models trained in watsonx.ai or any standard environment can be imported into MLz and deployed on z/OS. Use best-of-breed training tools while keeping production scoring on Z.</li>
-              <li><strong>Protects existing application investments</strong> — CICS, IMS, and batch applications gain AI capability without redesign. MLz integrates at the platform layer.</li>
-            </ul>
-
-            <h2>When to Consider MLz</h2>
-            <p>MLz is the right choice when one or more of the following apply:</p>
-            <ul>
-              <li>AI scoring needs to run close to z/OS applications and data — especially for regulated or latency-sensitive workloads where moving data off-platform is a risk or compliance concern.</li>
-              <li>Models trained externally — in watsonx.ai, Python environments, or open-source tools — need to be deployed and monitored on z/OS without rebuilding the surrounding application.</li>
-              <li>The team wants to train models directly on z/OS data sources — Db2, IMS, VSAM, MQ — without data extraction or replication to another platform.</li>
-              <li>Enterprise governance, auditability, and explainability are required for AI models in production — particularly in banking, insurance, government, or healthcare.</li>
-              <li>High-volume inference workloads need hardware acceleration (Telum AI Accelerator, zIIP) to avoid consuming general-purpose CPU capacity.</li>
-            </ul>
-
-            <h2>AI Lifecycle — Stages and Role on IBM Z</h2>
-            <p>MLz supports all five stages of the AI lifecycle, and all five execute on IBM Z alongside the transactions, applications, and data already running there.</p>
-
-            <h3>Train Model</h3>
-            <p>Train models directly on z/OS using Python, Scikit-learn, XGBoost, and PyTorch inside notebooks running through z/OS Container Extensions (zCX). Training connects natively to Db2, IMS, VSAM, and MQ — regulated or sensitive data never needs to leave the platform.</p>
-
-            <h3>Deploy Models</h3>
-            <p>Import models trained externally — in watsonx.ai, Linux-based environments, or any tool that exports PMML or ONNX — and deploy them on z/OS without redesigning the surrounding application. MLz manages versioning and the full deployment lifecycle from a single interface.</p>
-
-            <h3>Serve Model</h3>
-            <p>Model scoring integrates directly with CICS, IMS, and batch workloads. Inference runs at the point of transaction — no data movement, no external round-trip, no added latency. The Telum AI Accelerator and zIIP specialty engines handle high-volume inference without consuming general-purpose CPU capacity.</p>
-
-            <h3>AI Governance</h3>
-            <p>Model lifecycle activity is logged and audited within existing z/OS security frameworks — RACF, SMF audit trails, and pervasive encryption are native to the platform. Governance is built in, not bolted on. AI Factsheets integration supports enterprise-wide model documentation. No separate governance toolchain is required.</p>
-
-            <h2>Getting Started</h2>
-            <ul>
-              <li><a href="https://www.ibm.com/products/machine-learning-for-zos" target="_blank" rel="noopener">MLz Product Page — Start here</a></li>
-              <li><a href="https://www.ibm.com/support/z-content-solutions/machine-learning-zos/" target="_blank" rel="noopener">MLz Content Solution Hub — Documentation, tutorials, labs, and support</a></li>
-              <li><a href="https://www.ibm.com/docs/en/wml-for-zos/enterprise/3.2.0?topic=overview-mlz-enterprise" target="_blank" rel="noopener">MLz Product Documentation — Full reference documentation</a></li>
-              <li><a href="https://reneeibm.github.io/updated-ai-on-z/use-cases/use-cases.html#ai-solution-patterns" target="_blank" rel="noopener">Advanced Credit Card Fraud Detection — Solution Blueprint</a></li>
-            </ul>
-          </div>
-        </div>
-
         <!-- ── AI Optimizer for IBM Z and LinuxONE ────────────────── -->
         <div class="tool-accordion" id="ai-optimizer">
           <button class="tool-accordion-trigger" aria-expanded="false">
@@ -274,8 +202,7 @@
       activeTop: 'products',
       activeSub: 'ai-platforms',
       pageNavItems: [
-        { id: 'mlz',                  label: 'Machine Learning for IBM z/OS' },
-        { id: 'ai-optimizer',         label: 'AI Optimizer for IBM Z and LinuxONE' },
+        { id: 'ai-optimizer',         label: 'AI Optimizer for IBM LinuxONE' },
         { id: 'rhoai',                label: 'Red Hat OpenShift AI' },
         { id: 'watsonx-ai',           label: 'watsonx.ai' },
         { id: 'watsonx-governance',   label: 'watsonx.governance' },

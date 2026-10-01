@@ -20,60 +20,10 @@
       <!-- Page Hero -->
       <div class="page-hero page-hero--wide">
         <h1>Data &amp; Analytics Tools</h1>
-        <p>IBM Z Platform for Apache Spark handles large-scale data preparation and analytics directly on Z. IBM Synthetic Data Sets provides realistic artificial data for key IBM Z AI business use cases when real data is restricted or unavailable.</p>
+        <p>IBM Synthetic Data Sets provides realistic, privacy-safe artificial data for key IBM LinuxONE AI business use cases when real data is restricted or unavailable.</p>
       </div>
 
       <div class="page-body">
-
-        <!-- ── APACHE SPARK ──────────────────────────────────────────── -->
-        <div class="tool-accordion" id="apache-spark">
-          <button class="tool-accordion-trigger" aria-expanded="false">
-            <span class="tool-accordion-title">IBM Z Platform for Apache Spark</span>
-            <svg class="tool-accordion-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
-          </button>
-          <div class="tool-accordion-body" hidden>
-            <h1 style="margin-top:0;">IBM Z Platform for Apache Spark (zSpark)</h1>
-            <p><strong>AI Lifecycle:</strong> <a href="../prepare-data/prepare-data.html">Prepare Data</a> · <a href="../build-model/build-model.html">Build Model</a></p>
-
-            <h2>Overview: What is zSpark and Who Is It For?</h2>
-            <p>IBM Z Platform for Apache Spark (often referred to as zSpark) is a high-performance port of the open-source Apache Spark framework optimized natively for IBM z/OS.</p>
-            <p><strong>Target Audience:</strong> Enterprise Data Engineers, Data Scientists, z/OS System Programmers, and Application Developers looking to bridge traditional mainframe systems of record with modern data science and analytics tools.</p>
-            <p><strong>The Problem It Solves:</strong> Traditionally, extracting high-volume mainframe data for analytics and machine learning required copying sensitive operational data off the platform via ETL pipelines. This introduces high network costs, data latency, compliance exposures, and data synchronization overhead. zSpark allows teams to run Spark workloads directly on z/OS, keeping data secure within its native environment.</p>
-
-            <h2>Positioning &amp; Core Business Value</h2>
-            <ul>
-              <li><strong>Zero Data Movement (In-Place Analytics)</strong> — Process data right where it lives — adjacent to core transactional engines like Db2 for z/OS, IMS, and VSAM. This eliminates costly, vulnerable off-platform data transfers.</li>
-              <li><strong>Enterprise Security &amp; Compliance</strong> — Integrates tightly with core z/OS security frameworks, including RACF (Resource Access Control Facility) and robust cryptographic services, ensuring strict compliance with financial and healthcare data governance standards.</li>
-              <li><strong>Optimized Performance</strong> — Leverages the robust scale, reliability, and cryptographic acceleration of IBM Z and LinuxONE hardware to handle large-scale data engineering and batch ML pipelines efficiently.</li>
-              <li><strong>Unified Analytics Platform</strong> — Combine data preparation, feature engineering, SQL querying, and distributed machine learning into a single, cohesive workflow using familiar languages like Python (PySpark), Scala, Java, and R.</li>
-            </ul>
-
-            <h2>How IBM Z Platform for Apache Spark Works on IBM Z</h2>
-            <p>Spark uses a distributed master-worker architecture to parallelize computational tasks:</p>
-            <ul>
-              <li><strong>Driver Program</strong> — Coordinates execution, manages the SparkContext, schedules tasks, and tracks job status across execution nodes.</li>
-              <li><strong>Executors</strong> — Worker processes spawned on z/OS environments to run individual tasks and store data cached in memory.</li>
-              <li><strong>DataFrames and Datasets</strong> — The primary APIs for structured data processing. They provide highly optimized query plans through Spark's Catalyst optimizer, making data manipulation extremely fast.</li>
-            </ul>
-
-            <h2>Core Capabilities &amp; Technical Summary</h2>
-            <table class="ops-table">
-              <thead><tr><th>Category</th><th>Supported Features &amp; Technology on IBM Z</th></tr></thead>
-              <tbody>
-                <tr><td class="cap-label">Supported Languages</td><td>Python (PySpark), Scala, Java, R</td></tr>
-                <tr><td class="cap-label">Core Components</td><td>Spark SQL, Spark Structured Streaming, MLlib (Machine Learning Pipelines)</td></tr>
-                <tr><td class="cap-label">Key Data Sources</td><td>Db2 for z/OS, IMS, VSAM, SMF (System Management Facility) data, flat files, JDBC/ODBC</td></tr>
-                <tr><td class="cap-label">Security Architecture</td><td>Native z/OS security context, RACF integration, audit logging</td></tr>
-              </tbody>
-            </table>
-
-            <h2>Getting Started</h2>
-            <ul>
-              <li><a href="https://www.ibm.com/docs/en/zpas/1.4.0" target="_blank" rel="noopener">Official Product Documentation: IBM Z Platform for Apache Spark</a></li>
-              <li><a href="https://spark.apache.org/docs/latest/" target="_blank" rel="noopener">Official Upstream Reference: Apache Spark Documentation</a></li>
-            </ul>
-          </div>
-        </div>
 
         <!-- ── SYNTHETIC DATA SETS ───────────────────────────────────── -->
         <div class="tool-accordion" id="synthetic-data-sets">
@@ -139,7 +89,6 @@
       activeTop: 'products',
       activeSub: 'data-analytics',
       pageNavItems: [
-        { id: 'apache-spark',        label: 'IBM Z Platform for Apache Spark' },
         { id: 'synthetic-data-sets', label: 'IBM Synthetic Data Sets' },
       ]
     });
