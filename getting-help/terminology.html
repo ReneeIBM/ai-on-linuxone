@@ -17,104 +17,41 @@
   <div class="page-shell">
     <nav class="pagenav" id="pagenav"></nav>
     <div class="main-content">
+      <!-- Page Hero -->
+      <div class="page-hero">
+        <h1>Resources &amp; Contacts</h1>
+      </div>
+
       <div class="page-body">
-
-        <!-- ── TERMINOLOGY ───────────────────────────────────────────── -->
-        <section class="section" id="terminology">
-          <h1>Terminology</h1>
-          <p>A reference glossary of key terms used throughout the AI on IBM Z ecosystem — covering hardware, software, AI concepts, and IBM-specific product names.</p>
-
-          <h2>Hardware &amp; Platform</h2>
-          <table class="data-table">
-            <thead><tr><th>Term</th><th>Definition</th></tr></thead>
-            <tbody>
-              <tr><td><strong>IBM Z</strong></td><td>IBM's mainframe platform, encompassing the IBM z16, z15, and prior generations. Designed for mission-critical enterprise workloads at high availability and security.</td></tr>
-              <tr><td><strong>LinuxONE</strong></td><td>IBM's Linux-only mainframe systems (e.g., LinuxONE Emperor 4, Rockhopper 4), optimized for open-source workloads and cloud-native deployments.</td></tr>
-              <tr><td><strong>z16</strong></td><td>The current IBM Z flagship server (announced 2022), featuring the Telum I processor with an on-chip AI accelerator.</td></tr>
-              <tr><td><strong>Telum I</strong></td><td>The processor chip in the IBM z16 and LinuxONE Emperor 4 / Rockhopper 4. Includes an on-chip AI inference accelerator per chip, providing dedicated silicon for neural network workloads without requiring a GPU.</td></tr>
-              <tr><td><strong>Telum II</strong></td><td>The next-generation IBM Z processor (powering IBM z17), with an enhanced on-chip AI engine offering greater AI compute throughput and support for additional neural network operations vs. Telum I.</td></tr>
-              <tr><td><strong>IBM Spyre</strong></td><td>An IBM PCIe accelerator card designed for LLM and generative AI inference on IBM Z, providing high-bandwidth matrix processing for large model workloads. Not a CPU — a discrete AI coprocessor.</td></tr>
-              <tr><td><strong>s390x</strong></td><td>The hardware architecture of IBM Z mainframes. Used to distinguish software packages compiled for IBM Z (as opposed to x86-64 or ARM).</td></tr>
-              <tr><td><strong>z/OS</strong></td><td>IBM's proprietary operating system for IBM Z. It runs the vast majority of the world's large-scale transactional workloads including banking systems, insurance, and retail payment processing.</td></tr>
-              <tr><td><strong>Linux on IBM Z</strong></td><td>Linux distributions (RHEL, SLES, Ubuntu) ported to the s390x architecture and running on IBM Z hardware. Most open-source AI/ML software on IBM Z runs on Linux on IBM Z.</td></tr>
-            </tbody>
-          </table>
-
-          <h2>AI &amp; Machine Learning Concepts</h2>
-          <table class="data-table">
-            <thead><tr><th>Term</th><th>Definition</th></tr></thead>
-            <tbody>
-              <tr><td><strong>AI Inference</strong></td><td>The process of running a trained AI model on new input data to generate predictions or outputs. Contrasted with training, which adjusts model weights.</td></tr>
-              <tr><td><strong>Training</strong></td><td>The process of optimizing an AI model's parameters (weights) on labeled data using an algorithm such as gradient descent. Typically compute-intensive.</td></tr>
-              <tr><td><strong>Model</strong></td><td>A mathematical function (e.g., a neural network, decision tree, or regression) that maps inputs to outputs after being trained on data.</td></tr>
-              <tr><td><strong>Deep Learning (DL)</strong></td><td>A subset of machine learning based on neural networks with multiple layers (deep networks). Used for image recognition, NLP, fraud detection, and more.</td></tr>
-              <tr><td><strong>Large Language Model (LLM)</strong></td><td>A neural network with billions of parameters, pre-trained on large text corpora, capable of generating, summarizing, and reasoning over text. Examples: IBM Granite, Llama, Mistral.</td></tr>
-              <tr><td><strong>Foundation Model</strong></td><td>A large, general-purpose AI model pre-trained on broad data and fine-tuned or prompted for specific tasks. LLMs are one type of foundation model.</td></tr>
-              <tr><td><strong>Quantization</strong></td><td>A model compression technique that reduces the numerical precision of model weights (e.g., from FP32 to INT8 or FP16), reducing memory footprint and improving inference speed with minimal accuracy loss.</td></tr>
-              <tr><td><strong>GPTQ</strong></td><td>A post-training quantization method (W4A16 — 4-bit weights, 16-bit activations) widely used for compressing LLMs for efficient inference. Supported by IBM Spyre via vllm-spyre.</td></tr>
-              <tr><td><strong>ONNX</strong></td><td>Open Neural Network Exchange — an open standard format for representing AI models, enabling portability between frameworks (TensorFlow, PyTorch, scikit-learn, etc.).</td></tr>
-              <tr><td><strong>PMML</strong></td><td>Predictive Model Markup Language — an XML-based standard for representing traditional ML models (linear regression, decision trees, SVMs). Commonly used in z/OS environments via MLz.</td></tr>
-              <tr><td><strong>MLOps</strong></td><td>Machine Learning Operations — practices and tooling that automate the deployment, monitoring, and lifecycle management of machine learning models in production.</td></tr>
-              <tr><td><strong>Tensor</strong></td><td>A multi-dimensional array — the fundamental data structure in deep learning. Scalars, vectors, and matrices are all special cases of tensors.</td></tr>
-              <tr><td><strong>Tokenization</strong></td><td>The process of converting raw text into discrete units (tokens) that an LLM can process. A token typically represents a word fragment or subword.</td></tr>
-            </tbody>
-          </table>
-
-          <h2>IBM Z AI Products &amp; Libraries</h2>
-          <table class="data-table">
-            <thead><tr><th>Term / Abbreviation</th><th>Full Name &amp; Description</th></tr></thead>
-            <tbody>
-              <tr><td><strong>zDNN</strong></td><td>IBM Z Deep Neural Network Library — a C library that exposes Telum AI accelerator operations to software. Version 1.0.x targets Telum I; 1.1.x adds Telum II operations.</td></tr>
-              <tr><td><strong>zDLC</strong></td><td>IBM Z Deep Learning Compiler — compiles ONNX models to s390x binaries with automatic zDNN offload where supported.</td></tr>
-              <tr><td><strong>RHOAI</strong></td><td>Red Hat OpenShift AI — a Kubernetes-native MLOps and AI platform running on Red Hat OpenShift, including on IBM Z.</td></tr>
-              <tr><td><strong>Snap ML</strong></td><td>IBM Snap Machine Learning — an IBM library providing GPU-class acceleration for traditional ML training on IBM Z CPU hardware.</td></tr>
-              <tr><td><strong>vllm-spyre</strong></td><td>IBM's fork of vLLM with a custom backend for Spyre accelerators, enabling LLM inference on IBM Z at scale.</td></tr>
-              <tr><td><strong>TF Serving</strong></td><td>IBM Z Accelerated Serving for TensorFlow — production TensorFlow model serving optimized for IBM Z hardware.</td></tr>
-              <tr><td><strong>Triton</strong></td><td>IBM Z Accelerated for NVIDIA Triton Inference Server — multi-framework model serving on IBM Z.</td></tr>
-            </tbody>
-          </table>
-
-          <h2>Architecture &amp; Deployment Terms</h2>
-          <table class="data-table">
-            <thead><tr><th>Term</th><th>Definition</th></tr></thead>
-            <tbody>
-              <tr><td><strong>OpenShift</strong></td><td>Red Hat OpenShift — IBM's preferred Kubernetes distribution for containerized workloads, including AI, on IBM Z and across hybrid cloud.</td></tr>
-              <tr><td><strong>Tensor Parallelism</strong></td><td>A parallelism strategy that splits large model tensors (weight matrices) across multiple accelerator cards, enabling inference of models too large to fit on a single device.</td></tr>
-              <tr><td><strong>Model Scoring</strong></td><td>Running a deployed model against new input data to generate a prediction or score. Synonymous with inference in enterprise contexts.</td></tr>
-              <tr><td><strong>Model Drift</strong></td><td>The gradual degradation of a deployed model's accuracy over time as the real-world distribution of input data shifts away from the training distribution.</td></tr>
-              <tr><td><strong>AI Factsheet</strong></td><td>A structured document (IBM terminology) that captures metadata, lineage, and governance information about an AI model throughout its lifecycle.</td></tr>
-              <tr><td><strong>Hybrid Cloud</strong></td><td>An IT architecture combining on-premises infrastructure (e.g., IBM Z) with public cloud environments, connected by consistent tooling and APIs.</td></tr>
-              <tr><td><strong>OpenAI-compatible API</strong></td><td>A REST API interface that follows the same request/response schema as OpenAI's Chat Completions API, enabling drop-in compatibility with OpenAI client libraries.</td></tr>
-            </tbody>
-          </table>
-        </section>
 
         <!-- ── RESOURCES & CONTACTS ──────────────────────────────────── -->
         <section class="section" id="resources-contacts">
           <h1>Resources &amp; Contacts</h1>
-          <p>A curated list of links, communities, and teams to help you get further with AI on IBM Z.</p>
+          <p>A curated list of resources, links, and communities to help you get further with AI on IBM Z. If you need to reach out to our team, please email us at <a href="mailto:aionz@us.ibm.com">aionz@us.ibm.com</a>.</p>
 
-          <h2>Official IBM Documentation</h2>
+          <h2 id="ibm-docs">Official IBM Documentation</h2>
           <table class="data-table">
             <thead><tr><th>Resource</th><th>Link</th></tr></thead>
             <tbody>
-              <tr><td>Red Hat OpenShift AI</td><td><a href="https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed" target="_blank">docs.redhat.com (OpenShift AI)</a></td></tr>
-              <tr><td>IBM watsonx.ai</td><td><a href="https://www.ibm.com/docs/en/watsonx-as-a-service" target="_blank">ibm.com/docs/en/watsonx-as-a-service</a></td></tr>
-              <tr><td>IBM watsonx.governance</td><td><a href="https://www.ibm.com/docs/en/watsonx/saas?topic=governance" target="_blank">ibm.com/docs/en/watsonx</a></td></tr>
+              <tr><td>Machine Learning for IBM z/OS</td><td><a href="https://www.ibm.com/docs/en/wml-for-zos/enterprise" target="_blank">ibm.com/docs/en/wml-for-zos/enterprise</a></td></tr>
+              <tr><td>Red Hat OpenShift AI on IBM Z and LinuxONE</td><td><a href="https://community.ibm.com/community/user/blogs/kelly-pushong/2025/11/13/red-hat-openshift-ai-on-ibm-z-and-linuxone" target="_blank">community.ibm.com (OpenShift AI on IBM Z)</a></td></tr>
+              <tr><td>AI Toolkit for IBM Z and IBM LinuxONE</td><td><a href="https://www.ibm.com/products/ai-toolkit-for-z-and-linuxone" target="_blank">ibm.com/products/ai-toolkit-for-z-and-linuxone</a></td></tr>
+              <tr><td>IBM watsonx.ai</td><td><a href="https://www.ibm.com/docs/en/software-hub/5.4.x?topic=services-watsonxai" target="_blank">ibm.com/docs/en/software-hub/5.4.x?topic=services-watsonxai</a></td></tr>
+              <tr><td>IBM watsonx.governance</td><td><a href="https://www.ibm.com/docs/en/software-hub/5.4.x?topic=services-watsonxgovernance" target="_blank">ibm.com/docs/en/software-hub/5.4.x?topic=services-watsonxgovernance</a></td></tr>
             </tbody>
           </table>
 
-          <h2>Open Source Repositories</h2>
+          <h2 id="open-source">Open Source Repositories</h2>
           <table class="data-table">
             <thead><tr><th>Repository</th><th>Description</th><th>Link</th></tr></thead>
             <tbody>
+              <tr><td>IBM Z and LinuxONE Container Registry</td><td>Container images built for IBM Z and LinuxONE</td><td><a href="https://ibm.github.io/ibm-z-oss-hub/main/main.html" target="_blank">ibm.github.io/ibm-z-oss-hub</a></td></tr>
               <tr><td>IBM/zDNN</td><td>Deep Neural Network Library for Telum AI acceleration</td><td><a href="https://github.com/IBM/zDNN" target="_blank">github.com/IBM/zDNN</a></td></tr>
               <tr><td>IBM/vllm-spyre</td><td>vLLM backend plugin for IBM Spyre accelerators</td><td><a href="https://github.com/IBM/vllm-spyre" target="_blank">github.com/IBM/vllm-spyre</a></td></tr>
-              <tr><td>IBM/optimized-ai-on-z</td><td>Optimized TensorFlow and AI packages for IBM Z</td><td><a href="https://github.com/IBM/optimized-ai-on-z" target="_blank">github.com/IBM/optimized-ai-on-z</a></td></tr>
             </tbody>
           </table>
 
-          <h2>Learning &amp; Training</h2>
+          <h2 id="learning">Learning &amp; Training</h2>
           <table class="data-table">
             <thead><tr><th>Resource</th><th>Description</th><th>Link</th></tr></thead>
             <tbody>
@@ -124,24 +61,41 @@
             </tbody>
           </table>
 
-          <h2>Community &amp; Support</h2>
+          <h2 id="redbooks">Redbook Papers</h2>
+          <table class="data-table">
+            <thead><tr><th>Title</th><th>Link</th></tr></thead>
+            <tbody>
+              <tr><td>AI on IBM Z: Applications and Examples</td><td><a href="https://www.redbooks.ibm.com/abstracts/redp5758.html" target="_blank" rel="noopener">redbooks.ibm.com</a></td></tr>
+              <tr><td>AI for Linux on IBM Z and LinuxONE Applications and Examples</td><td><a href="https://www.redbooks.ibm.com/abstracts/redp5756.html" target="_blank" rel="noopener">redbooks.ibm.com</a></td></tr>
+              <tr><td>Finding an On-ramp to Your AI on IBM Z Journey</td><td><a href="https://www.redbooks.ibm.com/abstracts/redp5723.html" target="_blank" rel="noopener">redbooks.ibm.com</a></td></tr>
+              <tr><td>IBM Synthetic Data Sets</td><td><a href="https://www.redbooks.ibm.com/abstracts/redp5748.html" target="_blank" rel="noopener">redbooks.ibm.com</a></td></tr>
+              <tr><td>Turning Data into Insight with Machine Learning for IBM z/OS</td><td><a href="https://www.redbooks.ibm.com/abstracts/sg248552.html" target="_blank" rel="noopener">redbooks.ibm.com</a></td></tr>
+              <tr><td>AI Toolkit for IBM Z and LinuxONE</td><td><a href="https://www.redbooks.ibm.com/abstracts/redp5749.html" target="_blank" rel="noopener">redbooks.ibm.com</a></td></tr>
+              <tr><td>Securely Leverage Open-Source Software with Python AI Toolkit for IBM z/OS</td><td><a href="https://www.redbooks.ibm.com/abstracts/redp5709.html" target="_blank" rel="noopener">redbooks.ibm.com</a></td></tr>
+            </tbody>
+          </table>
+
+          <h2 id="services">Services</h2>
+          <table class="data-table">
+            <thead><tr><th>Resource</th><th>Description</th><th>Link</th></tr></thead>
+            <tbody>
+              <tr><td>IBM Technology Expert Labs</td><td>Services for implementing AI projects and use cases on IBM Z</td><td><a href="mailto:systems-expert-labs@ibm.com">systems-expert-labs@ibm.com</a></td></tr>
+            </tbody>
+          </table>
+
+          <h2 id="community">Community &amp; Support</h2>
           <table class="data-table">
             <thead><tr><th>Community</th><th>Description</th><th>Link</th></tr></thead>
             <tbody>
-              <tr><td>IBM Z Community</td><td>Official IBM Z user community forums and groups</td><td><a href="https://community.ibm.com/community/user/ibmz-and-linuxone/home" target="_blank">community.ibm.com</a></td></tr>
+              <tr><td>AI on IBM Z &amp; IBM LinuxONE Community</td><td>Official IBM Z and LinuxONE user community forums and groups</td><td><a href="https://community.ibm.com/community/user/groupz?CommunityKey=038560b2-e962-4500-b0b5-e3745175a065" target="_blank">community.ibm.com</a></td></tr>
+              <tr><td>New Ideas Portal</td><td>Contribute ideas you have to improve our products</td><td><a href="https://ideas.ibm.com/" target="_blank">ideas.ibm.com</a></td></tr>
               <tr><td>SHARE</td><td>IBM Z user group — conferences, SIGs, and technical working groups</td><td><a href="https://www.share.org" target="_blank">share.org</a></td></tr>
               <tr><td>IBM Support</td><td>Official IBM Support Portal for licensed product support cases</td><td><a href="https://www.ibm.com/support" target="_blank">ibm.com/support</a></td></tr>
             </tbody>
           </table>
 
-          <h2>Staying Current</h2>
-          <p>IBM Z AI tooling evolves rapidly. To stay current with new capabilities, hardware announcements, and software updates:</p>
-          <ul>
-            <li>Follow the <a href="https://github.com/IBM/zDNN/releases" target="_blank">zDNN releases page</a> for Telum AI accelerator updates</li>
-            <li>Watch the <a href="https://github.com/IBM/vllm-spyre" target="_blank">vllm-spyre repository</a> for Spyre/LLM inference updates</li>
-            <li>Monitor IBM Z product announcements via <a href="https://www.ibm.com/it-infrastructure/z" target="_blank">ibm.com/z</a></li>
-            <li>Subscribe to IBM Z newsletters and the IBM Developer newsletter for AI on Z content</li>
-          </ul>
+          <h2 id="staying-current">Staying Current</h2>
+          <p>AI and IBM Z evolves rapidly. To stay current with new capabilities, hardware announcements, and software updates, <a href="https://community.ibm.com/community/user/groupz?CommunityKey=038560b2-e962-4500-b0b5-e3745175a065" target="_blank">subscribe to our community</a> for update blogs.</p>
         </section>
 
       </div>
@@ -155,8 +109,14 @@
       activeTop: 'help',
       activeSub: null,
       pageNavItems: [
-        { id: 'terminology',        label: 'Terminology' },
         { id: 'resources-contacts', label: 'Resources & Contacts' },
+        { id: 'ibm-docs',           label: 'Official IBM Documentation' },
+        { id: 'open-source',        label: 'Open Source Repositories' },
+        { id: 'learning',           label: 'Learning & Training' },
+        { id: 'redbooks',           label: 'Redbook Papers' },
+        { id: 'services',           label: 'Services' },
+        { id: 'community',          label: 'Community & Support' },
+        { id: 'staying-current',    label: 'Staying Current' },
       ]
     });
   </script>

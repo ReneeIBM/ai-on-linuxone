@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI on Z | Deploy Models</title>
+  <title>AI on IBM LinuxONE | Deploy Models</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css" />
 </head>
-<body class="has-lifecycle">
+<body class="no-lifecycle">
   <header class="topbar">
-    <a href="../index.html" class="topbar-logo"><span class="topbar-logo-mark"></span>AI on IBM Z</a>
+    <a href="../index.html" class="topbar-logo"><span class="topbar-logo-mark"></span>AI on IBM LinuxONE 101</a>
     <nav class="topnav" id="topnav"></nav>
   </header>
   <nav class="lifecycle-nav" id="lifecycle-nav"></nav>
@@ -17,127 +17,223 @@
   <div class="page-shell">
     <nav class="pagenav" id="pagenav"></nav>
     <div class="main-content">
+      <!-- Page Hero -->
+      <div class="page-hero">
+        <h1>Deploy Models</h1>
+      </div>
+
       <div class="page-body">
 
         <!-- ── OVERVIEW ─────────────────────────────────────────────── -->
         <section class="section" id="overview">
           <h1>Deploy Models</h1>
-          <p>After training, most models need to be prepared before they can run efficiently in production on IBM Z. This stage covers both optimization — converting your model into the right format and compiling it for hardware acceleration — and deployment, where your model moves into a production runtime and begins scoring real data.</p>
-          <p>IBM Z supports multiple paths depending on your model type, your target operating environment, and how you need to integrate AI into your applications.</p>
+          <p>Before a model can be used in production, it often needs to be packaged, optimized, and prepared for its target runtime environment. This stage focuses on converting models into supported deployment formats, applying platform-specific optimizations, and preparing them for execution on IBM LinuxONE.</p>
+          <p>IBM LinuxONE supports multiple deployment paths based on the model type and target inference environment. Models developed with open-source and commercial frameworks — whether trained on LinuxONE or in a hybrid cloud environment — can be deployed using the same set of IBM LinuxONE deployment and serving technologies.</p>
 
           <h2>What happens at this stage?</h2>
           <div class="card-grid">
             <div class="card">
               <h4>Convert to a portable format</h4>
-              <p>Export your trained model to ONNX (deep learning) or PMML (traditional ML) — standard interchange formats that work across Z operating systems and deployment tools.</p>
+              <p>Export your trained model to ONNX (deep learning) or PMML (traditional ML) — standard interchange formats supported by IBM LinuxONE deployment tools. If you are running IBM Z Accelerated for TensorFlow or IBM Z Accelerated for PyTorch natively, you can deploy directly without ONNX conversion.</p>
             </div>
             <div class="card">
-              <h4>Optimize for IBM Z hardware</h4>
-              <p>Compile and quantize your model using the IBM Z Deep Learning Compiler or AI Optimizer to maximize inference performance on Telum and Spyre acceleration.</p>
+              <h4>Optimize for IBM LinuxONE hardware</h4>
+              <p>For deep learning models and encoder LLMs targeting the Telum II on-chip AI accelerator, compile with the IBM Z Deep Learning Compiler (zDLC) after ONNX conversion. For LLMs served on Spyre via Red Hat AI Inference Server or Red Hat OpenShift AI, no ONNX conversion or compilation is required — models are served natively. Traditional ML models do not require this step.</p>
             </div>
             <div class="card">
               <h4>Move to production</h4>
-              <p>Deploy your model to a production runtime — on z/OS, Linux on Z, or an OpenShift container environment — co-located with the enterprise data it needs to score.</p>
+              <p>Deploy your model to a production runtime on IBM LinuxONE — co-located with the enterprise data and Linux workloads it needs to score, with no data movement required.</p>
             </div>
             <div class="card">
               <h4>Configure scoring endpoints</h4>
-              <p>Set up the model to receive inference requests via REST API, CICS/IMS native scoring, batch jobs, or a gRPC serving endpoint.</p>
+              <p>Set up the model to receive inference requests via REST API or gRPC serving endpoint, integrated with your Linux applications and containerized services on IBM LinuxONE.</p>
             </div>
           </div>
 
           <h2>Who is this stage for?</h2>
-          <p>Optimization and deployment are jointly owned by <strong>ML Engineers</strong> and <strong>IT Architects</strong>. The ML Engineer handles model conversion, compilation, and the deployment artifact. The IT Architect owns the infrastructure decisions — operating environment, serving topology, and integration with business applications. Data Scientists are stakeholders who validate that the deployed model performs as expected.</p>
+          <p>Optimization and deployment are typically owned by <strong>ML Engineers</strong> and <strong>IT Architects</strong>. The ML Engineer handles model conversion, compilation, and the deployment artifact. The IT Architect owns the infrastructure decisions — serving topology, containerization strategy, and integration with business applications on IBM LinuxONE. Data Scientists are stakeholders who validate that the deployed model performs as expected.</p>
         </section>
 
         <!-- ── WHERE TO START ────────────────────────────────────────── -->
         <section class="section" id="where-to-start">
           <h1>Where to Start</h1>
-          <p>Your path depends on your model type, target environment, and deployment requirements. Use this to find your path:</p>
+          <p>Your path is determined by two things: your model type and your target accelerator. The three subsections below map to those two dimensions.</p>
+
+          <!-- ── SUBSECTION 1: Traditional ML ── -->
+          <h2 id="traditional-ml">Deploying Traditional Machine Learning Models</h2>
+          <p>Traditional ML models (classification, regression, recommendation, forecasting) are deployed via PMML and will either leverage the <strong>Telum II on-chip AI accelerator</strong> (e.g., gradient boosting and random forest models) or run on native CPU (e.g., linear regression and logistic regression). Not all traditional ML models use the on-chip AI accelerator.</p>
 
           <div class="decision-cards">
 
             <div class="decision-card">
-              <div class="decision-card-label">Deploying a Traditional Machine Learning Model</div>
-              <div class="decision-card-body">
-                <p>You have a trained model from Snap ML, scikit-learn, XGBoost, Spark MLlib, or another traditional ML framework.</p>
-                <p><strong>→ Start with PMML.</strong> PMML provides a portable format for many traditional machine learning models and enables deployment without requiring the original training framework.</p>
-                <p><em>Common approach:</em> Train a model → Export to PMML → Deploy through AI Optimizer or MLz scoring services.</p>
+              <button class="decision-card-trigger" aria-expanded="false">
+                <span class="dc-trigger-left">
+                  <span class="dc-trigger-title">Export and deploy via PMML on IBM LinuxONE</span>
+                  <span class="dc-pill"><a href="../products-tools/model-formats.html#pmml">PMML</a> · <a href="../products-tools/ai-frameworks.html#snapml">IBM Z Accelerated for Snap ML</a></span>
+                </span>
+                <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
+              </button>
+              <div class="dc-card-intro">
+                <p>You have a model trained with IBM Z Accelerated for Snap ML, scikit-learn, XGBoost, or another traditional ML framework and need to move it to production on IBM LinuxONE.</p>
+              </div>
+              <div class="decision-card-body" hidden>
+                <p><strong>→ Export to <a href="../products-tools/model-formats.html#pmml">PMML</a></strong> and deploy via the AI Toolkit for IBM Z and IBM LinuxONE scoring services or Red Hat OpenShift AI. PMML provides a portable format that does not require the original training framework at inference time, and is supported by IBM LinuxONE serving tools.</p>
+                <p><em>Common approach:</em> Train with IBM Z Accelerated for Snap ML or scikit-learn → Export to PMML → Deploy and score via AI Toolkit for IBM Z and IBM LinuxONE or Red Hat OpenShift AI on IBM LinuxONE.</p>
+                <p><em>Note: IBM Z Accelerated for Snap ML is primarily a training technology. Deployment begins after exporting the PMML model.</em></p>
               </div>
             </div>
 
             <div class="decision-card">
-              <div class="decision-card-label">Deploying a Deep Learning Model</div>
-              <div class="decision-card-body">
-                <p>You have a trained neural network and want portable deployment across serving platforms.</p>
-                <p><strong>→ Start with ONNX.</strong> ONNX creates a framework-independent model format that simplifies optimization and deployment across environments.</p>
-                <p><em>Common approach:</em> Convert to ONNX → Optimize and deploy for production inference.</p>
+              <button class="decision-card-trigger" aria-expanded="false">
+                <span class="dc-trigger-left">
+                  <span class="dc-trigger-title">Managed MLOps deployment for traditional ML</span>
+                  <span class="dc-pill"><a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a> · <a href="../products-tools/ai-platforms.html#watsonx">watsonx.ai</a></span>
+                </span>
+                <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
+              </button>
+              <div class="dc-card-intro">
+                <p>You want model deployment, lifecycle management, monitoring, and scoring endpoints managed through a unified platform on IBM LinuxONE.</p>
+              </div>
+              <div class="decision-card-body" hidden>
+                <p><strong>→ Use <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a> or <a href="../products-tools/ai-platforms.html#watsonx">watsonx.ai</a> on IBM LinuxONE.</strong> Red Hat OpenShift AI provides KServe-based model serving, deployment pipelines, and monitoring within a Kubernetes-native environment. watsonx.ai (via IBM Software Hub) provides a full ML deployment and lifecycle management environment. Both run on IBM LinuxONE and expose REST scoring endpoints for integration with your Linux applications.</p>
+                <p><em>Common approach:</em> Train model → Export to PMML or ONNX → Import into Red Hat OpenShift AI or watsonx.ai → Deploy as a REST scoring endpoint on IBM LinuxONE.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ── SUBSECTION 2: Deep Learning + Encoder LLMs (Telum on-chip) ── -->
+          <h2 id="deep-learning">Deploying Deep Learning Models and Encoder LLMs (Telum II On-Chip Accelerator)</h2>
+          <p>Deep learning models and encoder LLMs share the same deployment path on IBM LinuxONE to enable <strong>Telum II on-chip AI acceleration</strong>: convert to ONNX, compile with the IBM Z Deep Learning Compiler (zDLC), and deploy via a serving platform. Unlike traditional ML models, these heavier-weight models should always target the Telum II on-chip AI accelerator. Encoder LLMs can also choose the Spyre path — see the next subsection.</p>
+
+          <div class="decision-cards">
+
+            <div class="decision-card">
+              <button class="decision-card-trigger" aria-expanded="false">
+                <span class="dc-trigger-left">
+                  <span class="dc-trigger-title">Standard deep learning path</span>
+                  <span class="dc-pill"><a href="../products-tools/model-formats.html#onnx">ONNX</a> · <a href="../products-tools/model-formats.html#zdlc">zDLC</a></span>
+                </span>
+                <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
+              </button>
+              <div class="dc-card-intro">
+                <p>You have a neural network trained with IBM Z Accelerated for TensorFlow, IBM Z Accelerated for PyTorch, or any other framework — including models trained externally with Keras or Hugging Face — and want to deploy it on the Telum on-chip AI accelerator.</p>
+              </div>
+              <div class="decision-card-body" hidden>
+                <p><strong>→ Convert to <a href="../products-tools/model-formats.html#onnx">ONNX</a>, then compile with the <a href="../products-tools/model-formats.html#zdlc">IBM Z Deep Learning Compiler (zDLC)</a>.</strong> zDLC optimizes the ONNX model for IBM LinuxONE hardware, generating a deployment artifact that leverages Telum II AI acceleration automatically. The zDLC supports C++, Java, and Python APIs and produces shared library files embeddable in applications independently of the original framework.</p>
+                <p><em>Common approach:</em> Export model to ONNX → Compile with zDLC → Deploy via <a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton Inference Server</a> or <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a> on IBM LinuxONE.</p>
               </div>
             </div>
 
             <div class="decision-card">
-              <div class="decision-card-label">Optimizing a Deep Learning Model for IBM Z Hardware</div>
-              <div class="decision-card-body">
-                <p>You have a deep learning model in ONNX format and want to maximize inference performance on IBM Z and LinuxONE.</p>
-                <p><strong>→ Start with IBM Z Deep Learning Compiler (ZDLC).</strong> ZDLC generates optimized deployment artifacts that take advantage of IBM Z hardware acceleration.</p>
-                <p><em>Common approach:</em> Train model → Convert to ONNX → Optimize with ZDLC → Deploy to a serving platform.</p>
-                <p>Most users will encounter ZDLC as an optional optimization step after selecting a deployment format such as ONNX.</p>
+              <button class="decision-card-trigger" aria-expanded="false">
+                <span class="dc-trigger-left">
+                  <span class="dc-trigger-title">IBM Z Accelerated for TensorFlow direct serving</span>
+                  <span class="dc-pill"><a href="../products-tools/inference-serving.html#tf-serving">IBM Z Accelerated Serving for TensorFlow</a></span>
+                </span>
+                <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
+              </button>
+              <div class="dc-card-intro">
+                <p>Your model was built with IBM Z Accelerated for TensorFlow and you want to skip ONNX conversion by deploying directly with IBM Z Accelerated Serving for TensorFlow.</p>
+              </div>
+              <div class="decision-card-body" hidden>
+                <p><strong>→ Export as a TensorFlow SavedModel</strong> and deploy with <a href="../products-tools/inference-serving.html#tf-serving">IBM Z Accelerated Serving for TensorFlow</a>. This avoids the ONNX conversion step while still leveraging Telum hardware acceleration.</p>
+                <p><em>Common approach:</em> Train with IBM Z Accelerated for TensorFlow → Export SavedModel → Deploy to IBM Z Accelerated Serving for TensorFlow.</p>
+                <p><em>Note: The ONNX → zDLC path is also valid for IBM Z Accelerated for TensorFlow models and gives access to <a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton Inference Server</a> or <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a> as serving platforms.</em></p>
               </div>
             </div>
 
             <div class="decision-card">
-              <div class="decision-card-label">Deploying Models Trained with TensorFlow</div>
-              <div class="decision-card-body">
-                <p>Your model was trained using TensorFlow and is ready to be prepared for production deployment.</p>
-                <p><strong>→ Start by exporting a TensorFlow SavedModel or converting to ONNX.</strong> TensorFlow models can be deployed directly with TensorFlow Serving or converted to ONNX for use across multiple serving platforms.</p>
-                <p><em>Common approach:</em> Train with TensorFlow → Export SavedModel or ONNX → Deploy to TensorFlow Serving, Triton, MLz, or OpenShift AI.</p>
-                <p>TensorFlow is primarily a training framework; deployment choices are typically made after training is complete.</p>
+              <button class="decision-card-trigger" aria-expanded="false">
+                <span class="dc-trigger-left">
+                  <span class="dc-trigger-title">Multi-framework or containerized serving</span>
+                  <span class="dc-pill"><a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton Inference Server</a> · <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a></span>
+                </span>
+                <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
+              </button>
+              <div class="dc-card-intro">
+                <p>You need to serve multiple model types from a shared inference platform, or your team works in a containerized OpenShift environment.</p>
+              </div>
+              <div class="decision-card-body" hidden>
+                <p><strong>→ Use <a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton Inference Server</a></strong>, optionally managed through <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a>. IBM Z Accelerated for Triton Inference Server supports TensorFlow, PyTorch, ONNX, and zDLC-compiled models from a single serving runtime.</p>
+                <p><em>Common approach:</em> Convert model to ONNX and compile with zDLC → Deploy to IBM Z Accelerated for Triton Inference Server → Optionally manage deployment pipelines and monitoring through Red Hat OpenShift AI.</p>
               </div>
             </div>
 
             <div class="decision-card">
-              <div class="decision-card-label">Deploying Models Trained with PyTorch</div>
-              <div class="decision-card-body">
-                <p>Your model was trained using PyTorch and you want to deploy it into a production environment.</p>
-                <p><strong>→ Start by exporting to ONNX.</strong> ONNX provides a portable deployment format that integrates with many serving platforms.</p>
-                <p><em>Common approach:</em> Train with PyTorch → Convert to ONNX → Deploy to Triton, MLz, or OpenShift AI.</p>
-                <p>PyTorch is primarily a training framework rather than a deployment technology.</p>
+              <button class="decision-card-trigger" aria-expanded="false">
+                <span class="dc-trigger-left">
+                  <span class="dc-trigger-title">Encoder LLMs on Telum</span>
+                  <span class="dc-pill"><a href="../products-tools/model-formats.html#onnx">ONNX</a> · <a href="../products-tools/model-formats.html#zdlc">zDLC</a> · <a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton Inference Server</a></span>
+                </span>
+                <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
+              </button>
+              <div class="dc-card-intro">
+                <p>You have an encoder large language model (e.g., BERT-style) and want to run it on the Telum on-chip AI accelerator rather than Spyre.</p>
+              </div>
+              <div class="decision-card-body" hidden>
+                <p><strong>→ Convert the encoder LLM to <a href="../products-tools/model-formats.html#onnx">ONNX</a></strong> and follow the same deep learning path: compile with <a href="../products-tools/model-formats.html#zdlc">zDLC</a> and deploy via <a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton Inference Server</a> or <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a> on IBM LinuxONE.</p>
+                <p><em>Common approach:</em> Export encoder LLM to ONNX → Compile with zDLC → Deploy via IBM Z Accelerated for Triton Inference Server or Red Hat OpenShift AI on IBM LinuxONE.</p>
+                <p><em>Note: Encoder LLMs can also be served on Spyre — see the next subsection. As a general guide: models with approximately 300 million parameters or fewer are a good fit for the Telum II on-chip AI accelerator; models up to approximately 30 billion parameters can run on Spyre; models larger than that are not suited for IBM LinuxONE. The right choice also depends on your application SLAs and hardware availability.</em></p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ── SUBSECTION 3: LLMs on Spyre ── -->
+          <h2 id="llm-spyre">Deploying Large Language Models on Spyre</h2>
+          <p><strong>Decoder LLMs always use Spyre.</strong> Encoder LLMs may also choose Spyre over the Telum on-chip AI accelerator depending on Application SLAs, model size, and hardware availability. The tools in this subsection are specific to Spyre-accelerated LLM workloads.</p>
+
+          <div class="decision-cards">
+
+            <div class="decision-card">
+              <button class="decision-card-trigger" aria-expanded="false">
+                <span class="dc-trigger-left">
+                  <span class="dc-trigger-title">Decoder LLMs and encoder LLMs on Spyre</span>
+                  <span class="dc-pill"><a href="../products-tools/inference-serving.html#rh-inference">Red Hat AI Inference Server</a></span>
+                </span>
+                <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
+              </button>
+              <div class="dc-card-intro">
+                <p>You are deploying a decoder LLM (e.g., Llama, Granite) or an encoder LLM on Spyre and want a dedicated inference server without the full Red Hat OpenShift AI platform. No ONNX conversion is required — LLMs are served natively.</p>
+              </div>
+              <div class="decision-card-body" hidden>
+                <p><strong>→ Use <a href="../products-tools/inference-serving.html#rh-inference">Red Hat AI Inference Server</a>.</strong> This is the recommended path for LLM inference on Spyre without requiring the full Red Hat OpenShift AI platform. It is vLLM-based, purpose-built for large model inference, and supports Granite, Llama, Qwen, DeepSeek, Gemma, Mistral, and other models — no ONNX conversion required. Not used for traditional ML or deep learning models on the Telum II accelerator.</p>
+                <p><em>Common approach:</em> Source or fine-tune an LLM → Deploy natively via Red Hat AI Inference Server with Spyre acceleration on IBM LinuxONE.</p>
               </div>
             </div>
 
             <div class="decision-card">
-              <div class="decision-card-label">Deploying Models Trained with Snap ML</div>
-              <div class="decision-card-body">
-                <p>Your model was trained using Snap ML and is ready for production deployment.</p>
-                <p><strong>→ Start by exporting to PMML.</strong> PMML provides a portable format for many traditional machine learning models.</p>
-                <p><em>Common approach:</em> Train with Snap ML → Export PMML → Deploy through MLz or other scoring platforms.</p>
-                <p>Snap ML is primarily a training technology. Deployment decisions typically begin after exporting the trained model.</p>
+              <button class="decision-card-trigger" aria-expanded="false">
+                <span class="dc-trigger-left">
+                  <span class="dc-trigger-title">LLM deployment with MLOps and multi-platform support</span>
+                  <span class="dc-pill"><a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a></span>
+                </span>
+                <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
+              </button>
+              <div class="dc-card-intro">
+                <p>You need MLOps pipeline management, model catalogs, and monitoring around your LLM deployment, or you want a single platform that covers both Telum and Spyre workloads. No ONNX conversion is required for LLMs — they are served natively through the Red Hat AI Inference Server runtime embedded in OpenShift AI.</p>
+              </div>
+              <div class="decision-card-body" hidden>
+                <p><strong>→ Use <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a>.</strong> Both Red Hat AI Inference Server and Red Hat OpenShift AI are valid paths for LLM inference on Spyre — no ONNX conversion required for either. Choose OpenShift AI when you need the broader platform: MLOps pipelines, model governance, and unified management across Telum II and Spyre workloads on IBM LinuxONE.</p>
+                <p><em>Common approach:</em> Deploy LLMs through OpenShift AI using the <a href="../products-tools/inference-serving.html#rh-inference">Red Hat AI Inference Server</a> runtime for Spyre workloads, or <a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton Inference Server</a> for Telum II workloads — all managed from a single MLOps platform on IBM LinuxONE.</p>
               </div>
             </div>
 
             <div class="decision-card">
-              <div class="decision-card-label">Deploying Models Across Multiple Frameworks</div>
-              <div class="decision-card-body">
-                <p>You need to serve TensorFlow, PyTorch, ONNX, or other model types from a common inference platform.</p>
-                <p><strong>→ Use Triton Inference Server.</strong> Triton supports multiple framework formats through a single serving environment.</p>
-                <p><em>Common approach:</em> Train using your preferred framework → Export model → Deploy through Triton.</p>
+              <button class="decision-card-trigger" aria-expanded="false">
+                <span class="dc-trigger-left">
+                  <span class="dc-trigger-title">Hybrid routing across platforms</span>
+                  <span class="dc-pill"><a href="../products-tools/ai-platforms.html#ai-optimizer">AI Optimizer for IBM Z and LinuxONE</a></span>
+                </span>
+                <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
+              </button>
+              <div class="dc-card-intro">
+                <p>You have a hybrid deployment that spans IBM Z and other platforms (cloud, GPU clusters), and you need intelligent routing of LLM inference requests to the most optimal platform.</p>
               </div>
-            </div>
-
-            <div class="decision-card">
-              <div class="decision-card-label">Building an Enterprise AI Deployment Platform</div>
-              <div class="decision-card-body">
-                <p>Multiple teams require deployment pipelines, model catalogs, monitoring, and operational controls.</p>
-                <p><strong>→ Use Red Hat OpenShift AI.</strong> OpenShift AI provides the MLOps layer that manages model deployment, serving infrastructure, monitoring, and lifecycle operations.</p>
-                <p><em>Common approach:</em> Register model → Deploy using Triton or TensorFlow Serving → Monitor and manage through OpenShift AI.</p>
-              </div>
-            </div>
-
-            <div class="decision-card">
-              <div class="decision-card-label">Managing AI Assets Across the Full Lifecycle</div>
-              <div class="decision-card-body">
-                <p>You need model governance, catalogs, lifecycle management, and enterprise AI oversight.</p>
-                <p><strong>→ Use watsonx.ai.</strong> watsonx.ai helps manage AI assets and integrates with broader AI lifecycle and governance workflows.</p>
-                <p><em>Common approach:</em> Build or import model → Track and manage AI assets → Promote approved models into deployment platforms.</p>
+              <div class="decision-card-body" hidden>
+                <p><strong>→ Use <a href="../products-tools/ai-platforms.html#ai-optimizer">AI Optimizer for IBM LinuxONE</a>.</strong> AI Optimizer is a complete software appliance — delivered as a single LPAR image — that boots a fully optimized inferencing stack ready in under 2 hours. It acts as a policy-driven gateway routing inference requests to the most optimal endpoint (Spyre, Telum II, or external) based on tagging and model grouping. It integrates <a href="../products-tools/inference-serving.html#rh-inference">Red Hat AI Inference Server</a> and includes real-time monitoring via Prometheus &amp; Grafana.</p>
+                <p><em>Common approach:</em> Deploy AI Optimizer as the inference gateway on IBM LinuxONE → Register on-platform and external LLMs → Route inference requests to Spyre via the embedded Red Hat AI Inference Server or to an external environment based on configured policy.</p>
               </div>
             </div>
 
@@ -147,46 +243,106 @@
         <!-- ── NEXT STEPS ─────────────────────────────────────────────── -->
         <section class="section" id="next-steps">
           <h1>Next Steps</h1>
-          <div class="card-grid">
-            <div class="card">
-              <h4>Serve Model</h4>
-              <p>Expose your deployed model as a REST or gRPC endpoint for real-time inference requests from applications, microservices, or business workflows.</p>
-              <a href="../serve-model/serve-model.html" class="learn-more" style="font-size:13px;">Go to Serve Model &#8594;</a>
-            </div>
+          <div class="ns-tile-grid">
+            <a href="../serve-model/serve-model.html" class="ns-tile">
+              <span class="ns-tile-label">Serve Model</span>
+              <span class="ns-tile-body">Make your deployed model accessible to applications — via REST API or gRPC from your Linux workloads and containerized services on IBM LinuxONE.</span>
+              <span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span>
+            </a>
           </div>
         </section>
 
       </div>
-      <footer class="footer"><p>&copy; 2025 AI on Z</p></footer>
+      <footer class="footer"><p>&copy; 2026 IBM LinuxONE</p></footer>
     </div>
   </div>
 
   <style>
+    /* ── Product pill tag ── */
+    .dc-pill {
+      display: inline-flex;
+      align-items: center;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--ibm-text-secondary);
+      background: var(--ibm-gray-10);
+      border: 1px solid var(--ibm-border);
+      border-radius: 3px;
+      padding: 1px 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .dc-pill a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: var(--ibm-border);
+    }
+    .dc-pill a:hover {
+      color: var(--ibm-blue-60, #0043ce);
+      text-decoration-color: currentColor;
+    }
     .decision-cards {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 8px;
       margin: 18px 0 24px;
-      max-width: 720px;
     }
     .decision-card {
       border: 1px solid var(--ibm-border);
       border-radius: 6px;
       overflow: hidden;
     }
-    .decision-card-label {
-      background: var(--ibm-gray-10);
-      border-bottom: 1px solid var(--ibm-border);
-      padding: 9px 16px;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--ibm-text-helper);
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
+    .decision-card-trigger {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 11px 16px;
+      background: #edf5ff;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.15s;
     }
+    .decision-card-trigger:hover { background: #d0e2ff; }
+    .decision-card.open .decision-card-trigger { background: #d0e2ff; }
+    .dc-trigger-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      flex: 1;
+      min-width: 0;
+    }
+    .dc-trigger-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ibm-text-primary);
+    }
+    .dc-card-intro {
+      padding: 10px 16px 12px;
+      background: #fff;
+    }
+    .dc-card-intro p {
+      font-size: 13px;
+      color: var(--ibm-text-secondary);
+      margin: 0;
+      line-height: 1.5;
+    }
+    .dc-chevron {
+      width: 16px;
+      height: 16px;
+      color: var(--ibm-gray-70);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .decision-card.open .dc-chevron { transform: rotate(180deg); }
     .decision-card-body {
       padding: 14px 16px;
+      border-top: 1px solid var(--ibm-border);
     }
+    .decision-card-body[hidden] { display: none; }
     .decision-card-body p {
       font-size: 14px;
       color: var(--ibm-text-secondary);
@@ -199,6 +355,51 @@
     .decision-card-body strong {
       color: var(--ibm-text-primary);
     }
+
+    /* ── Next Steps tiles ── */
+    .ns-tile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0;
+      margin-top: 8px;
+    }
+    .ns-tile {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 20px 16px;
+      background: #fff;
+      border: 1px solid var(--ibm-border);
+      text-decoration: none;
+      color: var(--ibm-text-primary);
+      transition: background 0.15s;
+      min-height: 160px;
+    }
+    .ns-tile:hover { background: var(--ibm-gray-10); }
+    .ns-tile-label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ibm-text-primary);
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+    .ns-tile-body {
+      display: block;
+      font-size: 13px;
+      color: var(--ibm-text-secondary);
+      line-height: 1.5;
+      flex: 1;
+    }
+    .ns-tile-footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 16px;
+    }
+    .ns-tile-arrow {
+      font-size: 18px;
+      color: var(--ibm-text-primary);
+      line-height: 1;
+    }
   </style>
 
   <script src="../nav.js"></script>
@@ -208,11 +409,60 @@
       activeTop: 'lifecycle',
       activeSub: 'deploy-models',
       pageNavItems: [
-        { id: 'overview',       label: 'Overview' },
-        { id: 'where-to-start', label: 'Where to Start' },
-        { id: 'next-steps',     label: 'Next Steps' },
+        { id: 'overview',        label: 'Overview' },
+        { id: 'where-to-start',  label: 'Where to Start' },
+        { id: 'traditional-ml',  label: 'Deploying Traditional Machine Learning Models' },
+        { id: 'deep-learning',   label: 'Deploying Deep Learning Models and Encoder LLMs (Telum On-Chip Accelerator)' },
+        { id: 'llm-spyre',       label: 'Deploying Large Language Models on Spyre' },
+        { id: 'next-steps',      label: 'Next Steps' },
       ]
     });
+
+    (function() {
+      var SESSION_KEY = 'open-cards:' + location.pathname;
+      var allCards = Array.from(document.querySelectorAll('.decision-card'));
+
+      function saveState() {
+        var open = allCards.map(function(c, i) { return c.classList.contains('open') ? i : -1; }).filter(function(i) { return i >= 0; });
+        sessionStorage.setItem(SESSION_KEY, JSON.stringify(open));
+      }
+
+      function restoreState() {
+        var saved = JSON.parse(sessionStorage.getItem(SESSION_KEY) || '[]');
+        saved.forEach(function(i) {
+          var card = allCards[i];
+          if (!card) return;
+          var body = card.querySelector('.decision-card-body');
+          var btn  = card.querySelector('.decision-card-trigger');
+          card.classList.add('open');
+          body.hidden = false;
+          btn.setAttribute('aria-expanded', 'true');
+        });
+      }
+
+      allCards.forEach(function(card) {
+        var btn  = card.querySelector('.decision-card-trigger');
+        var body = card.querySelector('.decision-card-body');
+        btn.addEventListener('click', function() {
+          var isOpen = card.classList.contains('open');
+          if (isOpen) {
+            card.classList.remove('open');
+            body.hidden = true;
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            card.classList.add('open');
+            body.hidden = false;
+            btn.setAttribute('aria-expanded', 'true');
+          }
+          saveState();
+        });
+      });
+
+      // On reload, clear saved state so all cards start closed
+      var navType = (performance.getEntriesByType('navigation')[0] || {}).type;
+      if (navType === 'reload') sessionStorage.removeItem(SESSION_KEY);
+      restoreState();
+    })();
   </script>
 </body>
 </html>

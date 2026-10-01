@@ -1,7 +1,7 @@
 /* Shared sidebar renderer - included by all pages */
 /* Call renderSidebar(activeSection, activeSubPage) */
 /* activeSection: 'overview' | 'lifecycle' | 'products' | 'help' */
-/* activeSubPage: 'use-cases' | 'prepare-data' | 'train-model' | 'optimize-model' | 'deploy-models' | 'serve-model' | 'ai-governance' | null */
+/* activeSubPage: 'use-cases' | 'prepare-data' | 'build-model' | 'optimize-model' | 'deploy-models' | 'serve-model' | 'ai-governance' | null */
 
 function renderSidebar(activeSection, activeSubPage, rootPrefix) {
   const p = rootPrefix || '';
@@ -11,7 +11,7 @@ function renderSidebar(activeSection, activeSubPage, rootPrefix) {
     overview:      p + 'overview/overview.html',
     usecases:      p + 'use-cases/use-cases.html',
     preparedata:   p + 'prepare-data/prepare-data.html',
-    trainmodel:    p + 'train-model/train-model.html',
+    trainmodel:    p + 'build-model/build-model.html',
     optimizemodel: p + 'optimize-model/optimize-model.html',
     deploymodels:  p + 'deploy-models/deploy-models.html',
     servemodel:    p + 'serve-model/serve-model.html',
@@ -31,7 +31,7 @@ function renderSidebar(activeSection, activeSubPage, rootPrefix) {
     <div class="sidebar-sub-items${lifecycleOpen ? ' open' : ''}" id="lifecycle-items">
       <a href="${links.usecases}"      class="sidebar-sub-link${activeSubPage === 'use-cases'      ? ' active' : ''}">Use Cases</a>
       <a href="${links.preparedata}"   class="sidebar-sub-link${activeSubPage === 'prepare-data'   ? ' active' : ''}">Prepare Data</a>
-      <a href="${links.trainmodel}"    class="sidebar-sub-link${activeSubPage === 'train-model'    ? ' active' : ''}">Train Model</a>
+      <a href="${links.trainmodel}"    class="sidebar-sub-link${activeSubPage === 'build-model'    ? ' active' : ''}">Build Model</a>
       <a href="${links.optimizemodel}" class="sidebar-sub-link${activeSubPage === 'optimize-model' ? ' active' : ''}">Optimize Model</a>
       <a href="${links.deploymodels}"  class="sidebar-sub-link${activeSubPage === 'deploy-models'  ? ' active' : ''}">Deploy Models</a>
       <a href="${links.servemodel}"    class="sidebar-sub-link${activeSubPage === 'serve-model'    ? ' active' : ''}">Serve Model</a>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI on Z | Additional Patterns</title>
+  <title>AI on Z | Solution Blueprints</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css" />
@@ -17,10 +17,15 @@
   <div class="page-shell">
     <nav class="pagenav" id="pagenav"></nav>
     <div class="main-content">
+      <!-- Page Hero -->
+      <div class="page-hero">
+        <h1>Solution Blueprints</h1>
+      </div>
+
       <div class="page-body">
 
         <section class="section" id="solution-templates">
-          <h1>Additional Patterns</h1>
+          <h1>Solution Blueprints</h1>
           <p>Additional AI solution patterns for IBM Z — covering generative AI, fraud detection, credit risk, health insurance, data preprocessing, and anti-money laundering. Each pattern walks you through building, deploying, and integrating an AI model into a business application with working code.</p>
           <a href="https://ambitus.github.io/aionz-solution-templates/" class="learn-more" target="_blank" rel="noopener">View all templates on GitHub &#8594;</a>
         </section>
@@ -34,11 +39,6 @@
               <div class="st-card-tag st-tag--genai">Generative AI</div>
               <h3>Document Intelligence with Spyre</h3>
               <p>A reference implementation for running IBM Granite LLM inference on Red Hat AI Inference Server, leveraging the IBM Spyre Accelerator on IBM Z.</p>
-              <div class="st-card-meta">
-                <span class="st-badge">IBM Spyre</span>
-                <span class="st-badge">Red Hat AI Inference Server</span>
-                <span class="st-badge">IBM Granite</span>
-              </div>
               <a href="https://github.com/ambitus/aionz-st-document-intelligence-with-rhaiis-leveraging-ibm-spyre" class="learn-more" target="_blank" rel="noopener">View on GitHub &#8594;</a>
             </div>
           </div>
@@ -48,6 +48,15 @@
         <section class="section" id="fraud-detection">
           <h1>Fraud Detection</h1>
 
+          <!-- z/OS card -->
+          <div class="st-card-grid" style="margin-bottom:20px">
+            <div class="st-card">
+              <div class="st-card-tag st-tag--zos">z/OS</div>
+              <h3>Fraud Detection on IBM Z</h3>
+              <p>Deploy an AI fraud detection model using open-source frameworks and Machine Learning for IBM z/OS (MLz). Covers the full lifecycle from data preparation through to production scoring.</p>
+              <a href="https://github.com/ambitus/aionz-st-fraud-detection" class="learn-more" target="_blank" rel="noopener">View on GitHub &#8594;</a>
+            </div>
+          </div>
         </section>
 
         <!-- ── CREDIT RISK ────────────────────────────────────────────── -->
@@ -56,13 +65,16 @@
 
           <div class="st-card-grid">
             <div class="st-card">
+              <div class="st-card-tag st-tag--zos">z/OS</div>
+              <h3>Credit Risk Assessment on IBM Z</h3>
+              <p>Build and deploy a credit risk scoring model using open-source frameworks and Machine Learning for IBM z/OS, with real-time scoring co-located with transactional data.</p>
+              <a href="https://github.com/ambitus/aionz-st-credit-risk-assessment" class="learn-more" target="_blank" rel="noopener">View on GitHub &#8594;</a>
+            </div>
+
+            <div class="st-card">
               <div class="st-card-tag st-tag--linux">Linux on Z</div>
               <h3>Credit Risk Assessment on Linux on Z</h3>
-              <p>Deploy a credit risk assessment model on IBM Linux on Z using open-source frameworks and Triton Inference Server for containerized production serving.</p>
-              <div class="st-card-meta">
-                <span class="st-badge">Triton Inference Server</span>
-                <span class="st-badge">Open Source</span>
-              </div>
+              <p>Deploy a credit risk assessment model on IBM Linux on Z using open-source frameworks and IBM Z Accelerated for Triton Inference Server for containerized production serving.</p>
               <a href="https://github.com/ambitus/aionz-st-credit-risk-assessment-tis" class="learn-more" target="_blank" rel="noopener">View on GitHub &#8594;</a>
             </div>
           </div>
@@ -74,13 +86,16 @@
 
           <div class="st-card-grid">
             <div class="st-card">
+              <div class="st-card-tag st-tag--zos">z/OS</div>
+              <h3>Health Insurance Claims on IBM Z</h3>
+              <p>Build an AI model for health insurance claims processing using open-source frameworks and Machine Learning for IBM z/OS, deployed for real-time scoring on z/OS.</p>
+              <a href="https://github.com/ambitus/aionz-st-health-insurance-claims" class="learn-more" target="_blank" rel="noopener">View on GitHub &#8594;</a>
+            </div>
+
+            <div class="st-card">
               <div class="st-card-tag st-tag--linux">Linux on Z</div>
               <h3>Health Insurance Claims on Linux on Z</h3>
-              <p>Deploy a health insurance claims model on IBM Linux on Z using open-source frameworks and Triton Inference Server for containerized serving.</p>
-              <div class="st-card-meta">
-                <span class="st-badge">Triton Inference Server</span>
-                <span class="st-badge">Open Source</span>
-              </div>
+              <p>Deploy a health insurance claims model on IBM Linux on Z using open-source frameworks and IBM Z Accelerated for Triton Inference Server for containerized serving.</p>
               <a href="https://github.com/ambitus/aionz-st-health-insurance-claims-tis" class="learn-more" target="_blank" rel="noopener">View on GitHub &#8594;</a>
             </div>
           </div>
@@ -92,14 +107,16 @@
 
           <div class="st-card-grid">
             <div class="st-card">
+              <div class="st-card-tag st-tag--zos">z/OS</div>
+              <h3>Data Preprocessing with IBM Z</h3>
+              <p>Build an AI solution with a preprocessing pipeline on IBM Z using open-source frameworks and Machine Learning for IBM z/OS. Covers feature engineering, transformation, and production deployment.</p>
+              <a href="https://github.com/ambitus/aionz-st-data-preprocessing-mlz" class="learn-more" target="_blank" rel="noopener">View on GitHub &#8594;</a>
+            </div>
+
+            <div class="st-card">
               <div class="st-card-tag st-tag--linux">Linux on Z</div>
               <h3>Data Preprocessing with Linux on Z</h3>
-              <p>Build an AI solution with a preprocessing pipeline on IBM Linux on Z using open-source frameworks, Golang, and Triton Inference Server for serving.</p>
-              <div class="st-card-meta">
-                <span class="st-badge">Triton Inference Server</span>
-                <span class="st-badge">Golang</span>
-                <span class="st-badge">Open Source</span>
-              </div>
+              <p>Build an AI solution with a preprocessing pipeline on IBM Linux on Z using open-source frameworks, Golang, and IBM Z Accelerated for Triton Inference Server for serving.</p>
               <a href="https://github.com/ambitus/aionz-st-data-preprocessing-tis" class="learn-more" target="_blank" rel="noopener">View on GitHub &#8594;</a>
             </div>
           </div>
@@ -110,44 +127,39 @@
           <h1>Anti-Money Laundering</h1>
 
           <div class="st-card-grid">
+            <div class="st-card">
+              <div class="st-card-tag st-tag--zos">z/OS</div>
+              <h3>Anti-Money Laundering on IBM Z</h3>
+              <p>Deploy an AML detection model using open-source frameworks and Machine Learning for IBM z/OS. Designed for real-time transaction monitoring and compliance workflows.</p>
+              <a href="https://github.com/ambitus/aionz-st-anti-money-laundering" class="learn-more" target="_blank" rel="noopener">View on GitHub &#8594;</a>
+            </div>
           </div>
-        </section>
-
-        <!-- ── CONNECT ───────────────────────────────────────────────── -->
-        <section class="section" id="connect">
-          <h1>Questions &amp; Contributions</h1>
-          <p>Have a question, want to request a new template, or found an issue? Connect with the team on GitHub.</p>
-          <ul>
-            <li><a href="https://github.com/ambitus/aionz-solution-templates/issues/new" target="_blank" rel="noopener">Submit a GitHub issue</a> — general questions, enhancement requests, or bug fixes</li>
-            <li><a href="https://ambitus.github.io/aionz-solution-templates/" target="_blank" rel="noopener">View all templates on the project site</a></li>
-          </ul>
-          <p>Or reach the AI on Z team directly at <a href="mailto:aionz@us.ibm.com">aionz@us.ibm.com</a></p>
         </section>
 
         <!-- ── NEXT STEPS ────────────────────────────────────────────── -->
         <section class="section" id="next-steps">
-          <h1>Next Steps</h1>
-          <div class="card-grid">
-            <div class="card">
-              <h4>Example AI Solution Blueprint</h4>
-              <p>See a full end-to-end solution blueprint — Advanced Credit Card Fraud Detection using an XGBoost and BERT ensemble on IBM z17.</p>
-              <a href="use-cases.html" class="learn-more" style="font-size:13px;">Go to Solution Blueprint &#8594;</a>
-            </div>
-            <div class="card">
-              <h4>Use Cases Overview</h4>
-              <p>Understand the three AI entry points — Turnkey Solution, Select a Model, and Build Your Own — to identify the approach that best fits your organization.</p>
-              <a href="overview.html" class="learn-more" style="font-size:13px;">Go to Use Cases Overview &#8594;</a>
-            </div>
-            <div class="card">
-              <h4>AI Lifecycle</h4>
-              <p>Follow the end-to-end AI lifecycle on IBM Z — from preparing data and training models to deploying, serving, and governing AI in production.</p>
-              <a href="../prepare-data/prepare-data.html" class="learn-more" style="font-size:13px;">Go to AI Lifecycle &#8594;</a>
-            </div>
-            <div class="card">
-              <h4>Products &amp; Tools</h4>
-              <p>Browse the full catalog of IBM Z AI products and tools to identify what fits your use case and entry point.</p>
-              <a href="../products-tools/data-analytics.html" class="learn-more" style="font-size:13px;">Go to Products &amp; Tools &#8594;</a>
-            </div>
+          <h1>Additional Use Case Resources</h1>
+          <div class="ns-tile-grid">
+            <a href="use-cases.html" class="ns-tile">
+              <span class="ns-tile-label">Advanced Credit Card Fraud Detection</span>
+              <span class="ns-tile-body">See a full end-to-end solution blueprint — Advanced Credit Card Fraud Detection using an XGBoost and BERT ensemble on IBM z17.</span>
+              <span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span>
+            </a>
+            <a href="overview.html" class="ns-tile">
+              <span class="ns-tile-label">Use Cases Overview</span>
+              <span class="ns-tile-body">Understand the three AI entry points — Turnkey Solution, Select a Model, and Build Your Own — to identify the approach that best fits your organization.</span>
+              <span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span>
+            </a>
+            <a href="../prepare-data/lifecycle-overview.html" class="ns-tile">
+              <span class="ns-tile-label">AI Lifecycle</span>
+              <span class="ns-tile-body">Follow the end-to-end AI lifecycle on IBM Z — from preparing data and training models to deploying, serving, and governing AI in production.</span>
+              <span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span>
+            </a>
+            <a href="../products-tools/overview.html" class="ns-tile">
+              <span class="ns-tile-label">Products &amp; Tools</span>
+              <span class="ns-tile-body">Browse the full catalog of IBM Z AI products and tools to identify what fits your use case and entry point.</span>
+              <span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span>
+            </a>
           </div>
         </section>
 
@@ -424,6 +436,51 @@
     .bp-cta--primary  { background: #0f62fe; color: #ffffff; border: 1px solid #0f62fe; }
     .bp-cta--secondary { background: #ffffff; color: #0f62fe; border: 1px solid #0f62fe; }
     .bp-cta--ghost { background: transparent; color: #0f62fe; border: none; font-weight: 400; padding-left: 4px; }
+
+    /* ── Additional Use Case Resources tiles ── */
+    .ns-tile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0;
+      margin-top: 8px;
+    }
+    .ns-tile {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 20px 16px;
+      background: #fff;
+      border: 1px solid var(--ibm-border);
+      text-decoration: none;
+      color: var(--ibm-text-primary);
+      transition: background 0.15s;
+      min-height: 160px;
+    }
+    .ns-tile:hover { background: var(--ibm-gray-10); }
+    .ns-tile-label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ibm-text-primary);
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+    .ns-tile-body {
+      display: block;
+      font-size: 13px;
+      color: var(--ibm-text-secondary);
+      line-height: 1.5;
+      flex: 1;
+    }
+    .ns-tile-footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 16px;
+    }
+    .ns-tile-arrow {
+      font-size: 18px;
+      color: var(--ibm-text-primary);
+      line-height: 1;
+    }
   </style>
 
   <script src="../nav.js"></script>
@@ -440,8 +497,7 @@
         { id: 'health-insurance',        label: 'Health Insurance Claims' },
         { id: 'data-preprocessing',      label: 'Data Preprocessing' },
         { id: 'anti-money-laundering',   label: 'Anti-Money Laundering' },
-        { id: 'connect',                 label: 'Questions & Contributions' },
-        { id: 'next-steps',              label: 'Next Steps' },
+        { id: 'next-steps',              label: 'Additional Use Case Resources' },
       ]
     });
   </script>

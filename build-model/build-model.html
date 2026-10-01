@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI on IBM LinuxONE | Build Models</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="no-lifecycle">
+  <header class="topbar">
+    <a href="../index.html" class="topbar-logo"><span class="topbar-logo-mark"></span>AI on IBM LinuxONE 101</a>
+    <nav class="topnav" id="topnav"></nav>
+  </header>
+  <nav class="lifecycle-nav" id="lifecycle-nav"></nav>
+
+  <div class="page-shell">
+    <nav class="pagenav" id="pagenav"></nav>
+    <div class="main-content">
+      <!-- Page Hero -->
+      <div class="page-hero">
+        <h1>Build Models</h1>
+      </div>
+
+      <div class="page-body">
+
+        <!-- ── OVERVIEW ─────────────────────────────────────────────── -->
+        <section class="section" id="overview">
+          <h1>Build Models</h1>
+          <p>This stage focuses on developing the models that power AI applications on IBM LinuxONE. Activities may include building traditional machine learning or deep learning models, or selecting and serving a pre-built foundation model. IBM LinuxONE supports the popular open-source tools and frameworks AI practitioners already use, with hardware acceleration available through the Telum II on-chip AI accelerator and IBM Spyre Accelerator cards for supported workloads.</p>
+          <p>Model development does not need to occur on IBM LinuxONE. Many organizations develop and train models in cloud or hybrid environments and then deploy them to IBM LinuxONE for production inference. IBM LinuxONE also fully supports on-platform model development — keeping data, training, deployment, and inference within the same Linux environment.</p>
+
+          <h2>What happens at this stage?</h2>
+          <div class="card-grid">
+            <div class="card">
+              <h4>Build traditional ML models</h4>
+              <p>Train classification, regression, forecasting, or recommendation models on structured enterprise data using IBM Z Accelerated for Snap ML, watsonx.ai, or standard Python ML libraries on Linux on IBM LinuxONE.</p>
+            </div>
+            <div class="card">
+              <h4>Build deep learning models</h4>
+              <p>Develop neural networks for computer vision, NLP, or other unstructured data workloads using IBM Z Accelerated for TensorFlow or IBM Z Accelerated for PyTorch — both optimized for IBM LinuxONE hardware and available as container images.</p>
+            </div>
+            <div class="card">
+              <h4>Use pre-built large language models</h4>
+              <p>Source a pre-existing LLM from Hugging Face, IBM, or a commercial provider and serve it directly on IBM LinuxONE — no training required. Leverage Spyre Accelerator cards for generative AI workloads.</p>
+            </div>
+            <div class="card">
+              <h4>Export for deployment</h4>
+              <p>Save your model in a portable format — PMML for traditional ML, ONNX for deep learning — then compile with the IBM Z Deep Learning Compiler (zDLC) to leverage Telum II acceleration at inference time.</p>
+            </div>
+          </div>
+
+          <h2>Who is this stage for?</h2>
+          <p>Model development is typically led by <strong>Data Scientists</strong>, with <strong>ML Engineers</strong> supporting training pipelines, automation, and operationalization. IT Architects and Application Architects help evaluate platforms, frameworks, and deployment requirements. Business stakeholders provide domain expertise and define success criteria such as model accuracy thresholds and latency requirements.</p>
+        </section>
+
+        <!-- ── WHERE TO START ────────────────────────────────────────── -->
+        <section class="section" id="where-to-start">
+          <h1>Where to Start</h1>
+          <p>Your starting point depends on the type of model you're building. The three paths below reflect how IBM LinuxONE typically supports the spectrum of model types.</p>
+
+          <!-- ── SUBSECTION 1: Traditional ML ── -->
+          <h2 id="traditional-ml">Building Traditional Machine Learning Models</h2>
+          <p>You are working with structured or tabular data and need models such as classification, regression, or forecasting systems.</p>
+
+          <div class="decision-cards">
+
+            <div class="decision-card">
+              <button class="decision-card-trigger" aria-expanded="false">
+                <span class="dc-trigger-left">
+                  <span class="dc-trigger-title">Training traditional ML models on IBM LinuxONE</span>
+                  <span class="dc-pill"><a href="../products-tools/ai-frameworks.html#snapml">IBM Z Accelerated for Snap ML</a></span>
+                </span>
+                <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
+              </button>
+              <div class="dc-card-intro">
+                <p>You need to train classical ML models on IBM LinuxONE using a library purpose-built and optimized for the platform.</p>
+              </div>
+              <div class="decision-card-body" hidden>
+                <p><strong>→ Use <a href="../products-tools/ai-frameworks.html#snapml">IBM Z Accelerated for Snap ML</a>.</strong> Snap ML is the primary training technology for traditional ML on IBM LinuxONE, supporting generalized linear models, tree-based models, and gradient boosting. It is fast, efficient, accurate, and scales to large volumes of data. Decision tree ensemble inference is optimized on the Telum II on-chip AI accelerator. Snap ML is available as a container image via the IBM Container Registry (ICR) and is included in the AI Toolkit for IBM Z and IBM LinuxONE.</p>
+                <p><em>Common approach:</em> Prepare features with Snap ML preprocessing transformers → Train with Snap ML → Export to <a href="../products-tools/model-formats.html#pmml">PMML</a> → Deploy and serve on IBM LinuxONE.</p>
+              </div>
+            </div>
+
+            <div class="decision-card">
+              <button class="decision-card-trigger" aria-expanded="false">
+                <span class="dc-trigger-left">
+                  <span class="dc-trigger-title">Python notebooks and scikit-learn on IBM LinuxONE</span>
+                  <span class="dc-pill">scikit-learn · XGBoost · pandas</span>
+                </span>
+                <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
+              </button>
+              <div class="dc-card-intro">
+                <p>Your team prefers standard Python workflows and wants to train models using familiar libraries — scikit-learn, XGBoost, pandas, NumPy — running on Linux on IBM LinuxONE.</p>
+              </div>
+              <div class="decision-card-body" hidden>
+                <p><strong>→ Use standard Python ML libraries on Linux on IBM LinuxONE.</strong> Because IBM LinuxONE runs a full Linux environment, there is no special toolkit required — scikit-learn, XGBoost, LightGBM, and other Python ML frameworks install and run natively. This makes it easy for teams already using these tools to train on-platform without changing their workflows.</p>
+                <p><em>Common approach:</em> Explore data in Jupyter Notebooks → Train with scikit-learn or XGBoost → Export to <a href="../products-tools/model-formats.html#pmml">PMML</a> or <a href="../products-tools/model-formats.html#onnx">ONNX</a> → Deploy on IBM LinuxONE.</p>
+              </div>
+            </div>
+
+            <div class="decision-card">
+              <button class="decision-card-trigger" aria-expanded="false">
+                <span class="dc-trigger-left">
+                  <span class="dc-trigger-title">Unified MLOps platform for traditional ML</span>
+                  <span class="dc-pill"><a href="../products-tools/ai-platforms.html#watsonx">watsonx.ai</a> · <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a></span>
+                </span>
+                <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
+              </button>
+              <div class="dc-card-intro">
+                <p>You want a managed platform for model development, experiment tracking, pipeline automation, and deployment across the AI lifecycle on IBM LinuxONE.</p>
+              </div>
+              <div class="decision-card-body" hidden>
+                <p><strong>→ Use <a href="../products-tools/ai-platforms.html#watsonx">watsonx.ai</a> or <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a>.</strong> watsonx.ai on IBM LinuxONE (via IBM Software Hub) provides a full ML development and deployment environment with Jupyter notebooks, AutoML, and model lifecycle management. Red Hat OpenShift AI on IBM LinuxONE delivers Kubeflow pipelines, shared workbenches, and KServe-based model serving within a Kubernetes-native environment.</p>
+                <p><em>Common approach:</em> Develop and train ML models in watsonx.ai or Red Hat OpenShift AI notebooks → Manage experiments and pipelines → Deploy for production scoring on IBM LinuxONE.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ── SUBSECTION 2: Deep Learning ── -->
+          <h2 id="deep-learning">Building Deep Learning Models</h2>
+          <p>You need to develop neural networks for computer vision, natural language processing, or other unstructured data workloads. Deep learning models are trained with IBM Z Accelerated for TensorFlow or IBM Z Accelerated for PyTorch and typically exported to ONNX for deployment on IBM LinuxONE.</p>
+
+          <div class="decision-cards">
+
+            <div class="decision-card">
+              <button class="decision-card-trigger" aria-expanded="false">
+                <span class="dc-trigger-left">
+                  <span class="dc-trigger-title">Train deep learning models natively on IBM LinuxONE</span>
+                  <span class="dc-pill"><a href="../products-tools/ai-frameworks.html#tensorflow">IBM Z Accelerated for TensorFlow</a> · <a href="../products-tools/ai-frameworks.html#pytorch">IBM Z Accelerated for PyTorch</a></span>
+                </span>
+                <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
+              </button>
+              <div class="dc-card-intro">
+                <p>You are building deep learning models and want to train and deploy natively on IBM LinuxONE, leveraging Telum II hardware acceleration.</p>
+              </div>
+              <div class="decision-card-body" hidden>
+                <p><strong>→ Use <a href="../products-tools/ai-frameworks.html#tensorflow">IBM Z Accelerated for TensorFlow</a> or <a href="../products-tools/ai-frameworks.html#pytorch">IBM Z Accelerated for PyTorch</a>.</strong> Both frameworks are optimized for IBM LinuxONE hardware and exploit the Integrated Accelerator for AI on Telum II for inference. PyTorch also supports both traditional AI and Foundation model stacks, enabling deployment of Transformers and encoder-based models. Both are available as container images via the IBM Container Registry (ICR), included in the AI Toolkit for IBM Z and IBM LinuxONE.</p>
+                <p><em>Common approach:</em> Prepare data → Train with IBM Z Accelerated for TensorFlow or IBM Z Accelerated for PyTorch → Deploy directly via <a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton Inference Server</a> or <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a> on IBM LinuxONE.</p>
+              </div>
+            </div>
+
+            <div class="decision-card">
+              <button class="decision-card-trigger" aria-expanded="false">
+                <span class="dc-trigger-left">
+                  <span class="dc-trigger-title">ONNX-format deep learning models</span>
+                  <span class="dc-pill"><a href="../products-tools/model-formats.html#onnx">ONNX</a> · <a href="../products-tools/model-formats.html#zdlc">IBM Z Deep Learning Compiler</a></span>
+                </span>
+                <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
+              </button>
+              <div class="dc-card-intro">
+                <p>You have trained a deep learning model in any framework and want to convert it to ONNX and deploy it on IBM LinuxONE with Telum II acceleration.</p>
+              </div>
+              <div class="decision-card-body" hidden>
+                <p><strong>→ Convert your model to <a href="../products-tools/model-formats.html#onnx">ONNX</a> format</strong> using your framework of choice, then compile with the <a href="../products-tools/model-formats.html#zdlc">IBM Z Deep Learning Compiler (zDLC)</a> to leverage the Integrated Accelerator for AI on Telum II at inference time. The zDLC supports deep learning models, encoder LLMs, and small decoder LLMs (up to 2B parameters), and produces shared library files embeddable in applications independent of the original framework. The zDLC is available as a container via the IBM Container Registry (ICR).</p>
+                <p><em>Common approach:</em> Train with any framework (TensorFlow, PyTorch, Keras, or other) → Export to ONNX → Compile with zDLC → Deploy via <a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton Inference Server</a> or <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a> on IBM LinuxONE.</p>
+              </div>
+            </div>
+
+            <div class="decision-card">
+              <button class="decision-card-trigger" aria-expanded="false">
+                <span class="dc-trigger-left">
+                  <span class="dc-trigger-title">Collaborative deep learning platform</span>
+                  <span class="dc-pill"><a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a></span>
+                </span>
+                <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
+              </button>
+              <div class="dc-card-intro">
+                <p>Multiple teams need shared workspaces, automated pipelines, and model lifecycle management for deep learning on IBM LinuxONE.</p>
+              </div>
+              <div class="decision-card-body" hidden>
+                <p><strong>→ Use <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a>.</strong> Provides data science workbenches, Kubeflow pipelines, and model lifecycle management on IBM LinuxONE via Red Hat OpenShift. Teams already using OpenShift AI on other platforms can bring their existing skills and workflows directly to IBM LinuxONE — the OpenShift experience is consistent across environments.</p>
+                <p><em>Common approach:</em> Create shared projects → Train IBM Z Accelerated for TensorFlow or IBM Z Accelerated for PyTorch models → Promote through OpenShift pipelines → Deploy on IBM LinuxONE.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ── SUBSECTION 3: LLMs ── -->
+          <h2 id="llm">Using Pre-built Large Language Models</h2>
+          <p>Large language models can be sourced from IBM, open source communities, or commercial providers and served directly on IBM LinuxONE without customization or training from scratch. The IBM Spyre Accelerator cards provide dedicated Gen AI-ready cores purpose-built for LLM inference workloads.</p>
+
+          <div class="decision-cards">
+
+            <div class="decision-card">
+              <button class="decision-card-trigger" aria-expanded="false">
+                <span class="dc-trigger-left">
+                  <span class="dc-trigger-title">Use a pre-built LLM on IBM LinuxONE</span>
+                  <span class="dc-pill"><a href="../products-tools/inference-serving.html#rh-inference">Red Hat AI Inference Server</a> · <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a></span>
+                </span>
+                <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
+              </button>
+              <div class="dc-card-intro">
+                <p>Your use case is well-served by a general-purpose LLM sourced from Hugging Face, IBM Granite, or another model provider — no training required.</p>
+              </div>
+              <div class="decision-card-body" hidden>
+                <p><strong>→ Use <a href="../products-tools/inference-serving.html#rh-inference">Red Hat AI Inference Server</a></strong> (vLLM-based, optimized for Spyre-accelerated decoder LLMs) or <strong><a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a></strong> (for broader model management, monitoring, and serving) to serve a pre-built LLM on IBM LinuxONE. Supported models include Granite, Llama, Qwen, DeepSeek, Gemma, Mistral, and others.</p>
+                <p><em>Note: Red Hat AI Inference Server runs standalone and does not require Red Hat OpenShift. Red Hat OpenShift AI is the better fit if your organization already has an OpenShift container strategy on IBM LinuxONE.</em></p>
+                <p><em>Common approach:</em> Select a model from Hugging Face or IBM model repository → Serve via Red Hat AI Inference Server or Red Hat OpenShift AI on IBM LinuxONE → Integrate with your application via REST API.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ── NEXT STEPS ─────────────────────────────────────────────── -->
+        <section class="section" id="next-steps">
+          <h1>Next Steps</h1>
+          <p>Once your model is built and validated, the next stage is to make it available in a production environment on IBM LinuxONE.</p>
+          <div class="ns-tile-grid">
+            <a href="../deploy-models/deploy-models.html" class="ns-tile">
+              <span class="ns-tile-label">Deploy Models</span>
+              <span class="ns-tile-body">Convert your model to ONNX or PMML, optimize with the IBM Z Deep Learning Compiler or AI Optimizer for LinuxONE, and deploy to a production environment using AI Toolkit containers or Red Hat OpenShift AI on IBM LinuxONE.</span>
+              <span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span>
+            </a>
+          </div>
+        </section>
+
+      </div>
+      <footer class="footer"><p>&copy; 2026 IBM LinuxONE</p></footer>
+    </div>
+  </div>
+  <style>
+    .dc-list {
+      margin: 6px 0 0 18px;
+      padding: 0;
+    }
+    .dc-list li {
+      font-size: 14px;
+      color: var(--ibm-text-secondary);
+      line-height: 1.55;
+      margin-bottom: 4px;
+    }
+    .dc-list li:last-child {
+      margin-bottom: 0;
+    }
+    /* ── Product pill tag ── */
+    .dc-pill {
+      display: inline-flex;
+      align-items: center;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--ibm-text-secondary);
+      background: var(--ibm-gray-10);
+      border: 1px solid var(--ibm-border);
+      border-radius: 3px;
+      padding: 1px 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .dc-pill a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: var(--ibm-border);
+    }
+    .dc-pill a:hover {
+      color: var(--ibm-blue-60, #0043ce);
+      text-decoration-color: currentColor;
+    }
+
+    .decision-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 18px 0 24px;
+    }
+    .decision-card {
+      border: 1px solid var(--ibm-border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .decision-card-trigger {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 11px 16px;
+      background: #edf5ff;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.15s;
+    }
+    .decision-card-trigger:hover { background: #d0e2ff; }
+    .decision-card.open .decision-card-trigger { background: #d0e2ff; }
+    .dc-trigger-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      flex: 1;
+      min-width: 0;
+    }
+    .dc-trigger-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ibm-text-primary);
+    }
+    .dc-card-intro {
+      padding: 10px 16px 12px;
+      background: #fff;
+    }
+    .dc-card-intro p {
+      font-size: 13px;
+      color: var(--ibm-text-secondary);
+      margin: 0;
+      line-height: 1.5;
+    }
+    .dc-chevron {
+      width: 16px;
+      height: 16px;
+      color: var(--ibm-gray-70);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .decision-card.open .dc-chevron { transform: rotate(180deg); }
+    .decision-card-body {
+      padding: 14px 16px;
+      border-top: 1px solid var(--ibm-border);
+    }
+    .decision-card-body[hidden] { display: none; }
+    .decision-card-body p {
+      font-size: 14px;
+      color: var(--ibm-text-secondary);
+      margin-bottom: 6px !important;
+      line-height: 1.55;
+    }
+    .decision-card-body p:last-child {
+      margin-bottom: 0 !important;
+    }
+    .decision-card-body strong {
+      color: var(--ibm-text-primary);
+    }
+
+    /* ── Next Steps tiles ── */
+    .ns-tile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0;
+      margin-top: 8px;
+    }
+    .ns-tile {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 20px 16px;
+      background: #fff;
+      border: 1px solid var(--ibm-border);
+      text-decoration: none;
+      color: var(--ibm-text-primary);
+      transition: background 0.15s;
+      min-height: 160px;
+    }
+    .ns-tile:hover { background: var(--ibm-gray-10); }
+    .ns-tile-label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ibm-text-primary);
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+    .ns-tile-body {
+      display: block;
+      font-size: 13px;
+      color: var(--ibm-text-secondary);
+      line-height: 1.5;
+      flex: 1;
+    }
+    .ns-tile-footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 16px;
+    }
+    .ns-tile-arrow {
+      font-size: 18px;
+      color: var(--ibm-text-primary);
+      line-height: 1;
+    }
+  </style>
+
+  <script src="../nav.js"></script>
+  <script>
+    renderNav({
+      root: '../',
+      activeTop: 'lifecycle',
+      activeSub: 'build-model',
+      pageNavItems: [
+        { id: 'overview',          label: 'Overview' },
+        { id: 'where-to-start',    label: 'Where to Start' },
+        { id: 'traditional-ml',    label: 'Building Traditional Machine Learning Models' },
+        { id: 'deep-learning',     label: 'Building Deep Learning Models' },
+        { id: 'llm',               label: 'Using Pre-built Large Language Models' },
+        { id: 'next-steps',        label: 'Next Steps' },
+      ]
+    });
+
+    (function() {
+      var SESSION_KEY = 'open-cards:' + location.pathname;
+      var allCards = Array.from(document.querySelectorAll('.decision-card'));
+
+      function saveState() {
+        var open = allCards.map(function(c, i) { return c.classList.contains('open') ? i : -1; }).filter(function(i) { return i >= 0; });
+        sessionStorage.setItem(SESSION_KEY, JSON.stringify(open));
+      }
+
+      function restoreState() {
+        var saved = JSON.parse(sessionStorage.getItem(SESSION_KEY) || '[]');
+        saved.forEach(function(i) {
+          var card = allCards[i];
+          if (!card) return;
+          var body = card.querySelector('.decision-card-body');
+          var btn  = card.querySelector('.decision-card-trigger');
+          card.classList.add('open');
+          body.hidden = false;
+          btn.setAttribute('aria-expanded', 'true');
+        });
+      }
+
+      allCards.forEach(function(card) {
+        var btn  = card.querySelector('.decision-card-trigger');
+        var body = card.querySelector('.decision-card-body');
+        btn.addEventListener('click', function() {
+          var isOpen = card.classList.contains('open');
+          if (isOpen) {
+            card.classList.remove('open');
+            body.hidden = true;
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            card.classList.add('open');
+            body.hidden = false;
+            btn.setAttribute('aria-expanded', 'true');
+          }
+          saveState();
+        });
+      });
+
+      // On reload, clear saved state so all cards start closed
+      var navType = (performance.getEntriesByType('navigation')[0] || {}).type;
+      if (navType === 'reload') sessionStorage.removeItem(SESSION_KEY);
+      restoreState();
+    })();
+  </script>
+</body>
+</html>

@@ -16,7 +16,7 @@ ai-on-z/
 │
 ├── overview/                   ← Overview & news
 ├── prepare-data/               ← AI Lifecycle: Prepare Data
-├── train-model/                ← AI Lifecycle: Train Model
+├── build-model/                ← AI Lifecycle: Build Models
 ├── optimize-model/             ← AI Lifecycle: Optimize Model
 ├── deploy-models/              ← AI Lifecycle: Deploy Models
 ├── serve-model/                ← AI Lifecycle: Serve Model
@@ -27,7 +27,7 @@ ai-on-z/
 │   ├── ai-platforms.html       ← MLz, AI Optimizer, RHOAI, watsonx.ai, watsonx.governance
 │   ├── inference-serving.html  ← TF Serving, Triton, RH AI Inference Server
 │   ├── ai-frameworks.html      ← AI Toolkit, Snap ML, TensorFlow, PyTorch, zDLC, ONNX
-│   └── data-analytics.html     ← IBM Synthetic Data Sets
+│   └── data-analytics.html     ← IBM Synthetic Data Sets, Apache Spark
 │
 ├── use-cases/
 │   ├── use-cases.html          ← AI Solution Patterns

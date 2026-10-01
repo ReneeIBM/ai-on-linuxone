@@ -17,38 +17,43 @@
   <div class="page-shell">
     <nav class="pagenav" id="pagenav"></nav>
     <div class="main-content">
+      <!-- Page Hero -->
+      <div class="page-hero">
+        <h1>AI Lifecycle on IBM Z</h1>
+      </div>
+
       <div class="page-body">
 
         <section class="section" id="overview">
           <h1>AI Lifecycle Overview</h1>
           <p>IBM offers a broad set of AI technologies for IBM Z. Many products support more than one stage of the AI lifecycle and often work together. Use the sections below to explore where each product is commonly used, understand how products relate to one another, and see common paths organizations take when building AI solutions.</p>
 
-          <div class="card-grid" style="margin-top:24px;">
-            <div class="card" style="display:flex;flex-direction:column;">
-              <h4>Prepare Data</h4>
-              <p>Clean, transform, and engineer features using IBM Z-native data tools and open-source pipelines.</p>
-              <a href="../prepare-data/prepare-data.html" class="learn-more" style="font-size:13px;margin-top:auto;">Go to Prepare Data &#8594;</a>
-            </div>
-            <div class="card" style="display:flex;flex-direction:column;">
-              <h4>Train Model</h4>
-              <p>Train ML or deep learning models on IBM Z or hybrid cloud, using Telum acceleration where applicable.</p>
-              <a href="../train-model/train-model.html" class="learn-more" style="font-size:13px;margin-top:auto;">Go to Train Model &#8594;</a>
-            </div>
-            <div class="card" style="display:flex;flex-direction:column;">
-              <h4>Deploy Models</h4>
-              <p>Convert, optimize, and deploy your model into a production environment on IBM Z.</p>
-              <a href="../deploy-models/deploy-models.html" class="learn-more" style="font-size:13px;margin-top:auto;">Go to Deploy Models &#8594;</a>
-            </div>
-            <div class="card" style="display:flex;flex-direction:column;">
-              <h4>Serve Model</h4>
-              <p>Run trained models in production inference environments where they can process requests, generate predictions, and support operational workloads.</p>
-              <a href="../serve-model/serve-model.html" class="learn-more" style="font-size:13px;margin-top:auto;">Go to Serve Model &#8594;</a>
-            </div>
-            <div class="card" style="display:flex;flex-direction:column;">
-              <h4>AI Governance</h4>
-              <p>Monitor, explain, and govern models in production for bias, drift, and regulatory compliance.</p>
-              <a href="../ai-governance/ai-governance.html" class="learn-more" style="font-size:13px;margin-top:auto;">Go to AI Governance &#8594;</a>
-            </div>
+          <div class="ns-tile-grid" style="margin-top:24px;">
+            <a href="../prepare-data/prepare-data.html" class="ns-tile">
+              <span class="ns-tile-label">Prepare Data</span>
+              <span class="ns-tile-body">Clean, transform, and engineer features to prepare data for AI models.</span>
+              <span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span>
+            </a>
+            <a href="../build-model/build-model.html" class="ns-tile">
+              <span class="ns-tile-label">Build Models</span>
+              <span class="ns-tile-body">Build traditional ML and deep learning models on IBM Z or hybrid cloud, wherever your investments are.</span>
+              <span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span>
+            </a>
+            <a href="../deploy-models/deploy-models.html" class="ns-tile">
+              <span class="ns-tile-label">Deploy Models</span>
+              <span class="ns-tile-body">Convert, optimize, and deploy your model into a production environment on IBM Z.</span>
+              <span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span>
+            </a>
+            <a href="../serve-model/serve-model.html" class="ns-tile">
+              <span class="ns-tile-label">Serve Model</span>
+              <span class="ns-tile-body">Run trained models in production inference environments where they can process requests, generate predictions, and support operational workloads.</span>
+              <span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span>
+            </a>
+            <a href="../ai-governance/ai-governance.html" class="ns-tile">
+              <span class="ns-tile-label">AI Governance</span>
+              <span class="ns-tile-body">Monitor, explain, and govern models in production for bias, drift, and regulatory compliance.</span>
+              <span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span>
+            </a>
           </div>
         </section>
 
@@ -56,157 +61,279 @@
         <section class="section" id="lifecycle-matrix">
           <h2>IBM Z Products Used in the AI Lifecycle</h2>
           <p>Explore which products and tools support each stage of the AI lifecycle across <strong>IBM z/OS</strong> and <strong>Linux on Z</strong>.</p>
-
-          <div class="matrix-card">
-            <div class="matrix-table-wrap">
-              <table class="matrix-table">
-                <thead>
-                  <tr>
-                    <th class="matrix-th-product">Product</th>
-                    <th class="matrix-th-stage" style="color:#aaa;">Data for Training</th>
-                    <th class="matrix-th-stage" style="color:#f0a500;">Train Model</th>
-                    <th class="matrix-th-stage" style="color:#e07000;">Deploy Model</th>
-                    <th class="matrix-th-stage" style="color:#7b1040;">Serve Model</th>
-                    <th class="matrix-th-stage" style="color:#1a3a6e;">AI Governance</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- IBM Synthetic Data Sets -->
-                  <tr>
-                    <td class="matrix-td-product"><a href="../products-tools/data-analytics.html#synthetic-data-sets">IBM Synthetic Data Sets</a></td>
-                    <td class="matrix-cell-active matrix-stage-1"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-
-                  <!-- IBM Z Accelerated SnapML* -->
-                  <tr>
-                    <td class="matrix-td-product"><a href="../products-tools/ai-frameworks.html#snapml">IBM Z Accelerated SnapML*</a></td>
-                    <td class="matrix-cell-active matrix-stage-1"></td>
-                    <td class="matrix-cell-active matrix-stage-2"></td>
-                    <td class="matrix-cell-active matrix-stage-3"><span class="matrix-star" title="Most used capability">★</span></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-
-                  <!-- IBM Z Accelerated for TensorFlow* -->
-                  <tr>
-                    <td class="matrix-td-product"><a href="../products-tools/ai-frameworks.html#tensorflow">IBM Z Accelerated for TensorFlow*</a></td>
-                    <td></td>
-                    <td class="matrix-cell-active matrix-stage-2"></td>
-                    <td class="matrix-cell-active matrix-stage-3"><span class="matrix-star" title="Most used capability">★</span></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-
-                  <!-- IBM Z Accelerated for PyTorch* -->
-                  <tr>
-                    <td class="matrix-td-product"><a href="../products-tools/ai-frameworks.html#pytorch">IBM Z Accelerated for PyTorch*</a></td>
-                    <td></td>
-                    <td class="matrix-cell-active matrix-stage-2"></td>
-                    <td class="matrix-cell-active matrix-stage-3"><span class="matrix-star" title="Most used capability">★</span></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-
-                  <!-- ONNX & IBM Z Deep Learning Compiler* -->
-                  <tr>
-                    <td class="matrix-td-product"><a href="../products-tools/model-formats.html#zdlc">ONNX &amp; IBM Z Deep Learning Compiler*</a></td>
-                    <td></td>
-                    <td></td>
-                    <td class="matrix-cell-active matrix-stage-3"><span class="matrix-star" title="Most used capability">★</span></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-
-                  <!-- IBM Z Accelerated Serving for TensorFlow* -->
-                  <tr>
-                    <td class="matrix-td-product"><a href="../products-tools/inference-serving.html#tf-serving">IBM Z Accelerated Serving for TensorFlow *</a></td>
-                    <td></td>
-                    <td></td>
-                    <td class="matrix-cell-active matrix-stage-3"></td>
-                    <td class="matrix-cell-active matrix-stage-4"><span class="matrix-star" title="Most used capability">★</span></td>
-                    <td></td>
-                  </tr>
-
-                  <!-- IBM Z Accelerated for Triton Inference Server* -->
-                  <tr>
-                    <td class="matrix-td-product"><a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton Inference Server*</a></td>
-                    <td></td>
-                    <td></td>
-                    <td class="matrix-cell-active matrix-stage-3"></td>
-                    <td class="matrix-cell-active matrix-stage-4"><span class="matrix-star" title="Most used capability">★</span></td>
-                    <td></td>
-                  </tr>
-
-                  <!-- AI Optimizer for LinuxONE -->
-                  <tr>
-                    <td class="matrix-td-product"><a href="../products-tools/ai-platforms.html#ai-optimizer">AI Optimizer for LinuxONE</a></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="matrix-cell-active matrix-stage-4"><span class="matrix-star" title="Most used capability">★</span></td>
-                    <td></td>
-                  </tr>
-
-                  <!-- Red Hat OpenShift AI -->
-                  <tr>
-                    <td class="matrix-td-product"><a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a></td>
-                    <td class="matrix-cell-active matrix-stage-1"></td>
-                    <td class="matrix-cell-active matrix-stage-2"></td>
-                    <td class="matrix-cell-active matrix-stage-3"></td>
-                    <td class="matrix-cell-active matrix-stage-4"><span class="matrix-star" title="Most used capability">★</span></td>
-                    <td class="matrix-cell-active matrix-stage-5 matrix-label-cell">TrustyAI</td>
-                  </tr>
-
-                  <!-- Red Hat AI Inference Server -->
-                  <tr>
-                    <td class="matrix-td-product"><a href="../products-tools/inference-serving.html#rh-inference">Red Hat AI Inference Server</a></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="matrix-cell-active matrix-stage-4"></td>
-                    <td></td>
-                  </tr>
-
-                  <!-- watsonx.ai -->
-                  <tr>
-                    <td class="matrix-td-product"><a href="../products-tools/ai-platforms.html#watsonx-ai">watsonx.ai</a></td>
-                    <td></td>
-                    <td class="matrix-cell-active matrix-stage-2"></td>
-                    <td class="matrix-cell-active matrix-stage-3"></td>
-                    <td class="matrix-cell-active matrix-stage-4"><span class="matrix-star" title="Most used capability">★</span></td>
-                    <td></td>
-                  </tr>
-
-                  <!-- watsonx.governance -->
-                  <tr>
-                    <td class="matrix-td-product"><a href="../products-tools/ai-platforms.html#watsonx-governance">watsonx.governance</a></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td class="matrix-cell-active matrix-stage-5"></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="matrix-footer">
-              <div class="matrix-footer-left">
-                <p><strong>*</strong> Available in IBM Container Registry, with support included in AI Toolkit for IBM Z</p>
-                <p class="matrix-legend-star"><span class="matrix-star-inline">★</span> = Most used capability</p>
-              </div>
-            </div>
-          </div>
         </section>
 
-      </div>
+      </div><!-- end .page-body -->
+
+      <!-- matrix card is a direct child of .main-content so it is not clipped by .page-body max-width -->
+      <div class="matrix-card matrix-card--full" id="lifecycle-matrix-card">
+        <div class="matrix-table-wrap">
+          <table class="matrix-table">
+            <thead>
+              <tr>
+                <th class="matrix-th-product">Product</th>
+                <th class="matrix-th-stage">Prepare Data</th>
+                <th class="matrix-th-stage">Build Models</th>
+                <th class="matrix-th-stage">Deploy Models</th>
+                <th class="matrix-th-stage">Serve Model</th>
+                <th class="matrix-th-stage">AI Governance</th>
+                <th class="matrix-th-os">IBM z/OS</th>
+                <th class="matrix-th-os">Linux on Z</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- IBM Synthetic Data Sets -->
+              <tr>
+                <td class="matrix-td-product"><a href="../products-tools/data-analytics.html#synthetic-data-sets">IBM Synthetic Data Sets</a></td>
+                <td class="matrix-cell-active matrix-stage-1"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="matrix-os-yes">Yes</td>
+                <td class="matrix-os-yes">Yes</td>
+              </tr>
+
+              <!-- IBM Z Platform for Apache Spark -->
+              <tr>
+                <td class="matrix-td-product"><a href="../products-tools/data-analytics.html#apache-spark">IBM Z Platform for Apache Spark</a></td>
+                <td class="matrix-cell-active matrix-stage-1"></td>
+                <td class="matrix-cell-active matrix-stage-2"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="matrix-os-yes">Yes</td>
+                <td class="matrix-os-no">—</td>
+              </tr>
+
+              <!-- IBM Z Accelerated SnapML* -->
+              <tr>
+                <td class="matrix-td-product"><a href="../products-tools/ai-frameworks.html#snapml">IBM Z Accelerated SnapML*</a></td>
+                <td class="matrix-cell-active matrix-stage-1"></td>
+                <td class="matrix-cell-active matrix-stage-2"></td>
+                <td class="matrix-cell-active matrix-stage-3"><span class="matrix-star" title="Most used capability">★</span></td>
+                <td></td>
+                <td></td>
+                <td class="matrix-os-zcx">Yes via zCX</td>
+                <td class="matrix-os-yes">Yes</td>
+              </tr>
+
+              <!-- IBM Z Accelerated for TensorFlow* -->
+              <tr>
+                <td class="matrix-td-product"><a href="../products-tools/ai-frameworks.html#tensorflow">IBM Z Accelerated for TensorFlow*</a></td>
+                <td></td>
+                <td class="matrix-cell-active matrix-stage-2"></td>
+                <td class="matrix-cell-active matrix-stage-3"><span class="matrix-star" title="Most used capability">★</span></td>
+                <td></td>
+                <td></td>
+                <td class="matrix-os-zcx">Yes via zCX</td>
+                <td class="matrix-os-yes">Yes</td>
+              </tr>
+
+              <!-- IBM Z Accelerated for PyTorch* -->
+              <tr>
+                <td class="matrix-td-product"><a href="../products-tools/ai-frameworks.html#pytorch">IBM Z Accelerated for PyTorch*</a></td>
+                <td></td>
+                <td class="matrix-cell-active matrix-stage-2"></td>
+                <td class="matrix-cell-active matrix-stage-3"><span class="matrix-star" title="Most used capability">★</span></td>
+                <td></td>
+                <td></td>
+                <td class="matrix-os-zcx">Yes via zCX</td>
+                <td class="matrix-os-yes">Yes</td>
+              </tr>
+
+              <!-- Python AI Toolkit for IBM z/OS -->
+              <tr>
+                <td class="matrix-td-product"><a href="../products-tools/ai-frameworks.html#python-ai-toolkit">Python AI Toolkit for IBM z/OS</a></td>
+                <td></td>
+                <td class="matrix-cell-active matrix-stage-2"></td>
+                <td class="matrix-cell-active matrix-stage-3"><span class="matrix-star" title="Most used capability">★</span></td>
+                <td></td>
+                <td></td>
+                <td class="matrix-os-yes">Yes</td>
+                <td class="matrix-os-no">—</td>
+              </tr>
+
+              <!-- ONNX & IBM Z Deep Learning Compiler* -->
+              <tr>
+                <td class="matrix-td-product"><a href="../products-tools/model-formats.html#zdlc">ONNX &amp; IBM Z Deep Learning Compiler*</a></td>
+                <td></td>
+                <td></td>
+                <td class="matrix-cell-active matrix-stage-3"></td>
+                <td></td>
+                <td></td>
+                <td class="matrix-os-zcx">Yes via zCX</td>
+                <td class="matrix-os-yes">Yes</td>
+              </tr>
+
+              <!-- IBM Z Accelerated Serving for TensorFlow* -->
+              <tr>
+                <td class="matrix-td-product"><a href="../products-tools/inference-serving.html#tf-serving">IBM Z Accelerated Serving for TensorFlow*</a></td>
+                <td></td>
+                <td></td>
+                <td class="matrix-cell-active matrix-stage-3"></td>
+                <td class="matrix-cell-active matrix-stage-4"></td>
+                <td></td>
+                <td class="matrix-os-zcx">Yes via zCX</td>
+                <td class="matrix-os-yes">Yes</td>
+              </tr>
+
+              <!-- IBM Z Accelerated for Triton Inference Server* -->
+              <tr>
+                <td class="matrix-td-product"><a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton Inference Server*</a></td>
+                <td></td>
+                <td></td>
+                <td class="matrix-cell-active matrix-stage-3"></td>
+                <td class="matrix-cell-active matrix-stage-4"><span class="matrix-star" title="Most used capability">★</span></td>
+                <td></td>
+                <td class="matrix-os-zcx">Yes via zCX</td>
+                <td class="matrix-os-yes">Yes</td>
+              </tr>
+
+              <!-- Machine Learning for IBM z/OS -->
+              <tr>
+                <td class="matrix-td-product"><a href="../products-tools/ai-platforms.html#mlz">Machine Learning for IBM z/OS</a></td>
+                <td></td>
+                <td class="matrix-cell-active matrix-stage-2"></td>
+                <td class="matrix-cell-active matrix-stage-3"><span class="matrix-star" title="Most used capability">★</span></td>
+                <td class="matrix-cell-active matrix-stage-4"><span class="matrix-star" title="Most used capability">★</span></td>
+                <td class="matrix-cell-active matrix-stage-5 matrix-label-cell">Explainability &amp; Drift</td>
+                <td class="matrix-os-yes">Yes</td>
+                <td class="matrix-os-no">—</td>
+              </tr>
+
+              <!-- AI Optimizer for IBM Z -->
+              <tr>
+                <td class="matrix-td-product"><a href="../products-tools/ai-platforms.html#ai-optimizer">AI Optimizer for IBM Z and LinuxONE</a></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="matrix-cell-active matrix-stage-4"></td>
+                <td></td>
+                <td class="matrix-os-no">—</td>
+                <td class="matrix-os-yes">Yes</td>
+              </tr>
+
+              <!-- Red Hat OpenShift AI -->
+              <tr>
+                <td class="matrix-td-product"><a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a></td>
+                <td class="matrix-cell-active matrix-stage-1"></td>
+                <td class="matrix-cell-active matrix-stage-2"></td>
+                <td class="matrix-cell-active matrix-stage-3"></td>
+                <td class="matrix-cell-active matrix-stage-4"><span class="matrix-star" title="Most used capability">★</span></td>
+                <td class="matrix-cell-active matrix-stage-5 matrix-label-cell">TrustyAI</td>
+                <td class="matrix-os-zcx">Yes via zCX</td>
+                <td class="matrix-os-yes">Yes</td>
+              </tr>
+
+              <!-- Red Hat AI Inference Server -->
+              <tr>
+                <td class="matrix-td-product"><a href="../products-tools/inference-serving.html#rh-inference">Red Hat AI Inference Server</a></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="matrix-cell-active matrix-stage-4"></td>
+                <td></td>
+                <td class="matrix-os-no">—</td>
+                <td class="matrix-os-yes">Yes</td>
+              </tr>
+
+              <!-- watsonx.ai -->
+              <tr>
+                <td class="matrix-td-product"><a href="../products-tools/ai-platforms.html#watsonx-ai">watsonx.ai</a></td>
+                <td></td>
+                <td class="matrix-cell-active matrix-stage-2"></td>
+                <td class="matrix-cell-active matrix-stage-3"></td>
+                <td class="matrix-cell-active matrix-stage-4"><span class="matrix-star" title="Most used capability">★</span></td>
+                <td></td>
+                <td class="matrix-os-no">—</td>
+                <td class="matrix-os-yes">Yes</td>
+              </tr>
+
+              <!-- watsonx.governance -->
+              <tr>
+                <td class="matrix-td-product"><a href="../products-tools/ai-platforms.html#watsonx-governance">watsonx.governance</a></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="matrix-cell-active matrix-stage-5"></td>
+                <td class="matrix-os-no">—</td>
+                <td class="matrix-os-yes">Yes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="matrix-footer">
+          <div class="matrix-footer-left">
+            <p><strong>*</strong> Available in IBM Container Registry, with support included in AI Toolkit for IBM Z and IBM LinuxONE</p>
+            <p class="matrix-legend-star"><span class="matrix-star-inline">★</span> = Most used capability</p>
+          </div>
+        </div>
+      </div><!-- end .matrix-card -->
+
       <footer class="footer"><p>&copy; 2025 AI on Z</p></footer>
     </div>
   </div>
+
+  <style>
+    /* ── Matrix card full-bleed: direct child of .main-content, no clipping ancestor ── */
+    .matrix-card--full {
+      border-left: none;
+      border-right: none;
+      border-radius: 0;
+      box-shadow: none;
+      border-top: 1px solid var(--ibm-border);
+      border-bottom: 1px solid var(--ibm-border);
+      margin-top: 0;
+    }
+
+    /* ── Lifecycle tiles ── */
+    .ns-tile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0;
+
+    }
+    .ns-tile {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 20px 16px;
+      background: #fff;
+      border: 1px solid var(--ibm-border);
+      text-decoration: none;
+      color: var(--ibm-text-primary);
+      transition: background 0.15s;
+      min-height: 160px;
+    }
+    .ns-tile:hover { background: var(--ibm-gray-10); }
+    .ns-tile-label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ibm-text-primary);
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+    .ns-tile-body {
+      display: block;
+      font-size: 13px;
+      color: var(--ibm-text-secondary);
+      line-height: 1.5;
+      flex: 1;
+    }
+    .ns-tile-footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 16px;
+    }
+    .ns-tile-arrow {
+      font-size: 18px;
+      color: var(--ibm-text-primary);
+      line-height: 1;
+    }
+  </style>
 
   <script src="../nav.js"></script>
   <script>

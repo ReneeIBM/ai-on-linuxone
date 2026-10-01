@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI on Z | AI Governance</title>
+  <title>AI on IBM LinuxONE | AI Governance</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css" />
 </head>
-<body class="has-lifecycle">
+<body class="no-lifecycle">
   <header class="topbar">
-    <a href="../index.html" class="topbar-logo"><span class="topbar-logo-mark"></span>AI on IBM Z</a>
+    <a href="../index.html" class="topbar-logo"><span class="topbar-logo-mark"></span>AI on IBM LinuxONE 101</a>
     <nav class="topnav" id="topnav"></nav>
   </header>
   <nav class="lifecycle-nav" id="lifecycle-nav"></nav>
@@ -17,19 +17,24 @@
   <div class="page-shell">
     <nav class="pagenav" id="pagenav"></nav>
     <div class="main-content">
+      <!-- Page Hero -->
+      <div class="page-hero">
+        <h1>AI Governance</h1>
+      </div>
+
       <div class="page-body">
 
         <!-- ── OVERVIEW ─────────────────────────────────────────────── -->
         <section class="section" id="overview">
           <h1>AI Governance</h1>
-          <p>AI governance is the final — and ongoing — stage of the AI lifecycle. Once a model is in production, you need to monitor it over time, detect when its behavior changes, explain its decisions, and demonstrate compliance with internal policies and external regulations. For IBM Z clients in banking, insurance, healthcare, and the public sector, where regulatory expectations around fairness, explainability, accountability, and auditability are growing, on-platform governance is not optional.</p>
-          <p>IBM Z's advantage here is the same as every other stage: governance tools run directly on the platform where your data and models live. Data never has to leave IBM Z for monitoring, explainability, or audit — reducing latency, preserving data sovereignty, and keeping everything within the z/OS security boundary.</p>
+          <p>AI governance is an ongoing stage of the AI lifecycle that focuses on monitoring, managing, and evaluating models after deployment. Common activities include tracking model performance, detecting drift, understanding model behavior, and supporting organizational governance and compliance requirements. For organizations in regulated industries such as banking, insurance, healthcare, and the public sector — the primary clients of IBM LinuxONE — governance is a critical part of operating AI in production.</p>
+          <p>IBM LinuxONE supports governance activities on the same platform where data and models reside. Regulatory expectations around fairness, explainability, accountability, and auditability continue to grow — governing AI directly on IBM LinuxONE avoids unnecessary data movement, reduces latency, and helps maintain data sovereignty within organizational boundaries.</p>
 
           <h2>What happens at this stage?</h2>
           <div class="card-grid">
             <div class="card">
               <h4>Monitor model performance</h4>
-              <p>Track model quality and accuracy over time. Detect when a model's predictions begin to diverge from expected behavior — before it affects business outcomes.</p>
+              <p>Track model output quality and accuracy over time. Detect when a model's predictions begin to diverge from expected behavior — before it affects business outcomes.</p>
             </div>
             <div class="card">
               <h4>Detect drift</h4>
@@ -37,7 +42,7 @@
             </div>
             <div class="card">
               <h4>Explain decisions</h4>
-              <p>Generate explanations for individual model predictions using LIME and SHAP algorithms — supporting auditability, customer transparency, and regulatory requirements.</p>
+              <p>Generate explanations for individual model predictions — supporting auditability, customer transparency, and regulatory requirements.</p>
             </div>
             <div class="card">
               <h4>Ensure fairness and compliance</h4>
@@ -46,32 +51,65 @@
           </div>
 
           <h2>Who is this stage for?</h2>
-          <p>AI governance is primarily owned by <strong>Legal teams</strong> and <strong>ML Engineers</strong> in production, with <strong>Data Scientists</strong> and <strong>Data Engineers</strong> as key contributors. The Legal team sets compliance requirements; Data Scientists interpret monitoring results and determine when retraining is needed. On IBM Z, IT Architects are involved in ensuring governance tooling integrates with existing z/OS security and audit infrastructure.</p>
+          <p>AI governance is typically owned by <strong>AI Governance Leads</strong> and <strong>AI Risk and Compliance Managers</strong>, with ML Engineers, Data Scientists, and Data Engineers as key contributors. AI Governance Leads set compliance requirements and oversee model accountability; Data Scientists interpret monitoring results and determine when retraining is needed. On IBM LinuxONE, IT Architects ensure governance tooling integrates with existing Linux and containerized application infrastructure.</p>
         </section>
 
         <!-- ── THE GOVERNANCE LIFECYCLE ON IBM Z ─────────────────────── -->
         <!-- ── WHERE TO START ────────────────────────────────────────── -->
         <section class="section" id="where-to-start">
           <h1>Where to Start</h1>
-          <p>Your starting point depends on the scope of governance you need, where your models are deployed, and what compliance requirements you need to meet.</p>
+          <p>Start with the governance capabilities available on IBM LinuxONE. The tools below run natively on IBM LinuxONE or are available in hybrid environments — all supporting governance without requiring data to leave the platform.</p>
+
+          <!-- ── GOVERNANCE TOOLS ── -->
+          <h2 id="governance-tools">Governance Tools on IBM LinuxONE</h2>
+          <p>The following tools provide governance capabilities for models on IBM LinuxONE. TrustyAI runs directly within Red Hat OpenShift AI on IBM LinuxONE. watsonx.governance is now supported on IBM LinuxONE via IBM Software Hub 5.4.0 and is available both on-platform and off-platform.</p>
 
           <div class="decision-cards">
 
             <div class="decision-card">
-              <div class="decision-card-label">Establishing Enterprise AI Governance</div>
-              <div class="decision-card-body">
-                <p>You need visibility into AI models, governance workflows, risk management, compliance reporting, and responsible AI practices.</p>
-                <p><strong>→ Start with watsonx.governance.</strong> watsonx.governance provides governance workflows, model monitoring, risk management, compliance tracking, and AI lifecycle oversight.</p>
-                <p><em>Common approach:</em> Register AI assets → Define governance policies → Monitor compliance and model behavior → Generate audit reports.</p>
+              <button class="decision-card-trigger" aria-expanded="false">
+                <span class="dc-trigger-left">
+                  <span class="dc-trigger-title">Governance for containerized models on IBM LinuxONE</span>
+                  <span class="dc-badge dc-badge--on">On-Platform</span>
+                  <span class="dc-pill"><a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a> · TrustyAI</span>
+                </span>
+                <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
+              </button>
+              <div class="dc-card-intro">
+                <p>Your models are deployed on Red Hat OpenShift AI on IBM LinuxONE and you need bias detection, explainability, drift monitoring, and LLM guardrails integrated into your containerized AI platform.</p>
+              </div>
+              <div class="decision-card-body" hidden>
+                <p><strong>→ Use TrustyAI within <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a>.</strong> TrustyAI is an open-source AI explainability and fairness toolkit integrated directly into Red Hat OpenShift AI on IBM LinuxONE. It provides continuous monitoring of deployed models, detects bias and drift, and enhances trust and accountability in AI systems.</p>
+                <p>TrustyAI Assessment Services include:</p>
+                <ul style="margin: 6px 0 0 18px; font-size:14px; color:var(--ibm-text-secondary); line-height:1.6;">
+                  <li><strong>LLM Evaluation</strong> — evaluates Large Language Models using multiple quality metrics, ensuring output accuracy, consistency, and relevance</li>
+                  <li><strong>Guardrails</strong> — protects LLM inputs and outputs; the Guardrails Orchestrator manages flow between user, model, and detectors, flagging sensitive data and harmful or toxic content</li>
+                </ul>
+                <p><em>Common approach:</em> Deploy model through Red Hat OpenShift AI → Enable TrustyAI → Monitor predictions for bias, drift, and fairness → Generate explainability outputs for audit.</p>
               </div>
             </div>
 
             <div class="decision-card">
-              <div class="decision-card-label">Monitoring Production Inference Services</div>
-              <div class="decision-card-body">
-                <p>You need operational visibility into deployed models, inference endpoints, and production serving environments.</p>
-                <p><strong>→ Start with Red Hat AI Inference Server.</strong> Red Hat AI Inference Server provides the serving infrastructure where models execute and can be monitored for operational performance and reliability.</p>
-                <p><em>Common approach:</em> Deploy model → Monitor inference workloads → Track runtime performance and service health.</p>
+              <button class="decision-card-trigger" aria-expanded="false">
+                <span class="dc-trigger-left">
+                  <span class="dc-trigger-title">Enterprise-wide model tracking and compliance</span>
+                  <span class="dc-badge dc-badge--flex">Flexible</span>
+                  <span class="dc-pill"><a href="../products-tools/ai-platforms.html#watsonx-governance">watsonx.governance</a></span>
+                </span>
+                <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
+              </button>
+              <div class="dc-card-intro">
+                <p>You want enterprise AI governance — model lineage tracking, fairness and drift monitoring, and audit documentation — running directly on IBM LinuxONE or across hybrid environments.</p>
+              </div>
+              <div class="decision-card-body" hidden>
+                <p><strong>→ Use <a href="../products-tools/ai-platforms.html#watsonx-governance">watsonx.governance</a>.</strong> IBM watsonx.governance is now supported on IBM LinuxONE via IBM Software Hub 5.4.0, allowing organizations in banking, insurance, healthcare, and the public sector to monitor, track, and govern AI models directly on the platform where mission-critical data resides.</p>
+                <p>On IBM LinuxONE, watsonx.governance delivers three core capabilities:</p>
+                <ul style="margin: 6px 0 8px 18px; font-size:14px; color:var(--ibm-text-secondary); line-height:1.6;">
+                  <li><strong>AI Factsheets</strong> — automatic capture of model metadata, end-to-end lineage tracking, centralized audit documentation, and simplified regulatory reporting</li>
+                  <li><strong>OpenScale Monitoring</strong> — continuous monitoring of model quality, fairness monitoring for bias detection, drift detection for data and behavior changes, and explainability insights</li>
+                  <li><strong>Watson Machine Learning</strong> — model deployment and lifecycle management for ML workloads with integration into governance and monitoring</li>
+                </ul>
+                <p><em>Common approach:</em> Deploy watsonx.governance on IBM LinuxONE via IBM Software Hub → Enable AI Factsheets for model lineage → Configure OpenScale Monitoring for fairness, drift, and explainability → Use compliance reporting for regulatory audit.</p>
               </div>
             </div>
 
@@ -82,50 +120,114 @@
         <section class="section" id="next-steps">
           <h1>Where to Go from Here</h1>
           <p>You've reached the end of the AI lifecycle. Governance feeds back into the beginning — monitoring results inform retraining decisions, which restart the train → optimize → deploy → serve cycle.</p>
-          <div class="card-grid">
-            <div class="card">
-              <h4>Use Cases &amp; Solution Blueprints</h4>
-              <p>See end-to-end examples of complete AI on Z use cases — fraud detection, AML, credit risk, and more — including governance integration patterns.</p>
-              <a href="../use-cases/use-cases.html" class="learn-more" style="font-size:13px;">Explore Use Cases &#8594;</a>
-            </div>
-            <div class="card">
-              <h4>Getting Started</h4>
-              <p>Ready to begin? See resources, contacts, and IBM Technology Expert Labs services to help you start your AI on IBM Z journey.</p>
-              <a href="../getting-help/terminology.html" class="learn-more" style="font-size:13px;">Getting Help &amp; Resources &#8594;</a>
-            </div>
+          <div class="ns-tile-grid">
+            <a href="../use-cases/use-cases.html" class="ns-tile">
+              <span class="ns-tile-label">Use Cases &amp; Solution Blueprints</span>
+              <span class="ns-tile-body">See end-to-end examples of AI on IBM LinuxONE use cases — fraud detection, AML, credit risk, and more — including governance integration patterns.</span>
+              <span class="ns-tile-footer">
+                <span class="ns-tile-arrow">&#8594;</span>
+              </span>
+            </a>
+            <a href="../getting-help/terminology.html" class="ns-tile">
+              <span class="ns-tile-label">Getting Help &amp; Resources</span>
+              <span class="ns-tile-body">Ready to begin? See resources, contacts, and IBM Technology Expert Labs services to help you start your AI on IBM LinuxONE journey.</span>
+              <span class="ns-tile-footer">
+                <span class="ns-tile-arrow">&#8594;</span>
+              </span>
+            </a>
           </div>
         </section>
 
       </div>
-      <footer class="footer"><p>&copy; 2025 AI on Z</p></footer>
+      <footer class="footer"><p>&copy; 2026 IBM LinuxONE</p></footer>
     </div>
   </div>
   <style>
+    /* ── Product pill tag ── */
+    .dc-pill {
+      display: inline-flex;
+      align-items: center;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--ibm-text-secondary);
+      background: var(--ibm-gray-10);
+      border: 1px solid var(--ibm-border);
+      border-radius: 3px;
+      padding: 1px 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .dc-pill a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: var(--ibm-border);
+    }
+    .dc-pill a:hover {
+      color: var(--ibm-blue-60, #0043ce);
+      text-decoration-color: currentColor;
+    }
     .decision-cards {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 8px;
       margin: 18px 0 24px;
-      max-width: 720px;
     }
     .decision-card {
       border: 1px solid var(--ibm-border);
       border-radius: 6px;
       overflow: hidden;
     }
-    .decision-card-label {
-      background: var(--ibm-gray-10);
-      border-bottom: 1px solid var(--ibm-border);
-      padding: 9px 16px;
-      font-size: 12px;
+    .decision-card-trigger {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 11px 16px;
+      background: #edf5ff;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.15s;
+    }
+    .decision-card-trigger:hover { background: #d0e2ff; }
+    .decision-card.open .decision-card-trigger { background: #d0e2ff; }
+    .dc-trigger-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      flex: 1;
+      min-width: 0;
+    }
+    .dc-trigger-title {
+      font-size: 13px;
       font-weight: 600;
-      color: var(--ibm-text-helper);
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
+      color: var(--ibm-text-primary);
+    }
+    .dc-chevron {
+      width: 16px;
+      height: 16px;
+      color: var(--ibm-gray-70);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .decision-card.open .dc-chevron { transform: rotate(180deg); }
+    .dc-card-intro {
+      padding: 10px 16px 12px;
+      background: #fff;
+    }
+    .dc-card-intro p {
+      font-size: 13px;
+      color: var(--ibm-text-secondary);
+      margin: 0;
+      line-height: 1.5;
     }
     .decision-card-body {
       padding: 14px 16px;
+      border-top: 1px solid var(--ibm-border);
     }
+    .decision-card-body[hidden] { display: none; }
     .decision-card-body p {
       font-size: 14px;
       color: var(--ibm-text-secondary);
@@ -138,6 +240,65 @@
     .decision-card-body strong {
       color: var(--ibm-text-primary);
     }
+
+    /* ── Next Steps tiles ── */
+    .ns-tile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0;
+      margin-top: 20px;
+    }
+    .ns-tile {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 20px 16px;
+      background: #fff;
+      border: 1px solid var(--ibm-border);
+      text-decoration: none;
+      color: var(--ibm-text-primary);
+      transition: background 0.15s;
+      min-height: 160px;
+    }
+    .ns-tile:hover { background: var(--ibm-gray-10); }
+    .ns-tile-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ibm-text-primary);
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+    .ns-tile-body {
+      font-size: 13px;
+      color: var(--ibm-text-secondary);
+      line-height: 1.5;
+      flex: 1;
+    }
+    .ns-tile-footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 16px;
+    }
+    .ns-tile-arrow {
+      font-size: 18px;
+      color: var(--ibm-text-primary);
+      line-height: 1;
+    }
+    /* ── Decision card badges ── */
+    .dc-badge {
+      display: inline-flex;
+      align-items: center;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .dc-badge--off  { background: #e8e8e8; color: #393939; }
+    .dc-badge--on   { background: #defbe6; color: #044317; }
+    .dc-badge--flex { background: #edf5ff; color: #002d9c; }
   </style>
 
   <script src="../nav.js"></script>
@@ -147,11 +308,58 @@
       activeTop: 'lifecycle',
       activeSub: 'ai-governance',
       pageNavItems: [
-        { id: 'overview',             label: 'Overview' },
-        { id: 'where-to-start',       label: 'Where to Start' },
-        { id: 'next-steps',           label: 'Where to Go from Here' },
+        { id: 'overview',          label: 'Overview' },
+        { id: 'where-to-start',    label: 'Where to Start' },
+        { id: 'governance-tools',  label: 'On-Platform and Off-Platform Governance Tools' },
+        { id: 'next-steps',        label: 'Where to Go from Here' },
       ]
     });
+
+    (function() {
+      var SESSION_KEY = 'open-cards:' + location.pathname;
+      var allCards = Array.from(document.querySelectorAll('.decision-card'));
+
+      function saveState() {
+        var open = allCards.map(function(c, i) { return c.classList.contains('open') ? i : -1; }).filter(function(i) { return i >= 0; });
+        sessionStorage.setItem(SESSION_KEY, JSON.stringify(open));
+      }
+
+      function restoreState() {
+        var saved = JSON.parse(sessionStorage.getItem(SESSION_KEY) || '[]');
+        saved.forEach(function(i) {
+          var card = allCards[i];
+          if (!card) return;
+          var body = card.querySelector('.decision-card-body');
+          var btn  = card.querySelector('.decision-card-trigger');
+          card.classList.add('open');
+          body.hidden = false;
+          btn.setAttribute('aria-expanded', 'true');
+        });
+      }
+
+      allCards.forEach(function(card) {
+        var btn  = card.querySelector('.decision-card-trigger');
+        var body = card.querySelector('.decision-card-body');
+        btn.addEventListener('click', function() {
+          var isOpen = card.classList.contains('open');
+          if (isOpen) {
+            card.classList.remove('open');
+            body.hidden = true;
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            card.classList.add('open');
+            body.hidden = false;
+            btn.setAttribute('aria-expanded', 'true');
+          }
+          saveState();
+        });
+      });
+
+      // On reload, clear saved state so all cards start closed
+      var navType = (performance.getEntriesByType('navigation')[0] || {}).type;
+      if (navType === 'reload') sessionStorage.removeItem(SESSION_KEY);
+      restoreState();
+    })();
   </script>
 </body>
 </html>
