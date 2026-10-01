@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI on Z | Hardware Solutions</title>
+  <title>AI on IBM LinuxONE 101 | Hardware Solutions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css" />
 </head>
 <body class="no-lifecycle">
   <header class="topbar">
-    <a href="../index.html" class="topbar-logo"><span class="topbar-logo-mark"></span>AI on IBM Z</a>
+    <a href="../index.html" class="topbar-logo"><span class="topbar-logo-mark"></span>AI on IBM LinuxONE 101</a>
     <nav class="topnav" id="topnav"></nav>
   </header>
   <nav class="lifecycle-nav" id="lifecycle-nav"></nav>
@@ -20,31 +20,32 @@
       <!-- Page Hero -->
       <div class="page-hero page-hero--wide">
         <h1>Hardware Accelerators</h1>
-        <p>Telum and Spyre are the two AI accelerators available with IBM Z. Telum has an on-chip AI accelerator, designed for real-time inference on traditional ML and deep learning models. Spyre Accelerator for IBM Z is a separate card-based accelerator built for small decoder model workloads.</p>
+        <p>Telum II and Spyre are the two AI accelerators available with IBM LinuxONE 5. Telum II has an on-chip AI accelerator designed for real-time inference on traditional ML and deep learning models. IBM Spyre Accelerator is a separate card-based accelerator built for generative AI and large model workloads.</p>
       </div>
 
       <div class="page-body">
 
-        <!-- ── TELUM ─────────────────────────────────────────────────── -->
+        <!-- ── TELUM II ─────────────────────────────────────────────────── -->
         <div class="tool-accordion" id="telum">
           <button class="tool-accordion-trigger" aria-expanded="false">
-            <span class="tool-accordion-title">Telum and the IBM Integrated Accelerator for AI</span>
+            <span class="tool-accordion-title">Telum II and the IBM Integrated Accelerator for AI</span>
             <svg class="tool-accordion-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
           </button>
           <div class="tool-accordion-body" hidden>
-            <h1 style="margin-top:0;">Telum and the IBM Integrated Accelerator for AI</h1>
+            <h1 style="margin-top:0;">Telum II and the IBM Integrated Accelerator for AI</h1>
 
           <h2>What is the IBM Integrated Accelerator for AI?</h2>
-          <p>The IBM Integrated Accelerator for AI is an on-chip AI accelerator available on the <a href="https://www.ibm.com/products/z/telum" target="_blank" rel="noopener">IBM Telum chip</a> — part of IBM z16, LinuxONE 4, and now IBM z17 and LinuxONE 5 servers (Telum II). It is designed to enable high throughput, low latency inference for deep learning and machine learning. It also supports small encoder language models.</p>
-          <p>You can build and train your models on any platform, including IBM Z. When you are ready to deploy, your models can take advantage of the Telum on-chip accelerator, bringing the model inferencing directly to transactions processed in the core for real-time decisions.</p>
+          <p>The IBM Integrated Accelerator for AI is an on-chip AI accelerator available on the <a href="https://www.ibm.com/products/z/telum" target="_blank" rel="noopener">IBM Telum II chip</a> — part of IBM LinuxONE 5 (and IBM z17) servers. It is designed to enable high throughput, low latency inference for deep learning and machine learning. It also supports small encoder language models.</p>
+          <p>You can build and train your models on any platform, including IBM LinuxONE. When you are ready to deploy, your models can take advantage of the Telum II on-chip accelerator, bringing model inferencing directly to transactions processed in the core for real-time decisions — 450 billion inference requests per day, 99% within 1ms latency.</p>
           <p>The IBM Integrated Accelerator for AI is more than just a matrix multiply accelerator — it provides optimization and acceleration for a wide set of complex functions commonly found in deep learning and machine learning models, enabling a broader set of operations to run on-chip.</p>
 
           <h2>Why the Integrated Accelerator?</h2>
           <ul>
-            <li><strong>On-chip, no GPU required</strong> — AI inference runs directly on the Telum processor alongside your business transactions, with no external hardware needed.</li>
+            <li><strong>On-chip, no GPU required</strong> — AI inference runs directly on the Telum II processor alongside your business transactions, with no external hardware needed.</li>
             <li><strong>High throughput, low latency</strong> — Designed for real-time scoring at enterprise scale, enabling AI decisions within transaction flows.</li>
-            <li><strong>Supported frameworks</strong> — Secured, supported open-source frameworks have been optimized to exploit the on-chip accelerator in Telum.</li>
-            <li><strong>Security and compliance</strong> — Data doesn't need to leave the IBM Z platform, preserving the security and governance properties of your enterprise environment.</li>
+            <li><strong>Supported frameworks</strong> — Secured, supported open-source frameworks have been optimized to exploit the on-chip accelerator in Telum II.</li>
+            <li><strong>Security and compliance</strong> — Data doesn't need to leave the IBM LinuxONE platform, preserving the security and governance properties of your enterprise environment.</li>
+            <li><strong>Energy efficiency</strong> — 83% energy reduction compared to equivalent x86 + GPU deployments.</li>
           </ul>
 
           <h2>Example Use Cases</h2>
@@ -56,7 +57,7 @@
           </div>
 
           <h2>Supported Operations by Machine Generation</h2>
-          <p>The following operations are supported on the accelerator by machine generation. Telum II (IBM z17) adds significant new capabilities including INT8 quantization, Layer Normalization, Gelu, and more:</p>
+          <p>The following operations are supported on the accelerator by machine generation. Telum II (IBM LinuxONE 5) adds significant new capabilities including INT8 quantization (2× more efficient than FP16), Layer Normalization, Gelu, and more:</p>
           <details class="expand-card">
             <summary>
               <span class="expand-card-title">View supported operations table</span>
@@ -65,7 +66,7 @@
             <div class="expand-card-body">
               <table class="ops-table">
                 <thead>
-                  <tr><th>Operation</th><th>z16 / LinuxONE 4 (Telum)</th><th>z17 / LinuxONE 5 (Telum II)</th></tr>
+                  <tr><th>Operation</th><th>LinuxONE 4 (Telum)</th><th>LinuxONE 5 (Telum II)</th></tr>
                 </thead>
                 <tbody>
                   <tr><td class="cap-label">LSTM Activation</td><td>✓</td><td>✓</td></tr>
@@ -95,16 +96,16 @@
           </details>
 
           <h2>Using the Integrated Accelerator for AI</h2>
-          <p>Depending on your model type, there are a few essential approaches to leveraging the Integrated Accelerator for AI. These capabilities are available in IBM product offerings as well as through no-cost channels (such as the IBM Z Container Image Registry).</p>
+          <p>Depending on your model type, there are a few essential approaches to leveraging the Integrated Accelerator for AI. These capabilities are available in IBM product offerings as well as through no-cost channels (such as the IBM Z and LinuxONE Container Image Registry).</p>
           <p><strong>For deep learning models</strong> (IBM Z Accelerated for PyTorch, IBM Z Accelerated for TensorFlow):</p>
           <ul>
             <li><a href="../products-tools/model-formats.html#zdlc">ONNX models compiled with the IBM Z Deep Learning Compiler (zDLC)</a></li>
             <li><a href="../products-tools/ai-frameworks.html#tensorflow">IBM Z Accelerated for TensorFlow</a> — transparent zDNN offload</li>
-            <li><a href="../products-tools/ai-frameworks.html#pytorch">IBM Z Accelerated for PyTorch</a> — Telum and Telum II acceleration</li>
+            <li><a href="../products-tools/ai-frameworks.html#pytorch">IBM Z Accelerated for PyTorch</a> — Telum II acceleration</li>
           </ul>
           <p><strong>For traditional ML models</strong> (scikit-learn, XGBoost, LightGBM):</p>
           <ul>
-            <li><a href="../products-tools/ai-frameworks.html#snapml">IBM Z Accelerated SnapML</a> — optimized training and inference with Telum acceleration for Random Forest, Extra Trees, and Gradient Boosting</li>
+            <li><a href="../products-tools/ai-frameworks.html#snapml">IBM Z Accelerated for Snap ML</a> — optimized training and inference with Telum II acceleration for Random Forest, Extra Trees, and Gradient Boosting</li>
           </ul>
           <p><strong>For model serving</strong>:</p>
           <ul>
@@ -113,7 +114,7 @@
           </ul>
           <p><strong>For framework and compiler developers</strong>:</p>
           <ul>
-            <li><a href="https://github.com/IBM/zDNN" target="_blank" rel="noopener">IBM zDNN</a> — the low-level C library exposing Telum AI accelerator operations. Available in z/OS in all in-service releases, and for RHEL, Ubuntu, and SUSE.</li>
+            <li><a href="https://github.com/IBM/zDNN" target="_blank" rel="noopener">IBM zDNN</a> — the low-level C library exposing Telum II AI accelerator operations. Available for RHEL, Ubuntu, and SUSE on Linux on Z.</li>
           </ul>
           <a href="https://www.ibm.com/products/z/telum" class="learn-more" target="_blank" rel="noopener">IBM Telum processor website &#8594;</a>
           </div>
@@ -128,22 +129,22 @@
           <div class="tool-accordion-body" hidden>
             <h1 style="margin-top:0;">IBM Spyre Accelerator</h1>
             <p><strong>AI Lifecycle:</strong> <a href="../deploy-models/deploy-models.html">Deploy Models</a> · <a href="../serve-model/serve-model.html">Serve Model</a></p>
-            <p>The IBM Spyre Accelerator is an AI accelerator for IBM z17 designed to support generative AI and foundation model inference on IBM Z. It provides additional AI compute for workloads that require larger models and higher throughput than traditional transactional AI use cases.</p>
-            <p>Spyre is commonly used to deploy and serve large language models that enables use cases like retrieval-augmented generation (RAG) applications and/or AI assistants, and code modernization solutions. It allows organizations to run these workloads close to their business applications and enterprise data on IBM Z.</p>
+            <p>The IBM Spyre Accelerator is an AI accelerator for IBM LinuxONE 5 designed to support generative AI and foundation model inference. It provides additional AI compute for workloads that require larger models and higher throughput than traditional transactional AI use cases — 32 Gen AI-ready cores per adapter card, with up to 48 cards per system, delivering 10.3× throughput compared to x86.</p>
+            <p>Spyre is commonly used to deploy and serve large language models that enable use cases like retrieval-augmented generation (RAG) applications, AI assistants, and code modernization solutions. It allows organizations to run these workloads close to their business applications and enterprise data on IBM LinuxONE.</p>
 
             <h2>Key Capabilities</h2>
             <ul>
               <li>Dedicated AI acceleration for foundation model inference</li>
               <li>Support for a curated set of IBM Granite, Llama, Mixtral, and other transformer-based models</li>
               <li>Support for online and batch inference workloads</li>
-              <li>Scalable architecture with support for multiple accelerator cards in a single system</li>
+              <li>Scalable architecture: 32 Gen AI-ready cores per adapter card, up to 48 cards per system</li>
               <li>Support for FP16, INT8, and INT4 precision formats</li>
               <li>Integration with enterprise AI platforms and inference runtimes</li>
               <li>No accelerator programming required for most deployments</li>
             </ul>
 
-            <h2>On IBM Z</h2>
-            <p>It complements the Telum AI accelerator, which is optimized for real-time transactional AI workloads such as fraud detection and risk scoring. Spyre is designed for larger generative AI and foundation model workloads that require additional compute capacity.</p>
+            <h2>On IBM LinuxONE</h2>
+            <p>It complements the Telum II AI accelerator, which is optimized for real-time transactional AI workloads such as fraud detection and risk scoring. Spyre is designed for larger generative AI and foundation model workloads that require additional compute capacity.</p>
             <p>Organizations typically use Spyre when deploying:</p>
             <ul>
               <li>Large language models (LLMs)</li>
@@ -163,10 +164,10 @@
             <h2>When to Consider Spyre</h2>
             <p>Spyre may be a good fit when:</p>
             <ul>
-              <li>You need to deploy and serve foundation models on IBM Z</li>
+              <li>You need to deploy and serve foundation models on IBM LinuxONE</li>
               <li>Your workload requires more compute than traditional transactional AI models</li>
               <li>You want to keep AI workloads close to business applications and data</li>
-              <li>You are implementing generative AI use cases on IBM Z</li>
+              <li>You are implementing generative AI use cases on IBM LinuxONE</li>
             </ul>
 
             <h2>Getting Started</h2>
@@ -181,15 +182,15 @@
       <div class="ns-subnav-block">
         <div class="ns-subnav-label">Explore other Products &amp; Tools</div>
         <div class="ns-tile-grid">
-          <a href="data-analytics.html" class="ns-tile"><span class="ns-tile-label">Data &amp; Analytics</span><span class="ns-tile-body"><ul class="ns-tile-list"><li>IBM Z Platform for Apache Spark</li><li>IBM Synthetic Data Sets</li></ul></span><span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span></a>
-          <a href="ai-frameworks.html" class="ns-tile"><span class="ns-tile-label">AI Frameworks &amp; Dev Tools</span><span class="ns-tile-body"><ul class="ns-tile-list"><li>AI Toolkit for IBM Z and IBM LinuxONE</li><li>IBM Z Accelerated SnapML</li><li>IBM Z Accelerated for TensorFlow</li><li>IBM Z Accelerated for PyTorch</li><li>Python AI Toolkit for IBM z/OS</li></ul></span><span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span></a>
+          <a href="data-analytics.html" class="ns-tile"><span class="ns-tile-label">Data &amp; Analytics</span><span class="ns-tile-body"><ul class="ns-tile-list"><li>IBM Synthetic Data Sets</li></ul></span><span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span></a>
+          <a href="ai-frameworks.html" class="ns-tile"><span class="ns-tile-label">AI Frameworks &amp; Dev Tools</span><span class="ns-tile-body"><ul class="ns-tile-list"><li>AI Toolkit for IBM LinuxONE</li><li>IBM Z Accelerated for Snap ML</li><li>IBM Z Accelerated for TensorFlow</li><li>IBM Z Accelerated for PyTorch</li></ul></span><span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span></a>
           <a href="model-formats.html" class="ns-tile"><span class="ns-tile-label">Model Formats &amp; Compilers</span><span class="ns-tile-body"><ul class="ns-tile-list"><li>ONNX</li><li>PMML</li><li>IBM Z Deep Learning Compiler (zDLC)</li></ul></span><span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span></a>
-          <a href="inference-serving.html" class="ns-tile"><span class="ns-tile-label">Inference &amp; Serving</span><span class="ns-tile-body"><ul class="ns-tile-list"><li>IBM Z Accelerated for Triton Inference Server</li><li>IBM Z Accelerated Serving for TensorFlow</li><li>Red Hat AI Inference Server on IBM Z</li></ul></span><span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span></a>
-          <a href="ai-platforms.html" class="ns-tile"><span class="ns-tile-label">AI Platforms</span><span class="ns-tile-body"><ul class="ns-tile-list"><li>Machine Learning for IBM z/OS (MLz)</li><li>AI Optimizer for IBM Z and IBM LinuxONE</li><li>Red Hat OpenShift AI</li><li>watsonx.ai</li><li>watsonx.governance</li></ul></span><span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span></a>
-          <a href="turnkey-solutions.html" class="ns-tile"><span class="ns-tile-label">Turnkey &amp; ISV Solutions</span><span class="ns-tile-body"><ul class="ns-tile-list"><li>IBM SQL Data Insights Pro</li><li>Embedded AI Core Banking &amp; Payment Solutions</li><li>ISV Packaged AI Solutions</li></ul></span><span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span></a>
+          <a href="inference-serving.html" class="ns-tile"><span class="ns-tile-label">Inference &amp; Serving</span><span class="ns-tile-body"><ul class="ns-tile-list"><li>IBM Z Accelerated for Triton Inference Server</li><li>IBM Z Accelerated Serving for TensorFlow</li><li>Red Hat AI Inference Server on IBM LinuxONE</li></ul></span><span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span></a>
+          <a href="ai-platforms.html" class="ns-tile"><span class="ns-tile-label">AI Platforms</span><span class="ns-tile-body"><ul class="ns-tile-list"><li>AI Optimizer for IBM LinuxONE</li><li>Red Hat OpenShift AI</li><li>watsonx.ai</li><li>watsonx.governance</li></ul></span><span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span></a>
+          <a href="turnkey-solutions.html" class="ns-tile"><span class="ns-tile-label">Turnkey &amp; ISV Solutions</span><span class="ns-tile-body"><ul class="ns-tile-list"><li>IBM SQL Data Insights</li><li>Embedded AI Core Banking &amp; Payment Solutions</li><li>ISV Packaged AI Solutions</li></ul></span><span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span></a>
         </div>
       </div>
-      <footer class="footer"><p>&copy; 2025 AI on Z</p></footer>
+      <footer class="footer"><p>&copy; 2025 AI on LinuxONE</p></footer>
     </div>
   </div>
 
@@ -200,7 +201,7 @@
       activeTop: 'products',
       activeSub: 'hardware-solutions',
       pageNavItems: [
-        { id: 'telum', label: 'Telum and the IBM Integrated Accelerator for AI' },
+        { id: 'telum', label: 'Telum II and the IBM Integrated Accelerator for AI' },
         { id: 'spyre', label: 'IBM Spyre Accelerator' },
       ]
     });
@@ -247,16 +248,13 @@
           saveState();
         });
       });
-      // On reload, clear saved state so all accordions start closed
       var navType = (performance.getEntriesByType('navigation')[0] || {}).type;
       if (navType === 'reload') sessionStorage.removeItem(SESSION_KEY);
-      // Restore previously open accordions (e.g. after hitting Back)
       var saved = JSON.parse(sessionStorage.getItem(SESSION_KEY) || '[]');
       saved.forEach(function(id) {
         var acc = document.getElementById(id);
         if (acc) openAccordion(acc, false);
       });
-      // Hash takes priority — open + scroll to it
       openAccordionForHash();
     });
 
