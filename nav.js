@@ -40,8 +40,7 @@ function renderNav(opts) {
       id: 'data-analytics', label: 'Data & Analytics',
       href: p + 'products-tools/data-analytics.html',
       tools: [
-        { label: 'IBM Z Platform for Apache Spark', href: p + 'products-tools/data-analytics.html#apache-spark' },
-        { label: 'IBM Synthetic Data Sets',          href: p + 'products-tools/data-analytics.html#synthetic-data-sets' },
+        { label: 'IBM Synthetic Data Sets', href: p + 'products-tools/data-analytics.html#synthetic-data-sets' },
       ]
     },
     {
@@ -52,7 +51,6 @@ function renderNav(opts) {
         { label: 'IBM Z Accelerated SnapML',            href: p + 'products-tools/ai-frameworks.html#snapml' },
         { label: 'IBM Z Accelerated for TensorFlow',    href: p + 'products-tools/ai-frameworks.html#tensorflow' },
         { label: 'IBM Z Accelerated for PyTorch',       href: p + 'products-tools/ai-frameworks.html#pytorch' },
-        { label: 'Python AI Toolkit for IBM z/OS',      href: p + 'products-tools/ai-frameworks.html#python-ai-toolkit' },
       ]
     },
     {
@@ -77,7 +75,6 @@ function renderNav(opts) {
       id: 'ai-platforms', label: 'AI Platforms',
       href: p + 'products-tools/ai-platforms.html',
       tools: [
-        { label: 'Machine Learning for IBM z/OS',       href: p + 'products-tools/ai-platforms.html#mlz' },
         { label: 'AI Optimizer for IBM Z and LinuxONE', href: p + 'products-tools/ai-platforms.html#ai-optimizer' },
         { label: 'Red Hat OpenShift AI',                href: p + 'products-tools/ai-platforms.html#rhoai' },
         { label: 'watsonx.ai',                          href: p + 'products-tools/ai-platforms.html#watsonx-ai' },
@@ -96,7 +93,6 @@ function renderNav(opts) {
       id: 'turnkey-solutions', label: 'Turnkey & ISV Solutions',
       href: p + 'products-tools/turnkey-solutions.html',
       tools: [
-        { label: 'IBM SQL Data Insights Pro for Z',    href: p + 'products-tools/turnkey-solutions.html#sql-data-insights' },
         { label: 'Embedded AI Core Banking Solutions', href: p + 'products-tools/turnkey-solutions.html#embedded-ai-solutions' },
         { label: 'ISV Packaged AI Solutions',          href: p + 'products-tools/turnkey-solutions.html#packaged-ai-solutions' },
       ]
@@ -367,8 +363,7 @@ function initSearch(wrapper, root) {
     { title: 'Anti-Money Laundering on IBM LinuxONE', section: 'Solution Blueprints', snippet: 'AML detection model using open-source frameworks for real-time transaction monitoring on IBM LinuxONE.', href: root + 'use-cases/ai-solution-template.html#anti-money-laundering' },
 
     /* Turnkey & ISV Solutions */
-    { title: 'Turnkey & ISV Solutions', section: 'Products & Tools', snippet: 'Pre-built AI solutions from IBM and ecosystem partners — SQL Data Insights, Featurespace, Quantexa, Clari5, OvationCXM, Exponential AI, ACI, DXC, Worldline.', href: root + 'products-tools/turnkey-solutions.html' },
-    { title: 'IBM SQL Data Insights', section: 'Turnkey Solutions', snippet: 'IBM\'s turnkey AI-powered analytics for IBM LinuxONE — natural language querying and AI-generated insights against your data.', href: root + 'products-tools/turnkey-solutions.html#sql-data-insights' },
+    { title: 'Turnkey & ISV Solutions', section: 'Products & Tools', snippet: 'Pre-built AI solutions from IBM and ecosystem partners — Featurespace, Quantexa, Clari5, OvationCXM, Exponential AI, ACI, DXC, Worldline.', href: root + 'products-tools/turnkey-solutions.html' },
     { title: 'Featurespace — ARIC Risk Hub', section: 'ISV Solutions', snippet: 'Real-time fraud detection and risk scoring on IBM LinuxONE. Integrates with core banking and payments solutions.', href: root + 'products-tools/turnkey-solutions.html#packaged-ai-solutions' },
     { title: 'Quantexa — Decision Intelligence Platform', section: 'ISV Solutions', snippet: 'Entity resolution, fraud detection, KYC, and AML on IBM LinuxONE. Batch core banking and payments integrations.', href: root + 'products-tools/turnkey-solutions.html#packaged-ai-solutions' },
     { title: 'Clari5 — Enterprise Fraud Management', section: 'ISV Solutions', snippet: 'Anti-money laundering and payments fraud detection on IBM LinuxONE.', href: root + 'products-tools/turnkey-solutions.html#packaged-ai-solutions' },
