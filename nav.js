@@ -192,10 +192,10 @@ function renderNav(opts) {
       <input
         type="text"
         class="topbar-search-input"
-        placeholder="Search AI on Z…"
+        placeholder="Search AI on LinuxONE…"
         autocomplete="off"
         spellcheck="false"
-        aria-label="Search AI on Z"
+        aria-label="Search AI on LinuxONE"
       />
       <button class="topbar-search-clear" aria-label="Clear search">&#x2715;</button>
       <div class="topbar-search-results" role="listbox" aria-label="Search results"></div>
