@@ -28,7 +28,7 @@
         <section class="section" id="overview">
           <h1>Prepare Data</h1>
 
-          <p>Before a model can be trained, data must be cleaned, transformed, and structured for machine learning. IBM's AI on Z strategy is build and train anywhere, deploy on Z. Organizations may prepare data and develop models in existing environments or work directly on IBM Z, depending on their architecture, data residency, and operational requirements. This page helps you identify the tools that best fit your data sources, team, and AI objectives.</p>
+          <p>Before a model can be trained, data must be cleaned, transformed, and structured for machine learning. IBM's AI on LinuxONE strategy is build and train anywhere, deploy on LinuxONE. Organizations may prepare data and develop models in existing environments or work directly on IBM LinuxONE, depending on their architecture, data residency, and operational requirements. This page helps you identify the tools that best fit your data sources, team, and AI objectives.</p>
 
           <h2>What happens at this stage?</h2>
           <div class="card-grid">
@@ -71,12 +71,12 @@
                 <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
               </button>
               <div class="dc-card-intro">
-                <p>Your data science team already uses cloud, data lake, or x86-based tooling to prepare historical training data, and you plan to deploy the trained model on IBM Z.</p>
+                <p>Your data science team already uses cloud, data lake, or x86-based tooling to prepare historical training data, and you plan to deploy the trained model on IBM LinuxONE.</p>
               </div>
               <div class="decision-card-body" hidden>
-                <p><strong>→ Use your existing data preparation frameworks.</strong> There is no need to change your current workflow. Export the trained model in a portable format — such as <a href="../products-tools/model-formats.html#pmml">PMML</a> (standard for traditional ML pipelines) or <a href="../products-tools/model-formats.html#onnx">ONNX</a> (for deep learning models) — and deploy it on IBM Z.</p>
-                <p><em>Common approach:</em> Prepare historical data and train the model externally using your established frameworks, then export it in a portable format and deploy it on IBM Z for low-latency inference co-located with your enterprise data, business applications, and high-volume transactions.</p>
-                <p><em>Note: Preparing data and building models off-platform is a practical approach. IBM Z is designed to deliver the greatest AI value when models are deployed and served on-platform, where they co-locate with enterprise data, business applications, and high-volume transactions.</em></p>
+                <p><strong>→ Use your existing data preparation frameworks.</strong> There is no need to change your current workflow. Export the trained model in a portable format — such as <a href="../products-tools/model-formats.html#pmml">PMML</a> (standard for traditional ML pipelines) or <a href="../products-tools/model-formats.html#onnx">ONNX</a> (for deep learning models) — and deploy it on IBM LinuxONE.</p>
+                <p><em>Common approach:</em> Prepare historical data and train the model externally using your established frameworks, then export it in a portable format and deploy it on IBM LinuxONE for low-latency inference co-located with your enterprise data, business applications, and high-volume transactions.</p>
+                <p><em>Note: Preparing data and building models off-platform is a practical approach. IBM LinuxONE is designed to deliver the greatest AI value when models are deployed and served on-platform, where they co-locate with enterprise data, business applications, and high-volume transactions.</em></p>
               </div>
             </div>
 
@@ -129,7 +129,7 @@
                 <p>Your team uses standard Python data science libraries and wants to run preparation scripts directly on IBM LinuxONE alongside your enterprise workloads.</p>
               </div>
               <div class="decision-card-body" hidden>
-                <p><strong>→ Use standard Python tooling on Linux on IBM LinuxONE.</strong> IBM LinuxONE runs a full Linux environment, so pandas, NumPy, scikit-learn, and other standard Python libraries work natively without any special toolkit. IBM's accelerated frameworks for TensorFlow and PyTorch are available as container images and extend seamlessly from data preparation into model training.</p>
+                <p><strong>→ Use standard Python tooling on IBM LinuxONE.</strong> IBM LinuxONE runs a full Linux environment, so pandas, NumPy, scikit-learn, and other standard Python libraries work natively without any special toolkit. IBM's accelerated frameworks for TensorFlow and PyTorch are available as container images and extend seamlessly from data preparation into model training.</p>
                 <p><em>Common approach:</em> Use pandas and scikit-learn pipelines to cleanse, transform, and engineer features from enterprise data sources on-platform, then pass the prepared data directly into IBM Z Accelerated for TensorFlow or PyTorch for training — all within the same Linux environment on IBM LinuxONE.</p>
               </div>
             </div>
@@ -168,7 +168,7 @@
         </section>
 
       </div>
-      <footer class="footer"><p>&copy; 2025 AI on Z</p></footer>
+      <footer class="footer"><p>&copy; 2025 AI on LinuxONE</p></footer>
     </div>
   </div>
 
