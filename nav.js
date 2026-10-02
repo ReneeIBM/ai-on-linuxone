@@ -354,13 +354,11 @@ function initSearch(wrapper, root) {
 
     /* Use Cases */
     { title: 'Advanced Credit Card Fraud Detection', section: 'Use Cases', snippet: 'Multi-model ensemble AI on IBM LinuxONE 5 — a complete end-to-end solution blueprint using XGBoost and BERT.', href: root + 'use-cases/use-cases.html#ai-solution-patterns' },
-    { title: 'Solution Blueprints', section: 'Use Cases', snippet: 'AI solution patterns on IBM LinuxONE — generative AI, fraud detection, credit risk, health insurance, data preprocessing, and AML.', href: root + 'use-cases/ai-solution-template.html' },
-    { title: 'Fraud Detection on IBM LinuxONE', section: 'Solution Blueprints', snippet: 'Deploy an AI fraud detection model using open-source frameworks on IBM LinuxONE.', href: root + 'use-cases/ai-solution-template.html#fraud-detection' },
+    { title: 'Solution Blueprints', section: 'Use Cases', snippet: 'AI solution patterns on IBM LinuxONE — generative AI, credit risk, health insurance, and data preprocessing.', href: root + 'use-cases/ai-solution-template.html' },
     { title: 'Document Intelligence with Spyre', section: 'Solution Blueprints · Generative AI', snippet: 'IBM Granite LLM inference on Red Hat AI Inference Server, leveraging the IBM Spyre Accelerator on IBM LinuxONE.', href: root + 'use-cases/ai-solution-template.html#generative-ai' },
     { title: 'Credit Risk Assessment on IBM LinuxONE', section: 'Solution Blueprints', snippet: 'Build and deploy a credit risk scoring model using open-source frameworks on IBM LinuxONE with real-time scoring.', href: root + 'use-cases/ai-solution-template.html#credit-risk' },
     { title: 'Health Insurance Claims on IBM LinuxONE', section: 'Solution Blueprints', snippet: 'AI model for health insurance claims processing on IBM LinuxONE, deployed for real-time scoring.', href: root + 'use-cases/ai-solution-template.html#health-insurance' },
     { title: 'Data Preprocessing on IBM LinuxONE', section: 'Solution Blueprints', snippet: 'Build an AI solution with a preprocessing pipeline using open-source frameworks on IBM LinuxONE.', href: root + 'use-cases/ai-solution-template.html#data-preprocessing' },
-    { title: 'Anti-Money Laundering on IBM LinuxONE', section: 'Solution Blueprints', snippet: 'AML detection model using open-source frameworks for real-time transaction monitoring on IBM LinuxONE.', href: root + 'use-cases/ai-solution-template.html#anti-money-laundering' },
 
     /* Turnkey & ISV Solutions */
     { title: 'Turnkey & ISV Solutions', section: 'Products & Tools', snippet: 'Pre-built AI solutions from IBM and ecosystem partners — Featurespace, Quantexa, Clari5, OvationCXM, Exponential AI, ACI, DXC, Worldline.', href: root + 'products-tools/turnkey-solutions.html' },
