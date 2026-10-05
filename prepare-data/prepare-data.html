@@ -34,11 +34,11 @@
           <div class="card-grid">
             <div class="card">
               <h4>Access &amp; Connect</h4>
-              <p>Connect to enterprise data sources — Db2, IMS, VSAM, flat files.</p>
+              <p>Connect to enterprise data sources co-located on IBM LinuxONE — Oracle, Db2 LUW, PostgreSQL, MongoDB, or other local enterprise data sources.</p>
             </div>
             <div class="card">
               <h4>Cleanse &amp; Validate</h4>
-              <p>Handle missing values, inconsistent formats, duplicates, and outliers so your model trains on reliable data.</p>
+              <p>Handle missing values, inconsistent formats, duplicates, and outliers, and mask sensitive data so your model trains on reliable, compliant data.</p>
             </div>
             <div class="card">
               <h4>Transform &amp; Engineer Features</h4>
@@ -111,7 +111,7 @@
                 <p>You need to process large volumes of enterprise data, perform complex transformations, or build repeatable feature engineering pipelines directly on IBM LinuxONE.</p>
               </div>
               <div class="decision-card-body" hidden>
-                <p><strong>→ Use <a href="../products-tools/ai-frameworks.html#snapml">IBM Z Accelerated for Snap ML</a>.</strong> Snap ML includes enterprise-grade preprocessing transformers — including categorical encoders, normalization, and graph feature engineering — that run natively in optimized C++ on IBM LinuxONE, eliminating Python overhead and ensuring training-to-serving consistency via exportable JSON pipelines.</p>
+                <p><strong>→ Use <a href="../products-tools/ai-frameworks.html#snapml">IBM Z Accelerated for Snap ML</a>.</strong> Snap ML includes highly optimized, enterprise-grade preprocessing transformers — including categorical encoders, normalization, and graph feature engineering — that run with minimal overhead on IBM LinuxONE, ensuring training-to-serving consistency via exportable JSON pipelines.</p>
                 <p><em>Common approach:</em> Build Snap ML preprocessing pipelines that cleanse, encode, and engineer features from enterprise data sources, then feed directly into Snap ML model training — all on-platform with no data movement required.</p>
               </div>
             </div>
@@ -144,11 +144,11 @@
                 <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
               </button>
               <div class="dc-card-intro">
-                <p>Multiple teams need shared workspaces, automated pipelines, model management, deployment, and governance across the AI lifecycle.</p>
+                <p>Multiple teams need shared workspaces and automated pipelines for data preparation on IBM LinuxONE.</p>
               </div>
               <div class="decision-card-body" hidden>
-                <p><strong>→ Use <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a>.</strong> Red Hat OpenShift AI supports the full AI lifecycle and runs on IBM LinuxONE via Red Hat OpenShift, co-locating AI workloads with your existing Linux applications and containerized services on the same system.</p>
-                <p><em>Common approach:</em> Use Red Hat OpenShift AI on IBM LinuxONE for end-to-end data preparation, model development, deployment, and monitoring — leveraging Jupyter notebooks, automated ML pipelines, and KServe-based model serving within a unified Kubernetes platform. Teams already using OpenShift AI elsewhere can extend the same tooling and workflows to IBM LinuxONE.</p>
+                <p><strong>→ Use <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a>.</strong> Red Hat OpenShift AI provides data preparation capabilities on IBM LinuxONE through Jupyter notebooks for interactive data exploration and transformation, and automated ML pipelines for repeatable, scalable data processing workflows — all co-located with your enterprise data and Linux applications.</p>
+                <p><em>Common approach:</em> Use Red Hat OpenShift AI on IBM LinuxONE to explore and transform data in shared Jupyter workbenches → Build automated data pipelines → Feed prepared data directly into model training within the same platform.</p>
               </div>
             </div>
 

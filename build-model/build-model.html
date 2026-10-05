@@ -28,7 +28,6 @@
         <section class="section" id="overview">
           <h1>Build Models</h1>
           <p>This stage focuses on developing the models that power AI applications on IBM LinuxONE. Activities may include building traditional machine learning or deep learning models, or selecting and serving a pre-built foundation model. IBM LinuxONE supports the popular open-source tools and frameworks AI practitioners already use, with hardware acceleration available through the Telum II on-chip AI accelerator and IBM Spyre Accelerator cards for supported workloads.</p>
-          <p>Model development does not need to occur on IBM LinuxONE. Many organizations develop and train models in cloud or hybrid environments and then deploy them to IBM LinuxONE for production inference. IBM LinuxONE also fully supports on-platform model development — keeping data, training, deployment, and inference within the same Linux environment.</p>
 
           <h2>What happens at this stage?</h2>
           <div class="card-grid">
@@ -46,7 +45,7 @@
             </div>
             <div class="card">
               <h4>Export for deployment</h4>
-              <p>Save your model in a portable format — PMML for traditional ML, ONNX for deep learning — then compile with the IBM Z Deep Learning Compiler (zDLC) to leverage Telum II acceleration at inference time.</p>
+              <p>Save your model in a portable format — PMML for traditional ML, ONNX for deep learning or encoder LLMs — then compile with the IBM Z Deep Learning Compiler (zDLC) to leverage Telum II acceleration at inference time.</p>
             </div>
           </div>
 
@@ -61,7 +60,7 @@
 
           <!-- ── SUBSECTION 1: Traditional ML ── -->
           <h2 id="traditional-ml">Building Traditional Machine Learning Models</h2>
-          <p>You are working with structured or tabular data and need models such as classification, regression, or forecasting systems.</p>
+          <p>You are working with structured or tabular data and need models such as classification, regression, or forecasting systems. Models can be trained off-platform using your existing tools and deployed to IBM LinuxONE, or built directly on-platform.</p>
 
           <div class="decision-cards">
 
@@ -85,13 +84,13 @@
             <div class="decision-card">
               <button class="decision-card-trigger" aria-expanded="false">
                 <span class="dc-trigger-left">
-                  <span class="dc-trigger-title">Python notebooks and scikit-learn on IBM LinuxONE</span>
+                  <span class="dc-trigger-title">Jupyter Notebooks and scikit-learn on IBM LinuxONE</span>
                   <span class="dc-pill">scikit-learn · XGBoost · pandas</span>
                 </span>
                 <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
               </button>
               <div class="dc-card-intro">
-                <p>Your team prefers standard Python workflows and wants to train models using familiar libraries — scikit-learn, XGBoost, pandas, NumPy — running on IBM LinuxONE.</p>
+                <p>Your team prefers standard Python workflows and wants to train models using familiar libraries — scikit-learn, XGBoost, pandas, NumPy — in Jupyter Notebooks on IBM LinuxONE.</p>
               </div>
               <div class="decision-card-body" hidden>
                 <p><strong>→ Use standard Python ML libraries on IBM LinuxONE.</strong> Because IBM LinuxONE runs a full Linux environment, there is no special toolkit required — scikit-learn, XGBoost, LightGBM, and other Python ML frameworks install and run natively. This makes it easy for teams already using these tools to train on-platform without changing their workflows.</p>
@@ -108,11 +107,11 @@
                 <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
               </button>
               <div class="dc-card-intro">
-                <p>You want a managed platform for model development, experiment tracking, pipeline automation, and deployment across the AI lifecycle on IBM LinuxONE.</p>
+                <p>You want a managed platform for model development, experiment tracking, and automated training pipelines for traditional ML on IBM LinuxONE.</p>
               </div>
               <div class="decision-card-body" hidden>
-                <p><strong>→ Use <a href="../products-tools/ai-platforms.html#watsonx">watsonx.ai</a> or <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a>.</strong> watsonx.ai on IBM LinuxONE (via IBM Software Hub) provides a full ML development and deployment environment with Jupyter notebooks, AutoML, and model lifecycle management. Red Hat OpenShift AI on IBM LinuxONE delivers Kubeflow pipelines, shared workbenches, and KServe-based model serving within a Kubernetes-native environment.</p>
-                <p><em>Common approach:</em> Develop and train ML models in watsonx.ai or Red Hat OpenShift AI notebooks → Manage experiments and pipelines → Deploy for production scoring on IBM LinuxONE.</p>
+                <p><strong>→ Use <a href="../products-tools/ai-platforms.html#watsonx">watsonx.ai</a> or <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a>.</strong> watsonx.ai on IBM LinuxONE (via IBM Software Hub) provides a Jupyter-based ML development environment with AutoML and experiment tracking for building traditional ML models. Red Hat OpenShift AI on IBM LinuxONE provides shared data science workbenches and Kubeflow-based automated training pipelines — so teams can develop, iterate, and promote models collaboratively within a Kubernetes-native environment.</p>
+                <p><em>Common approach:</em> Develop and train ML models in watsonx.ai or Red Hat OpenShift AI Jupyter workbenches → Track experiments and manage training runs → Export trained model for deployment on IBM LinuxONE.</p>
               </div>
             </div>
 
@@ -120,7 +119,7 @@
 
           <!-- ── SUBSECTION 2: Deep Learning ── -->
           <h2 id="deep-learning">Building Deep Learning Models</h2>
-          <p>You need to develop neural networks for computer vision, natural language processing, or other unstructured data workloads. Deep learning models are trained with IBM Z Accelerated for TensorFlow or IBM Z Accelerated for PyTorch and typically exported to ONNX for deployment on IBM LinuxONE.</p>
+          <p>You need to develop neural networks for computer vision, natural language processing, or other unstructured data workloads — off-platform or on-platform. Deep learning models are trained with IBM Z Accelerated for TensorFlow or IBM Z Accelerated for PyTorch and typically exported to ONNX for deployment on IBM LinuxONE.</p>
 
           <div class="decision-cards">
 
@@ -136,7 +135,7 @@
                 <p>You are building deep learning models and want to train and deploy natively on IBM LinuxONE, leveraging Telum II hardware acceleration.</p>
               </div>
               <div class="decision-card-body" hidden>
-                <p><strong>→ Use <a href="../products-tools/ai-frameworks.html#tensorflow">IBM Z Accelerated for TensorFlow</a> or <a href="../products-tools/ai-frameworks.html#pytorch">IBM Z Accelerated for PyTorch</a>.</strong> Both frameworks are optimized for IBM LinuxONE hardware and exploit the Integrated Accelerator for AI on Telum II for inference. PyTorch also supports both traditional AI and Foundation model stacks, enabling deployment of Transformers and encoder-based models. Both are available as container images via the IBM Container Registry (ICR), included in the AI Toolkit for IBM Z and IBM LinuxONE.</p>
+                <p><strong>→ Use <a href="../products-tools/ai-frameworks.html#tensorflow">IBM Z Accelerated for TensorFlow</a> or <a href="../products-tools/ai-frameworks.html#pytorch">IBM Z Accelerated for PyTorch</a>.</strong> Both frameworks are optimized for IBM LinuxONE hardware and exploit the Integrated Accelerator for AI on Telum II for inference. PyTorch also supports both traditional AI and Foundation model stacks, enabling deployment of Transformers and encoder-based models. Both are available as container images via the IBM Container Registry (ICR) (part of the AI Toolkit for IBM Z and IBM LinuxONE).</p>
                 <p><em>Common approach:</em> Prepare data → Train with IBM Z Accelerated for TensorFlow or IBM Z Accelerated for PyTorch → Deploy directly via <a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton Inference Server</a> or <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a> on IBM LinuxONE.</p>
               </div>
             </div>
@@ -155,6 +154,23 @@
               <div class="decision-card-body" hidden>
                 <p><strong>→ Convert your model to <a href="../products-tools/model-formats.html#onnx">ONNX</a> format</strong> using your framework of choice, then compile with the <a href="../products-tools/model-formats.html#zdlc">IBM Z Deep Learning Compiler (zDLC)</a> to leverage the Integrated Accelerator for AI on Telum II at inference time. The zDLC supports deep learning models, encoder LLMs, and small decoder LLMs (up to 2B parameters), and produces shared library files embeddable in applications independent of the original framework. The zDLC is available as a container via the IBM Container Registry (ICR).</p>
                 <p><em>Common approach:</em> Train with any framework (TensorFlow, PyTorch, Keras, or other) → Export to ONNX → Compile with zDLC → Deploy via <a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton Inference Server</a> or <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a> on IBM LinuxONE.</p>
+              </div>
+            </div>
+
+            <div class="decision-card">
+              <button class="decision-card-trigger" aria-expanded="false">
+                <span class="dc-trigger-left">
+                  <span class="dc-trigger-title">Deploy a model trained off-platform to IBM LinuxONE</span>
+                  <span class="dc-pill"><a href="../products-tools/model-formats.html#pmml">PMML</a> · <a href="../products-tools/model-formats.html#onnx">ONNX</a></span>
+                </span>
+                <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
+              </button>
+              <div class="dc-card-intro">
+                <p>You have trained a model using any framework on any platform and want to convert it to a portable format and deploy it on IBM LinuxONE.</p>
+              </div>
+              <div class="decision-card-body" hidden>
+                <p><strong>→ Export your model to <a href="../products-tools/model-formats.html#pmml">PMML</a> (traditional ML) or <a href="../products-tools/model-formats.html#onnx">ONNX</a> (deep learning or encoder LLMs)</strong> and deploy it on IBM LinuxONE. PMML and ONNX are portable interchange formats supported by IBM LinuxONE serving tools — no dependency on the original training framework at inference time. For deep learning and encoder LLMs, compile the ONNX model with the <a href="../products-tools/model-formats.html#zdlc">IBM Z Deep Learning Compiler (zDLC)</a> to leverage Telum II acceleration.</p>
+                <p><em>Common approach:</em> Train with any framework off-platform → Export to PMML or ONNX → (For deep learning) Compile with zDLC → Deploy via AI Toolkit containers or Red Hat OpenShift AI on IBM LinuxONE.</p>
               </div>
             </div>
 
@@ -195,7 +211,7 @@
                 <p>Your use case is well-served by a general-purpose LLM sourced from Hugging Face, IBM Granite, or another model provider — no training required.</p>
               </div>
               <div class="decision-card-body" hidden>
-                <p><strong>→ Use <a href="../products-tools/inference-serving.html#rh-inference">Red Hat AI Inference Server</a></strong> (vLLM-based, optimized for Spyre-accelerated decoder LLMs) or <strong><a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a></strong> (for broader model management, monitoring, and serving) to serve a pre-built LLM on IBM LinuxONE. Supported models include Granite, Llama, Qwen, DeepSeek, Gemma, Mistral, and others.</p>
+                <p><strong>→ Use <a href="../products-tools/inference-serving.html#rh-inference">Red Hat AI Inference Server</a></strong> (vLLM-based, optimized for Spyre-accelerated decoder LLMs) or <strong><a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a></strong> (for broader model management, monitoring, and serving) to serve a pre-built LLM on IBM LinuxONE. Supported models include Granite, Llama, and others.</p>
                 <p><em>Note: Red Hat AI Inference Server runs standalone and does not require Red Hat OpenShift. Red Hat OpenShift AI is the better fit if your organization already has an OpenShift container strategy on IBM LinuxONE.</em></p>
                 <p><em>Common approach:</em> Select a model from Hugging Face or IBM model repository → Serve via Red Hat AI Inference Server or Red Hat OpenShift AI on IBM LinuxONE → Integrate with your application via REST API.</p>
               </div>
