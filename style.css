@@ -3,41 +3,47 @@
 
 /* ─── IBM Design Tokens ──────────────────────────────────────── */
 :root {
-  --ibm-orange:      #ff832b;
-  --ibm-orange-hover:#e56e1a;
-  --ibm-orange-20:   #ffd4b0;
-  --ibm-orange-10:   #fff2e8;
-  --ibm-orange-80:   #8a3800;
-  --ibm-blue:        #0f62fe;
-  --ibm-blue-hover:  #0353e9;
-  --ibm-blue-20:     #a6c8ff;
-  --ibm-blue-10:     #edf5ff;
-  --ibm-blue-80:     #002d9c;
-  --ibm-black:       #161616;
-  --ibm-gray-90:     #1a1a1a;
-  --ibm-gray-85:     #242424;
-  --ibm-gray-80:     #333333;
-  --ibm-gray-70:     #525252;
-  --ibm-gray-50:     #8d8d8d;
-  --ibm-gray-30:     #c6c6c6;
-  --ibm-gray-20:     #e8e8e8;
-  --ibm-gray-10:     #f4f4f4;
-  --ibm-white:       #ffffff;
+  /* ── LinuxONE Color Palette Specs ─────────────────────────── */
+  --ibm-orange:         #eb6200; /* Official LinuxONE Orange (R235 G98 B0) */
+  --ibm-orange-light:   #ff832b; /* Light Orange (R255 G131 B43) */
+  --ibm-orange-hover:   #d05600;
+  --ibm-orange-20:      #ffd4b0;
+  --ibm-orange-10:      #fff2e8;
+  --ibm-orange-80:      #8a3800;
+  
+  --ibm-blue:           #0043ce; /* Functional Dark Blue for text links only */
+  --ibm-blue-hover:     #002d9c;
+  --ibm-blue-20:        #d0e2ff;
+  --ibm-blue-10:        #edf5ff;
+  --ibm-blue-80:        #002d9c;
+  
+  --ibm-black:          #161616;
+  --ibm-gray-90:        #1a1a1a;
+  --ibm-gray-85:        #242424;
+  --ibm-gray-80:        #333333;
+  --ibm-gray-70:        #525252;
+  --ibm-gray-50:        #8d8d8d;
+  --ibm-gray-30:        #c6c6c6;
+  --ibm-gray-20:        #e0e0e0; /* Gray 20 (R224 G224 B224) */
+  --ibm-gray-10:        #f4f4f4; /* Gray 10 (R244 G244 B244) */
+  --ibm-white:          #ffffff; /* White (R255 G255 B255) */
+  
   --ibm-text-primary:   #161616;
   --ibm-text-secondary: #4a4a4a;
   --ibm-text-helper:    #6f6f6f;
-  --ibm-border:         #e0e0e0;
-  --ibm-green:       #24a148;
-  --ibm-teal:        #007d79;
-  /* ── IBM Purple (non-interactive) ── */
-  --cg-accent:       #a56eff;
-  --cg-accent-dark:  #a56eff;
-  --cg-20:           #a56eff;
-  --cg-10:           #f6f2ff;
+  --ibm-border:         #e0e0e0; /* Gray 20 */
+  --ibm-green:          #24a148;
+  --ibm-teal:           #007d79;
+  
+  /* ── Brand Accent (LinuxONE Orange System) ── */
+  --cg-accent:          #eb6200;
+  --cg-accent-dark:     #262626;
+  --cg-20:              #ffd4b0;
+  --cg-10:              #fff2e8;
 
-  --topbar-height:     64px;
-  --lifecycle-height:  42px;
-  --pagenav-width:     240px;
+  --topbar-height:      64px;
+  --lifecycle-height:   42px;
+  --pagenav-width:      240px;
 }
 
 /* ─── Base ───────────────────────────────────────────────────── */
@@ -46,7 +52,7 @@ body {
   font-size: 15px;
   line-height: 1.6;
   color: var(--ibm-text-primary);
-  background: #e5e7eb;
+  background: var(--ibm-gray-10);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -199,7 +205,7 @@ body {
   min-width: 220px;
   background: #1e1e2e;
   border: 1px solid rgba(255,255,255,0.1);
-  border-top: 2px solid var(--ibm-blue);
+  border-top: 2px solid var(--ibm-orange);
   box-shadow: 0 8px 24px rgba(0,0,0,0.4);
   z-index: 2000;
   padding: 8px 0;
@@ -231,13 +237,13 @@ body {
 .topnav-dropdown a:hover {
   background: rgba(255,255,255,0.07);
   color: #ffffff;
-  border-left-color: var(--ibm-blue);
+  border-left-color: var(--ibm-orange);
 }
 
 .topnav-dropdown a.active {
   color: #ffffff;
-  border-left-color: var(--ibm-blue);
-  background: rgba(15,98,254,0.18);
+  border-left-color: var(--ibm-orange);
+  background: rgba(235,98,0,0.18);
 }
 
 /* ─── Flyout (category → tools) ─────────────────────────────── */
@@ -262,13 +268,13 @@ body {
 .topnav-flyout-item:hover > .topnav-dropdown-cat {
   background: rgba(255,255,255,0.07);
   color: #ffffff;
-  border-left-color: var(--ibm-blue);
+  border-left-color: var(--ibm-orange);
 }
 
 .topnav-dropdown-cat.active {
   color: #ffffff;
-  border-left-color: var(--ibm-blue);
-  background: rgba(15,98,254,0.18);
+  border-left-color: var(--ibm-orange);
+  background: rgba(235,98,0,0.18);
 }
 
 .flyout-caret {
@@ -286,7 +292,7 @@ body {
   min-width: 260px;
   background: #1e1e2e;
   border: 1px solid rgba(255,255,255,0.1);
-  border-top: 2px solid var(--ibm-blue);
+  border-top: 2px solid var(--ibm-orange);
   box-shadow: 8px 8px 24px rgba(0,0,0,0.4);
   z-index: 2100;
   padding: 8px 0;
@@ -309,7 +315,7 @@ body {
 .flyout-tool-link:hover {
   background: rgba(255,255,255,0.07);
   color: #ffffff;
-  border-left-color: var(--ibm-blue);
+  border-left-color: var(--ibm-orange);
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -341,7 +347,7 @@ body {
 
 .lifecycle-link.active {
   color: #ffffff;
-  border-bottom-color: var(--ibm-blue);
+  border-bottom-color: var(--ibm-orange);
   font-weight: 500;
 }
 
@@ -359,7 +365,7 @@ body.has-lifecycle .page-shell {
 .page-shell {
   display: flex;
   min-height: 100vh;
-  background: #e5e7eb;
+  background: var(--ibm-gray-10);
 }
 
 /* pagenav on the LEFT */
@@ -405,12 +411,12 @@ body.has-lifecycle .pagenav {
 }
 
 .pagenav-link:hover {
-  color: #a6c8ff;
+  color: var(--ibm-orange-light);
 }
 
 .pagenav-link.active {
   color: #ffffff;
-  border-right-color: var(--ibm-blue);
+  border-right-color: var(--ibm-orange);
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -437,27 +443,27 @@ body.has-lifecycle .pagenav {
 
 /* ─── Page Hero (shared across all content pages) ────────────── */
 .page-hero {
-  background: var(--ibm-orange);
+  background: var(--ibm-white);
   color: var(--ibm-text-primary);
-  padding: 48px 52px 44px;
+  padding: 40px 52px 36px;
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid var(--ibm-orange-hover);
+  border-bottom: 1px solid var(--ibm-border);
 }
 .page-hero > * { position: relative; z-index: 1; }
 .page-hero h1 {
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.25;
   letter-spacing: -0.4px;
   color: var(--ibm-text-primary);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 .page-hero p {
   font-size: 15px;
   line-height: 1.65;
   color: var(--ibm-text-secondary);
-  max-width: 620px;
+  max-width: 680px;
   margin: 0;
 }
 
@@ -467,10 +473,11 @@ body.has-lifecycle .pagenav {
 .page-hero p a {
   color: var(--ibm-blue);
   text-decoration: underline;
-  text-decoration-color: rgba(15,98,254,0.4);
+  text-decoration-color: rgba(0, 67, 206, 0.4);
 }
 .page-hero p a:hover {
-  text-decoration-color: var(--ibm-blue);
+  color: var(--ibm-blue-hover);
+  text-decoration-color: var(--ibm-blue-hover);
 }
 
 /* ─── Clickable tile cards (Next Steps) ──────────────────────── */
@@ -480,7 +487,7 @@ body.has-lifecycle .pagenav {
   border: 1px solid var(--ibm-border);
   border-radius: 6px;
   padding: 18px 18px 16px;
-  border-top: 3px solid var(--ibm-blue);
+  border-top: 3px solid var(--ibm-orange);
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   text-decoration: none;
   color: inherit;
@@ -488,9 +495,9 @@ body.has-lifecycle .pagenav {
   cursor: pointer;
 }
 .card-tile:hover {
-  box-shadow: 0 4px 14px rgba(15,98,254,0.16);
+  box-shadow: 0 4px 14px rgba(235,98,0,0.16);
   transform: translateY(-2px);
-  border-top-color: var(--ibm-blue-hover);
+  border-top-color: var(--ibm-orange-hover);
 }
 .card-tile h4 {
   font-size: 13px;
@@ -508,7 +515,7 @@ body.has-lifecycle .pagenav {
 .card-tile .tile-arrow {
   font-size: 12px;
   font-weight: 600;
-  color: var(--ibm-blue);
+  color: var(--ibm-orange);
 }
 
 /* ─── Product category tiles (overview + subnav) ─────────────── */
@@ -706,6 +713,17 @@ body.has-lifecycle .section h2[id] {
   font-weight: 600;
 }
 
+.section a {
+  color: var(--ibm-blue);
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 67, 206, 0.4);
+}
+
+.section a:hover {
+  color: var(--ibm-blue-hover);
+  text-decoration-color: var(--ibm-blue-hover);
+}
+
 .section a.learn-more {
   display: inline-flex;
   align-items: center;
@@ -739,17 +757,17 @@ body.has-lifecycle .section h2[id] {
   justify-content: space-between;
   gap: 12px;
   padding: 14px 20px;
-  background: #edf5ff;
+  background: var(--ibm-orange-10);
   border: none;
   cursor: pointer;
   text-align: left;
   transition: background 0.15s;
 }
 .tool-accordion-trigger:hover {
-  background: #d0e2ff;
+  background: var(--ibm-orange-20);
 }
 .tool-accordion.is-open .tool-accordion-trigger {
-  background: #d0e2ff;
+  background: var(--ibm-orange-20);
 }
 .tool-accordion-title {
   font-size: 16px;
@@ -890,13 +908,13 @@ body.has-lifecycle .section h2[id] {
   border: 1px solid var(--ibm-border);
   border-radius: 6px;
   padding: 18px 18px 16px;
-  border-top: 3px solid var(--cg-accent);
+  border-top: 3px solid var(--ibm-orange);
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   transition: box-shadow 0.2s, transform 0.2s;
 }
 
 .card:hover {
-  box-shadow: 0 4px 14px rgba(105,112,119,0.15);
+  box-shadow: 0 4px 14px rgba(235,98,0,0.12);
   transform: translateY(-1px);
 }
 
@@ -925,9 +943,9 @@ body.has-lifecycle .section h2[id] {
 }
 
 .compare-card {
-  background: var(--cg-10);
-  border: 1px solid var(--cg-20);
-  border-top: 3px solid var(--cg-accent);
+  background: var(--ibm-orange-10);
+  border: 1px solid var(--ibm-orange-20);
+  border-top: 3px solid var(--ibm-orange);
   border-radius: 6px;
   padding: 18px;
 }
@@ -935,7 +953,7 @@ body.has-lifecycle .section h2[id] {
 .compare-card h4 {
   font-size: 13px;
   font-weight: 600;
-  color: var(--cg-accent-dark);
+  color: var(--ibm-text-primary);
   margin-bottom: 12px;
 }
 
@@ -945,9 +963,9 @@ body.has-lifecycle .section h2[id] {
 /* ─── Placeholder box ────────────────────────────────────────── */
 .placeholder-box {
   max-width: 620px;
-  border: 2px dashed var(--ibm-blue-20);
-  background: var(--ibm-blue-10);
-  color: var(--ibm-blue);
+  border: 2px dashed var(--ibm-orange-20);
+  background: var(--ibm-orange-10);
+  color: var(--ibm-orange-80);
   border-radius: 6px;
   padding: 48px 24px;
   text-align: center;
@@ -973,7 +991,7 @@ body.has-lifecycle .section h2[id] {
 }
 
 .ops-table thead th {
-  background: var(--cg-accent-dark);
+  background: #262626;
   color: var(--ibm-white);
   text-align: left;
   padding: 12px 16px;
@@ -981,7 +999,7 @@ body.has-lifecycle .section h2[id] {
   font-size: 12px;
   letter-spacing: 0.3px;
   text-transform: uppercase;
-  border-bottom: 2px solid #1a1a1a;
+  border-bottom: 2px solid var(--ibm-orange);
 }
 
 .ops-table tbody td {
@@ -992,23 +1010,23 @@ body.has-lifecycle .section h2[id] {
 }
 
 .ops-table tbody tr:last-child td { border-bottom: none; }
-.ops-table tbody tr:hover td { background: var(--ibm-blue-10); }
+.ops-table tbody tr:hover td { background: var(--ibm-orange-10); }
 
 .ops-table td.supported { color: var(--ibm-green); font-weight: 500; }
 .ops-table td.not-supported { color: #bbb; text-align: center; }
-.ops-table td.enhanced { color: var(--ibm-blue); font-weight: 500; }
+.ops-table td.enhanced { color: var(--ibm-orange-80); font-weight: 600; }
 .ops-table td.cap-label { font-weight: 600; color: var(--ibm-text-primary); white-space: nowrap; width: 200px; }
 .ops-table code { font-family: 'IBM Plex Mono', monospace; font-size: 12px; background: var(--ibm-gray-10); padding: 2px 6px; border-radius: 3px; }
 
 .ops-table td.ops-group-header {
-  background: #f0f4ff;
-  color: var(--ibm-blue);
+  background: var(--ibm-orange-10);
+  color: var(--ibm-orange-80);
   font-weight: 600;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   padding: 8px 16px;
-  border-bottom: 1px solid var(--ibm-border);
+  border-bottom: 1px solid var(--ibm-orange-20);
 }
 
 /* ─── Pattern / decision table ───────────────────────────────── */
@@ -1023,7 +1041,7 @@ body.has-lifecycle .section h2[id] {
 .pattern-table { width: 100%; border-collapse: collapse; font-size: 14px; }
 
 .pattern-table th {
-  background: var(--cg-accent-dark);
+  background: #262626;
   color: var(--ibm-white);
   text-align: left;
   padding: 12px 16px;
@@ -1031,7 +1049,7 @@ body.has-lifecycle .section h2[id] {
   font-size: 12px;
   letter-spacing: 0.3px;
   text-transform: uppercase;
-  border-bottom: 2px solid #1a1a1a;
+  border-bottom: 2px solid var(--ibm-orange);
 }
 
 .pattern-table td {
@@ -1043,7 +1061,7 @@ body.has-lifecycle .section h2[id] {
 }
 
 .pattern-table tr:last-child td { border-bottom: none; }
-.pattern-table tr:hover td { background: var(--cg-10); }
+.pattern-table tr:hover td { background: var(--ibm-orange-10); }
 
 /* ─── General data/glossary table ────────────────────────────── */
 .data-table {
@@ -1058,7 +1076,7 @@ body.has-lifecycle .section h2[id] {
 }
 
 .data-table thead th {
-  background: var(--cg-accent-dark);
+  background: #262626;
   color: var(--ibm-white);
   text-align: left;
   padding: 12px 16px;
@@ -1066,7 +1084,7 @@ body.has-lifecycle .section h2[id] {
   font-size: 12px;
   letter-spacing: 0.3px;
   text-transform: uppercase;
-  border-bottom: 2px solid #1a1a1a;
+  border-bottom: 2px solid var(--ibm-orange);
 }
 
 .data-table tbody td {
@@ -1078,7 +1096,7 @@ body.has-lifecycle .section h2[id] {
 }
 
 .data-table tbody tr:last-child td { border-bottom: none; }
-.data-table tbody tr:hover td { background: var(--cg-10); }
+.data-table tbody tr:hover td { background: var(--ibm-orange-10); }
 .data-table a { color: var(--ibm-blue); text-decoration: none; }
 .data-table a:hover { text-decoration: underline; }
 
@@ -1106,18 +1124,18 @@ body.has-lifecycle .section h2[id] {
 .expand-card summary::-webkit-details-marker { display: none; }
 
 .expand-card summary:hover {
-  background: var(--ibm-blue-10);
+  background: var(--ibm-orange-10);
 }
 
 .expand-card-title {
   font-size: 13.5px;
   font-weight: 600;
-  color: var(--ibm-blue);
+  color: var(--ibm-text-primary);
 }
 
 .expand-card-caret {
   font-size: 14px;
-  color: var(--ibm-blue);
+  color: var(--ibm-orange);
   transition: transform 0.2s;
 }
 
@@ -1172,9 +1190,9 @@ body.has-lifecycle .section h2[id] {
 }
 
 .telum-primary {
-  background: var(--cg-10);
-  border-color: var(--cg-20);
-  border-top: 3px solid var(--cg-accent);
+  background: var(--ibm-orange-10);
+  border-color: var(--ibm-orange-20);
+  border-top: 3px solid var(--ibm-orange);
 }
 
 .telum-supporting {
@@ -1190,7 +1208,7 @@ body.has-lifecycle .section h2[id] {
   letter-spacing: 0.6px;
   padding: 2px 7px;
   border-radius: 20px;
-  background: var(--ibm-blue);
+  background: var(--ibm-orange);
   color: #ffffff;
 }
 
@@ -1243,7 +1261,7 @@ body.has-lifecycle .section h2[id] {
 }
 
 .entry-flow-end {
-  background: var(--ibm-blue);
+  background: var(--ibm-orange);
   color: #ffffff;
   border: none;
 }
@@ -1292,8 +1310,8 @@ body.has-lifecycle .section h2[id] {
 }
 
 .entry-flow-ep1 {
-  background: var(--cg-10);
-  border: 1px solid var(--cg-20);
+  background: var(--ibm-orange-10);
+  border: 1px solid var(--ibm-orange-20);
   color: var(--ibm-text-primary);
 }
 
@@ -1304,8 +1322,8 @@ body.has-lifecycle .section h2[id] {
 }
 
 .entry-flow-ep3 {
-  background: #f6f2ff;
-  border: 1px solid #d4bbff;
+  background: #f4f4f4;
+  border: 1px solid var(--ibm-border);
   color: var(--ibm-text-primary);
 }
 
@@ -1319,7 +1337,7 @@ body.has-lifecycle .section h2[id] {
   font-size: 11px;
   font-weight: 700;
   flex-shrink: 0;
-  background: var(--cg-accent);
+  background: var(--ibm-orange);
   color: #ffffff;
 }
 
@@ -1329,7 +1347,7 @@ body.has-lifecycle .section h2[id] {
 }
 
 .entry-flow-ep3 .ep-badge {
-  background: #6929c4;
+  background: #525252;
   color: #ffffff;
 }
 
@@ -1352,7 +1370,7 @@ body.has-lifecycle .section h2[id] {
 }
 
 .ep-card:hover {
-  box-shadow: 0 4px 14px rgba(15,98,254,0.10);
+  box-shadow: 0 4px 14px rgba(235,98,0,0.12);
   transform: translateY(-1px);
 }
 
@@ -1463,7 +1481,7 @@ body.has-lifecycle .section h2[id] {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: var(--cg-accent);
+  background: var(--ibm-orange);
   color: var(--ibm-white);
   font-size: 13px;
   font-weight: 600;
@@ -1473,12 +1491,12 @@ body.has-lifecycle .section h2[id] {
   margin-top: 1px;
 }
 
-.alv-step--1 .alv-number { background: var(--cg-accent-dark); }
-.alv-step--2 .alv-number { background: var(--cg-accent); }
-.alv-step--3 .alv-number { background: var(--cg-accent); }
-.alv-step--4 .alv-number { background: var(--cg-accent); }
-.alv-step--5 .alv-number { background: var(--cg-accent); }
-.alv-step--6 .alv-number { background: var(--cg-accent); }
+.alv-step--1 .alv-number { background: var(--ibm-orange); }
+.alv-step--2 .alv-number { background: var(--ibm-orange); }
+.alv-step--3 .alv-number { background: var(--ibm-orange); }
+.alv-step--4 .alv-number { background: var(--ibm-orange); }
+.alv-step--5 .alv-number { background: var(--ibm-orange); }
+.alv-step--6 .alv-number { background: var(--ibm-orange); }
 
 .alv-body { flex: 1; }
 
@@ -1531,9 +1549,9 @@ body.has-lifecycle .section h2[id] {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.4px;
-  color: var(--ibm-blue);
-  background: var(--ibm-blue-10);
-  border: 1px solid var(--ibm-blue-20);
+  color: var(--ibm-orange-80);
+  background: var(--ibm-orange-10);
+  border: 1px solid var(--ibm-orange-20);
   padding: 2px 8px;
   border-radius: 3px;
 }
@@ -1655,7 +1673,7 @@ body.has-lifecycle .section h2[id] {
   width: 360px;
   background: #1e1e2e;
   border: 1px solid rgba(255,255,255,0.12);
-  border-top: 2px solid var(--ibm-blue);
+  border-top: 2px solid var(--ibm-orange);
   border-radius: 0 0 6px 6px;
   box-shadow: 0 12px 32px rgba(0,0,0,0.45);
   z-index: 3000;
@@ -1701,7 +1719,7 @@ body.has-lifecycle .section h2[id] {
 }
 
 .search-result-title mark {
-  background: rgba(15,98,254,0.5);
+  background: rgba(235,98,0,0.5);
   color: #ffffff;
   border-radius: 2px;
   padding: 0 1px;
@@ -1725,7 +1743,7 @@ body.has-lifecycle .section h2[id] {
 }
 
 .search-result-snippet mark {
-  background: rgba(15,98,254,0.4);
+  background: rgba(235,98,0,0.4);
   color: rgba(255,255,255,0.9);
   border-radius: 2px;
   padding: 0 1px;
@@ -1750,7 +1768,7 @@ body.has-lifecycle .section h2[id] {
 
 .callout-note {
   background: var(--ibm-gray-10);
-  border-left: 3px solid var(--ibm-blue);
+  border-left: 3px solid var(--ibm-orange);
   border-radius: 0 4px 4px 0;
   padding: 10px 14px;
   margin: 16px 0 0;
@@ -2076,8 +2094,8 @@ body.has-lifecycle .section h2[id] {
 
   .topnav-link.active {
     border-bottom: none;
-    border-left-color: var(--ibm-blue);
-    background: rgba(15,98,254,0.15);
+    border-left-color: var(--ibm-orange);
+    background: rgba(235,98,0,0.15);
   }
 
   .mobile-subnav-toggle {

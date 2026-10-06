@@ -86,7 +86,7 @@
     }
     .home-why-card {
       background: var(--ibm-gray-10);
-      border-left: 3px solid var(--cg-accent);
+      border-left: 3px solid var(--ibm-orange);
       border-radius: 4px;
       padding: 18px 20px;
     }
@@ -131,7 +131,7 @@
       transition: box-shadow 0.2s, transform 0.2s;
     }
     .home-vblock:hover {
-      box-shadow: 0 4px 18px rgba(15,98,254,0.13);
+      box-shadow: 0 4px 18px rgba(235,98,0,0.18);
       transform: translateY(-2px);
     }
     /* Icon banner — flat solid color, icon left-aligned */
@@ -142,9 +142,9 @@
       justify-content: flex-start;
       padding: 0 28px;
     }
-    .home-vblock-banner--usecases  { background: #0043ce; }
-    .home-vblock-banner--lifecycle { background: #0f62fe; }
-    .home-vblock-banner--products  { background: #4589ff; }
+    .home-vblock-banner--usecases  { background: var(--ibm-orange); }
+    .home-vblock-banner--lifecycle { background: var(--ibm-orange); color: #fff; }
+    .home-vblock-banner--products  { background: var(--ibm-orange); color: #fff; }
     .home-vblock-banner svg { flex-shrink: 0; }
     .home-vblock-body {
       padding: 20px 22px 22px;
@@ -180,7 +180,7 @@
     .home-vblock-link {
       font-size: 13px;
       font-weight: 600;
-      color: var(--ibm-blue);
+      color: var(--ibm-orange);
     }
 
     /* ── Lifecycle strip ────────────────────────────────────── */
@@ -204,11 +204,11 @@
       transition: background 0.15s;
     }
     .home-lifecycle-step:last-child { border-right: none; }
-    .home-lifecycle-step:hover { background: var(--ibm-blue-10); }
+    .home-lifecycle-step:hover { background: var(--ibm-orange-10); }
     .home-lifecycle-step-num {
       font-size: 10px;
       font-weight: 700;
-      color: var(--ibm-blue);
+      color: var(--ibm-orange);
       letter-spacing: 0.5px;
       text-transform: uppercase;
       margin-bottom: 6px;
@@ -492,7 +492,7 @@
 
             <!-- 1. Client Briefing -->
             <div style="border:1px solid var(--ibm-border);border-radius:8px;padding:24px 26px;display:flex;flex-direction:column;position:relative;">
-              <div style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--cg-accent);color:#fff;font-size:13px;font-weight:700;margin-bottom:14px;flex-shrink:0;">1</div>
+              <div style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--ibm-orange);color:#fff;font-size:13px;font-weight:700;margin-bottom:14px;flex-shrink:0;">1</div>
               <h3 style="font-size:16px;font-weight:600;color:var(--ibm-text-primary);margin-bottom:8px;">Client briefing</h3>
               <p style="font-size:13px;color:var(--ibm-text-secondary);line-height:1.65;flex:1;margin-bottom:16px;">Discussion and demonstration of AI on IBM&#174; LinuxONE strategy and capabilities. Understand where how AI can be leveraged for impact in your business.</p>
               <div style="display:inline-flex;align-items:center;gap:5px;margin-bottom:10px;">
@@ -501,14 +501,14 @@
               </div>
               <p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.6px;color:var(--ibm-gray-70);margin:0 0 6px;">To schedule</p>
               <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--ibm-gray-10);border-radius:6px;border:1px solid var(--ibm-border);">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="var(--ibm-blue)" style="flex-shrink:0;"><path d="M28 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm-2.2 2L16 14.78 6.2 8zM4 24V9.34l11.43 7.58a1 1 0 0 0 1.14 0L28 9.34V24z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="var(--ibm-gray-70)" style="flex-shrink:0;"><path d="M28 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm-2.2 2L16 14.78 6.2 8zM4 24V9.34l11.43 7.58a1 1 0 0 0 1.14 0L28 9.34V24z"/></svg>
                 <a href="mailto:aionz@us.ibm.com" style="font-size:13px;font-weight:600;color:var(--ibm-blue);text-decoration:none;">aionz@us.ibm.com</a>
               </div>
             </div>
 
             <!-- 2. Discovery Workshop -->
             <div style="border:1px solid var(--ibm-border);border-radius:8px;padding:24px 26px;display:flex;flex-direction:column;position:relative;">
-              <div style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--cg-accent);color:#fff;font-size:13px;font-weight:700;margin-bottom:14px;flex-shrink:0;">2</div>
+              <div style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--ibm-orange);color:#fff;font-size:13px;font-weight:700;margin-bottom:14px;flex-shrink:0;">2</div>
               <h3 style="font-size:16px;font-weight:600;color:var(--ibm-text-primary);margin-bottom:8px;">Discovery Workshop</h3>
               <p style="font-size:13px;color:var(--ibm-text-secondary);line-height:1.65;flex:1;margin-bottom:16px;">Engage with an AI on IBM LinuxONE expert team to identify and ideate on candidate use cases, identify the value delivered by AI on IBM&#174; LinuxONE, and scope a project architecture.</p>
               <div style="display:inline-flex;align-items:center;gap:5px;margin-bottom:10px;">
@@ -517,14 +517,14 @@
               </div>
               <p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.6px;color:var(--ibm-gray-70);margin:0 0 6px;">To schedule</p>
               <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--ibm-gray-10);border-radius:6px;border:1px solid var(--ibm-border);">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="var(--ibm-blue)" style="flex-shrink:0;"><path d="M28 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm-2.2 2L16 14.78 6.2 8zM4 24V9.34l11.43 7.58a1 1 0 0 0 1.14 0L28 9.34V24z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="var(--ibm-gray-70)" style="flex-shrink:0;"><path d="M28 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm-2.2 2L16 14.78 6.2 8zM4 24V9.34l11.43 7.58a1 1 0 0 0 1.14 0L28 9.34V24z"/></svg>
                 <a href="mailto:aionz@us.ibm.com" style="font-size:13px;font-weight:600;color:var(--ibm-blue);text-decoration:none;">aionz@us.ibm.com</a>
               </div>
             </div>
 
             <!-- 3. Pilot / Proof of Concept -->
             <div style="border:1px solid var(--ibm-border);border-radius:8px;padding:24px 26px;display:flex;flex-direction:column;position:relative;">
-              <div style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--cg-accent);color:#fff;font-size:13px;font-weight:700;margin-bottom:14px;flex-shrink:0;">3</div>
+              <div style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--ibm-orange);color:#fff;font-size:13px;font-weight:700;margin-bottom:14px;flex-shrink:0;">3</div>
               <h3 style="font-size:16px;font-weight:600;color:var(--ibm-text-primary);margin-bottom:8px;">Pilot / Proof of Concept</h3>
               <p style="font-size:13px;color:var(--ibm-text-secondary);line-height:1.65;flex:1;margin-bottom:16px;">Collaborate with a multi-disciplinary IBM team to jointly innovate and rapidly demonstrate AI on IBM&#174; LinuxONE value.</p>
               <div style="display:inline-flex;align-items:center;gap:5px;margin-bottom:10px;">
@@ -533,7 +533,7 @@
               </div>
               <p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.6px;color:var(--ibm-gray-70);margin:0 0 6px;">To schedule</p>
               <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--ibm-gray-10);border-radius:6px;border:1px solid var(--ibm-border);">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="var(--ibm-blue)" style="flex-shrink:0;"><path d="M28 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm-2.2 2L16 14.78 6.2 8zM4 24V9.34l11.43 7.58a1 1 0 0 0 1.14 0L28 9.34V24z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="var(--ibm-gray-70)" style="flex-shrink:0;"><path d="M28 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm-2.2 2L16 14.78 6.2 8zM4 24V9.34l11.43 7.58a1 1 0 0 0 1.14 0L28 9.34V24z"/></svg>
                 <a href="mailto:aionz@us.ibm.com" style="font-size:13px;font-weight:600;color:var(--ibm-blue);text-decoration:none;">aionz@us.ibm.com</a>
               </div>
             </div>
@@ -608,7 +608,7 @@
           <h3>Contact Us</h3>
           <p>Have questions about AI on IBM LinuxONE, want to request a workshop, or looking to connect with the team? Reach out to us directly.</p>
           <div style="display:inline-flex;align-items:center;gap:10px;padding:12px 16px;background:var(--ibm-gray-10);border-radius:6px;border:1px solid var(--ibm-border);">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="var(--ibm-blue)"><path d="M28 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm-2.2 2L16 14.78 6.2 8zM4 24V9.34l11.43 7.58a1 1 0 0 0 1.14 0L28 9.34V24z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="var(--ibm-gray-70)"><path d="M28 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm-2.2 2L16 14.78 6.2 8zM4 24V9.34l11.43 7.58a1 1 0 0 0 1.14 0L28 9.34V24z"/></svg>
             <span style="font-size:14px;font-weight:600;color:var(--ibm-text-primary);user-select:all;">aionz@us.ibm.com</span>
           </div>
         </div>
