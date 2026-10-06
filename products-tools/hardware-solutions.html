@@ -28,36 +28,35 @@
         <!-- ── TELUM II ─────────────────────────────────────────────────── -->
         <div class="tool-accordion" id="telum">
           <button class="tool-accordion-trigger" aria-expanded="false">
-            <span class="tool-accordion-title">Telum II and the IBM Integrated Accelerator for AI</span>
+            <span class="tool-accordion-title">IBM Integrated Accelerator for AI (Telum)</span>
             <svg class="tool-accordion-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
           </button>
           <div class="tool-accordion-body" hidden>
-            <h1 style="margin-top:0;">Telum II and the IBM Integrated Accelerator for AI</h1>
+            <h1 style="margin-top:0;">IBM Integrated Accelerator for AI (Telum)</h1>
 
           <h2>What is the IBM Integrated Accelerator for AI?</h2>
-          <p>The IBM Integrated Accelerator for AI is an on-chip AI accelerator available on the <a href="https://www.ibm.com/products/z/telum" target="_blank" rel="noopener">IBM Telum II chip</a> — part of IBM LinuxONE 5 (and IBM z17) servers. It is designed to enable high throughput, low latency inference for deep learning and machine learning. It also supports small encoder language models.</p>
-          <p>You can build and train your models on any platform, including IBM LinuxONE. When you are ready to deploy, your models can take advantage of the Telum II on-chip accelerator, bringing model inferencing directly to transactions processed in the core for real-time decisions — 450 billion inference requests per day, 99% within 1ms latency.</p>
-          <p>The IBM Integrated Accelerator for AI is more than just a matrix multiply accelerator — it provides optimization and acceleration for a wide set of complex functions commonly found in deep learning and machine learning models, enabling a broader set of operations to run on-chip.</p>
+          <p>The IBM Integrated Accelerator for AI is an on-chip AI accelerator available on the IBM Telum chip, part of IBM LinuxONE 4 and IBM LinuxONE 5 servers. It is designed to enable high-throughput, low-latency inference for deep learning and machine learning workloads.</p>
+          <p>You can build and train your models on any platform, including Linux on IBM LinuxONE. When you are ready to deploy, your models receive transparent acceleration and optimization on-chip, leveraging the best available acceleration for the model type.</p>
+          <p>The IBM Integrated Accelerator for AI is more than just a matrix multiplication accelerator. It provides optimization and acceleration for a broad set of complex functions commonly found in deep learning and machine learning models, enabling a wider range of AI operations to run directly on-chip.</p>
 
           <h2>Why the Integrated Accelerator?</h2>
           <ul>
-            <li><strong>On-chip, no GPU required</strong> — AI inference runs directly on the Telum II processor alongside your business transactions, with no external hardware needed.</li>
-            <li><strong>High throughput, low latency</strong> — Designed for real-time scoring at enterprise scale, enabling AI decisions within transaction flows.</li>
-            <li><strong>Supported frameworks</strong> — Secured, supported open-source frameworks have been optimized to exploit the on-chip accelerator in Telum II.</li>
-            <li><strong>Security and compliance</strong> — Data doesn't need to leave the IBM LinuxONE platform, preserving the security and governance properties of your enterprise environment.</li>
-            <li><strong>Energy efficiency</strong> — 83% energy reduction compared to equivalent x86 + GPU deployments.</li>
+            <li><strong>On-chip, no GPU required</strong> &ndash; AI inference runs directly on the Telum processor with no external accelerator required for many AI workloads.</li>
+            <li><strong>High throughput, low latency</strong> &ndash; Designed to support real-time inferencing for enterprise applications, helping organizations make AI-driven decisions close to their data.</li>
+            <li><strong>Transparent acceleration</strong> &ndash; Supported frameworks automatically offload eligible operations to the accelerator without requiring application redesign or model rewrites.</li>
+            <li><strong>Security and compliance</strong> &ndash; AI workloads run on the same highly secure LinuxONE platform where enterprise applications and data reside, helping reduce data movement while supporting governance and compliance requirements.</li>
           </ul>
 
           <h2>Example Use Cases</h2>
           <div class="card-grid">
-            <div class="card"><h4>Fraud Detection</h4><p>Identify potentially fraudulent transactions as they occur, helping reduce losses and improve customer experience.</p></div>
-            <div class="card"><h4>Credit Risk Assessment</h4><p>Evaluate risk in real time to support faster lending and approval decisions.</p></div>
-            <div class="card"><h4>Payment Authorization</h4><p>Enhance payment processing with intelligent scoring and anomaly detection.</p></div>
-            <div class="card"><h4>Anti-Money Laundering</h4><p>Detect suspicious activity and support compliance initiatives through AI-powered analysis.</p></div>
+            <div class="card"><h4>Real-Time Fraud Detection</h4><p>Analyze transactions and business events as they occur to help detect fraudulent activity while maintaining low-latency response times.</p></div>
+            <div class="card"><h4>Risk Analysis</h4><p>Apply predictive AI models to evaluate financial, operational, or business risk in real time.</p></div>
+            <div class="card"><h4>Recommendation Systems</h4><p>Deliver intelligent recommendations and personalized experiences using machine learning models running close to enterprise data.</p></div>
+            <div class="card"><h4>Enterprise AI Applications</h4><p>Support AI-powered business applications that require scalable and efficient inferencing across enterprise workloads.</p></div>
           </div>
 
           <h2>Supported Operations by Machine Generation</h2>
-          <p>The following operations are supported on the accelerator by machine generation. Telum II (IBM LinuxONE 5) adds significant new capabilities including INT8 quantization (2× more efficient than FP16), Layer Normalization, Gelu, and more:</p>
+          <p>The following operations are supported on the accelerator by machine generation. Telum II on IBM LinuxONE 5 adds significant new capabilities, including INT8 quantization, Layer Normalization, Gelu, and additional tensor operations.</p>
           <details class="expand-card">
             <summary>
               <span class="expand-card-title">View supported operations table</span>
@@ -94,29 +93,67 @@
               </table>
             </div>
           </details>
+          <p style="margin-top:10px;font-size:13px;color:var(--ibm-gray-70);">The supported operations remain identical because the Integrated Accelerator for AI is the same Telum architecture available across IBM Z and LinuxONE systems.</p>
 
           <h2>Using the Integrated Accelerator for AI</h2>
-          <p>Depending on your model type, there are a few essential approaches to leveraging the Integrated Accelerator for AI. These capabilities are available in IBM product offerings as well as through no-cost channels (such as the IBM Z and LinuxONE Container Image Registry).</p>
-          <p><strong>For deep learning models</strong> (IBM Z Accelerated for PyTorch, IBM Z Accelerated for TensorFlow):</p>
+          <p>Depending on your model type, there are a few essential approaches to leveraging the Integrated Accelerator for AI. These capabilities are available through IBM offerings and open-source software on LinuxONE.</p>
+          <p><strong>For Deep Learning Models</strong> (PyTorch, TensorFlow):</p>
           <ul>
             <li><a href="../products-tools/model-formats.html#zdlc">ONNX models compiled with the IBM Z Deep Learning Compiler (zDLC)</a></li>
-            <li><a href="../products-tools/ai-frameworks.html#tensorflow">IBM Z Accelerated for TensorFlow</a> — transparent zDNN offload</li>
-            <li><a href="../products-tools/ai-frameworks.html#pytorch">IBM Z Accelerated for PyTorch</a> — Telum II acceleration</li>
+            <li><a href="../products-tools/ai-frameworks.html#tensorflow">IBM Z Accelerated for TensorFlow</a></li>
+            <li><a href="../products-tools/ai-frameworks.html#pytorch">IBM Z Accelerated for PyTorch</a></li>
           </ul>
-          <p><strong>For traditional ML models</strong> (scikit-learn, XGBoost, LightGBM):</p>
+          <p>These solutions can transparently leverage Integrated Accelerator capabilities available on LinuxONE.</p>
+          <p><strong>For Traditional Machine Learning Models</strong> (scikit-learn, XGBoost, LightGBM):</p>
           <ul>
-            <li><a href="../products-tools/ai-frameworks.html#snapml">IBM Z Accelerated for Snap ML</a> — optimized training and inference with Telum II acceleration for Random Forest, Extra Trees, and Gradient Boosting</li>
+            <li><a href="../products-tools/ai-frameworks.html#snapml">IBM Z Accelerated SnapML</a> &ndash; optimized training and inference with accelerator support for machine learning workloads.</li>
           </ul>
-          <p><strong>For model serving</strong>:</p>
+          <p><strong>For Framework and Compiler Developers</strong>:</p>
           <ul>
-            <li><a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton Inference Server</a></li>
-            <li><a href="../products-tools/inference-serving.html#tf-serving">IBM Z Accelerated Serving for TensorFlow</a></li>
+            <li><a href="https://github.com/IBM/zDNN" target="_blank" rel="noopener">IBM zDNN</a> &ndash; a low-level library that exposes Integrated Accelerator capabilities to frameworks and compilers. Available on major Linux distributions including Red Hat Enterprise Linux, Ubuntu, and SUSE Linux Enterprise Server.</li>
           </ul>
-          <p><strong>For framework and compiler developers</strong>:</p>
+
+          <h2>Related Technologies</h2>
+          <p>Organizations commonly use the Integrated Accelerator for AI alongside:</p>
           <ul>
-            <li><a href="https://github.com/IBM/zDNN" target="_blank" rel="noopener">IBM zDNN</a> — the low-level C library exposing Telum II AI accelerator operations. Available for RHEL, Ubuntu, and SUSE on Linux on Z.</li>
+            <li><a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a></li>
+            <li><a href="../products-tools/inference-serving.html#rh-inference">Red Hat AI Inference Server</a></li>
+            <li><a href="../products-tools/ai-platforms.html#watsonx-ai">watsonx.ai</a></li>
+            <li><a href="#spyre">IBM Spyre Accelerator</a></li>
+            <li><a href="../products-tools/inference-serving.html#triton">Triton Inference Server</a></li>
+            <li><a href="../products-tools/ai-frameworks.html#tensorflow">TensorFlow</a></li>
+            <li><a href="../products-tools/ai-frameworks.html#pytorch">PyTorch</a></li>
           </ul>
-          <a href="https://www.ibm.com/products/z/telum" class="learn-more" target="_blank" rel="noopener">IBM Telum processor website &#8594;</a>
+          <p>These technologies help organizations build, deploy, and scale AI workloads on LinuxONE while taking advantage of on-chip and accelerator-based inferencing capabilities.</p>
+
+          <h2>Telum vs. Spyre &mdash; Which to Use?</h2>
+          <div class="card-grid">
+            <div class="card">
+              <h4>Telum Integrated Accelerator</h4>
+              <ul style="padding-left:16px;margin:8px 0 0;font-size:13px;line-height:1.6;">
+                <li>Real-time transactional AI</li>
+                <li>Fraud detection at transaction speed</li>
+                <li>Risk and credit scoring</li>
+                <li>Payment authorization</li>
+                <li>Ultra-low latency, on-chip inference</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h4>Spyre Accelerator</h4>
+              <ul style="padding-left:16px;margin:8px 0 0;font-size:13px;line-height:1.6;">
+                <li>Generative AI and LLMs</li>
+                <li>RAG and enterprise assistants</li>
+                <li>Code modernization</li>
+                <li>Large-scale batch inference</li>
+                <li>Model fine-tuning (on roadmap)</li>
+              </ul>
+            </div>
+          </div>
+
+          <h2>Getting Started</h2>
+          <ul>
+            <li><a href="https://www.ibm.com/products/z/telum" target="_blank" rel="noopener">IBM Telum processor announcement</a></li>
+          </ul>
           </div>
         </div>
 
@@ -129,30 +166,23 @@
           <div class="tool-accordion-body" hidden>
             <h1 style="margin-top:0;">IBM Spyre Accelerator</h1>
             <p><strong>AI Lifecycle:</strong> <a href="../deploy-models/deploy-models.html">Deploy Models</a> · <a href="../serve-model/serve-model.html">Serve Model</a></p>
-            <p>The IBM Spyre Accelerator is an AI accelerator for IBM LinuxONE 5 designed to support generative AI and foundation model inference. It provides additional AI compute for workloads that require larger models and higher throughput than traditional transactional AI use cases — 32 Gen AI-ready cores per adapter card, with up to 48 cards per system, delivering 10.3× throughput compared to x86.</p>
-            <p>Spyre is commonly used to deploy and serve large language models that enable use cases like retrieval-augmented generation (RAG) applications, AI assistants, and code modernization solutions. It allows organizations to run these workloads close to their business applications and enterprise data on IBM LinuxONE.</p>
+            <p>The IBM Spyre Accelerator is an AI accelerator for LinuxONE Emperor 5 systems designed to support generative AI and foundation model inference. It provides dedicated AI compute for organizations running large AI models alongside enterprise Linux workloads.</p>
+            <p>Spyre helps scale inference workloads such as large language models that enables use cases like retrieval-augmented generation (RAG), AI assistants, and other generative AI applications while allowing data and applications to remain on the LinuxONE platform.</p>
 
             <h2>Key Capabilities</h2>
             <ul>
               <li>Dedicated AI acceleration for foundation model inference</li>
               <li>Support for a curated set of IBM Granite, Llama, Mixtral, and other transformer-based models</li>
               <li>Support for online and batch inference workloads</li>
-              <li>Scalable architecture: 32 Gen AI-ready cores per adapter card, up to 48 cards per system</li>
+              <li>Scalable architecture with support for multiple accelerator cards in a single system</li>
               <li>Support for FP16, INT8, and INT4 precision formats</li>
-              <li>Integration with enterprise AI platforms and inference runtimes</li>
+              <li>Integration with AI platforms, serving frameworks, and inference runtimes</li>
               <li>No accelerator programming required for most deployments</li>
             </ul>
 
-            <h2>On IBM LinuxONE</h2>
-            <p>It complements the Telum II AI accelerator, which is optimized for real-time transactional AI workloads such as fraud detection and risk scoring. Spyre is designed for larger generative AI and foundation model workloads that require additional compute capacity.</p>
-            <p>Organizations typically use Spyre when deploying:</p>
-            <ul>
-              <li>Large language models (LLMs)</li>
-              <li>Retrieval-augmented generation (RAG) applications</li>
-              <li>AI assistants and copilots</li>
-              <li>Document intelligence solutions</li>
-            </ul>
-            <p>Spyre is accessed through supported software products rather than programmed directly.</p>
+            <h2>On LinuxONE</h2>
+            <p>It is designed for organizations deploying and operating generative AI workloads on LinuxONE. Common use cases include AI assistants, document intelligence, enterprise search, knowledge assistants, code modernization, and other foundation model applications.</p>
+            <p>Rather than serving as a model development platform, Spyre provides the infrastructure needed to run production inference workloads at scale.</p>
 
             <h2>Common Software Integrations</h2>
             <ul>
@@ -164,10 +194,10 @@
             <h2>When to Consider Spyre</h2>
             <p>Spyre may be a good fit when:</p>
             <ul>
-              <li>You need to deploy and serve foundation models on IBM LinuxONE</li>
-              <li>Your workload requires more compute than traditional transactional AI models</li>
-              <li>You want to keep AI workloads close to business applications and data</li>
-              <li>You are implementing generative AI use cases on IBM LinuxONE</li>
+              <li>You need to deploy and serve foundation models on LinuxONE</li>
+              <li>Your AI strategy includes generative AI or large language models</li>
+              <li>You want to scale inference workloads while keeping applications and data on platform</li>
+              <li>You are building AI services using OpenShift AI, Red Hat AI Inference Server, vLLM, or Triton</li>
             </ul>
 
             <h2>Getting Started</h2>
