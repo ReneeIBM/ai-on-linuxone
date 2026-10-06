@@ -374,14 +374,34 @@
       border-radius: 4px;
       font-size: 13px;
       font-weight: 600;
-      text-decoration: none;
-      transition: opacity 0.15s;
+      text-decoration: none !important;
+      transition: opacity 0.15s, background 0.15s;
       white-space: nowrap;
     }
     .bp-cta:hover { opacity: 0.85; }
-    .bp-cta--primary  { background: var(--ibm-orange); color: #ffffff; border: 1px solid var(--ibm-orange); }
-    .bp-cta--secondary { background: #ffffff; color: var(--ibm-orange); border: 1px solid var(--ibm-orange); }
-    .bp-cta--ghost { background: transparent; color: var(--ibm-blue); border: none; font-weight: 400; padding-left: 4px; }
+    .bp-cta--primary {
+      background: #0f62fe !important;
+      color: #ffffff !important;
+      border: 1px solid #0f62fe !important;
+      text-decoration: none !important;
+    }
+    .bp-cta--primary:hover {
+      background: #0353e9 !important;
+      color: #ffffff !important;
+    }
+    .bp-cta--secondary {
+      background: #ffffff !important;
+      color: var(--ibm-orange) !important;
+      border: 1px solid var(--ibm-orange) !important;
+      text-decoration: none !important;
+    }
+    .bp-cta--ghost {
+      background: transparent !important;
+      color: var(--ibm-blue) !important;
+      border: none !important;
+      font-weight: 400;
+      padding-left: 4px;
+    }
 
     /* ── Additional Use Case Resources tiles ── */
     .ns-tile-grid {

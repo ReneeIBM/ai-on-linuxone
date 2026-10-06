@@ -443,12 +443,12 @@ body.has-lifecycle .pagenav {
 
 /* ─── Page Hero (shared across all content pages) ────────────── */
 .page-hero {
-  background: var(--ibm-white);
-  color: var(--ibm-text-primary);
-  padding: 40px 52px 36px;
+  background: var(--ibm-orange);
+  color: #ffffff;
+  padding: 44px 52px 40px;
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid var(--ibm-border);
+  border-bottom: 1px solid var(--ibm-orange-hover);
 }
 .page-hero > * { position: relative; z-index: 1; }
 .page-hero h1 {
@@ -456,14 +456,14 @@ body.has-lifecycle .pagenav {
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.4px;
-  color: var(--ibm-text-primary);
+  color: #ffffff;
   margin-bottom: 10px;
 }
 .page-hero p {
   font-size: 15px;
   line-height: 1.65;
-  color: var(--ibm-text-secondary);
-  max-width: 680px;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 720px;
   margin: 0;
 }
 
@@ -471,13 +471,14 @@ body.has-lifecycle .pagenav {
   max-width: none;
 }
 .page-hero p a {
-  color: var(--ibm-blue);
+  color: #ffffff;
+  font-weight: 600;
   text-decoration: underline;
-  text-decoration-color: rgba(0, 67, 206, 0.4);
+  text-decoration-color: rgba(255, 255, 255, 0.6);
 }
 .page-hero p a:hover {
-  color: var(--ibm-blue-hover);
-  text-decoration-color: var(--ibm-blue-hover);
+  color: #ffffff;
+  text-decoration-color: #ffffff;
 }
 
 /* ─── Clickable tile cards (Next Steps) ──────────────────────── */
