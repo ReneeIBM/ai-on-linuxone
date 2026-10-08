@@ -27,15 +27,11 @@
         <!-- ── OVERVIEW ─────────────────────────────────────────────── -->
         <section class="section" id="overview">
           <h1>AI Governance</h1>
-          <p>AI governance is an ongoing stage of the AI lifecycle that focuses on monitoring, managing, and evaluating models after deployment. Common activities include tracking model performance, detecting drift, understanding model behavior, and supporting organizational governance and compliance requirements. For organizations in regulated industries such as banking, insurance, healthcare, and the public sector — the primary clients of IBM LinuxONE — governance is a critical part of operating AI in production.</p>
-          <p>IBM LinuxONE supports governance activities on the same platform where data and models reside. Regulatory expectations around fairness, explainability, accountability, and auditability continue to grow — governing AI directly on IBM LinuxONE avoids unnecessary data movement, reduces latency, and helps maintain data sovereignty within organizational boundaries.</p>
+          <p>AI governance is an ongoing stage of the AI lifecycle that focuses on monitoring, managing, and evaluating models after deployment. Common activities include tracking model performance, detecting drift, understanding model behavior, and supporting organizational governance and compliance requirements. IBM LinuxONE supports governance activities on the same platform where data and models reside.</p>
+          <p>Regulatory expectations around fairness, explainability, accountability, and auditability continue to grow — governing AI directly on IBM LinuxONE avoids unnecessary data movement, reduces latency, and helps maintain data sovereignty within organizational boundaries.</p>
 
           <h2>What happens at this stage?</h2>
           <div class="card-grid">
-            <div class="card">
-              <h4>Monitor model performance</h4>
-              <p>Track model output quality and accuracy over time. Detect when a model's predictions begin to diverge from expected behavior — before it affects business outcomes.</p>
-            </div>
             <div class="card">
               <h4>Detect drift</h4>
               <p>Monitor for output drift (predictions changing) and feature drift (input data patterns shifting) — and drill down to identify the source so you can take prompt action.</p>
@@ -102,7 +98,7 @@
                 <p>You want enterprise AI governance — model lineage tracking, fairness and drift monitoring, and audit documentation — running directly on IBM LinuxONE or across hybrid environments.</p>
               </div>
               <div class="decision-card-body" hidden>
-                <p><strong>→ Use <a href="../products-tools/ai-platforms.html#watsonx-governance">watsonx.governance</a>.</strong> IBM watsonx.governance is now supported on IBM LinuxONE via IBM Software Hub 5.4.0, allowing organizations in banking, insurance, healthcare, and the public sector to monitor, track, and govern AI models directly on the platform where your most sensitive and regulated data resides.</p>
+                <p><strong>→ Use <a href="../products-tools/ai-platforms.html#watsonx-governance">watsonx.governance</a>.</strong> IBM watsonx.governance allows organizations to monitor, track, and govern AI models directly on the platform where your most sensitive data resides.</p>
                 <p>On IBM LinuxONE, watsonx.governance delivers three core capabilities:</p>
                 <ul style="margin: 6px 0 8px 18px; font-size:14px; color:var(--ibm-text-secondary); line-height:1.6;">
                   <li><strong>AI Factsheets</strong> — automatic capture of model metadata, end-to-end lineage tracking, centralized audit documentation, and simplified regulatory reporting</li>
