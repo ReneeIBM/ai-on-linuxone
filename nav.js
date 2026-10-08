@@ -361,7 +361,7 @@ function initSearch(wrapper, root) {
     { title: 'Data Preprocessing on IBM LinuxONE', section: 'Solution Blueprints', snippet: 'Build an AI solution with a preprocessing pipeline using open-source frameworks on IBM LinuxONE.', href: root + 'use-cases/ai-solution-template.html#data-preprocessing' },
 
     /* Turnkey & ISV Solutions */
-    { title: 'Turnkey & ISV Solutions', section: 'Products & Tools', snippet: 'Pre-built AI solutions from IBM and ecosystem partners — Featurespace, Quantexa, Clari5, OvationCXM, Exponential AI, ACI, DXC, Worldline.', href: root + 'products-tools/turnkey-solutions.html' },
+    { title: 'Turnkey & ISV Solutions', section: 'Products & Tools', snippet: 'Pre-built AI solutions from IBM and ecosystem partners on IBM LinuxONE — Featurespace, Quantexa, Clari5, OvationCXM, Exponential AI, ACI, DXC, Worldline.', href: root + 'products-tools/turnkey-solutions.html' },
     { title: 'Featurespace — ARIC Risk Hub', section: 'ISV Solutions', snippet: 'Real-time fraud detection and risk scoring on IBM LinuxONE. Integrates with core banking and payments solutions.', href: root + 'products-tools/turnkey-solutions.html#packaged-ai-solutions' },
     { title: 'Quantexa — Decision Intelligence Platform', section: 'ISV Solutions', snippet: 'Entity resolution, fraud detection, KYC, and AML on IBM LinuxONE. Batch core banking and payments integrations.', href: root + 'products-tools/turnkey-solutions.html#packaged-ai-solutions' },
     { title: 'Clari5 — Enterprise Fraud Management', section: 'ISV Solutions', snippet: 'Anti-money laundering and payments fraud detection on IBM LinuxONE.', href: root + 'products-tools/turnkey-solutions.html#packaged-ai-solutions' },
