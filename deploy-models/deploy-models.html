@@ -34,11 +34,11 @@
           <div class="card-grid">
             <div class="card">
               <h4>Convert to a portable format</h4>
-              <p>Export your trained model to ONNX (deep learning) or PMML (traditional ML) — standard interchange formats supported by IBM LinuxONE deployment tools. If you are running IBM Z Accelerated for TensorFlow or IBM Z Accelerated for PyTorch natively, you can deploy directly without ONNX conversion.</p>
+              <p>Export to ONNX (deep learning) or PMML (traditional ML). Native TensorFlow and PyTorch models can deploy directly without conversion.</p>
             </div>
             <div class="card">
               <h4>Optimize for IBM LinuxONE hardware</h4>
-              <p>For deep learning models and encoder LLMs, compile with the IBM Z Deep Learning Compiler (zDLC) after ONNX conversion to target the Telum on-chip AI accelerator. Unlike traditional ML models, deep learning models and encoder LLMs will almost always target the on-chip AI accelerator — they contain mathematical operations that benefit from it automatically. For LLMs served on Spyre via Red Hat AI Inference Server or Red Hat OpenShift AI, no ONNX conversion or compilation is required — models are served natively.</p>
+              <p>Deep learning models and encoder LLMs: compile with zDLC after ONNX conversion to target the Telum on-chip AI accelerator. LLMs on Spyre are served natively — no ONNX conversion required.</p>
             </div>
             <div class="card">
               <h4>Move to production</h4>
@@ -237,7 +237,7 @@
                 <p>You have a hybrid deployment that spans IBM LinuxONE and other platforms (cloud, GPU clusters), and you need intelligent routing of LLM inference requests to the most optimal platform.</p>
               </div>
               <div class="decision-card-body" hidden>
-                <p><strong>→ Use <a href="../products-tools/ai-platforms.html#ai-optimizer">AI Optimizer for IBM LinuxONE</a>.</strong> AI Optimizer is a complete software appliance — delivered as a single LPAR image — that boots a fully optimized inferencing stack ready in under 2 hours. It acts as a policy-driven gateway routing inference requests to the most optimal endpoint (Spyre, Telum II, or external) based on tagging and model grouping. It integrates <a href="../products-tools/inference-serving.html#rh-inference">Red Hat AI Inference Server</a> and includes real-time monitoring via Prometheus &amp; Grafana.</p>
+                <p><strong>→ Use <a href="../products-tools/ai-platforms.html#ai-optimizer">AI Optimizer for IBM LinuxONE</a>.</strong> AI Optimizer is a policy-driven inference gateway that routes inference requests to the most optimal endpoint (Spyre, Telum II, or external) and integrates <a href="../products-tools/inference-serving.html#rh-inference">Red Hat AI Inference Server</a> for Spyre workloads.</p>
                 <p><em>Common approach:</em> Deploy AI Optimizer as the inference gateway on IBM LinuxONE → Register on-platform and external LLMs → Route inference requests to Spyre via the embedded Red Hat AI Inference Server or to an external environment based on configured policy.</p>
               </div>
             </div>

@@ -33,8 +33,8 @@
           <h2>What happens at this stage?</h2>
           <div class="card-grid">
             <div class="card">
-              <h4>Integrate the model into your application</h4>
-              <p>The scoring endpoint is created at deploy time — this stage is about wiring it into your business application via REST API or gRPC from your Linux workloads and containerized services on IBM LinuxONE.</p>
+              <h4>Infuse AI into your application</h4>
+              <p>Embed inference directly into Linux applications and microservices co-located with enterprise data on IBM LinuxONE. The scoring endpoint is created at deploy time — invoke it via REST or gRPC to eliminate data movement and minimize latency for real-time transactional AI.</p>
             </div>
             <div class="card">
               <h4>Handle production traffic</h4>
@@ -43,10 +43,6 @@
             <div class="card">
               <h4>Manage model versions</h4>
               <p>Support model versioning and controlled updates, allowing new model versions to be swapped in, tested, and rolled back with minimal disruption to production workloads.</p>
-            </div>
-            <div class="card">
-              <h4>Infuse AI into applications</h4>
-              <p>Embed inference directly into Linux applications and microservices co-located with enterprise data on IBM LinuxONE — eliminating data movement and minimizing latency for real-time transactional AI.</p>
             </div>
           </div>
 
@@ -113,6 +109,7 @@
               <div class="decision-card-body" hidden>
                 <p><strong>→ Invoke via REST or gRPC through the KServe endpoint.</strong> Red Hat OpenShift AI exposes model endpoints via KServe — call the REST or gRPC endpoint from your application on IBM LinuxONE. Includes monitoring, alerting, and scaling controls around the serving layer.</p>
                 <p><em>Common approach:</em> Send inference requests to the KServe REST or gRPC endpoint managed by Red Hat OpenShift AI from your Linux application on IBM LinuxONE.</p>
+                <p><em>Note: Red Hat OpenShift AI also handles model versioning and controlled rollbacks through its model catalog and deployment pipelines.</em></p>
               </div>
             </div>
 
@@ -155,7 +152,6 @@
               <div class="decision-card-body" hidden>
                 <p><strong>→ Invoke via REST through the OpenShift AI model endpoint.</strong> Red Hat OpenShift AI manages the Red Hat AI Inference Server runtime for Spyre workloads — invoke via the same OpenAI-compatible REST API, with monitoring, alerting, and scaling managed by the platform.</p>
                 <p><em>Common approach:</em> Send inference requests to the OpenShift AI model endpoint from your application on IBM LinuxONE.</p>
-                <p><a href="https://docs.redhat.com/en/documentation/red_hat_ai/3/html/validated_models/ibm-z-validated-models_validated-models" target="_blank" rel="noopener">See validated LLMs for IBM Z on Red Hat OpenShift AI &#8594;</a></p>
               </div>
             </div>
 

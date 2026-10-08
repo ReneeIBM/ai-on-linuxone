@@ -446,30 +446,30 @@
 
           <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;max-width:960px;margin-top:20px;">
 
-            <!-- Cost-efficient computing -->
-            <div style="border:1px solid var(--ibm-border);border-radius:8px;padding:24px 22px;display:flex;flex-direction:column;gap:14px;background:#fff;">
-              <img src="https://raw.githubusercontent.com/carbon-design-system/carbon/main/packages/pictograms/src/svg/sustainability.svg" width="40" height="40" alt="Sustainability pictogram" style="flex-shrink:0;max-width:100%;" />
-              <div>
-                <p style="font-size:14px;font-weight:600;color:var(--ibm-text-primary);margin:0 0 6px;">Cost-efficient computing</p>
-                <p style="font-size:13px;color:var(--ibm-text-secondary);line-height:1.65;margin:0;">Optimize data center efficiency and workload consolidation on IBM LinuxONE.</p>
-              </div>
-            </div>
-
-            <!-- Advanced security -->
-            <div style="border:1px solid var(--ibm-border);border-radius:8px;padding:24px 22px;display:flex;flex-direction:column;gap:14px;background:#fff;">
-              <img src="https://raw.githubusercontent.com/carbon-design-system/carbon/main/packages/pictograms/src/svg/cybersecurity.svg" width="40" height="40" alt="Cybersecurity pictogram" style="flex-shrink:0;max-width:100%;" />
-              <div>
-                <p style="font-size:14px;font-weight:600;color:var(--ibm-text-primary);margin:0 0 6px;">Advanced security</p>
-                <p style="font-size:13px;color:var(--ibm-text-secondary);line-height:1.65;margin:0;">Protect your data and applications with confidential containers and quantum-safe encryption.</p>
-              </div>
-            </div>
-
-            <!-- Accelerated AI -->
+            <!-- Real-time AI insights -->
             <div style="border:1px solid var(--ibm-border);border-radius:8px;padding:24px 22px;display:flex;flex-direction:column;gap:14px;background:#fff;">
               <img src="https://raw.githubusercontent.com/carbon-design-system/carbon/main/packages/pictograms/src/svg/deep-learning.svg" width="40" height="40" alt="AI pictogram" style="flex-shrink:0;max-width:100%;" />
               <div>
-                <p style="font-size:14px;font-weight:600;color:var(--ibm-text-primary);margin:0 0 6px;">Accelerated AI</p>
-                <p style="font-size:13px;color:var(--ibm-text-secondary);line-height:1.65;margin:0;">Enhance, scale and secure AI workloads with IBM Telum II and Spyre accelerator.</p>
+                <p style="font-size:14px;font-weight:600;color:var(--ibm-text-primary);margin:0 0 6px;">Real-time AI insights</p>
+                <p style="font-size:13px;color:var(--ibm-text-secondary);line-height:1.65;margin:0;">The on-chip AI accelerator enables low-latency inference, analyzing data as transactions occur. Memory coherence and direct fabric access eliminate bottlenecks for seamless AI execution.</p>
+              </div>
+            </div>
+
+            <!-- Higher AI throughput -->
+            <div style="border:1px solid var(--ibm-border);border-radius:8px;padding:24px 22px;display:flex;flex-direction:column;gap:14px;background:#fff;">
+              <img src="https://raw.githubusercontent.com/carbon-design-system/carbon/main/packages/pictograms/src/svg/data-enrichment.svg" width="40" height="40" alt="Throughput pictogram" style="flex-shrink:0;max-width:100%;" />
+              <div>
+                <p style="font-size:14px;font-weight:600;color:var(--ibm-text-primary);margin:0 0 6px;">Higher AI throughput</p>
+                <p style="font-size:13px;color:var(--ibm-text-secondary);line-height:1.65;margin:0;">Using a single integrated accelerator for AI on an OLTP workload on IBM LinuxONE Emperor 5 matches the throughput of running inferencing on a compared remote x86 server with 13 cores.<sup>1</sup></p>
+              </div>
+            </div>
+
+            <!-- Accelerated AI performance -->
+            <div style="border:1px solid var(--ibm-border);border-radius:8px;padding:24px 22px;display:flex;flex-direction:column;gap:14px;background:#fff;">
+              <img src="https://raw.githubusercontent.com/carbon-design-system/carbon/main/packages/pictograms/src/svg/machine-learning.svg" width="40" height="40" alt="Performance pictogram" style="flex-shrink:0;max-width:100%;" />
+              <div>
+                <p style="font-size:14px;font-weight:600;color:var(--ibm-text-primary);margin:0 0 6px;">Accelerated AI performance</p>
+                <p style="font-size:13px;color:var(--ibm-text-secondary);line-height:1.65;margin:0;">With IBM LinuxONE Emperor 5, process up to 450 billion inference operations per day with 1 ms response time using a Credit Card Fraud Detection Deep Learning model.<sup>2</sup></p>
               </div>
             </div>
 
@@ -615,6 +615,10 @@
 
       </div>
 
+      <div style="padding:24px 52px 32px;max-width:960px;">
+        <p style="font-size:11px;color:var(--ibm-text-secondary);line-height:1.6;margin:0 0 10px;"><sup>1</sup> Disclaimer: Performance results are based on IBM® internal tests running on IBM Systems Hardware of machine type 9175. The OLTP application and PostgreSQL was deployed on the IBM Systems Hardware. The Credit Card Fraud Detection (CCFD) ensemble AI setup consists of two models (LSTM, TabFormer). On IBM Systems Hardware, running the OLTP application with IBM Z Deep Learning Compiler (zDLC) compiled jar and IBM Z Accelerated for NVIDIA® Triton™ Inference Server locally and processing the AI inference operations on cores and the Integrated Accelerator for AI versus running the OLTP application locally and processing remote AI inference operations on a x86 server running NVIDIA Triton Inference Server with OpenVINO™ runtime backend on CPU (with AMX). Each scenario was driven from Apache JMeter™ 5.6.3 with 64 parallel users. IBM Systems Hardware configuration: 1 LPAR running Ubuntu 24.04 with 7 dedicated cores (SMT), 256 GB memory, and IBM FlashSystem® 9500 storage. The Network adapters were dedicated for NETH on Linux. x86 server configuration: 1 x86 server running Ubuntu 24.04 with 28 Emerald Rapids Intel® Xeon® Gold CPUs @ 2.20 GHz with Hyper-Threading turned on, 1 TB memory, local SSDs, UEFI with maximum performance profile enabled, CPU P-State Control and C-States disabled. Results may vary.</p>
+        <p style="font-size:11px;color:var(--ibm-text-secondary);line-height:1.6;margin:0;"><sup>2, 3</sup> Disclaimer: Performance result is extrapolated from IBM® internal tests running on IBM Systems Hardware of machine type 9175. The benchmark was executed with 1 thread performing local inference operations using a LSTM based synthetic Credit Card Fraud Detection model to exploit the Integrated Accelerator for AI. A batch size of 160 was used. IBM Systems Hardware configuration: 1 LPAR running Red Hat® Enterprise Linux® 9.4 with 6 cores (SMT), 128 GB memory. Results may vary.</p>
+      </div>
       <footer class="footer"><p>&copy; 2026 AI on IBM LinuxONE</p></footer>
     </div>
   </div>
