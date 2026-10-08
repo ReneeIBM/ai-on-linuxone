@@ -136,7 +136,7 @@
                 <p>Your LLM is deployed on Spyre via Red Hat AI Inference Server on IBM LinuxONE.</p>
               </div>
               <div class="decision-card-body" hidden>
-                <p><strong>→ Invoke via OpenAI-compatible REST API.</strong> Red Hat AI Inference Server exposes an OpenAI-compatible REST API. Call the endpoint from your application using standard OpenAI client libraries or any HTTP client. Supports Granite, Llama, Qwen, DeepSeek, Gemma, Mistral, and other models on IBM LinuxONE Spyre.</p>
+                <p><strong>→ Invoke via OpenAI-compatible REST API.</strong> Red Hat AI Inference Server exposes an OpenAI-compatible REST API. Call the endpoint from your application using standard OpenAI client libraries or any HTTP client. Supports Granite, Llama, and other models on IBM LinuxONE Spyre.</p>
                 <p><em>Common approach:</em> Send inference requests to the Red Hat AI Inference Server REST endpoint from your application on IBM LinuxONE.</p>
               </div>
             </div>
@@ -171,8 +171,8 @@
                 <p>You have a hybrid environment spanning IBM LinuxONE and other platforms (cloud, GPU clusters) and need intelligent routing of LLM inference requests to the most optimal endpoint.</p>
               </div>
               <div class="decision-card-body" hidden>
-                <p><strong>→ Invoke via the AI Optimizer gateway REST endpoint.</strong> AI Optimizer for IBM Z and LinuxONE acts as an inference gateway — send inference requests to the gateway endpoint and it routes them to the appropriate on-platform or external endpoint based on configured policy.</p>
-                <p><em>Common approach:</em> Send inference requests to the AI Optimizer gateway endpoint on IBM LinuxONE — requests are routed to Spyre, Telum, or an external environment based on policy.</p>
+                <p><strong>→ Invoke via the AI Optimizer gateway REST endpoint.</strong> AI Optimizer for IBM Z and LinuxONE acts as a policy-driven inference gateway — send inference requests to the gateway, which routes them to on-platform endpoints (Spyre or Telum) or external environments. Integrates with Red Hat AI Inference Server for Spyre workloads.</p>
+                <p><em>Common approach:</em> Send inference requests to the AI Optimizer gateway endpoint on IBM LinuxONE — requests are routed to Spyre, Telum, or an external environment based on configured policy.</p>
               </div>
             </div>
 

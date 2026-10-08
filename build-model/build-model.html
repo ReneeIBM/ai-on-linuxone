@@ -135,7 +135,7 @@
                 <p>You are building deep learning models and want to train and deploy natively on IBM LinuxONE, leveraging Telum II hardware acceleration.</p>
               </div>
               <div class="decision-card-body" hidden>
-                <p><strong>→ Use <a href="../products-tools/ai-frameworks.html#tensorflow">IBM Z Accelerated for TensorFlow</a> or <a href="../products-tools/ai-frameworks.html#pytorch">IBM Z Accelerated for PyTorch</a>.</strong> Both frameworks are optimized for IBM LinuxONE hardware and exploit the Integrated Accelerator for AI on Telum II for inference. PyTorch also supports both traditional AI and Foundation model stacks, enabling deployment of Transformers and encoder-based models. Both are available as container images via the IBM Container Registry (ICR) (part of the AI Toolkit for IBM Z and IBM LinuxONE).</p>
+                <p><strong>→ Use <a href="../products-tools/ai-frameworks.html#tensorflow">IBM Z Accelerated for TensorFlow</a> or <a href="../products-tools/ai-frameworks.html#pytorch">IBM Z Accelerated for PyTorch</a>.</strong> Both frameworks are optimized for IBM LinuxONE hardware and exploit the Integrated Accelerator for AI on Telum II for inference. IBM Z Accelerated for PyTorch also supports Transformer-based architectures including encoder-based models. Both are available as container images via the IBM Container Registry (ICR) (part of the AI Toolkit for IBM Z and IBM LinuxONE).</p>
                 <p><em>Common approach:</em> Prepare data → Train with IBM Z Accelerated for TensorFlow or IBM Z Accelerated for PyTorch → Deploy directly via <a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton Inference Server</a> or <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a> on IBM LinuxONE.</p>
               </div>
             </div>
@@ -152,7 +152,7 @@
                 <p>You have trained a deep learning model in any framework and want to convert it to ONNX and deploy it on IBM LinuxONE with Telum II acceleration.</p>
               </div>
               <div class="decision-card-body" hidden>
-                <p><strong>→ Convert your model to <a href="../products-tools/model-formats.html#onnx">ONNX</a> format</strong> using your framework of choice, then compile with the <a href="../products-tools/model-formats.html#zdlc">IBM Z Deep Learning Compiler (zDLC)</a> to leverage the Integrated Accelerator for AI on Telum II at inference time. The zDLC supports deep learning models, encoder LLMs, and small decoder LLMs (up to 2B parameters), and produces shared library files embeddable in applications independent of the original framework. The zDLC is available as a container via the IBM Container Registry (ICR).</p>
+                <p><strong>→ Convert your model to <a href="../products-tools/model-formats.html#onnx">ONNX</a> format</strong> using your framework of choice, then compile with the <a href="../products-tools/model-formats.html#zdlc">IBM Z Deep Learning Compiler (zDLC)</a> to leverage the Integrated Accelerator for AI on Telum II at inference time. The zDLC supports deep learning models and encoder LLMs, and produces shared library files embeddable in applications independent of the original framework. The zDLC is available as a container via the IBM Container Registry (ICR).</p>
                 <p><em>Common approach:</em> Train with any framework (TensorFlow, PyTorch, Keras, or other) → Export to ONNX → Compile with zDLC → Deploy via <a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton Inference Server</a> or <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a> on IBM LinuxONE.</p>
               </div>
             </div>
@@ -227,7 +227,7 @@
           <div class="ns-tile-grid">
             <a href="../deploy-models/deploy-models.html" class="ns-tile">
               <span class="ns-tile-label">Deploy Models</span>
-              <span class="ns-tile-body">Convert your model to ONNX or PMML, optimize with the IBM Z Deep Learning Compiler or AI Optimizer for LinuxONE, and deploy to a production environment using AI Toolkit containers or Red Hat OpenShift AI on IBM LinuxONE.</span>
+              <span class="ns-tile-body">Convert your model to ONNX or PMML, compile with the IBM Z Deep Learning Compiler (zDLC) for Telum acceleration, and deploy to a production environment using AI Toolkit containers or Red Hat OpenShift AI on IBM LinuxONE.</span>
               <span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span>
             </a>
           </div>
