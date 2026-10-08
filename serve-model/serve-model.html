@@ -28,7 +28,7 @@
         <section class="section" id="overview">
           <h1>Serve Model</h1>
           <p>Serving is the stage where a deployed model is made available for production use. On IBM LinuxONE, as soon as a model is deployed a scoring endpoint is created — serving and deploying are effectively the same step. This stage focuses on invoking that endpoint from your applications and managing the model in production over time.</p>
-          <p>The invocation method depends on your runtime: models deployed in IBM Z Accelerated for Triton Inference Server, IBM Z Accelerated Serving for TensorFlow, or Red Hat AI Inference Server are called via REST or gRPC. Invocation happens directly on IBM LinuxONE, close to enterprise data, reducing latency and enabling AI to be embedded into your Linux applications and containerized services.</p>
+          <p>The invocation method depends on your runtime — models are invoked via REST or gRPC, with the exact endpoint format determined by the serving platform. Invocation happens directly on IBM LinuxONE, close to enterprise data, reducing latency and enabling AI to be embedded into your Linux applications and containerized services.</p>
 
           <h2>What happens at this stage?</h2>
           <div class="card-grid">
