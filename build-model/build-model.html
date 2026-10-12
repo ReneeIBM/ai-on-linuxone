@@ -145,34 +145,15 @@
 
           <!-- ── SUBSECTION 3: LLMs ── -->
           <h2 id="llm">Using Large Language Models (LLMs) &amp; Foundation Models</h2>
-          <p>When implementing foundation models and generative AI on IBM LinuxONE, organizations have three primary pathways depending on customization requirements and model scale. The IBM Spyre Accelerator provides dedicated on-premises compute for LLM inference workloads.</p>
+          <p>When working with foundation models on IBM LinuxONE, there are three paths: use a pre-built LLM as-is, fine-tune a pre-built LLM on your data, or build and train a custom SLM or encoder. If your use case is satisfied by a standard foundation model without any modification, skip this stage — go directly to <a href="../deploy-models/deploy-models.html#llm-spyre">Deploy Models</a>. The two paths below require work at this stage.</p>
 
           <div class="decision-cards">
 
-            <!-- 1. Use pre-built LLM as-is -->
+            <!-- 1. Fine-tune pre-built LLM on your data -->
             <div class="decision-card">
               <button class="decision-card-trigger" aria-expanded="false">
                 <span class="dc-trigger-left">
-                  <span class="dc-trigger-title">1. Deploy a pre-built LLM as-is</span>
-                  <span class="dc-pill"><a href="../products-tools/inference-serving.html#rh-inference">Red Hat AI Inference Server</a> · <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a></span>
-                </span>
-                <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
-              </button>
-              <div class="dc-card-intro">
-                <p>Your use case is satisfied by standard foundation models (such as IBM Granite or Llama) without domain adaptation or weight modification.</p>
-              </div>
-              <div class="decision-card-body" hidden>
-                <p><strong>→ Use <a href="../products-tools/inference-serving.html#rh-inference">Red Hat AI Inference Server</a></strong> (a runtime optimized for Spyre-accelerated decoder LLMs) or <strong><a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a></strong> for unified platform serving, monitoring, and governance.</p>
-                <p><em>Note: Red Hat AI Inference Server runs standalone and does not require Red Hat OpenShift. Red Hat OpenShift AI is currently available as Technology Preview on IBM LinuxONE — recommended if your organization already uses OpenShift container orchestration on IBM LinuxONE.</em></p>
-                <p><em>Common approach:</em> Select a foundation model from Hugging Face or IBM model repository → Serve on IBM LinuxONE via Red Hat AI Inference Server with Spyre acceleration.</p>
-              </div>
-            </div>
-
-            <!-- 2. Fine-tune pre-built LLM on your data -->
-            <div class="decision-card">
-              <button class="decision-card-trigger" aria-expanded="false">
-                <span class="dc-trigger-left">
-                  <span class="dc-trigger-title">2. Fine-tune a pre-built LLM on enterprise data</span>
+                  <span class="dc-trigger-title">1. Fine-tune a pre-built LLM on enterprise data</span>
                   <span class="dc-pill"><a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a></span>
                 </span>
                 <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
@@ -190,7 +171,7 @@
             <div class="decision-card">
               <button class="decision-card-trigger" aria-expanded="false">
                 <span class="dc-trigger-left">
-                  <span class="dc-trigger-title">3. Build &amp; train custom Small Language Models (SLMs) or encoders</span>
+                  <span class="dc-trigger-title">2. Build &amp; train custom Small Language Models (SLMs) or encoders</span>
                   <span class="dc-pill"><a href="../products-tools/ai-frameworks.html#pytorch">IBM Z Accelerated for PyTorch</a> · <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a></span>
                 </span>
                 <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
@@ -199,8 +180,8 @@
                 <p>You need a compact, task-specific model trained from scratch — such as a domain encoder or small transformer.</p>
               </div>
               <div class="decision-card-body" hidden>
-                <p><strong>→ Train custom architectures using <a href="../products-tools/ai-frameworks.html#pytorch">IBM Z Accelerated for PyTorch</a> or Red Hat OpenShift AI pipelines.</strong> For specialized domain encoders (e.g., custom transformers for transactional token streams, log anomaly detection, or embedding generation), models can be trained natively on IBM LinuxONE. Convert to ONNX and compile with the <a href="../products-tools/model-formats.html#zdlc">IBM Z Deep Learning Compiler (zDLC)</a> to target the Telum II on-chip accelerator for low-latency in-transaction inference.</p>
-                <p><em>Common approach:</em> Train encoder/SLM architecture using IBM Z Accelerated for PyTorch → Export to ONNX → Compile via zDLC for Telum II hardware acceleration → Embed directly into LinuxONE core workflows.</p>
+                <p><strong>→ Train custom architectures using <a href="../products-tools/ai-frameworks.html#pytorch">IBM Z Accelerated for PyTorch</a> or <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a> pipelines</strong> natively on IBM LinuxONE. Once trained, export to ONNX for deployment — see <a href="../deploy-models/deploy-models.html#deep-learning">Deploy Models</a> for the compilation and serving steps.</p>
+                <p><em>Common approach:</em> Train encoder/SLM architecture using IBM Z Accelerated for PyTorch → Export to ONNX → proceed to Deploy Models.</p>
               </div>
             </div>
 
