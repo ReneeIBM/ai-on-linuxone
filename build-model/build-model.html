@@ -98,23 +98,6 @@
               </div>
             </div>
 
-            <div class="decision-card">
-              <button class="decision-card-trigger" aria-expanded="false">
-                <span class="dc-trigger-left">
-                  <span class="dc-trigger-title">Manage experiment tracking and automated training pipelines</span>
-                  <span class="dc-pill"><a href="../products-tools/ai-platforms.html#watsonx-ai">watsonx.ai</a> · <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a></span>
-                </span>
-                <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
-              </button>
-              <div class="dc-card-intro">
-                <p>You want a managed platform for model development, experiment tracking, and automated training pipelines for machine learning on IBM LinuxONE.</p>
-              </div>
-              <div class="decision-card-body" hidden>
-                <p><strong>→ Use <a href="../products-tools/ai-platforms.html#watsonx-ai">watsonx.ai</a> or <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a>.</strong> watsonx.ai on IBM LinuxONE (via IBM Software Hub) provides a Jupyter-based ML development environment with AutoML and experiment tracking for building machine learning models. Red Hat OpenShift AI on IBM LinuxONE provides shared data science workbenches and Kubeflow-based automated training pipelines — so teams can develop, iterate, and promote models collaboratively within a Kubernetes-native environment.</p>
-                <p><em>Common approach:</em> Develop and train ML models in watsonx.ai or Red Hat OpenShift AI Jupyter workbenches → Track experiments and manage training runs → Export trained model for deployment on IBM LinuxONE.</p>
-              </div>
-            </div>
-
           </div>
 
           <!-- ── SUBSECTION 2: Deep Learning ── -->
@@ -140,39 +123,6 @@
               </div>
             </div>
 
-            <div class="decision-card">
-              <button class="decision-card-trigger" aria-expanded="false">
-                <span class="dc-trigger-left">
-                  <span class="dc-trigger-title">Convert and compile a deep learning model for accelerated inference</span>
-                  <span class="dc-pill"><a href="../products-tools/model-formats.html#onnx">ONNX</a> · <a href="../products-tools/model-formats.html#zdlc">IBM Z Deep Learning Compiler</a></span>
-                </span>
-                <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
-              </button>
-              <div class="dc-card-intro">
-                <p>You have trained a deep learning model in any framework and want to convert it to ONNX and deploy it on IBM LinuxONE with Telum II acceleration.</p>
-              </div>
-              <div class="decision-card-body" hidden>
-                <p><strong>→ Convert your model to <a href="../products-tools/model-formats.html#onnx">ONNX</a> format</strong> using your framework of choice, then compile with the <a href="../products-tools/model-formats.html#zdlc">IBM Z Deep Learning Compiler (zDLC)</a> to leverage the Integrated Accelerator for AI on Telum II at inference time. The zDLC supports deep learning models and encoder LLMs, and produces shared library files embeddable in applications independent of the original framework. The zDLC is available as a container via the IBM Container Registry (ICR) through the <a href="../products-tools/ai-frameworks.html#ai-toolkit">AI Toolkit for IBM LinuxONE</a>.</p>
-                <p><em>Common approach:</em> Train with any framework (TensorFlow, PyTorch, Keras, or other) → Export to ONNX → Compile with zDLC → Deploy via <a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton Inference Server</a> or <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a> on IBM LinuxONE.</p>
-              </div>
-            </div>
-
-            <div class="decision-card">
-              <button class="decision-card-trigger" aria-expanded="false">
-                <span class="dc-trigger-left">
-                  <span class="dc-trigger-title">Bring a model trained elsewhere to IBM LinuxONE</span>
-                  <span class="dc-pill"><a href="../products-tools/model-formats.html#pmml">PMML</a> · <a href="../products-tools/model-formats.html#onnx">ONNX</a></span>
-                </span>
-                <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
-              </button>
-              <div class="dc-card-intro">
-                <p>You have trained a model using any framework on any platform and want to convert it to a portable format and deploy it on IBM LinuxONE.</p>
-              </div>
-              <div class="decision-card-body" hidden>
-                <p><strong>→ Export your model to <a href="../products-tools/model-formats.html#pmml">PMML</a> (machine learning) or <a href="../products-tools/model-formats.html#onnx">ONNX</a> (deep learning or encoder LLMs)</strong> and deploy it on IBM LinuxONE. PMML and ONNX are portable interchange formats supported by IBM LinuxONE serving tools — no dependency on the original training framework at inference time. For deep learning and encoder LLMs, compile the ONNX model with the <a href="../products-tools/model-formats.html#zdlc">IBM Z Deep Learning Compiler (zDLC)</a> to leverage Telum II acceleration.</p>
-                <p><em>Common approach:</em> Train with any framework off-platform → Export to PMML or ONNX → (For deep learning) Compile with zDLC → Deploy via container images from the <a href="../products-tools/ai-frameworks.html#ai-toolkit">AI Toolkit for IBM LinuxONE</a> or Red Hat OpenShift AI on IBM LinuxONE.</p>
-              </div>
-            </div>
 
             <div class="decision-card">
               <button class="decision-card-trigger" aria-expanded="false">
