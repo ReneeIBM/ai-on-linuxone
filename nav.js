@@ -23,9 +23,9 @@ function renderNav(opts) {
   const lifecycleItems = [
     { id: 'lifecycle-overview', label: 'Overview',   href: p + 'prepare-data/lifecycle-overview.html', tools: [] },
     { id: 'prepare-data',   label: 'Prepare Data',   href: p + 'prepare-data/prepare-data.html',       tools: [] },
-    { id: 'build-model',    label: 'Build Models',   href: p + 'build-model/build-model.html',         tools: [] },
+    { id: 'build-model',    label: 'Build & Train Models', href: p + 'build-model/build-model.html',   tools: [] },
     { id: 'deploy-models',  label: 'Deploy Models',  href: p + 'deploy-models/deploy-models.html',     tools: [] },
-    { id: 'serve-model',    label: 'Serve Model',    href: p + 'serve-model/serve-model.html',         tools: [] },
+    { id: 'serve-model',    label: 'Serve Models',   href: p + 'serve-model/serve-model.html',         tools: [] },
     { id: 'ai-governance',  label: 'AI Governance',  href: p + 'ai-governance/ai-governance.html',     tools: [] },
   ];
 
@@ -47,7 +47,7 @@ function renderNav(opts) {
       id: 'ai-frameworks', label: 'AI Frameworks & Dev Tools',
       href: p + 'products-tools/ai-frameworks.html',
       tools: [
-        { label: 'AI Toolkit for IBM Z and IBM LinuxONE',   href: p + 'products-tools/ai-frameworks.html#ai-toolkit' },
+        { label: 'AI Toolkit for IBM LinuxONE',             href: p + 'products-tools/ai-frameworks.html#ai-toolkit' },
         { label: 'IBM Z Accelerated SnapML',            href: p + 'products-tools/ai-frameworks.html#snapml' },
         { label: 'IBM Z Accelerated for TensorFlow',    href: p + 'products-tools/ai-frameworks.html#tensorflow' },
         { label: 'IBM Z Accelerated for PyTorch',       href: p + 'products-tools/ai-frameworks.html#pytorch' },
@@ -75,7 +75,7 @@ function renderNav(opts) {
       id: 'ai-platforms', label: 'AI Platforms',
       href: p + 'products-tools/ai-platforms.html',
       tools: [
-        { label: 'AI Optimizer for IBM Z and LinuxONE', href: p + 'products-tools/ai-platforms.html#ai-optimizer' },
+        { label: 'AI Optimizer for LinuxONE',           href: p + 'products-tools/ai-platforms.html#ai-optimizer' },
         { label: 'Red Hat OpenShift AI',                href: p + 'products-tools/ai-platforms.html#rhoai' },
         { label: 'watsonx.ai',                          href: p + 'products-tools/ai-platforms.html#watsonx-ai' },
         { label: 'watsonx.governance',                  href: p + 'products-tools/ai-platforms.html#watsonx-governance' },
@@ -90,7 +90,7 @@ function renderNav(opts) {
       ]
     },
     {
-      id: 'turnkey-solutions', label: 'Turnkey & ISV Solutions',
+      id: 'turnkey-solutions', label: 'Turnkey and Embedded AI ISV Solutions',
       href: p + 'products-tools/turnkey-solutions.html',
       tools: [
         { label: 'Embedded AI Core Banking Solutions', href: p + 'products-tools/turnkey-solutions.html#embedded-ai-solutions' },
@@ -105,7 +105,7 @@ function renderNav(opts) {
 
   const useCasesItems = [
     { id: 'use-cases-overview',    label: 'Overview',                     href: p + 'use-cases/overview.html' },
-    { id: 'ai-solution-patterns',  label: 'Advanced Credit Card Fraud Detection', href: p + 'use-cases/use-cases.html#ai-solution-patterns' },
+    { id: 'ai-solution-patterns',  label: 'Solution Blueprints — Coming Soon',    href: p + 'use-cases/use-cases.html#ai-solution-patterns' },
     { id: 'ai-solution-template',  label: 'Solution Blueprints',          href: p + 'use-cases/ai-solution-template.html' },
   ];
 
@@ -311,15 +311,15 @@ function initSearch(wrapper, root) {
     /* Prepare Data */
     { title: 'Prepare Data', section: 'AI Lifecycle', snippet: 'Synthetic data generation, feature engineering, and open-source Python libraries on IBM LinuxONE for data preparation.', href: root + 'prepare-data/prepare-data.html' },
     { title: 'IBM Synthetic Data Sets', section: 'Prepare Data', snippet: 'Generate realistic, privacy-safe labeled datasets for training AI models on IBM LinuxONE.', href: root + 'products-tools/data-analytics.html#synthetic-data-sets' },
-    { title: 'IBM Z Accelerated for Snap ML', section: 'Prepare Data', snippet: 'Snap ML on IBM LinuxONE — accelerated preprocessing and feature engineering leveraging the Telum II on-chip AI accelerator.', href: root + 'products-tools/ai-frameworks.html#snapml' },
+    { title: 'IBM Z Accelerated SnapML', section: 'Prepare Data', snippet: 'Snap ML on IBM LinuxONE — accelerated preprocessing and feature engineering leveraging the Telum II on-chip AI accelerator.', href: root + 'products-tools/ai-frameworks.html#snapml' },
 
-    /* Build Models */
-    { title: 'Build Models', section: 'AI Lifecycle', snippet: 'Traditional ML, deep learning, and LLMs on IBM LinuxONE — IBM Z Accelerated for Snap ML, IBM Z Accelerated for TensorFlow, IBM Z Accelerated for PyTorch, fine-tuning, and prompt engineering.', href: root + 'build-model/build-model.html' },
-    { title: 'IBM Z Accelerated for Snap ML', section: 'Build Model', snippet: 'IBM Z Accelerated for Snap ML leverages the Telum II on-chip AI accelerator for fast classical ML training on IBM LinuxONE.', href: root + 'products-tools/ai-frameworks.html#snapml' },
+    /* Build & Train Models */
+    { title: 'Build & Train Models', section: 'AI Lifecycle', snippet: 'Machine learning, deep learning, and LLMs on IBM LinuxONE — IBM Z Accelerated SnapML, IBM Z Accelerated for TensorFlow, IBM Z Accelerated for PyTorch, fine-tuning, and prompt engineering.', href: root + 'build-model/build-model.html' },
+    { title: 'IBM Z Accelerated SnapML', section: 'Build & Train Models', snippet: 'IBM Z Accelerated SnapML leverages the Telum II on-chip AI accelerator for fast classical ML training on IBM LinuxONE.', href: root + 'products-tools/ai-frameworks.html#snapml' },
     { title: 'IBM Z Accelerated for TensorFlow', section: 'AI Frameworks & Dev Tools', snippet: 'IBM Z Accelerated for TensorFlow optimized for IBM LinuxONE with hardware acceleration via the Telum II AI accelerator.', href: root + 'products-tools/ai-frameworks.html#tensorflow' },
     { title: 'IBM Z Accelerated Serving for TensorFlow', section: 'Inference & Serving', snippet: 'IBM Z Accelerated Serving for TensorFlow on IBM LinuxONE — expose REST and gRPC endpoints for high-throughput, low-latency model inference.', href: root + 'products-tools/inference-serving.html#tf-serving' },
-    { title: 'IBM Z Accelerated for PyTorch', section: 'Build Model', snippet: 'IBM Z Accelerated for PyTorch optimized for s390x, enabling deep learning model training on IBM LinuxONE.', href: root + 'products-tools/ai-frameworks.html#pytorch' },
-    { title: 'Red Hat OpenShift AI', section: 'Build Model', snippet: 'MLOps platform on Red Hat OpenShift running on IBM LinuxONE for containerized AI workloads.', href: root + 'products-tools/ai-platforms.html#rhoai' },
+    { title: 'IBM Z Accelerated for PyTorch', section: 'Build & Train Models', snippet: 'IBM Z Accelerated for PyTorch optimized for s390x, enabling deep learning model training on IBM LinuxONE.', href: root + 'products-tools/ai-frameworks.html#pytorch' },
+    { title: 'Red Hat OpenShift AI', section: 'Build & Train Models', snippet: 'MLOps platform on Red Hat OpenShift running on IBM LinuxONE for containerized AI workloads.', href: root + 'products-tools/ai-platforms.html#rhoai' },
 
     /* Deploy Models (includes optimize & deploy) */
     { title: 'ONNX & IBM Z Deep Learning Compiler', section: 'Deploy Models', snippet: 'Convert and compile models to ONNX format; use zDLC to optimize neural networks for IBM LinuxONE hardware.', href: root + 'products-tools/model-formats.html#zdlc' },
@@ -328,17 +328,17 @@ function initSearch(wrapper, root) {
     /* Model Formats & Compilers */
     { title: 'Model Formats & Compilers', section: 'Products & Tools', snippet: 'ONNX and PMML model interchange formats plus the IBM Z Deep Learning Compiler for Telum II-accelerated inference.', href: root + 'products-tools/model-formats.html' },
     { title: 'ONNX Model Format', section: 'Model Formats & Compilers', snippet: 'Export IBM Z Accelerated for TensorFlow, IBM Z Accelerated for PyTorch, or scikit-learn models to ONNX for portable deployment on IBM LinuxONE.', href: root + 'products-tools/model-formats.html#onnx' },
-    { title: 'PMML Model Format', section: 'Model Formats & Compilers', snippet: 'Convert scikit-learn, XGBoost, or LightGBM models to PMML for deployment via IBM Z Accelerated for Snap ML on IBM LinuxONE.', href: root + 'products-tools/model-formats.html#pmml' },
+    { title: 'PMML Model Format', section: 'Model Formats & Compilers', snippet: 'Convert scikit-learn, XGBoost, or LightGBM models to PMML for deployment via IBM Z Accelerated SnapML on IBM LinuxONE.', href: root + 'products-tools/model-formats.html#pmml' },
     { title: 'IBM Z Deep Learning Compiler (zDLC)', section: 'Model Formats & Compilers', snippet: 'Compile ONNX models to optimized s390x binaries with automatic Telum II AI accelerator offloading via zDNN.', href: root + 'products-tools/model-formats.html#zdlc' },
 
     /* Deploy Models */
     { title: 'Deploy Models', section: 'AI Lifecycle', snippet: 'Deploy AI models on IBM LinuxONE with RHOAI, watsonx.ai, or AI Optimizer for streamlined containerized deployment.', href: root + 'deploy-models/deploy-models.html' },
     { title: 'watsonx.ai on IBM LinuxONE', section: 'Deploy Models', snippet: 'Run IBM watsonx.ai workloads on IBM LinuxONE infrastructure for enterprise-grade AI deployment.', href: root + 'products-tools/ai-platforms.html#watsonx-ai' },
 
-    /* Serve Model */
-    { title: 'Serve Model', section: 'AI Lifecycle', snippet: 'Invoke deployed IBM LinuxONE models from applications via REST and gRPC endpoints using Triton or Red Hat AI Inference Server.', href: root + 'serve-model/serve-model.html' },
-    { title: 'IBM Z Accelerated for Triton Inference Server', section: 'Serve Model', snippet: 'IBM Z Accelerated for Triton Inference Server — multi-framework model serving optimized for IBM LinuxONE.', href: root + 'products-tools/inference-serving.html#triton' },
-    { title: 'Red Hat AI Inference Server', section: 'Serve Model', snippet: 'Serve large language models and GenAI workloads on IBM LinuxONE using the Red Hat AI Inference Server with vLLM.', href: root + 'products-tools/inference-serving.html#rh-inference' },
+    /* Serve Models */
+    { title: 'Serve Models', section: 'AI Lifecycle', snippet: 'Invoke deployed IBM LinuxONE models from applications via REST and gRPC endpoints using Triton or Red Hat AI Inference Server.', href: root + 'serve-model/serve-model.html' },
+    { title: 'IBM Z Accelerated for Triton Inference Server', section: 'Serve Models', snippet: 'IBM Z Accelerated for Triton Inference Server — multi-framework model serving optimized for IBM LinuxONE.', href: root + 'products-tools/inference-serving.html#triton' },
+    { title: 'Red Hat AI Inference Server', section: 'Serve Models', snippet: 'Serve large language models and GenAI workloads on IBM LinuxONE using the Red Hat AI Inference Server with vLLM.', href: root + 'products-tools/inference-serving.html#rh-inference' },
 
     /* AI Governance */
     { title: 'AI Governance', section: 'AI Lifecycle', snippet: 'Monitor, explain, and govern AI models with watsonx.governance and TrustyAI on IBM LinuxONE.', href: root + 'ai-governance/ai-governance.html' },
@@ -350,7 +350,7 @@ function initSearch(wrapper, root) {
     { title: 'IBM Spyre Accelerator', section: 'Hardware', snippet: 'The IBM Spyre Accelerator on IBM LinuxONE 5 enables high-throughput generative AI — 32 Gen AI-ready cores per adapter, up to 48 cards per system.', href: root + 'products-tools/hardware-solutions.html#spyre' },
 
     /* AI Frameworks */
-    { title: 'AI Toolkit for IBM LinuxONE', section: 'Products & Tools', snippet: 'A collection of open-source AI frameworks — IBM Z Accelerated for TensorFlow, IBM Z Accelerated for PyTorch, IBM Z Accelerated for Snap ML, ONNX — optimized for s390x.', href: root + 'products-tools/ai-frameworks.html#ai-toolkit' },
+    { title: 'AI Toolkit for IBM LinuxONE', section: 'Products & Tools', snippet: 'A collection of open-source AI frameworks — IBM Z Accelerated for TensorFlow, IBM Z Accelerated for PyTorch, IBM Z Accelerated SnapML, ONNX — optimized for s390x.', href: root + 'products-tools/ai-frameworks.html#ai-toolkit' },
 
     /* Use Cases */
     { title: 'Advanced Credit Card Fraud Detection', section: 'Use Cases', snippet: 'Multi-model ensemble AI on IBM LinuxONE 5 — a complete end-to-end solution blueprint using XGBoost and BERT.', href: root + 'use-cases/use-cases.html#ai-solution-patterns' },
@@ -360,8 +360,8 @@ function initSearch(wrapper, root) {
     { title: 'Health Insurance Claims on IBM LinuxONE', section: 'Solution Blueprints', snippet: 'AI model for health insurance claims processing on IBM LinuxONE, deployed for real-time scoring.', href: root + 'use-cases/ai-solution-template.html#health-insurance' },
     { title: 'Data Preprocessing on IBM LinuxONE', section: 'Solution Blueprints', snippet: 'Build an AI solution with a preprocessing pipeline using open-source frameworks on IBM LinuxONE.', href: root + 'use-cases/ai-solution-template.html#data-preprocessing' },
 
-    /* Turnkey & ISV Solutions */
-    { title: 'Turnkey & ISV Solutions', section: 'Products & Tools', snippet: 'Pre-built AI solutions from IBM and ecosystem partners on IBM LinuxONE — Featurespace, Quantexa, Clari5, OvationCXM, Exponential AI, ACI, DXC, Worldline.', href: root + 'products-tools/turnkey-solutions.html' },
+    /* Turnkey and Embedded AI ISV Solutions */
+    { title: 'Turnkey and Embedded AI ISV Solutions', section: 'Products & Tools', snippet: 'Pre-built AI solutions from IBM and ecosystem partners on IBM LinuxONE — Featurespace, Quantexa, Clari5, OvationCXM, Exponential AI, ACI, DXC, Worldline.', href: root + 'products-tools/turnkey-solutions.html' },
     { title: 'Featurespace — ARIC Risk Hub', section: 'ISV Solutions', snippet: 'Real-time fraud detection and risk scoring on IBM LinuxONE. Integrates with core banking and payments solutions.', href: root + 'products-tools/turnkey-solutions.html#packaged-ai-solutions' },
     { title: 'Quantexa — Decision Intelligence Platform', section: 'ISV Solutions', snippet: 'Entity resolution, fraud detection, KYC, and AML on IBM LinuxONE. Batch core banking and payments integrations.', href: root + 'products-tools/turnkey-solutions.html#packaged-ai-solutions' },
     { title: 'Clari5 — Enterprise Fraud Management', section: 'ISV Solutions', snippet: 'Anti-money laundering and payments fraud detection on IBM LinuxONE.', href: root + 'products-tools/turnkey-solutions.html#packaged-ai-solutions' },

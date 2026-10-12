@@ -34,14 +34,14 @@
           <div class="card-grid">
             <div class="card">
               <h4>Convert to a portable format</h4>
-              <p>Export to ONNX (deep learning) or PMML (traditional ML). Native TensorFlow and PyTorch models can deploy directly without conversion.</p>
+              <p>Export to ONNX (deep learning) or PMML (machine learning). Native TensorFlow and PyTorch models can deploy directly without conversion.</p>
             </div>
             <div class="card">
-              <h4>Optimize for IBM LinuxONE hardware</h4>
+              <h4>Optimize for h/w acceleration on IBM LinuxONE</h4>
               <p>Deep learning models and encoder LLMs: compile with zDLC after ONNX conversion to target the Telum on-chip AI accelerator. LLMs on Spyre are served natively — no ONNX conversion required.</p>
             </div>
             <div class="card">
-              <h4>Move to production</h4>
+              <h4>Path to Production</h4>
               <p>Deploy your model to a production runtime on IBM LinuxONE — co-located with the enterprise data and Linux workloads it needs to score, with no data movement required.</p>
             </div>
             <div class="card">
@@ -59,27 +59,27 @@
           <h1>Where to Start</h1>
           <p>Your path is determined by two things: your model type and your target accelerator. The three subsections below map to those two dimensions.</p>
 
-          <!-- ── SUBSECTION 1: Traditional ML ── -->
-          <h2 id="traditional-ml">Deploying Traditional Machine Learning Models</h2>
-          <p>Traditional ML models (classification, regression, recommendation, forecasting) are deployed via PMML and will either leverage the <strong>Telum II on-chip AI accelerator</strong> (e.g., gradient boosting and random forest models) or run on native CPU (e.g., linear regression and logistic regression). Not all traditional ML models use the on-chip AI accelerator.</p>
+          <!-- ── SUBSECTION 1: Machine Learning ── -->
+          <h2 id="traditional-ml">Deploying Machine Learning Models</h2>
+          <p>Machine learning models (classification, regression, recommendation, forecasting) are deployed via PMML and will either leverage the <strong>Telum II on-chip AI accelerator</strong> (e.g., gradient boosting and random forest models) or run on native CPU (e.g., linear regression and logistic regression). Not all machine learning models use the on-chip AI accelerator.</p>
 
           <div class="decision-cards">
 
             <div class="decision-card">
               <button class="decision-card-trigger" aria-expanded="false">
                 <span class="dc-trigger-left">
-                  <span class="dc-trigger-title">Package a traditional ML model in a portable format for production</span>
-                  <span class="dc-pill"><a href="../products-tools/model-formats.html#pmml">PMML</a> · <a href="../products-tools/ai-frameworks.html#snapml">IBM Z Accelerated for Snap ML</a></span>
+                  <span class="dc-trigger-title">Package a machine learning model in a portable format for production</span>
+                  <span class="dc-pill"><a href="../products-tools/model-formats.html#pmml">PMML</a> · <a href="../products-tools/ai-frameworks.html#snapml">IBM Z Accelerated SnapML</a></span>
                 </span>
                 <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
               </button>
               <div class="dc-card-intro">
-                <p>You have a model trained with IBM Z Accelerated for Snap ML, scikit-learn, XGBoost, or another traditional ML framework and need to move it to production on IBM LinuxONE.</p>
+                <p>You have a model trained with IBM Z Accelerated SnapML, scikit-learn, XGBoost, or another machine learning framework and need to move it to production on IBM LinuxONE.</p>
               </div>
               <div class="decision-card-body" hidden>
-                <p><strong>→ Export to <a href="../products-tools/model-formats.html#pmml">PMML</a></strong> and deploy via the AI Toolkit for IBM Z and IBM LinuxONE scoring services or Red Hat OpenShift AI. PMML provides a portable format that does not require the original training framework at inference time, and is supported by IBM LinuxONE serving tools.</p>
-                <p><em>Common approach:</em> Train with IBM Z Accelerated for Snap ML or scikit-learn → Export to PMML → Deploy and score via AI Toolkit for IBM Z and IBM LinuxONE or Red Hat OpenShift AI on IBM LinuxONE.</p>
-                <p><em>Note: IBM Z Accelerated for Snap ML is primarily a training technology. Deployment begins after exporting the PMML model.</em></p>
+                <p><strong>→ Export to <a href="../products-tools/model-formats.html#pmml">PMML</a></strong> and deploy via the <a href="../products-tools/ai-frameworks.html#ai-toolkit">AI Toolkit for IBM LinuxONE</a> scoring services or Red Hat OpenShift AI. PMML provides a portable format that does not require the original training framework at inference time, and is supported by IBM LinuxONE serving tools.</p>
+                <p><em>Common approach:</em> Train with IBM Z Accelerated SnapML or scikit-learn → Export to PMML → Deploy and score via the <a href="../products-tools/ai-frameworks.html#ai-toolkit">AI Toolkit for IBM LinuxONE</a> or Red Hat OpenShift AI on IBM LinuxONE.</p>
+                <p><em>Note: IBM Z Accelerated SnapML is primarily a training technology. Deployment begins after exporting the PMML model.</em></p>
               </div>
             </div>
 
@@ -87,7 +87,7 @@
               <button class="decision-card-trigger" aria-expanded="false">
                 <span class="dc-trigger-left">
                   <span class="dc-trigger-title">Deploy with lifecycle management, monitoring, and REST endpoints</span>
-                  <span class="dc-pill"><a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a> · <a href="../products-tools/ai-platforms.html#watsonx">watsonx.ai</a></span>
+                  <span class="dc-pill"><a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a> · <a href="../products-tools/ai-platforms.html#watsonx-ai">watsonx.ai</a></span>
                 </span>
                 <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
               </button>
@@ -95,7 +95,7 @@
                 <p>You want model deployment, lifecycle management, monitoring, and scoring endpoints managed through a unified platform on IBM LinuxONE.</p>
               </div>
               <div class="decision-card-body" hidden>
-                <p><strong>→ Use <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a> or <a href="../products-tools/ai-platforms.html#watsonx">watsonx.ai</a> on IBM LinuxONE.</strong> Red Hat OpenShift AI provides KServe-based model serving, deployment pipelines, and monitoring within a Kubernetes-native environment. watsonx.ai (via IBM Software Hub) provides a full ML deployment and lifecycle management environment. Both run on IBM LinuxONE and expose REST scoring endpoints for integration with your Linux applications.</p>
+                <p><strong>→ Use <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a> or <a href="../products-tools/ai-platforms.html#watsonx-ai">watsonx.ai</a> on IBM LinuxONE.</strong> Red Hat OpenShift AI provides KServe-based model serving, deployment pipelines, and monitoring within a Kubernetes-native environment. watsonx.ai (via IBM Software Hub) provides a full ML deployment and lifecycle management environment. Both run on IBM LinuxONE and expose REST scoring endpoints for integration with your Linux applications.</p>
                 <p><em>Common approach:</em> Train model → Export to PMML or ONNX → Import into Red Hat OpenShift AI or watsonx.ai → Deploy as a REST scoring endpoint on IBM LinuxONE.</p>
               </div>
             </div>
@@ -109,12 +109,12 @@
                 <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
               </button>
               <div class="dc-card-intro">
-                <p>You need to serve one or more traditional ML models from a shared inference platform, or your team works in a containerized OpenShift environment.</p>
+                <p>You need to serve one or more machine learning models from a shared inference platform, or your team works in a containerized OpenShift environment.</p>
               </div>
               <div class="decision-card-body" hidden>
                 <p><strong>Choose based on what you need from the serving platform:</strong></p>
-                <p><strong>→ <a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton Inference Server</a></strong> — Focused, high-performance model serving. Supports PMML and ONNX models from a single runtime. Best when you need a dedicated inference server without the overhead of a full MLOps platform.</p>
-                <p><strong>→ <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a></strong> — Full AI lifecycle platform covering training, serving, monitoring, and governance in one place. Runs across architectures including IBM LinuxONE. Best when your team needs a unified MLOps environment.</p>
+                <p><strong>→ <a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton Inference Server</a></strong> — Focused, high-performance model serving. Supports PMML and ONNX models from a single runtime. Best when you need a dedicated inference server without additional platform overhead.</p>
+                <p><strong>→ <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a></strong> — Full AI platform covering training, serving, monitoring, and governance in one place. Runs across architectures including IBM LinuxONE. Best when your team needs a unified platform environment.</p>
                 <p><em>Common approach:</em> Export model to PMML → Deploy to IBM Z Accelerated for Triton Inference Server, or import into Red Hat OpenShift AI for unified lifecycle management on IBM LinuxONE.</p>
                 <p><em>📎 Deep learning models (ONNX) can also be served through either of these tools — see the Deep Learning section below.</em></p>
               </div>
@@ -124,7 +124,7 @@
 
           <!-- ── SUBSECTION 2: Deep Learning + Encoder LLMs (Telum on-chip) ── -->
           <h2 id="deep-learning">Deploying Deep Learning Models and Encoder LLMs (Telum On-Chip Accelerator)</h2>
-          <p>Deep learning models and encoder LLMs share the same deployment path on IBM LinuxONE to enable <strong>Telum on-chip AI acceleration</strong>: convert to ONNX, compile with the IBM Z Deep Learning Compiler (zDLC), and deploy via a serving platform. Unlike traditional ML models, these heavier-weight models will almost always target the on-chip AI accelerator — they contain mathematical operations that benefit from it automatically. Encoder LLMs can also choose the Spyre path — see the next subsection.</p>
+          <p>Deep learning models and encoder LLMs share the same deployment path on IBM LinuxONE to enable <strong>Telum on-chip AI acceleration</strong>: convert to ONNX, compile with the IBM Z Deep Learning Compiler (zDLC), and deploy via a serving platform. Unlike standard machine learning models, these heavier-weight models will almost always target the on-chip AI accelerator — they contain mathematical operations that benefit from it automatically. Encoder LLMs can also choose the Spyre path — see the next subsection.</p>
 
           <div class="decision-cards">
 
@@ -142,7 +142,7 @@
               <div class="decision-card-body" hidden>
                 <p><strong>→ Convert to <a href="../products-tools/model-formats.html#onnx">ONNX</a>, then compile with the <a href="../products-tools/model-formats.html#zdlc">IBM Z Deep Learning Compiler (zDLC)</a>.</strong> zDLC optimizes the ONNX model for IBM LinuxONE hardware, generating a deployment artifact that leverages Telum on-chip AI acceleration automatically. The zDLC supports C++, Java, and Python APIs and produces shared library files embeddable in applications independently of the original framework.</p>
                 <p><em>Common approach:</em> Export model to ONNX → Compile with zDLC → Deploy via <a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton Inference Server</a> or <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a> on IBM LinuxONE.</p>
-                <p><em>Note: For choosing between Triton Inference Server and Red Hat OpenShift AI as your serving platform, see <strong><a href="#traditional-ml">Serve ML models from a shared inference platform</a></strong> in the Traditional ML section above — both tools support ONNX deep learning models in the same way.</em></p>
+                <p><em>Note: For choosing between Triton Inference Server and Red Hat OpenShift AI as your serving platform, see <strong><a href="#traditional-ml">Serve ML models from a shared inference platform</a></strong> in the Machine Learning section above — both tools support ONNX deep learning models in the same way.</em></p>
                 <p><em>Note: If your model was built natively with IBM Z Accelerated for TensorFlow and you want to skip ONNX conversion entirely, see <strong>Build a TensorFlow model natively and deploy directly on IBM LinuxONE</strong> below.</em></p>
               </div>
             </div>
@@ -203,7 +203,7 @@
                 <p>You are deploying a decoder LLM (e.g., Llama, Granite) or an encoder LLM on Spyre and want a dedicated inference server without the full Red Hat OpenShift AI platform. No ONNX conversion is required — LLMs are served natively.</p>
               </div>
               <div class="decision-card-body" hidden>
-                <p><strong>→ Use <a href="../products-tools/inference-serving.html#rh-inference">Red Hat AI Inference Server</a>.</strong> This is the recommended path for LLM inference on Spyre without requiring the full Red Hat OpenShift AI platform. It is vLLM-based, purpose-built for large model inference, and supports Granite, Llama, Qwen, DeepSeek, Gemma, Mistral, and other models — no ONNX conversion required. Not used for traditional ML or deep learning models on the Telum II accelerator.</p>
+                <p><strong>→ Use <a href="../products-tools/inference-serving.html#rh-inference">Red Hat AI Inference Server</a>.</strong> This is the recommended path for LLM inference on Spyre without requiring the full Red Hat OpenShift AI platform. It is vLLM-based, purpose-built for large model inference, and supports Granite, Llama, and other models — no ONNX conversion required. Not used for machine learning or deep learning models on the Telum II accelerator.</p>
                 <p><em>Common approach:</em> Source or fine-tune an LLM → Deploy natively via Red Hat AI Inference Server with Spyre acceleration on IBM LinuxONE.</p>
               </div>
             </div>
@@ -211,17 +211,17 @@
             <div class="decision-card">
               <button class="decision-card-trigger" aria-expanded="false">
                 <span class="dc-trigger-left">
-                  <span class="dc-trigger-title">LLM deployment with MLOps and multi-platform support</span>
+                  <span class="dc-trigger-title">LLM deployment with diverse acceleration capabilities</span>
                   <span class="dc-pill"><a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a></span>
                 </span>
                 <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
               </button>
               <div class="dc-card-intro">
-                <p>You need MLOps pipeline management, model catalogs, and monitoring around your LLM deployment, or you want a single platform that covers both Telum and Spyre workloads. No ONNX conversion is required for LLMs — they are served natively through the Red Hat AI Inference Server runtime embedded in OpenShift AI.</p>
+                <p>You need centralized pipeline management, model catalogs, and monitoring around your LLM deployment across diverse acceleration capabilities (Telum II and Spyre). No ONNX conversion is required for LLMs — they are served natively through the Red Hat AI Inference Server runtime embedded in OpenShift AI.</p>
               </div>
               <div class="decision-card-body" hidden>
-                <p><strong>→ Use <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a>.</strong> Both Red Hat AI Inference Server and Red Hat OpenShift AI are valid paths for LLM inference on Spyre — no ONNX conversion required for either. Choose OpenShift AI when you need the broader platform: MLOps pipelines, model governance, and unified management across Telum II and Spyre workloads on IBM LinuxONE.</p>
-                <p><em>Common approach:</em> Deploy LLMs through OpenShift AI using the <a href="../products-tools/inference-serving.html#rh-inference">Red Hat AI Inference Server</a> runtime for Spyre workloads, or <a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton Inference Server</a> for Telum II workloads — all managed from a single MLOps platform on IBM LinuxONE.</p>
+                <p><strong>→ Use <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a>.</strong> Both Red Hat AI Inference Server and Red Hat OpenShift AI are valid paths for LLM inference on Spyre — no ONNX conversion required for either. Choose OpenShift AI when you need the broader platform: deployment pipelines, model governance, and unified management across diverse acceleration capabilities (Telum II and Spyre) on IBM LinuxONE.</p>
+                <p><em>Common approach:</em> Deploy LLMs through OpenShift AI using the <a href="../products-tools/inference-serving.html#rh-inference">Red Hat AI Inference Server</a> runtime for Spyre workloads, or <a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton Inference Server</a> for Telum II workloads — all managed from a unified AI platform on IBM LinuxONE.</p>
               </div>
             </div>
 
@@ -250,7 +250,7 @@
           <h1>Next Steps</h1>
           <div class="ns-tile-grid">
             <a href="../serve-model/serve-model.html" class="ns-tile">
-              <span class="ns-tile-label">Serve Model</span>
+              <span class="ns-tile-label">Serve Models</span>
               <span class="ns-tile-body">Make your deployed model accessible to applications — via REST API or gRPC from your Linux workloads and containerized services on IBM LinuxONE.</span>
               <span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span>
             </a>
@@ -416,7 +416,7 @@
       pageNavItems: [
         { id: 'overview',        label: 'Overview' },
         { id: 'where-to-start',  label: 'Where to Start' },
-        { id: 'traditional-ml',  label: 'Deploying Traditional Machine Learning Models' },
+        { id: 'traditional-ml',  label: 'Deploying Machine Learning Models' },
         { id: 'deep-learning',   label: 'Deploying Deep Learning Models and Encoder LLMs (Telum On-Chip Accelerator)' },
         { id: 'llm-spyre',       label: 'Deploying Large Language Models on Spyre' },
         { id: 'next-steps',      label: 'Next Steps' },

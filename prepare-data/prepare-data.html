@@ -46,7 +46,7 @@
             </div>
             <div class="card">
               <h4>Build Pipelines</h4>
-              <p>Automate repeatable preparation steps so data flows consistently from source to model training — and again at inference time.</p>
+              <p>Build automated, repeatable data pipelines that move data seamlessly from source systems through preparation and model training, and apply the same transformations during inference.</p>
             </div>
           </div>
 
@@ -90,7 +90,7 @@
                 <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
               </button>
               <div class="dc-card-intro">
-                <p>You don't have access to production data yet, or you want to move quickly without data privacy concerns. IBM Synthetic Data Sets are currently available for three use cases: banking, AML, and insurance.</p>
+                <p>You don't have access to production data yet, or you want to move quickly without data privacy concerns. IBM Synthetic Data Sets are currently available for three use cases: banking, Anti-Money Laundering (AML), and insurance.</p>
               </div>
               <div class="decision-card-body" hidden>
                 <p><strong>→ Start with <a href="../products-tools/data-analytics.html#synthetic-data-sets">IBM Synthetic Data Sets</a>.</strong> Pre-built, realistic datasets help you build, test, and validate models without waiting for production data access.</p>
@@ -103,7 +103,7 @@
                 <span class="dc-trigger-left">
                   <span class="dc-trigger-title">Building a Production Data Pipeline on IBM LinuxONE</span>
                   <span class="dc-badge dc-badge--on">On-Platform</span>
-                  <span class="dc-pill"><a href="../products-tools/ai-frameworks.html#snapml">IBM Z Accelerated for Snap ML</a></span>
+                  <span class="dc-pill"><a href="../products-tools/ai-frameworks.html#snapml">IBM Z Accelerated SnapML</a></span>
                 </span>
                 <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
               </button>
@@ -111,7 +111,7 @@
                 <p>You need to process large volumes of enterprise data, perform complex transformations, or build repeatable feature engineering pipelines directly on IBM LinuxONE.</p>
               </div>
               <div class="decision-card-body" hidden>
-                <p><strong>→ Use <a href="../products-tools/ai-frameworks.html#snapml">IBM Z Accelerated for Snap ML</a>.</strong> Snap ML includes highly optimized, enterprise-grade preprocessing transformers — including categorical encoders, normalization, and graph feature engineering — that run with minimal overhead on IBM LinuxONE, ensuring training-to-serving consistency via exportable JSON pipelines.</p>
+                <p><strong>→ Use <a href="../products-tools/ai-frameworks.html#snapml">IBM Z Accelerated SnapML</a>.</strong> Snap ML includes highly optimized, enterprise-grade preprocessing transformers — including categorical encoders, normalization, and graph feature engineering — that run with minimal overhead on IBM LinuxONE, ensuring training-to-serving consistency via exportable JSON pipelines.</p>
                 <p><em>Common approach:</em> Build Snap ML preprocessing pipelines that cleanse, encode, and engineer features from enterprise data sources, then feed directly into Snap ML model training — all on-platform with no data movement required.</p>
               </div>
             </div>
@@ -121,7 +121,7 @@
                 <span class="dc-trigger-left">
                   <span class="dc-trigger-title">Python-Based Data Preparation on IBM LinuxONE</span>
                   <span class="dc-badge dc-badge--on">On-Platform</span>
-                  <span class="dc-pill"><a href="../products-tools/ai-frameworks.html#tensorflow">IBM Z Accelerated for TensorFlow</a> · <a href="../products-tools/ai-frameworks.html#pytorch">PyTorch</a></span>
+                  <span class="dc-pill"><a href="../products-tools/ai-frameworks.html#tensorflow">IBM Z Accelerated for TensorFlow</a> · <a href="../products-tools/ai-frameworks.html#pytorch">IBM Z Accelerated for PyTorch</a></span>
                 </span>
                 <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
               </button>
@@ -129,7 +129,7 @@
                 <p>Your team uses standard Python data science libraries and wants to run preparation scripts directly on IBM LinuxONE alongside your enterprise workloads.</p>
               </div>
               <div class="decision-card-body" hidden>
-                <p><strong>→ Use standard Python tooling on IBM LinuxONE.</strong> IBM LinuxONE runs a full Linux environment, so pandas, NumPy, scikit-learn, and other standard Python libraries work natively without any special toolkit. IBM's accelerated frameworks for TensorFlow and PyTorch are available as container images and extend seamlessly from data preparation into model training.</p>
+                <p><strong>→ Use standard Python tooling on IBM LinuxONE.</strong> IBM LinuxONE runs a full Linux environment, so pandas, NumPy, scikit-learn, and other standard Python libraries work natively without any special toolkit. IBM's accelerated frameworks for TensorFlow and PyTorch are available as container images via the <a href="../products-tools/ai-frameworks.html#ai-toolkit">AI Toolkit for IBM LinuxONE</a> and extend seamlessly from data preparation into model training.</p>
                 <p><em>Common approach:</em> Use pandas and scikit-learn pipelines to cleanse, transform, and engineer features from enterprise data sources on-platform, then pass the prepared data directly into IBM Z Accelerated for TensorFlow or PyTorch for training — all within the same Linux environment on IBM LinuxONE.</p>
               </div>
             </div>
@@ -160,8 +160,8 @@
           <h1>Next Steps</h1>
           <div class="ns-tile-grid">
             <a href="../build-model/build-model.html" class="ns-tile">
-              <span class="ns-tile-label">Build Models</span>
-              <span class="ns-tile-body">Once your data is prepared and model-ready, the next step is building your model. IBM Z supports traditional machine learning, deep learning, and serving pre-built large language models.</span>
+              <span class="ns-tile-label">Build &amp; Train Models</span>
+              <span class="ns-tile-body">Once your data is prepared and model-ready, the next step is building and training your model. IBM LinuxONE supports machine learning, deep learning, and serving pre-built large language models.</span>
               <span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span>
             </a>
           </div>
@@ -348,7 +348,7 @@
       pageNavItems: [
         { id: 'overview',       label: 'Overview' },
         { id: 'where-to-start', label: 'Where to Start' },
-        { id: 'next-step',      label: 'Next: Build Models' },
+        { id: 'next-step',      label: 'Next: Build & Train Models' },
       ]
     });
 

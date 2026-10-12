@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI on LinuxONE 101 | Serve Model</title>
+  <title>AI on LinuxONE 101 | Serve Models</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css" />
@@ -19,15 +19,15 @@
     <div class="main-content">
       <!-- Page Hero -->
       <div class="page-hero">
-        <h1>Serve Model</h1>
+        <h1>Serve Models</h1>
       </div>
 
       <div class="page-body">
 
         <!-- ── OVERVIEW ─────────────────────────────────────────────── -->
         <section class="section" id="overview">
-          <h1>Serve Model</h1>
-          <p>Serving is the stage where a deployed model is made available for production use. On IBM LinuxONE, as soon as a model is deployed a scoring endpoint is created — serving and deploying are effectively the same step. This stage focuses on invoking that endpoint from your applications and managing the model in production over time.</p>
+          <h1>Serve Models</h1>
+          <p>Serving is the stage where a deployed model is made available for production use. On IBM LinuxONE, as soon as a model is deployed a scoring endpoint is created — with a scoring endpoint, your model is ready to be served. This stage focuses on invoking that endpoint from your applications and managing the model in production over time.</p>
           <p>The invocation method depends on your runtime — models are invoked via REST or gRPC, with the exact endpoint format determined by the serving platform. Invocation happens directly on IBM LinuxONE, close to enterprise data, reducing latency and enabling AI to be embedded into your Linux applications and containerized services.</p>
 
           <h2>What happens at this stage?</h2>
@@ -42,7 +42,7 @@
             </div>
             <div class="card">
               <h4>Manage model versions</h4>
-              <p>Support model versioning and controlled updates, allowing new model versions to be swapped in, tested, and rolled back with minimal disruption to production workloads.</p>
+              <p>Support model versioning and controlled updates, allowing new model versions to be swapped in, tested, and rolled back with minimal disruption to production workloads if needed.</p>
             </div>
           </div>
 
@@ -56,7 +56,7 @@
           <p>Your invocation method follows from the runtime your model was deployed to. The accordions below map to each runtime available on IBM LinuxONE. Encoder LLMs can run on either Telum (Triton) or Spyre (Red Hat AI Inference Server) — see the relevant accordion for each.</p>
 
           <!-- ── SUBSECTION 1: Telum runtimes ── -->
-          <h2 id="telum-runtimes">Invoking Models on Telum (Traditional ML, Deep Learning, and Encoder LLMs)</h2>
+          <h2 id="telum-runtimes">Invoking Models on Telum (Machine Learning, Deep Learning, and Encoder LLMs)</h2>
           <p>Models deployed through Telum-based runtimes on IBM LinuxONE are invoked via REST or gRPC endpoints from your Linux applications and containerized services. The runtime you deployed to determines how you call the endpoint.</p>
 
           <div class="decision-cards">
@@ -70,7 +70,7 @@
                 <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
               </button>
               <div class="dc-card-intro">
-                <p>Your model — traditional ML (PMML or ONNX), deep learning (zDLC-compiled ONNX), or encoder LLM — is deployed in IBM Z Accelerated for Triton Inference Server on IBM LinuxONE.</p>
+                <p>Your model — machine learning (PMML or ONNX), deep learning (zDLC-compiled ONNX), or encoder LLM — is deployed in IBM Z Accelerated for Triton Inference Server on IBM LinuxONE.</p>
               </div>
               <div class="decision-card-body" hidden>
                 <p><strong>→ Invoke via gRPC or REST.</strong> IBM Z Accelerated for Triton Inference Server exposes both gRPC and HTTP/REST endpoints. Call the endpoint directly from your Linux application or containerized service co-located on IBM LinuxONE. Supports concurrent model execution and dynamic batching to meet strict SLAs.</p>
@@ -147,7 +147,7 @@
                 <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
               </button>
               <div class="dc-card-intro">
-                <p>Your LLM is deployed through Red Hat OpenShift AI on IBM LinuxONE, with MLOps pipeline management, monitoring, and governance.</p>
+                <p>Your LLM is deployed through Red Hat OpenShift AI on IBM LinuxONE, with acceleration pipeline management, monitoring, and governance.</p>
               </div>
               <div class="decision-card-body" hidden>
                 <p><strong>→ Invoke via REST through the OpenShift AI model endpoint.</strong> Red Hat OpenShift AI manages the Red Hat AI Inference Server runtime for Spyre workloads — invoke via the same OpenAI-compatible REST API, with monitoring, alerting, and scaling managed by the platform.</p>
@@ -353,7 +353,7 @@
       pageNavItems: [
         { id: 'overview',        label: 'Overview' },
         { id: 'where-to-start',  label: 'Where to Start' },
-        { id: 'telum-runtimes',  label: 'Invoking Models on Telum (Traditional ML, Deep Learning, and Encoder LLMs)' },
+        { id: 'telum-runtimes',  label: 'Invoking Models on Telum (Machine Learning, Deep Learning, and Encoder LLMs)' },
         { id: 'llm-spyre',       label: 'Invoking Large Language Models on Spyre' },
         { id: 'hybrid-routing',  label: 'Routing Inference Across Environments' },
         { id: 'next-steps',      label: 'Next Steps' },

@@ -8,7 +8,7 @@ function renderSidebar(activeSection, activeSubPage, rootPrefix) {
   const lifecycleOpen = activeSection === 'lifecycle';
 
   const links = {
-    overview:      p + 'overview/overview.html',
+    overview:      p + 'index.html',
     usecases:      p + 'use-cases/use-cases.html',
     preparedata:   p + 'prepare-data/prepare-data.html',
     trainmodel:    p + 'build-model/build-model.html',
@@ -31,10 +31,10 @@ function renderSidebar(activeSection, activeSubPage, rootPrefix) {
     <div class="sidebar-sub-items${lifecycleOpen ? ' open' : ''}" id="lifecycle-items">
       <a href="${links.usecases}"      class="sidebar-sub-link${activeSubPage === 'use-cases'      ? ' active' : ''}">Use Cases</a>
       <a href="${links.preparedata}"   class="sidebar-sub-link${activeSubPage === 'prepare-data'   ? ' active' : ''}">Prepare Data</a>
-      <a href="${links.trainmodel}"    class="sidebar-sub-link${activeSubPage === 'build-model'    ? ' active' : ''}">Build Model</a>
+      <a href="${links.trainmodel}"    class="sidebar-sub-link${activeSubPage === 'build-model'    ? ' active' : ''}">Build &amp; Train Models</a>
       <a href="${links.optimizemodel}" class="sidebar-sub-link${activeSubPage === 'optimize-model' ? ' active' : ''}">Optimize Model</a>
       <a href="${links.deploymodels}"  class="sidebar-sub-link${activeSubPage === 'deploy-models'  ? ' active' : ''}">Deploy Models</a>
-      <a href="${links.servemodel}"    class="sidebar-sub-link${activeSubPage === 'serve-model'    ? ' active' : ''}">Serve Model</a>
+      <a href="${links.servemodel}"    class="sidebar-sub-link${activeSubPage === 'serve-model'    ? ' active' : ''}">Serve Models</a>
       <a href="${links.aigovernance}"  class="sidebar-sub-link${activeSubPage === 'ai-governance'  ? ' active' : ''}">AI Governance</a>
     </div>
     <div class="sidebar-divider"></div>
