@@ -526,7 +526,9 @@ body.has-lifecycle .pagenav {
   gap: 0;
   margin-top: 8px;
 }
-.ns-tile {
+.ns-tile,
+.section a.ns-tile,
+.section a.ns-tile:hover {
   display: flex;
   flex-direction: column;
   padding: 20px 20px 16px;

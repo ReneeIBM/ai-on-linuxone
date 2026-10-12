@@ -37,15 +37,15 @@
             </div>
             <div class="card">
               <h4>Build deep learning models</h4>
-              <p>Develop neural networks for computer vision, NLP, or other unstructured data workloads using <a href="../products-tools/ai-frameworks.html#tensorflow">IBM Z Accelerated for TensorFlow</a> or <a href="../products-tools/ai-frameworks.html#pytorch">IBM Z Accelerated for PyTorch</a> — both optimized for IBM LinuxONE hardware and available as container images through the <a href="../products-tools/ai-frameworks.html#ai-toolkit">AI Toolkit for IBM LinuxONE</a>.</p>
+              <p>Develop neural networks for computer vision, NLP, or other unstructured data workloads using standard deep learning frameworks, optimized for IBM LinuxONE hardware.</p>
             </div>
             <div class="card">
               <h4>Build, fine-tune, or use pre-built LLMs</h4>
-              <p>1) Use pre-built LLMs as-is from IBM or open source, 2) fine-tune pre-built LLMs on proprietary enterprise data, or 3) build and train bespoke custom LLMs. Leverage Spyre Accelerator cards for generative AI workloads.</p>
+              <p>Work with foundation models on IBM LinuxONE — deploy pre-built LLMs as-is, fine-tune them on your data, or train custom small language models and encoders from scratch.</p>
             </div>
             <div class="card">
               <h4>Export for deployment</h4>
-              <p>Save your model in a portable format — PMML for machine learning models, ONNX for deep learning or encoder LLMs — then compile with the IBM Z Deep Learning Compiler (zDLC) to leverage Telum II acceleration at inference time.</p>
+              <p>When training is complete, export your model in a format supported by IBM LinuxONE — PMML for machine learning models, ONNX for deep learning models and encoder LLMs. The export format you choose determines your deployment path.</p>
             </div>
           </div>
 
@@ -76,7 +76,7 @@
                 <p>You need to train classical ML models on IBM LinuxONE using a library purpose-built and optimized for the platform.</p>
               </div>
               <div class="decision-card-body" hidden>
-                <p><strong>→ Use <a href="../products-tools/ai-frameworks.html#snapml">IBM Z Accelerated SnapML</a>.</strong> Snap ML is the primary training technology for machine learning on IBM LinuxONE, supporting generalized linear models, tree-based models, and gradient boosting. It is fast, efficient, accurate, and scales to large volumes of data. Decision tree ensemble inference is optimized on the Telum II on-chip AI accelerator. Snap ML is available as a container image via the IBM Container Registry (ICR) and is included in the <a href="../products-tools/ai-frameworks.html#ai-toolkit">AI Toolkit for IBM LinuxONE</a>.</p>
+                <p><strong>→ Use <a href="../products-tools/ai-frameworks.html#snapml">IBM Z Accelerated SnapML</a>.</strong> Snap ML is the primary training technology for machine learning on IBM LinuxONE, supporting generalized linear models, tree-based models, and gradient boosting. Decision tree ensemble inference is optimized on the Telum II on-chip AI accelerator. Snap ML is available as a container image via the IBM Container Registry (ICR) and is included in the <a href="../products-tools/ai-frameworks.html#ai-toolkit">AI Toolkit for IBM LinuxONE</a>.</p>
                 <p><em>Common approach:</em> Prepare features with Snap ML preprocessing transformers → Train with Snap ML → Export to <a href="../products-tools/model-formats.html#pmml">PMML</a> → Deploy and serve on IBM LinuxONE.</p>
               </div>
             </div>
@@ -85,7 +85,6 @@
               <button class="decision-card-trigger" aria-expanded="false">
                 <span class="dc-trigger-left">
                   <span class="dc-trigger-title">Use standard Python libraries in a familiar notebook workflow</span>
-                  <span class="dc-pill">scikit-learn · XGBoost · pandas</span>
                 </span>
                 <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
               </button>
@@ -118,7 +117,7 @@
                 <p>You are building deep learning models and want to train and deploy natively on IBM LinuxONE, leveraging Telum II hardware acceleration.</p>
               </div>
               <div class="decision-card-body" hidden>
-                <p><strong>→ Use <a href="../products-tools/ai-frameworks.html#tensorflow">IBM Z Accelerated for TensorFlow</a> or <a href="../products-tools/ai-frameworks.html#pytorch">IBM Z Accelerated for PyTorch</a>.</strong> Both frameworks are optimized for IBM LinuxONE hardware and exploit the Integrated Accelerator for AI on Telum II for inference. IBM Z Accelerated for PyTorch also supports Transformer-based architectures including encoder-based models. Both are available as container images via the IBM Container Registry (ICR) (part of the <a href="../products-tools/ai-frameworks.html#ai-toolkit">AI Toolkit for IBM LinuxONE</a>).</p>
+                <p><strong>→ Use <a href="../products-tools/ai-frameworks.html#tensorflow">IBM Z Accelerated for TensorFlow</a> or <a href="../products-tools/ai-frameworks.html#pytorch">IBM Z Accelerated for PyTorch</a>.</strong> Both frameworks are optimized for IBM LinuxONE hardware and use the Integrated Accelerator for AI on Telum II for inference. IBM Z Accelerated for PyTorch also supports Transformer-based architectures including encoder-based models. Both are available as container images via the IBM Container Registry (ICR) (part of the <a href="../products-tools/ai-frameworks.html#ai-toolkit">AI Toolkit for IBM LinuxONE</a>).</p>
                 <p><em>Common approach:</em> Prepare data → Train with IBM Z Accelerated for TensorFlow or IBM Z Accelerated for PyTorch → Deploy directly via <a href="../products-tools/inference-serving.html#triton">IBM Z Accelerated for Triton Inference Server</a> or <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a> on IBM LinuxONE.</p>
               </div>
             </div>
@@ -145,7 +144,7 @@
 
           <!-- ── SUBSECTION 3: LLMs ── -->
           <h2 id="llm">Using Large Language Models (LLMs) &amp; Foundation Models</h2>
-          <p>When working with foundation models on IBM LinuxONE, there are three paths: use a pre-built LLM as-is, fine-tune a pre-built LLM on your data, or build and train a custom SLM or encoder. If your use case is satisfied by a standard foundation model without any modification, skip this stage — go directly to <a href="../deploy-models/deploy-models.html#llm-spyre">Deploy Models</a>. The two paths below require work at this stage.</p>
+          <p>When working with foundation models on IBM LinuxONE, there are three paths: use a pre-built LLM as-is, fine-tune a pre-built LLM on your data, or build and train a custom SLM or encoder. If your use case is satisfied by a standard foundation model without any modification, skip this stage — go directly to <a href="../deploy-models/deploy-models.html#llm-spyre">Deploy Models</a>.</p>
 
           <div class="decision-cards">
 
@@ -159,11 +158,10 @@
                 <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
               </button>
               <div class="dc-card-intro">
-                <p>Adapt a foundation model to organizational domain knowledge, specialized vocabularies, or task-specific schemas while retaining core model capabilities.</p>
+                <p>Adapt a pre-built foundation model to your domain data while keeping training data on-premises.</p>
               </div>
               <div class="decision-card-body" hidden>
-                <p><strong>→ Fine-tune a foundation model on your domain data.</strong> Fine-tuning updates model weights on a curated dataset (e.g., internal documentation, domain-specific terminology, or proprietary transaction records), achieving domain alignment while keeping sensitive enterprise training data on-premises.</p>
-                <p><em>Common approach:</em> Prepare domain datasets on IBM LinuxONE → Execute tuning pipelines via <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a> → Merge weights or export LoRA adapters → Deploy to <a href="../products-tools/inference-serving.html#rh-inference">Red Hat AI Inference Server</a> on IBM LinuxONE.</p>
+                <p><strong>→ Fine-tune a foundation model on your domain data</strong> using <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a> on IBM LinuxONE. RHOAI provides OpenShift-based workbenches for model development and experimentation, and Kubeflow Pipelines for automating training workflows — including data preparation, validation, and the tuning run itself. Training data stays on-premises throughout. Once fine-tuned, deploy the model to <a href="../products-tools/inference-serving.html#rh-inference">Red Hat AI Inference Server</a> on IBM LinuxONE.</p>
               </div>
             </div>
 
@@ -177,11 +175,10 @@
                 <svg class="dc-chevron" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
               </button>
               <div class="dc-card-intro">
-                <p>You need a compact, task-specific model trained from scratch — such as a domain encoder or small transformer.</p>
+                <p>Build and train a compact, task-specific model from scratch — such as a domain encoder or small transformer — directly on IBM LinuxONE.</p>
               </div>
               <div class="decision-card-body" hidden>
-                <p><strong>→ Train custom architectures using <a href="../products-tools/ai-frameworks.html#pytorch">IBM Z Accelerated for PyTorch</a> or <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a> pipelines</strong> natively on IBM LinuxONE. Once trained, export to ONNX for deployment — see <a href="../deploy-models/deploy-models.html#deep-learning">Deploy Models</a> for the compilation and serving steps.</p>
-                <p><em>Common approach:</em> Train encoder/SLM architecture using IBM Z Accelerated for PyTorch → Export to ONNX → proceed to Deploy Models.</p>
+                <p><strong>→ Train custom architectures using <a href="../products-tools/ai-frameworks.html#pytorch">IBM Z Accelerated for PyTorch</a></strong> natively on IBM LinuxONE. IBM Z Accelerated for PyTorch supports language processing and computer vision workloads, including Transformer-based architectures such as encoders, and uses the Telum on-chip AI accelerator via NNPA instructions for inference. It is available as a container image from the IBM Container Registry as part of the <a href="../products-tools/ai-frameworks.html#ai-toolkit">AI Toolkit for IBM LinuxONE</a>. Training workflows can be automated using <a href="../products-tools/ai-platforms.html#rhoai">Red Hat OpenShift AI</a> Kubeflow Pipelines for data preparation, validation, and the training run itself. Once trained, export the model to ONNX and proceed to <a href="../deploy-models/deploy-models.html#deep-learning">Deploy Models</a> for compilation and serving steps.</p>
               </div>
             </div>
 
@@ -195,7 +192,7 @@
           <div class="ns-tile-grid">
             <a href="../deploy-models/deploy-models.html" class="ns-tile">
               <span class="ns-tile-label">Deploy Models</span>
-              <span class="ns-tile-body">Convert your model to ONNX or PMML, compile with the IBM Z Deep Learning Compiler (zDLC) for Telum acceleration, and deploy to a production environment using container images from the <a href="../products-tools/ai-frameworks.html#ai-toolkit">AI Toolkit for IBM LinuxONE</a> or Red Hat OpenShift AI on IBM LinuxONE.</span>
+              <span class="ns-tile-body">Convert your model to ONNX or PMML, compile with the IBM Z Deep Learning Compiler (zDLC) for Telum acceleration, and deploy to a production environment on IBM LinuxONE.</span>
               <span class="ns-tile-footer"><span class="ns-tile-arrow">&#8594;</span></span>
             </a>
           </div>

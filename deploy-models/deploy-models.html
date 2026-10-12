@@ -57,11 +57,11 @@
         <!-- ── WHERE TO START ────────────────────────────────────────── -->
         <section class="section" id="where-to-start">
           <h1>Where to Start</h1>
-          <p>Your path is determined by two things: your model type and your target accelerator. The three subsections below map to those two dimensions.</p>
+          <p>The three subsections below each cover a distinct model type and deployment path: machine learning models, deep learning models and encoder LLMs targeting the Telum on-chip AI accelerator, and large language models on IBM Spyre Accelerator.</p>
 
           <!-- ── SUBSECTION 1: Machine Learning ── -->
-          <h2 id="traditional-ml">Deploying Machine Learning Models</h2>
-          <p>Machine learning models (classification, regression, recommendation, forecasting) are deployed via PMML and will either leverage the <strong>Telum II on-chip AI accelerator</strong> (e.g., gradient boosting and random forest models) or run on native CPU (e.g., linear regression and logistic regression). Not all machine learning models use the on-chip AI accelerator.</p>
+          <h2 id="machine-learning">Deploying Machine Learning Models</h2>
+          <p>Machine learning models are deployed via PMML. Some model types (e.g., gradient boosting, random forest) use the Telum II on-chip AI accelerator; others run on native CPU.</p>
 
           <div class="decision-cards">
 
@@ -380,7 +380,7 @@
       pageNavItems: [
         { id: 'overview',        label: 'Overview' },
         { id: 'where-to-start',  label: 'Where to Start' },
-        { id: 'traditional-ml',  label: 'Deploying Machine Learning Models' },
+        { id: 'machine-learning',  label: 'Deploying Machine Learning Models' },
         { id: 'deep-learning',   label: 'Deploying Deep Learning Models and Encoder LLMs (Telum On-Chip Accelerator)' },
         { id: 'llm-spyre',       label: 'Deploying Large Language Models on Spyre' },
         { id: 'next-steps',      label: 'Next Steps' },

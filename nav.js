@@ -106,7 +106,7 @@ function renderNav(opts) {
   const useCasesItems = [
     { id: 'use-cases-overview',    label: 'Overview',                     href: p + 'use-cases/overview.html' },
     { id: 'ai-solution-patterns',  label: 'Solution Blueprints — Coming Soon',    href: p + 'use-cases/use-cases.html#ai-solution-patterns' },
-    { id: 'ai-solution-template',  label: 'Solution Blueprints',          href: p + 'use-cases/ai-solution-template.html' },
+    { id: 'ai-solution-template',  label: 'Additional Solution Blueprints',  href: p + 'use-cases/ai-solution-template.html' },
   ];
 
   /* ── Helper: simple dropdown (no flyout) ───────────────────── */
