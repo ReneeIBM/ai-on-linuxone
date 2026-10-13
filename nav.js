@@ -353,8 +353,8 @@ function initSearch(wrapper, root) {
     { title: 'AI Toolkit for IBM LinuxONE', section: 'Products & Tools', snippet: 'A collection of open-source AI frameworks — IBM Z Accelerated for TensorFlow, IBM Z Accelerated for PyTorch, IBM Z Accelerated SnapML, ONNX — optimized for s390x.', href: root + 'products-tools/ai-frameworks.html#ai-toolkit' },
 
     /* Use Cases */
-    { title: 'Advanced Credit Card Fraud Detection', section: 'Use Cases', snippet: 'Multi-model ensemble AI on IBM LinuxONE 5 — a complete end-to-end solution blueprint using XGBoost and BERT.', href: root + 'use-cases/use-cases.html#ai-solution-patterns' },
-    { title: 'Solution Blueprints', section: 'Use Cases', snippet: 'AI solution patterns on IBM LinuxONE — generative AI, credit risk, health insurance, and data preprocessing.', href: root + 'use-cases/ai-solution-template.html' },
+    { title: 'Solution Blueprints — Coming Soon', section: 'Use Cases', snippet: 'End-to-end solution blueprints for AI on IBM LinuxONE are coming soon.', href: root + 'use-cases/use-cases.html#ai-solution-patterns' },
+    { title: 'Additional Solution Blueprints', section: 'Use Cases', snippet: 'AI solution patterns on IBM LinuxONE — generative AI, credit risk, health insurance, and data preprocessing.', href: root + 'use-cases/ai-solution-template.html' },
     { title: 'Document Intelligence with Spyre', section: 'Solution Blueprints · Generative AI', snippet: 'IBM Granite LLM inference on Red Hat AI Inference Server, leveraging the IBM Spyre Accelerator on IBM LinuxONE.', href: root + 'use-cases/ai-solution-template.html#generative-ai' },
     { title: 'Credit Risk Assessment on IBM LinuxONE', section: 'Solution Blueprints', snippet: 'Build and deploy a credit risk scoring model using open-source frameworks on IBM LinuxONE with real-time scoring.', href: root + 'use-cases/ai-solution-template.html#credit-risk' },
     { title: 'Health Insurance Claims on IBM LinuxONE', section: 'Solution Blueprints', snippet: 'AI model for health insurance claims processing on IBM LinuxONE, deployed for real-time scoring.', href: root + 'use-cases/ai-solution-template.html#health-insurance' },
