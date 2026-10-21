@@ -103,14 +103,25 @@
       margin: 0;
     }
 
-    /* ── Section label ──────────────────────────────────────── */
-    .home-section-label {
-      font-size: 11px;
+    /* ── Step heading ───────────────────────────────────────── */
+    .home-step {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px 12px;
+      margin-bottom: 18px;
+    }
+    .home-step-num {
+      color: var(--ibm-gray-70);
+      font-size: 12px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.9px;
-      color: var(--ibm-gray-70);
-      margin-bottom: 20px;
+    }
+    .home-step-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ibm-text-primary);
     }
 
     /* ── Visual blocks ──────────────────────────────────────── */
@@ -180,7 +191,7 @@
     .home-vblock-link {
       font-size: 13px;
       font-weight: 600;
-      color: var(--ibm-orange);
+      color: var(--ibm-blue);
     }
 
     /* ── Lifecycle strip ────────────────────────────────────── */
@@ -281,6 +292,13 @@
       border: none;
       border-top: 1px solid var(--ibm-border);
       margin: 48px 0;
+    }
+
+    /* ── Where-to-start divider ─────────────────────────────── */
+    .home-section--start {
+      border-top: 3px solid var(--ibm-orange);
+      padding-top: 32px;
+      margin-top: 16px;
     }
 
     /* ── Contact ────────────────────────────────────────────── */
@@ -402,47 +420,34 @@
         <!-- What is AI on IBM LinuxONE -->
         <div class="home-intro" id="what-is-ai">
           <h2>What is AI on IBM LinuxONE</h2>
-          <p>Artificial Intelligence (AI) is enabling organizations to unlock greater value from their data through predictive insights and intelligent decision-making. IBM LinuxONE is a highly secure, scalable, and energy-efficient enterprise Linux platform designed to run critical Linux workloads while supporting modern data and AI applications. By bringing AI closer to enterprise data and core business processes, IBM LinuxONE helps organizations accelerate innovation. IBM LinuxONE provides a trusted foundation for deploying AI at scale while meeting the demanding requirements of enterprise environments.</p>
+          <p>Artificial Intelligence (AI) is enabling organizations to unlock greater value from their data through predictive insights and intelligent decision-making. IBM LinuxONE is a highly secure, scalable, and energy-efficient enterprise Linux platform designed to run critical Linux workloads while supporting modern data and AI applications — with AI acceleration built in, so you can run AI directly on the server that already runs your business. By bringing AI closer to enterprise data and core business processes, IBM LinuxONE helps organizations accelerate innovation. IBM LinuxONE provides a trusted foundation for deploying AI at scale while meeting the demanding requirements of enterprise environments.</p>
+        </div>
 
-          <hr class="home-section-divider" style="margin:36px 0 32px;" />
+        <!-- Built-in AI acceleration: Telum and Spyre -->
+        <div class="home-intro" id="ai-built-in" style="margin-bottom:48px;">
+          <h2>Built-in AI acceleration</h2>
 
-          <h3 id="ai-value" style="font-size:22px;font-weight:600;color:var(--ibm-text-primary);margin:0 0 20px;letter-spacing:-0.3px;">What AI on IBM LinuxONE can do for your business</h3>
+          <!-- Compact strip: one row per accelerator -->
+          <div style="max-width:960px;margin-top:16px;border-bottom:1px solid var(--ibm-border);">
 
-          <div style="display:flex;flex-direction:column;gap:32px;max-width:780px;">
-
-            <!-- Real-Time Fraud Prevention -->
-            <div style="display:flex;align-items:flex-start;gap:24px;">
-              <img src="https://raw.githubusercontent.com/carbon-design-system/carbon/main/packages/pictograms/src/svg/cybersecurity.svg" width="40" height="40" alt="Cybersecurity pictogram" style="flex-shrink:0;" />
-              <div>
-                <p style="font-size:15px;font-weight:600;color:var(--ibm-text-primary);margin:0 0 6px;">Real-Time Fraud Prevention</p>
-                <p style="font-size:14px;color:var(--ibm-text-secondary);line-height:1.65;margin:0;">Intercept fraudulent transactions at the point of origin by co-locating sub-millisecond AI inference directly alongside core payment workflows on IBM LinuxONE.</p>
-              </div>
+            <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 20px;padding:14px 0;border-top:1px solid var(--ibm-border);">
+              <span style="flex:0 0 190px;font-size:16px;font-weight:600;color:var(--ibm-text-primary);">Telum I / Telum II</span>
+              <span style="flex:1 1 280px;font-size:13px;color:var(--ibm-text-secondary);line-height:1.6;">An AI accelerator inside LinuxONE 4/5 that supports real-time, low-latency inferencing for enterprise applications, close to your data.</span>
+              <a href="products-tools/hardware-solutions.html#telum" style="font-size:13px;font-weight:600;color:var(--ibm-blue);text-decoration:none;white-space:nowrap;">Learn more &#8594;</a>
             </div>
 
-            <!-- Intelligent Claims Processing -->
-            <div style="display:flex;align-items:flex-start;gap:24px;">
-              <img src="https://raw.githubusercontent.com/carbon-design-system/carbon/main/packages/pictograms/src/svg/document--security.svg" width="40" height="40" alt="Document security pictogram" style="flex-shrink:0;" />
-              <div>
-                <p style="font-size:15px;font-weight:600;color:var(--ibm-text-primary);margin:0 0 6px;">Intelligent Claims Processing</p>
-                <p style="font-size:14px;color:var(--ibm-text-secondary);line-height:1.65;margin:0;">Accelerate claims settlement and detect complex fraud across structured and unstructured data while keeping sensitive customer data on-premises.</p>
-              </div>
-            </div>
-
-            <!-- Sovereign Conversational Banking -->
-            <div style="display:flex;align-items:flex-start;gap:24px;">
-              <img src="https://raw.githubusercontent.com/carbon-design-system/carbon/main/packages/pictograms/src/svg/banking.svg" width="40" height="40" alt="Financial services pictogram" style="flex-shrink:0;" />
-              <div>
-                <p style="font-size:15px;font-weight:600;color:var(--ibm-text-primary);margin:0 0 6px;">Sovereign Conversational Banking</p>
-                <p style="font-size:14px;color:var(--ibm-text-secondary);line-height:1.65;margin:0;">Deliver personalized financial recommendations and AI assisted workflows while maintaining full data residency and addressing regulatory compliance on trusted infrastructure.</p>
-              </div>
+            <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 20px;padding:14px 0;border-top:1px solid var(--ibm-border);">
+              <span style="flex:0 0 190px;font-size:16px;font-weight:600;color:var(--ibm-text-primary);">IBM Spyre Accelerator</span>
+              <span style="flex:1 1 280px;font-size:13px;color:var(--ibm-text-secondary);line-height:1.6;">An AI inferencing accelerator card that enables additional use cases on your secure on-prem Linux server, including generative AI.</span>
+              <a href="products-tools/hardware-solutions.html#spyre" style="font-size:13px;font-weight:600;color:var(--ibm-blue);text-decoration:none;white-space:nowrap;">Learn more &#8594;</a>
             </div>
 
           </div>
         </div>
 
-        <!-- Core Capabilities -->
+        <!-- Key Benefits -->
         <div class="home-intro" id="what-you-can-build" style="margin-bottom:48px;">
-          <h2>Core Capabilities</h2>
+          <h2>Key Benefits</h2>
 
           <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;max-width:960px;margin-top:20px;">
 
@@ -450,8 +455,8 @@
             <div style="border:1px solid var(--ibm-border);border-radius:8px;padding:24px 22px;display:flex;flex-direction:column;gap:14px;background:#fff;">
               <img src="https://raw.githubusercontent.com/carbon-design-system/carbon/main/packages/pictograms/src/svg/deep-learning.svg" width="40" height="40" alt="AI pictogram" style="flex-shrink:0;max-width:100%;" />
               <div>
-                <p style="font-size:14px;font-weight:600;color:var(--ibm-text-primary);margin:0 0 6px;">Real-time AI insights</p>
-                <p style="font-size:13px;color:var(--ibm-text-secondary);line-height:1.65;margin:0;">The on-chip AI accelerator enables low-latency inference, analyzing data as transactions occur. Memory coherence and direct fabric access eliminate bottlenecks for seamless AI execution.</p>
+                <p style="font-size:14px;font-weight:600;color:var(--ibm-text-primary);margin:0 0 6px;">Real-time AI for online transaction processing (OLTP)</p>
+                <p style="font-size:13px;color:var(--ibm-text-secondary);line-height:1.65;margin:0;">The on-chip AI accelerator enables low-latency inference, analyzing data as online transaction processing (OLTP) transactions occur. Memory coherence and direct fabric access eliminate bottlenecks for seamless AI execution.</p>
               </div>
             </div>
 
@@ -460,7 +465,7 @@
               <img src="https://raw.githubusercontent.com/carbon-design-system/carbon/main/packages/pictograms/src/svg/analytics.svg" width="40" height="40" alt="Throughput pictogram" style="flex-shrink:0;max-width:100%;" />
               <div>
                 <p style="font-size:14px;font-weight:600;color:var(--ibm-text-primary);margin:0 0 6px;">Higher AI throughput</p>
-                <p style="font-size:13px;color:var(--ibm-text-secondary);line-height:1.65;margin:0;">Using a single integrated accelerator for AI on an OLTP workload on IBM LinuxONE Emperor 5 matches the throughput of running inferencing on a compared remote x86 server with 13 cores.<sup>1</sup></p>
+                <p style="font-size:13px;color:var(--ibm-text-secondary);line-height:1.65;margin:0;">Using a single integrated accelerator for AI on an online transaction processing (OLTP) workload on IBM LinuxONE Emperor 5 matches the throughput of running inferencing on a compared remote x86 server with 13 cores.<sup>1</sup></p>
               </div>
             </div>
 
@@ -476,10 +481,8 @@
           </div>
         </div>
 
-        <hr class="home-section-divider" />
-
         <!-- Where to start -->
-        <div id="where-to-start" style="margin-bottom:20px;">
+        <div id="where-to-start" class="home-section--start" style="margin-bottom:20px;">
           <h2 style="font-size:22px;font-weight:600;color:var(--ibm-text-primary);letter-spacing:-0.3px;margin-bottom:4px;">Where to start</h2>
           <p style="font-size:14px;color:var(--ibm-text-secondary);margin:0 0 4px;">The path to get started with AI on IBM&#174; LinuxONE today</p>
           <p style="font-size:13px;font-weight:600;color:var(--ibm-text-secondary);margin:0 0 28px;">IBM's investment in partnering with clients</p>
@@ -487,7 +490,7 @@
 
         <!-- Step 1: Client journey -->
         <div style="margin-bottom:36px;">
-          <div class="home-section-label">Step 1 — Connect with the team</div>
+          <div class="home-step"><span class="home-step-num">Step 1</span><span class="home-step-title">Connect with the team</span></div>
           <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;">
 
             <!-- 1. Client Briefing -->
@@ -545,7 +548,7 @@
 
         <!-- Step 2: Explore -->
         <div style="margin-bottom:20px;">
-          <div class="home-section-label">Step 2 — Explore and learn</div>
+          <div class="home-step"><span class="home-step-num">Step 2</span><span class="home-step-title">Explore and learn</span></div>
         </div>
         <div class="home-visual-blocks">
 
@@ -631,8 +634,8 @@
       activeSub: null,
       pageNavItems: [
         { id: 'what-is-ai',        label: 'What is AI on IBM LinuxONE' },
-        { id: 'ai-value',          label: 'What AI on IBM LinuxONE can do for your business' },
-        { id: 'what-you-can-build',label: 'Core Capabilities' },
+        { id: 'ai-built-in',       label: 'Built-In AI Acceleration' },
+        { id: 'what-you-can-build',label: 'Key Benefits' },
         { id: 'where-to-start',    label: 'Where to Start' },
         { id: 'contact',           label: 'Contact Us' },
       ]
